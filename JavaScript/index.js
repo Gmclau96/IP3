@@ -34,7 +34,7 @@ app.post('/password', function (req, res) {
 // Insert
 app.post('/add', function (req, res) {
   db.serialize(() => {
-    db.run('INSERT INTO usr(email,password) VALUES(?,?)', [req.body.email, req.body.password], function (err) {
+    db.run('INSERT INTO usr(userID,email,password) VALUES(NULL,?,?)', [req.body.email, req.body.password], function (err) {
       if (err) {
         return console.log(err.message);
       }
@@ -53,9 +53,9 @@ app.post('/login', function (req, res) {
         alert("Incorrect login details, please try again")
         res.send("Error encountered while displaying");
         return console.error(err.message);
-      }
+      } else{
       //TEMPORARILY REDIRECTS TO ACCOUNT PAGE
-      res.sendFile(path.join(__dirname, '../public/account.html'));
+      res.sendFile(path.join(__dirname, '../public/account.html'));}
     });
   });
 });
