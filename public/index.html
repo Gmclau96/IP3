@@ -9,19 +9,38 @@
 </head>
 
 <body>
-    <h1>IP3Diary</h1>
-    <h3>For all your planning and scheduling needs</h3>
-    <!--Fieldset for login details -->
-    <fieldset>
-        <legend>Login</legend>
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" placeholder="Enter Username"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" placeholder="Enter Password"><br><br>
-        <input type="submit" value="Login">
-        <input type="submit" value="Sign up">
-        <input type="submit" value="Forgot password?">
-    </fieldset>
+
+    <!-- Header-->
+    <header class="py-5">
+        <div class="container px-lg-5">
+            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                <div class="m-4 m-lg-5">
+                    <h1 class="display-5 fw-bold">IP3Diary</h1>
+                    <h2 class="fs-4">For all your planning and scheduling needs</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="pt-4">
+        <div class="card-body">
+            <form>
+                <fieldset>
+                    <legend>Login</legend>
+                    <div class="mb-3">
+                        <label class="form-label">Email:</label>
+                        <input class="form-control" type="text" id='email' name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password:</label>
+                        <input class="form-control" type="password" id="password" name="password" required>
+                    </div>
+                    <button class="btn btn-primary" type="submit" formaction="/login" formmethod="post">Login</button>
+                    <button class="btn btn-primary" type="submit" formnovalidate formaction="/signup" formmethod="post">Sign up</button>
+                    <button class="btn btn-primary" type="submit" formnovalidate formaction="/password" formmethod="post">Forgot password?</button>
+                </fieldset>
+            </form>
+        </div>
+    </section>
 </body>
 
 </html>
