@@ -7,6 +7,7 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, './public')));
 
+
 let db = new sqlite3.Database('./database/users.db', sqlite3.OPEN_READWRITE, (err) => {
   if (err) {
     console.error(err.message);
@@ -14,7 +15,18 @@ let db = new sqlite3.Database('./database/users.db', sqlite3.OPEN_READWRITE, (er
     console.log('Connected to the users database.');
 });
 
-db.run('CREATE TABLE IF NOT EXISTS usr(userID INTEGER PRIMARY KEY, email TEXT, password TEXT)');
+//sets up database
+db.serialize(() => {
+  db.run('CREATE TABLE IF NOT EXISTS usr(userID INTEGER PRIMARY KEY, email TEXT, password TEXT, admin BOOLEAN, UNIQUE(email))')
+    //sets up users as admins
+    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"lucy","lucy",1)')
+    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"gordon","gordon",1)')
+    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"jodran","jodran",1)')
+    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"jamie","jamie",1)')
+    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"arrun","arrun",1)')
+    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"jacob","jacob",1)');
+});
+
 //Display interface
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../public/index.html'));
@@ -34,7 +46,7 @@ app.post('/password', function (req, res) {
 // Insert
 app.post('/add', function (req, res) {
   db.serialize(() => {
-    db.run('INSERT INTO usr(userID,email,password) VALUES(NULL,?,?)', [req.body.email, req.body.password], function (err) {
+    db.run('INSERT INTO usr(userID,email,password,admin) VALUES(NULL,?,?,0)', [req.body.email, req.body.password], function (err) {
       if (err) {
         return console.log(err.message);
       }
@@ -53,9 +65,10 @@ app.post('/login', function (req, res) {
         alert("Incorrect login details, please try again")
         res.send("Error encountered while displaying");
         return console.error(err.message);
-      } else{
-      //TEMPORARILY REDIRECTS TO ACCOUNT PAGE
-      res.sendFile(path.join(__dirname, '../public/account.html'));}
+      } else {
+        //TEMPORARILY REDIRECTS TO ACCOUNT PAGE
+        res.sendFile(path.join(__dirname, '../public/account.html'));
+      }
     });
   });
 });
@@ -94,7 +107,7 @@ app.post('/delete', function (req, res) {
 app.post('/showAll', function (req, res) {
   db.serialize(() => {
     db.each("SELECT * FROM usr", function (err, row) {
-      console.log("Read  from DB userID: " + row.userID + " email: " + row.email + " password: " + row.password);
+      console.log("Read  from DB userID: " + row.userID + " email: " + row.email + " password: " + row.password + " admin: " + row.admin);
     });
     res.send(`results in terminal window `);
   });

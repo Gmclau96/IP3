@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP3 Diary - Sign up</title>
+</head>
+
+<body>
+
+    <!-- Header-->
+    <header class="py-5">
+        <div class="container px-lg-5">
+            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                <div class="m-4 m-lg-5">
+                    <h1 class="display-5 fw-bold">IP3Diary</h1>
+                    <h2 class="fs-4">For all your planning and scheduling needs</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="pt-4">
+        <div class="card-body">
+            <form>
+                <fieldset>
+                    <legend>Sign up</legend>
+                    <div class="mb-3">
+                        <label class="form-label">First Name:</label>
+                        <input class="form-control" type="text" id='fname' name="fname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Last Name:</label>
+                        <input class="form-control" type="text" id='lname' name="lname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email:</label>
+                        <input class="form-control" type="text" id='email' name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password:</label>
+                        <input class="form-control" type="password" id="password" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Retype Password:</label>
+                        <input class="form-control" type="password" id="password2" name="password2" required>
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" type="checkbox" id="agree" name="agree" required>
+                        <label class="form-label">I agree to the <a href=>terms and
+                                conditions:</a></label>
+                    </div>
+                    <button class="btn btn-primary" type="submit" formaction="/add" formmethod="post">Sign up</button>
+                    <button class="btn btn-primary" type="submit" formnovalidate formaction="/signup"
+                        formmethod="post">Have an accopunt? Login here</button>
+                    <button class="btn btn-primary" type="submit" formnovalidate formaction="/password"
+                        formmethod="post">Forgot password?</button>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
