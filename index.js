@@ -1,13 +1,26 @@
-const sqlite3 = require('sqlite3').verbose();
 const express = require('express');
+const app = express();
+
 const path = require("path");
+const public = path.join(__dirname,'public');
+app.use(express.static(public));
+
+
+app.listen(3000, () => {
+  console.log("Server listening on port: 3000");
+});
+
+
+const sqlite3 = require('sqlite3').verbose();
+
+
 const { emitKeypressEvents } = require('readline');
 
-const app = express();
+
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-
+//initiates database
 let db = new sqlite3.Database('./database/users.db', sqlite3.OPEN_READWRITE, (err) => {
   if (err) {
     console.error(err.message);
@@ -21,7 +34,7 @@ db.serialize(() => {
     //sets up users as admins
     .run('INSERT OR IGNORE INTO usr VALUES(NULL,"lucy","lucy",1)')
     .run('INSERT OR IGNORE INTO usr VALUES(NULL,"gordon","gordon",1)')
-    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"jodran","jodran",1)')
+    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"jordan","jordan",1)')
     .run('INSERT OR IGNORE INTO usr VALUES(NULL,"jamie","jamie",1)')
     .run('INSERT OR IGNORE INTO usr VALUES(NULL,"arrun","arrun",1)')
     .run('INSERT OR IGNORE INTO usr VALUES(NULL,"jacob","jacob",1)');
@@ -29,46 +42,48 @@ db.serialize(() => {
 
 //Display interface
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.redirect('index.html');
 });
 
 //redirects to signup page from index
 app.post('/signup', function (req, res) {
-  res.sendFile(path.join(__dirname, '../public/signup.html'));
+  res.redirect('signup.html');
 });
 
 //redirects to password reset page from index
 app.post('/password', function (req, res) {
-  res.sendFile(path.join(__dirname, '../public/password.html'));
+  res.redirect('password.html');
 });
+
 
 
 // Insert
 app.post('/add', function (req, res) {
   db.serialize(() => {
-    db.run('INSERT INTO usr(userID,email,password,admin) VALUES(NULL,?,?,0)', [req.body.email, req.body.password], function (err) {
-      if (err) {
-        return console.log(err.message);
-      }
-      console.log("New employee has been added");
-      res.sendFile(path.join(__dirname, '../public/index.html'));
-    });
+    if (req.body.password == req.body.password2) {
+      db.run('INSERT INTO usr(userID,email,password,admin) VALUES(NULL,?,?,0)', [req.body.email, req.body.password], function (err) {
+        if (err) {
+          return console.log(err.message);
+        }
+        console.log("New user has been added");
+        res.sendFile(path.join(__dirname, '../public/index.html'));
+      });
+    } else {
+      console.log("passwords dont match");
+    }
   });
 });
 
-
-// login
+//LOGIN
 app.post('/login', function (req, res) {
   db.serialize(() => {
-    db.each('SELECT email EMAIL, password PASSWORD FROM usr WHERE email =? AND password =?', [req.body.email, req.body.password], function (err, row) {
+    db.each('SELECT email EMAIL, password PASSWORD FROM usr WHERE email =? AND password =?', [req.body.email, req.body.password], function (err) {
       if (err) {
-        alert("Incorrect login details, please try again")
-        res.send("Error encountered while displaying");
+        res.send("Error encounteredf while updating");
         return console.error(err.message);
-      } else {
-        //TEMPORARILY REDIRECTS TO ACCOUNT PAGE
-        res.sendFile(path.join(__dirname, '../public/account.html'));
       }
+      res.send("Entry updated sucessfully");
+      console.log("Entry updated sucessfully");
     });
   });
 });
@@ -87,7 +102,6 @@ app.post('/update', function (req, res) {
   });
 });
 
-
 //Delete
 app.post('/delete', function (req, res) {
   db.serialize(() => {
@@ -102,7 +116,6 @@ app.post('/delete', function (req, res) {
   });
 });
 
-
 //Show All
 app.post('/showAll', function (req, res) {
   db.serialize(() => {
@@ -112,7 +125,6 @@ app.post('/showAll', function (req, res) {
     res.send(`results in terminal window `);
   });
 });
-
 
 //Close
 app.get('/close', function (req, res) {
@@ -126,6 +138,3 @@ app.get('/close', function (req, res) {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server listening on port: 3000");
-});
