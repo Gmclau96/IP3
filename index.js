@@ -1,24 +1,17 @@
 const express = require('express');
 const app = express();
-
+const sqlite3 = require('sqlite3').verbose();
+const { emitKeypressEvents } = require('readline');
 const path = require("path");
 const public = path.join(__dirname,'public');
-app.use(express.static(public));
 
+app.use(express.static(public));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(3000, () => {
   console.log("Server listening on port: 3000");
 });
-
-
-const sqlite3 = require('sqlite3').verbose();
-
-
-const { emitKeypressEvents } = require('readline');
-
-
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
 
 //initiates database
 let db = new sqlite3.Database('./database/users.db', sqlite3.OPEN_READWRITE, (err) => {
@@ -66,7 +59,7 @@ app.post('/add', function (req, res) {
           return console.log(err.message);
         }
         console.log("New user has been added");
-        res.sendFile(path.join(__dirname, '../public/index.html'));
+        res.redirect('index.html');
       });
     } else {
       console.log("passwords dont match");
@@ -79,11 +72,11 @@ app.post('/login', function (req, res) {
   db.serialize(() => {
     db.each('SELECT email EMAIL, password PASSWORD FROM usr WHERE email =? AND password =?', [req.body.email, req.body.password], function (err) {
       if (err) {
-        res.send("Error encounteredf while updating");
         return console.error(err.message);
       }
-      res.send("Entry updated sucessfully");
-      console.log("Entry updated sucessfully");
+      console.log("Login Successful");
+      //Routes temporarlity to account page
+      res.redirect('account.html');
     });
   });
 });
