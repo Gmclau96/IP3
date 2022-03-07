@@ -322,19 +322,20 @@
         
     }
 
-    /* Login Content */
+    /* Login & sign up Content */
 
 #sub-header{
     text-align: center;   
 }
 
-#login-fieldset{
+#login-fieldset, #signup-fieldset{
     margin: auto;
     padding: 10px; 
     max-width: max-content;
+    border: solid 2px #36846b;
   }
 
- #login-legend{
+ #login-legend, #signup-legend{
      font-size: 2rem;
  } 
 
@@ -344,7 +345,7 @@ font-size: 1.5rem;
 
  .email-class::before{
      font: var(--fa-font-solid);
-     content: "\f007";
+     content: "\40";
  }
 
  .password-class::before{
@@ -358,7 +359,7 @@ font-size: 1.5rem;
  
      }
 
-  #login-buttons{
+  #login-buttons, #signup-buttons{
     font-weight: 500;
     color: #ffffff;
     background-color: #36846b;
