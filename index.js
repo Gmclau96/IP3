@@ -3,7 +3,7 @@ const app = express();
 const sqlite3 = require('sqlite3').verbose();
 const { emitKeypressEvents } = require('readline');
 const path = require("path");
-const public = path.join(__dirname,'public');
+const public = path.join(__dirname, 'public');
 
 app.use(express.static(public));
 app.use(express.urlencoded({ extended: false }));
