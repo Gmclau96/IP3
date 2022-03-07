@@ -252,3 +252,71 @@
         margin: 1em;
         cursor: pointer;
     }
+
+    /*Arrun's CSS*/
+    .recipeBox{
+        border-radius:25px;
+        border:2px solid #000000;
+        padding:20px;
+        width:700px;
+        height:fit-content;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: 35px;
+    }
+
+    #recipeName{
+        text-transform: capitalize;
+    }
+
+    #recipeParagraph{
+        width:400px;
+    }
+    
+    .ingredients{
+      display:inline-block;
+      width:210px;
+      height:fit-content;
+      margin-left:425px;
+      margin-top:-100%;
+      font-size: 14px;
+      background-color: #00FFFF;
+      border-radius:10px;
+      padding:15px;
+    }
+
+    .ingredients1{
+        display:inline-block;
+        width:210px;
+        height:fit-content;
+        margin-left:425px;
+        margin-top:-100%;
+        font-size: 14px;
+        background-color: #00FFFF;
+        border-radius:10px;
+        padding:15px;
+        position:relative;
+        bottom:130px;
+        
+      }
+
+      .recipe-buttons{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        
+        
+      }
+
+      #recipe-buttons{
+        font-weight: 500;
+        color: #ffffff;
+        background-color: #36846b;
+        border: none;
+        padding: 1em;
+        border-radius: .5em;
+        margin: 1em;
+        cursor: pointer;
+        
+    }
