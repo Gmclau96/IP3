@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        #notesBox {
+            border-radius: 25px;
+            border: 2px solid #D3D3D3;
+            padding: 20px;
+            width: 450px;
+            height: 300px;
+            text-align: center;
+        }
+
+        .addNote {
+            border-radius: 7px;
+            width: 100px;
+            margin: 0 auto;
+            margin-right: 20px;
+            display: inline;
+            background-color: black;
+            color: white;
+        }
+
+        .editNote {
+            border-radius: 7px;
+            width: 100px;
+            margin: 0 auto;
+            margin-right: 20px;
+            margin-left: 20px;
+            display: inline;
+            background-color: white;
+            color: black;
+        }
+
+        .removeNote {
+            border-radius: 7px;
+            width: 100px;
+            margin: 0 auto;
+            margin-left: 20px;
+            display: inline;
+            background-color: black;
+            color: white;
+        }
+
+        .justifyContent {
+            justify-content: center;
+        }
+
+        .flex-parent {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>IP3Diary</h1>
+
+    <h1>
+
+    </h1>
+
+    <div class="flex-parent justifyContent">
+        <p id="notesBox">test notes 1!</p>
+    </div>
+
+    <div class="flex-parent justifyContent">
+        <p id="notesBox">test notes 2!</p>
+    </div>
+
+    <p></p>
+
+    <div class="buttons">
+        <div class="flex-parent justifyContent">
+
+            <button name="submit" class="addNote Save" type="submit" value="Save" onclick="myFunction()">Add
+                Note</button>
+            <button name="submit" class="editNote Update" type="submit" value="Update" onclick="myFunction2()">Edit
+                Note</button>
+            <button name="submit" class="removeNote Delete" type="submit" value="Delete" onclick="myFunction3()">Remove
+                Note</button>
+
+            <p id="saved"></p>
+
+        </div>
+    </div>
+</body>
+
+</html>
