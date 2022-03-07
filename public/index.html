@@ -6,42 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IP3 Diary - Login</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/81b06af5ec.js" crossorigin="anonymous"></script>
+    <link href="css/styles.css" rel="stylesheet" /> 
 </head>
 
 <body>
 
     <!-- Header-->
-    <header class="py-5">
-        <div class="container px-lg-5">
-            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-                <div class="m-4 m-lg-5">
-                    <h1 class="display-5 fw-bold">IP3Diary</h1>
-                    <h2 class="fs-4">For all your planning and scheduling needs</h2>
-                </div>
-            </div>
-        </div>
+    <header>
+        <h1>IP3Diary</h1>
+        <h2 id="sub-header">For all your planning and scheduling needs</h2>
     </header>
-    <section class="pt-4">
-        <div class="card-body">
-            <form>
-                <fieldset>
-                    <legend>Login</legend>
-                    <div class="mb-3">
-                        <label class="form-label">Email:</label>
-                        <input class="form-control" type="text" id='email' name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password:</label>
-                        <input class="form-control" type="password" id="password" name="password" required>
-                    </div>
-                    <button class="btn btn-primary" type="submit" formaction="/login" formmethod="post">Login</button>
-                    <button class="btn btn-primary" type="submit" formnovalidate formaction="/signup" formmethod="post">Sign up</button>
-                    <button class="btn btn-primary" type="submit" formnovalidate formaction="/password" formmethod="post">Forgot password?</button>
-                </fieldset>
-            </form>
-        </div>
-    </section>
+    <br><br><br>
+
+    <form id="login-form">
+        <fieldset id="login-fieldset">
+            <legend id="login-legend">Login</legend>
+            <div class="email">
+                <label class="email-class" id="form-label"> Email:</label><br>
+                <input id="form-control" type="text" id='email' name="email" required>
+            </div>
+            <div class="password">
+                <label class="password-class" id="form-label"> Password:</label><br>
+                <input id="form-control" type="password" id="password" name="password" required>
+            </div><br>
+            <button id="login-buttons" type="submit" formaction="/login" formmethod="post">LOGIN</button>
+            <button id="login-buttons" type="submit" formnovalidate formaction="/signup" formmethod="post">SIGN
+                UP</button>
+            <button id="login-buttons" type="submit" formnovalidate formaction="/password" formmethod="post">FORGOT
+                PASSWORD?</button>
+        </fieldset>
+    </form>
 </body>
 
 </html>
