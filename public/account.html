@@ -5,17 +5,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="css/styles.css">
-        <body>
-            <h1>IP3Diary</h1>
+    <title>Personal Organiser</title>
+
+</head>
+
+
+<body>
+
+    <!--Navigation Menu-->
+    <div class="nav-menu">
+        <div id="burger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    <div id="nav-content">
+        <ul class="pages-container">
+            <li class="nav-page">
+                <a href="" class="nav-link">Calendar</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Lists</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Notes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Recipes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Account</a>
+            </li>
+        </ul>
+        <button id="logoutBtn">Sign Out</button>
+    </div>
+
+    <main>
+
+            <header>
+                <h1>IP3Diary</h1>
+            </header>
+            
             <!-- Form for Account Page-->
             <fieldset>
 
             <form method="POST" id="account-form">
 
                 <!-- Link for Account Picture -->
-                <img src="/public/images/Person Icon.PNG">
+                <img scr="images/Person Icon.PNG">
 
                 <!-- Account Name -->
                 <label for="Editname">Account Name </label>
@@ -52,9 +91,11 @@
         </form>
 <br>
 
+</main>
+
 <!-- Link to Account Script File-->
 <script scr="account.js"></script>
             
-        </body>
-    </head>
+</body>
+    
 </html>
