@@ -322,7 +322,7 @@
         
     }
 
-    /* Login, sign up & password reset Content */
+/* Common elements in login, signup & password reset pages */
 
 #sub-header{
     text-align: center;   
@@ -337,29 +337,18 @@
 
  #login-legend, #signup-legend{
      font-size: 2rem;
- } 
+    } 
 
- #form-label{
-font-size: 1.5rem;
- }
-
- .email-class::before{
-     font: var(--fa-font-solid);
-     content: "\f0e0";
- }
-
- .password-class::before{
-    font: var(--fa-font-solid);
-    content: "\f023";
-}
-
- #form-control{
+     #form-label{
+    font-size: 1.5rem;
+    }
+ 
+    #form-control{
     font-size: 1.5rem;
     width:100%;
- 
      }
 
-  #login-buttons, #signup-buttons{
+  #login-buttons, #signup-buttons, #password-buttons{
     font-weight: 500;
     color: #ffffff;
     background-color: #36846b;
@@ -371,11 +360,19 @@ font-size: 1.5rem;
     
 }
 
-.password-div{
-    margin: auto;
-    padding: 10px; 
-    max-width: max-content;
+/* icons for login page */
+
+ .email-class::before{
+     font: var(--fa-font-solid);
+     content: "\f0e0";
+ }
+
+ .password-class::before{
+    font: var(--fa-font-solid);
+    content: "\f023";
 }
+
+/* Password reset page */
 
 #password-reset-label{
     font-size: 1.5rem;  
@@ -383,7 +380,7 @@ font-size: 1.5rem;
     text-align: center;
 }
 
-
+/* Divider for password reset page with text enrty and buttons */
 
 #email-and-submit-div{
     text-align: center; 
@@ -392,15 +389,4 @@ font-size: 1.5rem;
 
     #password-reset-input{
     font-size: 1.5rem;
-    }
-
-    #password-buttons{
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
     }
