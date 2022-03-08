@@ -345,7 +345,7 @@ font-size: 1.5rem;
 
  .email-class::before{
      font: var(--fa-font-solid);
-     content: "\40";
+     content: "\f0e0";
  }
 
  .password-class::before{
