@@ -322,7 +322,7 @@
         
     }
 
-    /* Login & sign up Content */
+    /* Login, sign up & password reset Content */
 
 #sub-header{
     text-align: center;   
@@ -359,7 +359,7 @@ font-size: 1.5rem;
  
      }
 
-  #login-buttons, #signup-buttons{
+  #login-buttons, #signup-buttons, #password-buttons{
     font-weight: 500;
     color: #ffffff;
     background-color: #36846b;
@@ -371,3 +371,26 @@ font-size: 1.5rem;
     
 }
 
+.password-div{
+    margin: auto;
+    padding: 10px; 
+    max-width: max-content;
+}
+
+#password-reset-label{
+    font-size: 1.5rem;  
+    text-align: center;
+}
+
+
+
+#email-and-submit-div{
+    margin: auto;
+    padding: 10px; 
+    max-width: max-content;
+}
+
+    #password-reset-input{
+    font-size: 1.5rem;
+
+    }
