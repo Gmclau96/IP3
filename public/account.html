@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/81b06af5ec.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
     <title>Personal Organiser</title>
 
@@ -49,53 +50,48 @@
             </header>
             
             <!-- Form for Account Page-->
-            <fieldset>
+            <fieldset id="account-fieldset">
 
             <form method="POST" id="account-form">
 
-                <!-- Link for Account Icon -->
-                <img src="images/PersonIcon.PNG" width="30" height="30">
+                
+               
 
                 <!-- Account Name -->
-                <label for="Editname">Account Name </label>
-                <input type="text" id="editname" name="editname" placeholder="Edit Name">    
-                <button type="text" id="editname" name="editname" placeholder="Edit Name"></button>
+                <label for="Editname" id="account-label" class="account">Account Name </label>
+                <input type="text" id="account-control" name="editname" placeholder="Edit Name">    
+                <button type="text" id="account-buttons" name="editname">Edit Name</button>
                 <br>
 
-                <!-- Link for Email Icon -->
-                <img src="images/@ Icon.PNG" width="30" height="30">
+              
 
                 <!-- Email Address-->
-                <label for="Editemail">Email@Address.com</label>
-                <input type="text" id="editemail" name="editemail" placeholder="Edit Email">
-                <button type="text" id="Edit Email" name="editemail" placeholder="Edit Email"></button>
+                <label for="Editemail" id="account-label" class="email">Email@Address.com</label>
+                <input type="text" id="account-control" name="editemail" placeholder="Edit Email">
+                <button type="text" id="account-buttons" name="editemail">Edit Email Address</button>
                 <br>
 
-                <!-- Link for Profile Icon-->
-                <img src="images/Profile Icon.PNG" width="30" height="30">
+                
 
                 <!--Edit Profile Picture-->
-                <label for="Editprofilepicture">Edit Profile Picture</label>
-                <input type="text" id="editprofilepicture" name="editprofilepicture" placeholder="Edit Profile Picture">
-                <button type="text" id="Edit Profile Picture" name="editprofilepicture" placeholder="Edit Profile Picture"></button>
+                <label for="Editprofilepicture" id="account-label" class="profile">Edit Profile Picture</label>
+                
+                <button type="text" id="account-buttons" name="editprofilepicture">Edit Profile Picture</button>
                 <br>
 
-                <!-- Link for Delete Icon -->
-                <img src="images/@ Icon.PNG" width="30" height="30">
+                
 
                 <!-- Delete Account-->
-                <label for="Deleteaccount">Delete Account</label>
-                <input type="text" id="deleteaccount" name="deleteaccount" placeholder="Delete Account">
-                <button type="text" id="Delete Accpunt" name="deleteaccount" placeholder="Delete Account"></button>
+                <label for="Deleteaccount" id="account-label" class="delete">Delete Account</label>
+                
+                <button type="text" id="account-buttons" name="deleteaccount">Delete Account</button>
                 <br>
 
-                <!-- Link for Save Icon -->
-                <img src="images/Save Icon.PNG" width="30" height="30">
+                
 
                 <!-- Save Changes -->
-                <label for="Savechanges">Save Changes</label>
-                <input type="text" id="savechanges" name="savechanges" placeholder="Save Changes">
-                <button type="text" id="Save Changes" name="savechnages" placeholder="Save Changes"></button>
+                <label for="Savechanges" id="account-label" class="save">Save Changes</label>
+                <button type="text" id="account-buttons" name="savechanges">Save Changes</button>
                 <br>
 
                

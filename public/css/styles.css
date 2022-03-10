@@ -391,4 +391,59 @@
     font-size: 1.5rem;
     }
 
+    /* Account Page CSS */
+
+    #account-buttons{
+        font-weight: 500;
+        color: #ffffff;
+        background-color: #36846b;
+        border: none;
+        padding: 1em;
+        border-radius: .5em;
+        margin: 1em;
+        cursor: pointer;
+        
+    }
+
     
+    #account-label{
+        font-size: 1.5rem;
+        }
+     
+        #account-control{
+        font-size: 1.5rem;
+        width:100%;
+         }
+
+        #account-fieldset{
+            margin: auto;
+            padding: 10px; 
+            max-width: max-content;
+            border: solid 2px #36846b;
+          }
+
+          .account::before{
+            font: var(--fa-font-solid);
+            content: "\f007";
+        }
+
+        .email::before{
+            font: var(--fa-font-solid);
+            content: "\40";
+        }
+
+        .profile::before{
+            font: var(--fa-font-solid);
+            content: "\f2bd";
+        }
+
+        .delete::before{
+            font: var(--fa-font-solid);
+            content: "\f2ed";
+        }
+
+        .save::before{
+            font: var(--fa-font-solid);
+            content: "\f0c7";
+        }
+        
