@@ -25,12 +25,7 @@ let db = new sqlite3.Database('./database/users.db', sqlite3.OPEN_READWRITE, (er
 db.serialize(() => {
   db.run('CREATE TABLE IF NOT EXISTS usr(userID INTEGER PRIMARY KEY, email TEXT, password TEXT, admin BOOLEAN, UNIQUE(email))')
     //sets up users as admins
-    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"lucy","lucy",1)')
-    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"gordon","gordon",1)')
-    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"jordan","jordan",1)')
-    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"jamie","jamie",1)')
-    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"arrun","arrun",1)')
-    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"jacob","jacob",1)');
+    .run('INSERT OR IGNORE INTO usr VALUES(NULL,"Admin@ip3.com","Admin",1)')
 });
 
 //Display interface
