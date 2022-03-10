@@ -427,7 +427,7 @@
             content: "\f007";
         }
 
-        .email::before{
+        .account-email::before{
             font: var(--fa-font-solid);
             content: "\40";
         }
