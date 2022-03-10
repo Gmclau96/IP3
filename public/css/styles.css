@@ -364,7 +364,7 @@
 
  .email-class::before{
      font: var(--fa-font-solid);
-     content: "\f0e0";
+     content: "\40";
  }
 
  .password-class::before{
