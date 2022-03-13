@@ -422,6 +422,8 @@
             border: solid 2px #36846b;
           }
 
+          /* Icons for Account Page Using FontAwesome */
+
           .account::before{
             font: var(--fa-font-solid);
             content: "\f007";
@@ -447,7 +449,7 @@
             content: "\f0c7";
         }
 
-        
+        /* Styling for button contained in account page */
 
         .flex-container > button {
             display: flex;
@@ -455,5 +457,4 @@
             flex-direction: column;
             position: relative;
             left: 36em;
-
         }
