@@ -458,3 +458,118 @@
             position: relative;
             left: 36em;
         }
+
+        /*Css For Lists */
+        .listBox{
+            margin-top: 50px;
+            border-radius: 25px;
+            border: 2px solid #000000;
+            padding: 20px;
+            width: 175px;
+            height: auto;
+            text-align: center;
+            justify-content: center;
+            float: left;
+            margin-left: 40px;
+        }
+        
+        .listcontainer {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+          
+          .listcontainer input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+          
+          /* Check Box CSS */
+          .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+          }
+          
+          
+          .listcontainer:hover input ~ .checkmark {
+            background-color: #ccc;
+          }
+          
+          
+          .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+          
+          .listcontainer input:checked ~ .checkmark:after {
+            display: block;
+          }
+          
+          .listcontainer .checkmark:after {
+            left: 7px;
+            top: 1px;
+            width: 10px;
+            height: 22px;
+            border: solid rgb(0, 0, 0);
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        
+          .invisbox{
+            margin-top: 50px;
+            border-radius: 25px;
+            border: 2px solid #000000;
+            padding: 20px;
+            width: 190px;
+            height: auto;
+            text-align: center;
+            float: left;
+            margin-left: 40px;
+            visibility: hidden;
+          }
+        
+        
+        .listcontainer .listbtn {
+          justify-content: flex-end;
+          display: flex;
+        }
+        
+        .listBtnBox{
+            margin-top: 50px;
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            display: inline-block;
+            
+            
+        }
+        
+        .addEditListBox{
+            margin-top: 50px;
+            
+            padding: 20px;
+            
+            width: 100%;
+            height: auto;
+            text-align: center;
+            justify-content: center;
+            
+            
+        }
