@@ -460,9 +460,9 @@ cursor: pointer;
             content: "\40";
         }
 
-        .profile::before{
+        .password::before{
             font: var(--fa-font-solid);
-            content: "\f2bd";
+            content: "\f023";
         }
 
         .delete::before{
@@ -601,7 +601,7 @@ cursor: pointer;
         }
 
 
-          /* Account Page CSS */
+          /* Admin Page CSS */
 
     #admin-buttons{
         font-weight: 500;
@@ -650,9 +650,9 @@ cursor: pointer;
             content: "\40";
         }
 
-        .admin-profile::before{
+        .admin-password::before{
             font: var(--fa-font-solid);
-            content: "\f2bd";
+            content: "\f023";
         }
 
         .admin-delete::before{
