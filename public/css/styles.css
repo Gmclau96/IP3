@@ -573,3 +573,78 @@
             
             
         }
+
+
+          /* Account Page CSS */
+
+    #admin-buttons{
+        font-weight: 500;
+        color: #ffffff;
+        background-color: #36846b;
+        border: none;
+        padding: 1em;
+        border-radius: .5em;
+        margin: 1em;
+        cursor: pointer;
+        
+    }
+
+    
+    #admin-label{
+        font-size: 1.5rem;
+        }
+     
+        #admin-control{
+        font-size: 1.5rem;
+        width:45%;
+         }
+
+        #admin-fieldset{
+            margin: auto;
+            padding: 10px; 
+            max-width: max-content;
+            border: solid 2px #36846b;
+          }
+
+          /* Icons for Admin Page Using FontAwesome */
+
+        .admin::before{
+            font: var(--fa-font-solid);
+            content: "\f002";
+        }
+        
+
+        .admin-name::before{
+            font: var(--fa-font-solid);
+            content: "\f007";
+        }
+
+        .admin-email::before{
+            font: var(--fa-font-solid);
+            content: "\40";
+        }
+
+        .admin-profile::before{
+            font: var(--fa-font-solid);
+            content: "\f2bd";
+        }
+
+        .admin-delete::before{
+            font: var(--fa-font-solid);
+            content: "\f2ed";
+        }
+
+        .admin-save::before{
+            font: var(--fa-font-solid);
+            content: "\f0c7";
+        }
+
+        /* Styling for button contained in admin page */
+
+        .flex-container > button {
+            display: flex;
+            flex-wrap: nowrap; 
+            flex-direction: column;
+            position: relative;
+            left: 36em;
+        }
