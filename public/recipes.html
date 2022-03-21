@@ -43,7 +43,7 @@
         <header>
             <h1>Recipes</h1>
         </header>
-        <div class="recipeBox">
+        <ul><div id="recipeBox">
             <h2 id="recipeName">Spaghetti Puttanesca</h2>
             <br>
             <h3>Method</h3>
@@ -95,8 +95,12 @@
                 <h4>To serve</h4>
                 <p>freshly grated Parmesan</p>
             </div>
-        </div>
-        <div class="recipeBox">
+            <li>
+                <input hidden = "true"id ="delete-button" type="button" value="Delete" onclick="Delete()" />
+            </li>
+        </div></ul>
+
+        <ul><div id="recipeBox2">
             <h2 id="recipeName">Fish pie mac 'n' cheese</h2>
             <br>
             <h3>Method</h3>
@@ -129,12 +133,15 @@
                 <p>300g fish pie mix(smoked fish, white fish and salmon)</p>
                 <p>green salad,to serve(optional)</p>
             </div>
-        </div>
+            <li>
+                <input hidden = "true"id ="remove-button"type="button" value="Delete" onclick="remove()" />
+            </li>
+        </div></ul>
         <br>
         <div class="recipe-buttons">
             <button id="recipe-buttons">ADD RECIPE</button>
             <button id="recipe-buttons">EDIT RECIPE</button>
-            <button id="recipe-buttons">REMOVE RECIPE</button>
+            <button id ="recipe-buttons" onclick="myFunction()">REMOVE RECIPE</button>
         </div>
     </div>
     </main>
@@ -147,7 +154,7 @@
 
 
 
-
+    <script src="../public/JavaScript/recipe.js"></script>
 
 </body>
 
