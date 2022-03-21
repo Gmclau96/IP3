@@ -233,6 +233,11 @@ padding: .5rem .5rem;
     cursor: pointer;
 }
 
+.prev-date,
+.next-date {
+  opacity: 0.5;
+}
+
 .today {
     background-color: #ffffff;
     border-radius: 2rem;
