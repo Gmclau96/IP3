@@ -125,18 +125,18 @@ input[type="checkbox"].toggle + label::after {
     width: 5em;
     height: 1.75em;
     color: #ffffff;
-    background-color: #000000;
+    background-color: #36846b;
     border-radius: 1em;
     transition: 200ms ease-in-out;
 }
 
 input[type="checkbox"].toggle:checked + label::after {
     transform: translateX(55%);
-    background-color: #000000;
+    background-color: #36846b;
     content: "Day";
 }
 
-#toggle-button {
+#view-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,7 +192,7 @@ h2 {
 }
 
 .month i {
-padding: .5rem .5rem;
+    padding: .5rem .5rem;
 }
 
 .weekdays {
@@ -235,7 +235,7 @@ padding: .5rem .5rem;
 
 .prev-date,
 .next-date {
-  opacity: 0.5;
+    opacity: 0.5;
 }
 
 .today {
@@ -246,42 +246,42 @@ padding: .5rem .5rem;
 
 /* Day View */
 #day-view {
-display: none;
-background-color: #ffffff;
-width: 40rem;
-margin: 3rem auto;
-outline: #000000 solid 2px;
+    display: none;
+    background-color: #ffffff;
+    width: 40rem;
+    margin: 3rem auto;
+    outline: #000000 solid 2px;
 }
 
 .hour-slot {
-display: flex;
-flex-direction: row;
-height: 3em;
-border: solid 2px #000000;
+    display: flex;
+    flex-direction: row;
+    height: 3em;
+    border: solid 2px #000000;
 }
 
 .hour {
-width: 8rem;
-padding: 1em 1em;
+    width: 8rem;
+    padding: 1em 1em;
 }
 
 .user-events {
-padding: 1em 1em;
+    padding: 1em 1em;
 }
 
 #calendar-buttons {
-margin: 2rem 0;
+    margin: 2rem 0;
 }
 
 #calendar-buttons button {
-font-weight: 500;
-color: #ffffff;
-background-color: #36846b;
-border: none;
-padding: 1em;
-border-radius: .5em;
-margin: 1em;
-cursor: pointer;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
 }
 
 

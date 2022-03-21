@@ -69,17 +69,29 @@ const renderCalendar = () => {
   }
 };
 
-document.querySelector(".prev").addEventListener("onclick", () => {
+document.querySelector(".prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
   renderCalendar();
 });
 
-document.querySelector(".next").addEventListener("onclick", () => {
+document.querySelector(".next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
   renderCalendar();
 });
 
 renderCalendar();
+
+/*
+document.addEventListener("onclick", () => {
+  var checkBox = document.getElementById("view-button");
+  var dayView = document.getElementById("day-view");
+
+  if (checkBox.checked == true){
+    dayView.style.display = "none";
+  } else {
+    dayView.style.display = "flex";
+  }
+})*/
 
 
   /*
