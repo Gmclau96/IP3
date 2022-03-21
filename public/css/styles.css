@@ -286,7 +286,7 @@ h2 {
 
 
     /*Arrun's CSS*/
-    .recipeBox{
+    #recipeBox{
         border-radius:25px;
         border:2px solid #000000;
         padding:20px;
@@ -297,7 +297,17 @@ h2 {
         margin-right:auto;
         margin-top: 35px;
     }
-
+    #recipeBox2{
+        border-radius:25px;
+        border:2px solid #000000;
+        padding:20px;
+        width:700px;
+        height:fit-content;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: 35px;
+    }
     #recipeName{
         text-transform: capitalize;
     }
@@ -465,9 +475,9 @@ h2 {
             content: "\40";
         }
 
-        .profile::before{
+        .password::before{
             font: var(--fa-font-solid);
-            content: "\f2bd";
+            content: "\f023";
         }
 
         .delete::before{
@@ -606,7 +616,7 @@ h2 {
         }
 
 
-          /* Account Page CSS */
+          /* Admin Page CSS */
 
     #admin-buttons{
         font-weight: 500;
@@ -655,9 +665,9 @@ h2 {
             content: "\40";
         }
 
-        .admin-profile::before{
+        .admin-password::before{
             font: var(--fa-font-solid);
-            content: "\f2bd";
+            content: "\f023";
         }
 
         .admin-delete::before{
