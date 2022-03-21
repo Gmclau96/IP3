@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,34 +8,11 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Personal Organiser</title>
 </head>
+
 <body>
     <!--Navigation Menu-->
     <div class="nav-menu">
-        <div id="burger-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </div>
-    <div id="nav-content">
-        <ul class="pages-container">
-            <li class="nav-page">
-                <a href="" class="nav-link">Calendar</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Lists</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Notes</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Recipes</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Account</a>
-            </li>
-        </ul>
-        <button id="logoutBtn">Sign Out</button>
+ 
     </div>
 
     <!--Main section - contains that pages content-->
@@ -48,14 +26,15 @@
             <label for="view-choice"></label>
         </div>
 
+        <!--Month View-->
         <div class="calendar">
             <div class="month">
-                <p><i class="arrow left"></i></p>
+                <p><i class="arrow left prev"></i></p>
                 <div class="date">
-                    <h2>February</h2>
-                    <p>Wed February 23, 2022</p>
+                    <h2></h2>
+                    <p></p>
                 </div>
-                <p><i class="arrow right"></i></p>
+                <p><i class="arrow right next"></i></p>
             </div>
             <div class="weekdays">
                 <div>Sun</div>
@@ -67,46 +46,127 @@
                 <div>Sat</div>
             </div>
             <div class="days">
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>6</div>
-                <div>7</div>
-                <div>8</div>
-                <div>9</div>
-                <div>10</div>
-                <div>11</div>
-                <div>12</div>
-                <div>13</div>
-                <div>14</div>
-                <div>15</div>
-                <div>16</div>
-                <div>17</div>
-                <div>18</div>
-                <div>19</div>
-                <div>20</div>
-                <div>21</div>
-                <div>22</div>
-                <div class="today">23</div>
-                <div>24</div>
-                <div>25</div>
-                <div>26</div>
-                <div>27</div>
-                <div>28</div>
-                <div>29</div>
-                <div>30</div>
-                <div>31</div>
-            </div>
-            <div id="action-buttons">
-                <button>ADD EVENT</button>
-                <button>EDIT EVENT</button>
-                <button>REMOVE EVENT</button>
+                
             </div>
         </div>
+
+        <!--Day View-->
+        <div id="day-view">
+            <div class="month">
+                <p><i class="arrow left"></i></p>
+                <div class="date">
+                    <h2>February</h2>
+                    <p>Wed February 23, 2022</p>
+                </div>
+                <p><i class="arrow right"></i></p>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">00:00</div>
+                <div class="user-events">Birthday</div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">01:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">02:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">03:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">04:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">05:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">06:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">07:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">08:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">09:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">10:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">11:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">12:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">13:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">14:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">15:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">16:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">17:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">18:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">19:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">20:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">21:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">22:00</div>
+                <div class="user-events"></div>
+            </div>
+            <div class="hour-slot">
+                <div class="hour">23:00</div>
+                <div class="user-events"></div>
+            </div>
+        </div>
+
+        <div id="calendar-buttons">
+            <button>ADD EVENT</button>
+            <button>EDIT EVENT</button>
+            <button>REMOVE EVENT</button>
+        </div>
+        </div>
     </main>
-    
-    <script src="calendarScript.js"></script>
+
+    <script src="JavaScript/calendar.js"></script>
 </body>
+
 </html>
