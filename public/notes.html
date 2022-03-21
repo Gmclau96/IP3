@@ -1,94 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-    <style>
-        h1 {
-            text-align: center;
-        }
 
-        #notesBox {
-            border-radius: 25px;
-            border: 2px solid #D3D3D3;
-            padding: 20px;
-            width: 450px;
-            height: 300px;
-            text-align: center;
-        }
+<header>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>
+        Notes
+    </title>
+</header>
 
-        .addNote {
-            border-radius: 7px;
-            width: 100px;
-            margin: 0 auto;
-            margin-right: 20px;
-            display: inline;
-            background-color: black;
-            color: white;
-        }
-
-        .editNote {
-            border-radius: 7px;
-            width: 100px;
-            margin: 0 auto;
-            margin-right: 20px;
-            margin-left: 20px;
-            display: inline;
-            background-color: white;
-            color: black;
-        }
-
-        .removeNote {
-            border-radius: 7px;
-            width: 100px;
-            margin: 0 auto;
-            margin-left: 20px;
-            display: inline;
-            background-color: black;
-            color: white;
-        }
-
-        .justifyContent {
-            justify-content: center;
-        }
-
-        .flex-parent {
-            display: flex;
-        }
-    </style>
-</head>
 
 <body>
 
-    <h1>IP3Diary</h1>
-
-    <h1>
-
-    </h1>
-
-    <div class="flex-parent justifyContent">
-        <p id="notesBox">test notes 1!</p>
-    </div>
-
-    <div class="flex-parent justifyContent">
-        <p id="notesBox">test notes 2!</p>
-    </div>
-
-    <p></p>
-
-    <div class="buttons">
-        <div class="flex-parent justifyContent">
-
-            <button name="submit" class="addNote Save" type="submit" value="Save" onclick="myFunction()">Add
-                Note</button>
-            <button name="submit" class="editNote Update" type="submit" value="Update" onclick="myFunction2()">Edit
-                Note</button>
-            <button name="submit" class="removeNote Delete" type="submit" value="Delete" onclick="myFunction3()">Remove
-                Note</button>
-
-            <p id="saved"></p>
-
+    <!--Navigation Menu-->
+    <div class="nav-menu">
+        <div id="burger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
     </div>
+    <div id="nav-content">
+        <ul class="pages-container">
+            <li class="nav-page">
+                <a href="" class="nav-link">Calendar</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Lists</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Notes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Recipes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Account</a>
+            </li>
+        </ul>
+        <button id="logoutBtn">Sign Out</button>
+    </div>
+
+    <main>
+
+        <h1>
+            Notes
+        </h1>
+
+
+            <div id="recipeBox">
+                <h2>
+                    Note 1
+                </h2>
+                <p>Lorem ipsum dolor sit amet. Aut totam asperiores qui reprehenderit itaque et voluptas
+                    tempore ab harum quasi. Ut quam dolor 33 consequatur libero et aperiam odio. In nulla
+                    perspiciatis ab voluptas quia qui deleniti illo et asperiores quis non voluptas repellat
+                    qui nihil ipsa.
+                </p>
+            </div>
+
+
+            <div id="recipeBox">
+                <p>Lorem ipsum dolor sit amet. Aut totam asperiores qui reprehenderit itaque et voluptas
+                    tempore ab harum quasi. Ut quam dolor 33 consequatur libero et aperiam odio. In nulla
+                    perspiciatis ab voluptas quia qui deleniti illo et asperiores quis non voluptas repellat
+                    qui nihil ipsa.
+                </p>
+            </div>
+
+        <br>
+        <div class="recipe-buttons">
+            <button id="recipe-buttons" onclick="myFunction1()">ADD NOTE</button>
+            <button id="recipe-buttons" onclick="myFunction2()">EDIT NOTE</button>
+            <button id="recipe-buttons" onclick="myFunction3()">REMOVE NOTE</button>
+        </div>
+    </main>
 </body>
 
 </html>
