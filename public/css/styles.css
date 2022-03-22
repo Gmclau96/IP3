@@ -125,18 +125,18 @@ input[type="checkbox"].toggle + label::after {
     width: 5em;
     height: 1.75em;
     color: #ffffff;
-    background-color: #000000;
+    background-color: #36846b;
     border-radius: 1em;
     transition: 200ms ease-in-out;
 }
 
 input[type="checkbox"].toggle:checked + label::after {
     transform: translateX(55%);
-    background-color: #000000;
+    background-color: #36846b;
     content: "Day";
 }
 
-#toggle-button {
+#view-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,7 +192,7 @@ h2 {
 }
 
 .month i {
-padding: .5rem .5rem;
+    padding: .5rem .5rem;
 }
 
 .weekdays {
@@ -233,6 +233,11 @@ padding: .5rem .5rem;
     cursor: pointer;
 }
 
+.prev-date,
+.next-date {
+    opacity: 0.5;
+}
+
 .today {
     background-color: #ffffff;
     border-radius: 2rem;
@@ -241,47 +246,47 @@ padding: .5rem .5rem;
 
 /* Day View */
 #day-view {
-display: none;
-background-color: #ffffff;
-width: 40rem;
-margin: 3rem auto;
-outline: #000000 solid 2px;
+    display: none;
+    background-color: #ffffff;
+    width: 40rem;
+    margin: 3rem auto;
+    outline: #000000 solid 2px;
 }
 
 .hour-slot {
-display: flex;
-flex-direction: row;
-height: 3em;
-border: solid 2px #000000;
+    display: flex;
+    flex-direction: row;
+    height: 3em;
+    border: solid 2px #000000;
 }
 
 .hour {
-width: 8rem;
-padding: 1em 1em;
+    width: 8rem;
+    padding: 1em 1em;
 }
 
 .user-events {
-padding: 1em 1em;
+    padding: 1em 1em;
 }
 
 #calendar-buttons {
-margin: 2rem 0;
+    margin: 2rem 0;
 }
 
 #calendar-buttons button {
-font-weight: 500;
-color: #ffffff;
-background-color: #36846b;
-border: none;
-padding: 1em;
-border-radius: .5em;
-margin: 1em;
-cursor: pointer;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
 }
 
 
     /*Arrun's CSS*/
-    .recipeBox{
+    #recipeBox{
         border-radius:25px;
         border:2px solid #000000;
         padding:20px;
@@ -292,7 +297,17 @@ cursor: pointer;
         margin-right:auto;
         margin-top: 35px;
     }
-
+    #recipeBox2{
+        border-radius:25px;
+        border:2px solid #000000;
+        padding:20px;
+        width:700px;
+        height:fit-content;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: 35px;
+    }
     #recipeName{
         text-transform: capitalize;
     }
@@ -460,9 +475,9 @@ cursor: pointer;
             content: "\40";
         }
 
-        .profile::before{
+        .password::before{
             font: var(--fa-font-solid);
-            content: "\f2bd";
+            content: "\f023";
         }
 
         .delete::before{
@@ -598,4 +613,79 @@ cursor: pointer;
             justify-content: center;
             
             
+        }
+
+
+          /* Admin Page CSS */
+
+    #admin-buttons{
+        font-weight: 500;
+        color: #ffffff;
+        background-color: #36846b;
+        border: none;
+        padding: 1em;
+        border-radius: .5em;
+        margin: 1em;
+        cursor: pointer;
+        
+    }
+
+    
+    #admin-label{
+        font-size: 1.5rem;
+        }
+     
+        #admin-control{
+        font-size: 1.5rem;
+        width:45%;
+         }
+
+        #admin-fieldset{
+            margin: auto;
+            padding: 10px; 
+            max-width: max-content;
+            border: solid 2px #36846b;
+          }
+
+          /* Icons for Admin Page Using FontAwesome */
+
+        .admin::before{
+            font: var(--fa-font-solid);
+            content: "\f002";
+        }
+        
+
+        .admin-name::before{
+            font: var(--fa-font-solid);
+            content: "\f007";
+        }
+
+        .admin-email::before{
+            font: var(--fa-font-solid);
+            content: "\40";
+        }
+
+        .admin-password::before{
+            font: var(--fa-font-solid);
+            content: "\f023";
+        }
+
+        .admin-delete::before{
+            font: var(--fa-font-solid);
+            content: "\f2ed";
+        }
+
+        .admin-save::before{
+            font: var(--fa-font-solid);
+            content: "\f0c7";
+        }
+
+        /* Styling for button contained in admin page */
+
+        .flex-container > button {
+            display: flex;
+            flex-wrap: nowrap; 
+            flex-direction: column;
+            position: relative;
+            left: 36em;
         }
