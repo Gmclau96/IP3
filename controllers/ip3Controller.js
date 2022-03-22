@@ -1,3 +1,4 @@
+const bcrypt = require("bcryptjs/dist/bcrypt");
 const userDao = require("../models/userModel.js");
 
 exports.get_login = function (req, res) {
@@ -5,17 +6,28 @@ exports.get_login = function (req, res) {
 };
 
 //handle login
-exports.post_login = function (req, res) {
-    db.serialize(() => {
-        db.each('SELECT email EMAIL, hash HASH FROM usr WHERE email =? AND hash =?', [req.body.email, req.body.password], function (err) {
-            if (err) {
-                return console.error(err.message);
-            }
-            console.log("Login Successful");
-            //Routes temporarlity to account page
-            res.redirect('account.html');
-        });
-    });
+exports.post_login = async function (req, res) {
+
+    userDao.login(req,res);
+    //Routes temporarlity to account page
+    // res.redirect('account.html');
+
+
+
+
+
+
+
+    // db.serialize(() => {
+    //     db.each('SELECT email EMAIL, hash HASH FROM usr WHERE email =? AND hash =?', [email, password], function (err) {
+    //         if (err) {
+    //             return console.error(err.message);
+    //         }
+    //         console.log("Login Successful");
+    //         //Routes temporarlity to account page
+    //         res.redirect('account.html');
+    //     });
+    // });
 };
 
 exports.get_signup = function (req, res) {
@@ -23,26 +35,8 @@ exports.get_signup = function (req, res) {
 };
 
 //post sign up
-exports.post_signup = function (req, res) {
-    const email = req.body.email;
-    const password = req.body.password2;
-    const forname = req.body.fname;
-    const surname = req.body.lname;
-
-    if (!email || !password) {
-        res.send(401, "no user or no password");
-        return;
-    }
-    // userDao.lookup(email, function (err, u) {
-    //   if (u) {
-    //     res.send(401, "User exists:", email);
-    //     return;
-    //   }
-    userDao.create(email, password, forname, surname);
-    console.log("register user", email, "password", password);
-   res.redirect('index.html');
-    
-    // });
+exports.post_signup = async function (req, res) {
+    userDao.create(req,res);
 };
 
 exports.get_password = function (req, res) {

@@ -1,43 +1,85 @@
-const sqlite3 = require('sqlite3').verbose();
 const bcrypt = require('bcryptjs');
 const res = require('express/lib/response');
+const path = require('path');
 
-
-const db = new sqlite3.Database('./database/users.db', sqlite3.OPEN_READWRITE, (err) => {
-    if (err) {
-        console.error(err.message);
-    } else
-        console.log('Connected to the users database.');
-});
+var knex = require('knex')({
+    client: 'sqlite3',
+    connection: { filename: './database/users.db' },
+    useNullAsDefault: true
+})
 
 class UserDAO {
     init() {
-        db.serialize(() => {
-            db.run('CREATE TABLE IF NOT EXISTS usr(userID INTEGER PRIMARY KEY, email TEXT, hash TEXT, forename TEXT, surname TEXT, admin BOOLEAN, UNIQUE(email))')
-                //sets up users as admins
-                .run('INSERT OR IGNORE INTO usr VALUES(NULL,"Admin@ip3.com","Admin","forename","surname",1)')
-        });
+        //creates usr table on first time set up with 1 admin row
+        knex.schema.hasTable("usr").then(function (exists) {
+            if (!exists) {
+                knex.schema.createTable("usr", (table) => {
+                    table.increments("id").primary()
+                    table.string("email").unique()
+                    table.string("hash")
+                    table.string("forename")
+                    table.string("surname")
+                    table.boolean("admin")
+                })
+                    .then(() =>
+                        knex("usr").insert([
+                            { email: "Admin@ip3.com", hash: "Admin", forename: "Admin", surname: "Admin", admin: 1 },
+                        ])
+                    )
+            }
+        })
     }
-    create(email, password, forename, surname) {
+    async create(req, res) {
+        //user input to variables
+        const email = req.body.email;
+        const password = req.body.password;
+        const password2 = req.body.password2;
+        const forename = req.body.fname;
+        const surname = req.body.lname;
 
-        const hash = bcrypt.hash(password, 10);
-        db.serialize(() => {
-            db.run('INSERT INTO usr(userID,email,hash,forename,surname,admin) VALUES(NULL,?,?,?,?,0)', [email, hash, forename, surname])
-        });
-
+        if (password != password2) {
+            res.send("passwords dont match");
+        } else {
+            //registers user
+            try {
+                const hash = await bcrypt.hash(password, 10);
+                await knex('usr').insert({ email: email, hash: hash, forename: forename, surname: surname, admin: 0 });
+                console.log("User added");
+                res.redirect('index.html');
+            } catch (e) {
+                if (e.errno === 19) {
+                    res.send("account already exists");
+                    console.log(e);
+                } else {
+                    console.log('Something broke!');
+                }
+            }
+        }
     }
-    // lookup(user, cb) {
-    //     this.db.find({ 'user': user }, function (err, entries) {
-    //         if (err) {
-    //             return cb(null, null);
-    //         } else {
-    //             if (entries.length == 0) {
-    //                 return cb(null, null);
-    //             }
-    //             return cb(null, entries[0]);
-    //         }
-    //     });
-    // }
+    async login(req, res) {
+
+        try {
+            //user input to variables
+            const email = req.body.email;
+            const password = req.body.password;
+            const user = await knex('usr').first('*').where({ email: email });
+            //logs in user
+            if (user) {
+                const validPass = await bcrypt.compare(password, user.hash);
+                if (validPass) {
+                    res.redirect('account.html')
+                } else {
+                    res.send('Wrong password!');
+                }
+            } else {
+                res.send('User not found!');
+            }
+
+        } catch (e) {
+            // console.log(e); // Uncomment if needed for debug
+            res.status(400).json('Something broke!');
+        }
+    }
 }
 const dao = new UserDAO();
 dao.init();

@@ -18,9 +18,10 @@
   "homepage": "https://github.com/Gmclau96/IP3#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "dialog": "^0.3.1",
     "express": "^4.17.3",
+    "knex": "^0.95.15",
     "path": "^0.12.7",
-    "sqlite3": "^5.0.2",
-    "sweetalert": "^2.1.2"
+    "sqlite3": "^5.0.2"
   }
 }
