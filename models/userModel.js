@@ -1,19 +1,17 @@
 const bcrypt = require('bcryptjs');
-const res = require('express/lib/response');
-const path = require('path');
 
 var knex = require('knex')({
     client: 'sqlite3',
-    connection: { filename: './database/users.db' },
+    connection: { filename: './database/ip3Diary.db' },
     useNullAsDefault: true
 })
 
 class UserDAO {
     init() {
-        //creates usr table on first time set up with 1 admin row
-        knex.schema.hasTable("usr").then(function (exists) {
+        //creates users table on first time set up with 1 admin row
+        knex.schema.hasTable("users").then(function (exists) {
             if (!exists) {
-                knex.schema.createTable("usr", (table) => {
+                knex.schema.createTable("users", (table) => {
                     table.increments("id").primary()
                     table.string("email").unique()
                     table.string("hash")
@@ -22,8 +20,8 @@ class UserDAO {
                     table.boolean("admin")
                 })
                     .then(() =>
-                        knex("usr").insert([
-                            { email: "Admin@ip3.com", hash: "Admin", forename: "Admin", surname: "Admin", admin: 1 },
+                        knex("users").insert([
+                            { email: "Admin@ip3.com", hash: "Password123", forename: "Admin", surname: "Admin", admin: 1 },
                         ])
                     )
             }
@@ -38,7 +36,7 @@ class UserDAO {
         const password2 = req.body.password2;
 
 
-        //signup validation
+        //signup validation schema
         const Joi = require('@hapi/joi');
         const schema = Joi.object()
             .options({ abortEarly: false })
@@ -109,7 +107,7 @@ class UserDAO {
             //registers user
             try {
                 const hash = await bcrypt.hash(password, 10);
-                await knex('usr').insert({ email: email, hash: hash, forename: forename, surname: surname, admin: 0 });
+                await knex('users').insert({ email: email, hash: hash, forename: forename, surname: surname, admin: 0 });
                 console.log("User added");
                 res.redirect('index.html');
             } catch (e) {
@@ -128,7 +126,7 @@ class UserDAO {
             //user input to variables
             const email = req.body.email;
             const password = req.body.password;
-            const user = await knex('usr').first('*').where({ email: email });
+            const user = await knex('users').first('*').where({ email: email });
             //logs in user
             if (user) {
                 const validPass = await bcrypt.compare(password, user.hash);
@@ -143,7 +141,7 @@ class UserDAO {
 
         } catch (e) {
             // console.log(e); // Uncomment if needed for debug
-            res.status(400).json('Something broke!');
+            res.status(400).send('Something broke!');
         }
     }
 }

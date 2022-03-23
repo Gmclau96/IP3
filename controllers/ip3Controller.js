@@ -1,5 +1,5 @@
-const bcrypt = require("bcryptjs/dist/bcrypt");
 const userDao = require("../models/userModel.js");
+const notesDao = require("../models/notesModel.js");
 
 exports.get_login = function (req, res) {
     res.redirect("index.html");
@@ -7,27 +7,7 @@ exports.get_login = function (req, res) {
 
 //handle login
 exports.post_login = async function (req, res) {
-
-    userDao.login(req,res);
-    //Routes temporarlity to account page
-    // res.redirect('account.html');
-
-
-
-
-
-
-
-    // db.serialize(() => {
-    //     db.each('SELECT email EMAIL, hash HASH FROM usr WHERE email =? AND hash =?', [email, password], function (err) {
-    //         if (err) {
-    //             return console.error(err.message);
-    //         }
-    //         console.log("Login Successful");
-    //         //Routes temporarlity to account page
-    //         res.redirect('account.html');
-    //     });
-    // });
+    userDao.login(req, res);
 };
 
 exports.get_signup = function (req, res) {
@@ -36,7 +16,7 @@ exports.get_signup = function (req, res) {
 
 //post sign up
 exports.post_signup = async function (req, res) {
-    userDao.create(req,res);
+    userDao.create(req, res);
 };
 
 exports.get_password = function (req, res) {
@@ -58,6 +38,10 @@ exports.get_calendar = function (req, res) {
 exports.get_notes = function (req, res) {
     res.redirect("notes.html");
 };
+
+exports.post_notes = async function (req, res) {
+    notesDao.upload(req, res);
+}
 
 exports.get_recipes = function (req, res) {
     res.redirect('recipes.html');

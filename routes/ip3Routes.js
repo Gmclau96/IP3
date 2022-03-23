@@ -17,8 +17,9 @@ router.get('/account', controller.get_account);
 router.get('/lists', controller.get_lists);
 //GET Calender page
 router.get('/calendar', controller.get_calendar);
-//GET notes page
+//GET & POST notes page
 router.get('/notes', controller.get_notes);
+router.post('/notes', controller.post_notes);
 //GET recipes page
 router.get('/recipes', controller.get_recipes);
 //GET landing page TODO
