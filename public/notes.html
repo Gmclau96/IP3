@@ -50,34 +50,44 @@
             Notes
         </h1>
 
+        <div id="newNoteDiv" hidden="true">
+            <form>
+                <label id="noteTitle"> Note Title</label>
+                <input id="noteTitle" name="noteTitle"required> <br>
+                <label id="noteContent"> Note Content</label>
+                <input id="noteContent" name="noteContent" required> <br>
+                <button id="add"type="submit" formaction="/notes" formmethod="post">Save</button>
+            </form>
+        </div>
+        <div id="recipeBox">
+            <h2>
+                Note 1
+            </h2>
+            <p>Lorem ipsum dolor sit amet. Aut totam asperiores qui reprehenderit itaque et voluptas
+                tempore ab harum quasi. Ut quam dolor 33 consequatur libero et aperiam odio. In nulla
+                perspiciatis ab voluptas quia qui deleniti illo et asperiores quis non voluptas repellat
+                qui nihil ipsa.
+            </p>
+        </div>
 
-            <div id="recipeBox">
-                <h2>
-                    Note 1
-                </h2>
-                <p>Lorem ipsum dolor sit amet. Aut totam asperiores qui reprehenderit itaque et voluptas
-                    tempore ab harum quasi. Ut quam dolor 33 consequatur libero et aperiam odio. In nulla
-                    perspiciatis ab voluptas quia qui deleniti illo et asperiores quis non voluptas repellat
-                    qui nihil ipsa.
-                </p>
-            </div>
 
-
-            <div id="recipeBox">
-                <p>Lorem ipsum dolor sit amet. Aut totam asperiores qui reprehenderit itaque et voluptas
-                    tempore ab harum quasi. Ut quam dolor 33 consequatur libero et aperiam odio. In nulla
-                    perspiciatis ab voluptas quia qui deleniti illo et asperiores quis non voluptas repellat
-                    qui nihil ipsa.
-                </p>
-            </div>
+        <div id="recipeBox">
+            <p>Lorem ipsum dolor sit amet. Aut totam asperiores qui reprehenderit itaque et voluptas
+                tempore ab harum quasi. Ut quam dolor 33 consequatur libero et aperiam odio. In nulla
+                perspiciatis ab voluptas quia qui deleniti illo et asperiores quis non voluptas repellat
+                qui nihil ipsa.
+            </p>
+        </div>
 
         <br>
         <div class="recipe-buttons">
-            <button id="recipe-buttons" onclick="myFunction1()">ADD NOTE</button>
-            <button id="recipe-buttons" onclick="myFunction2()">EDIT NOTE</button>
+            <button id="note-button" onclick="newNote()">ADD NOTE</button>
+            <button id="recipe-buttons">EDIT NOTE</button>
             <button id="recipe-buttons" onclick="myFunction3()">REMOVE NOTE</button>
         </div>
+
     </main>
+    <script src="./JavaScript/notes.js"></script>
 </body>
 
 </html>
