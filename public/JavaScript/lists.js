@@ -9,4 +9,9 @@ function myFunction(){
     return false;
 }
 
+function newList(){
+    var x= document.getElementById("newListDiv");
+    x.hidden = false;
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+ }
 

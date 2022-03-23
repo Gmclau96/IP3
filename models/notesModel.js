@@ -11,8 +11,8 @@ class NotesDAO {
             if (!exists) {
                 return knex.schema.createTable('notes', function (t) {
                     t.increments('noteID').primary();
-                    t.string('noteTitle');
-                    t.string('noteContent');
+                    t.string('noteTitle').notNullable();
+                    t.string('noteContent').notNullable();
                     t.integer('foreignID');
                     t.foreign('foreignID').references('users.id').deferrable('deferred');
                 });

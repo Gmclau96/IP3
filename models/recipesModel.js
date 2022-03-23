@@ -11,9 +11,9 @@ class RecipesDAO {
             if (!exists) {
                 return knex.schema.createTable('recipes', function (t) {
                     t.increments('recipeID').primary();
-                    t.string('recipeTitle');
-                    t.string('recipeIngredients');
-                    t.string('recipeMethod');
+                    t.string('recipeTitle').notNullable();
+                    t.string('recipeIngredients').notNullable();
+                    t.string('recipeMethod').notNullable();
                     t.integer('foreignID');
                     t.foreign('foreignID').references('users.id').deferrable('deferred');
                 });

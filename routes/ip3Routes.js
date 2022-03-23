@@ -15,6 +15,7 @@ router.get('/password', controller.get_password);
 router.get('/account', controller.get_account);
 //GET lists page
 router.get('/lists', controller.get_lists);
+router.post('/lists', controller.post_lists);
 //GET Calender page
 router.get('/calendar', controller.get_calendar);
 //GET & POST notes page

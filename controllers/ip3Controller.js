@@ -1,6 +1,7 @@
 const userDao = require("../models/userModel.js");
 const notesDao = require("../models/notesModel.js");
 const recipesDao = require("../models/recipesModel.js");
+const listsDao = require("../models/listsModel.js");
 
 exports.get_login = function (req, res) {
     res.redirect("index.html");
@@ -30,6 +31,10 @@ exports.get_account = function (req, res) {
 
 exports.get_lists = function (req, res) {
     res.redirect("lists.html");
+};
+
+exports.post_lists = async function (req, res) {
+    listsDao.upload(req, res);
 };
 
 exports.get_calendar = function (req, res) {
