@@ -31,14 +31,80 @@ class UserDAO {
     }
     async create(req, res) {
         //user input to variables
+        const forename = req.body.fname;
+        const surname = req.body.lname;
         const email = req.body.email;
         const password = req.body.password;
         const password2 = req.body.password2;
-        const forename = req.body.fname;
-        const surname = req.body.lname;
 
-        if (password != password2) {
-            res.send("passwords dont match");
+
+        //signup validation
+        const Joi = require('@hapi/joi');
+        const schema = Joi.object()
+            .options({ abortEarly: false })
+            .keys({
+                forename: Joi.string()
+                    .pattern(new RegExp('^(([A-Za-z]+)(\s[A-Za-z]+)?)$'))
+                    .min(3)
+                    .max(20)
+                    .required()
+                    .messages({
+                        "string.base": `"forename" should be a type of 'text'`,
+                        "string.empty": `"forename" cannot be empty`,
+                        "string.pattern.base": '"forename" must contain only letters',
+                        "string.min": `"forename" should have a minimum length of {#limit}`,
+                        "string.max": `"forename" should have a maximum length of {#limit}`,
+                        "any.required": `"forename" is a required field`
+                    }),
+                surname: Joi.string()
+                    .pattern(new RegExp('^(([A-Za-z]+)(\s[A-Za-z]+)?)$'))
+                    .min(2)
+                    .max(20)
+                    .required()
+                    .messages({
+                        "string.base": `"surname" should be a type of 'text'`,
+                        "string.empty": `"surname" cannot be empty`,
+                        "string.pattern.base": '"surname" must contain only letters',
+                        "string.min": `"surname" should have a minimum length of {#limit}`,
+                        "string.max": `"surname" should have a maximum length of {#limit}`,
+                        "any.required": `"surname" is a required field`
+                    }),
+                email: Joi.string()
+                    .email()
+                    .min(6)
+                    .trim()
+                    .required()
+                    .messages({
+                        "string.base": `"email" should be a type of 'email'`,
+                        "string.empty": `"email" cannot be empty`,
+                        "string.min": `"email" should have a minimum length of {#limit}`,
+                        "any.required": `"email" is a required field`
+                    }),
+                password: Joi.string()
+                    .pattern(new RegExp('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$'))
+                    .required()
+                    .messages({
+                        "string.base": `"password" should be a type of 'text'`,
+                        "string.empty": `"password" cannot be empty`,
+                        "string.min": `"password" should have a minimum length of 8`,
+                        "string.pattern.base": '"password" should be at least 8 characters, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number. Can contain special characters',
+                        "any.required": `"password" is a required field`
+                    }),
+                password2: Joi.any()
+                    .equal(Joi.ref('password'))
+                    .required()
+                    .messages({
+                        "string.empty": `"password" cannot be empty`,
+                        "any.only": 'passwords do not match',
+                        "any.required": `"password" is a required field`
+                    })
+            });
+
+        //Checks for input errors
+        const { error } = schema.validate({ forename: forename, surname: surname, email: email, password: password, password2: password2 });
+
+        if (error) {
+            res.status(400).send(error.message);
         } else {
             //registers user
             try {
