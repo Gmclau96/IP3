@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,7 @@
     <title>To-Do Lists</title>
 
 </head>
-
+<html>
 <body>
     <div class="nav-menu">
         <div id="burger-menu">
@@ -58,7 +59,7 @@
 
         <div class="listbtn">
             <a href="editLists.html" class="button">Edit List</a>
-            <a class="button">Delete List</a>
+            <input hidden = "true"id ="delete-button" type="button" value="Delete" onclick="Delete()" />
           </div>
     </div>
 
@@ -89,7 +90,7 @@
 
         <div class="listbtn">
             <a href="editLists.html" class="button">Edit List</a>
-            <a class="button">Delete List</a>
+            <input hidden = "true"id ="delete-button" type="button" value="Delete" onclick="Delete()" />
           </div>
     </div>
 
@@ -120,7 +121,7 @@
 
         <div class="listbtn">
             <a href="editLists.html" class="button">Edit List</a>
-            <a class="button">Delete List</a>
+            <input hidden = "true"id ="delete-button" type="button" value="Delete" onclick="Delete()" />
           </div>
     </div>
 
@@ -151,7 +152,7 @@
 
         <div class="listbtn">
             <a href="editLists.html" class="button">Edit List</a>
-            <a class="button">Delete List</a>
+            <input hidden = "true"id ="delete-button" type="button" value="Delete" onclick="Delete()" />
           </div>
 
     </div>
@@ -184,7 +185,7 @@
 
         <div class="listbtn">
             <a href="editLists.html" class="button">Edit List</a>
-            <a class="button">Delete List</a>
+            <input hidden = "true"id ="delete-button" type="button" value="Delete" onclick="Delete()" />
           </div>
     </div>
 
@@ -213,7 +214,7 @@
 
         <div class="listbtn">
             <a href="editLists.html" class="button">Edit List</a>
-            <a class="button">Delete List</a>
+            <input hidden = "true"id ="delete-button" type="button" value="Delete" onclick="Delete()" />
           </div>
     </div>
 
@@ -242,7 +243,7 @@
 
         <div class="listbtn">
             <a href="editLists.html" class="button">Edit List</a>
-            <a class="button">Delete List</a>
+            <input hidden = "true"id ="delete-button" type="button" value="Delete" onclick="Delete()" />
           </div>
     </div>
 
@@ -264,19 +265,23 @@
 
         <div class="listbtn">
             <a href="editLists.html" class="button">Edit List</a>
-            <a class="button">Delete List</a>
+            <input hidden = "true"id ="delete-button" type="button" value="Delete" onclick="Delete()" />
           </div>
     </div>
-</body>
+
 
 <div class ="listBtnBox">
     <div class="listbtn">
         
         <a href="addLists.html" class="button">Add List</a>
+        <button id ="recipe-buttons" onclick="myFunction()">Remove List</button>
       </div>
 </div>
 
 </div>
+</body>
+
+<script src="../public/JavaScript/lists.js"></script>
 
 
 </html>
