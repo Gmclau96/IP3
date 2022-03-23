@@ -46,13 +46,15 @@
         <!-- abillity to add recipe -->
         <div id="newRecipeDiv" hidden="true">
             <form>
-                <label id="recipeTitle"> Recipe Title</label>
-                <input id="recipeTitle" name="recipeTitle"required> <br>
-                <label id="recipreIngredients"> Ingredients</label>
-                <input id="recipreIngredients" name="recipeIngredients" required> <br>
-                <label id="recipreMethod"> Method</label>
-                <input id="recipreMethod" name="recipeMethod" required> <br>
-                <button id="add"type="submit" formaction="/recipes" formmethod="post">Save</button>
+                <label id="recipeTitlelb"> Recipe Title</label>
+                <input id="recipeTitle" placeholder="Type your recipe title here" name="recipeTitle"required> <br>
+                <label id="recipreIngredientslb"> Ingredients</label>
+                <input id="recipreIngredients" placeholder="Type your ingredients here" name="recipeIngredients" required> <br>
+                <label id="recipreMethodlb"> Method</label>
+                <input id="recipreMethod" placeholder="Type your methods here" name="recipeMethod" required> <br>
+                <div class="add-button">
+                    <button id="add"type="submit" formaction="/recipes" formmethod="post">Save</button>
+                </div>
             </form>
         </div>
         <ul><div id="recipeBox">

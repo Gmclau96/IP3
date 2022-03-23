@@ -363,6 +363,70 @@ h2 {
         
     }
 
+    #newRecipeDiv{
+        margin: auto;
+        margin-top:20px;
+        padding: 10px; 
+        max-width: max-content;
+        border: solid 2px #36846b;
+      }
+
+    #recipeTitlelb{
+        font-size: 1.5rem;
+    }
+
+    #recipreIngredientslb{
+        font-size: 1.5rem;
+    }
+
+    #recipreMethodlb{
+        font-size: 1.5rem;
+    }
+
+    #recipeTitle{
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom:20px;
+        padding: 10px; 
+        max-width: max-content;
+      }
+    
+      #recipreIngredients{
+        margin: auto;
+        margin-bottom:20px;
+        margin-left:5px;
+        padding: 10px; 
+        max-width: max-content;
+      }
+      #recipreMethod{
+        margin: auto;
+        margin-bottom:20px;
+        margin-left:43px;
+        padding: 10px; 
+        max-width: max-content;
+      }
+
+      #add{
+        font-weight: 500;
+        color: #ffffff;
+        background-color: #36846b;
+        border: none;
+        padding: 1em;
+        border-radius: .5em;
+        margin: 1em;
+        cursor: pointer;
+        
+        
+    }
+
+    .add-button{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        
+        
+      }
+
 /* Common elements in login, signup & password reset pages */
 
 #sub-header{
