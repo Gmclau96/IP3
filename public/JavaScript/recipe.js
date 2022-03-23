@@ -27,7 +27,8 @@ function remove() {
     y.hidden = false;
   }
 
-  function newNote() {
+  function newRecipe() {
     var x= document.getElementById("newRecipeDiv");
       x.hidden = false;
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
