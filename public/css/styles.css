@@ -501,6 +501,11 @@ h2 {
         }
 
         /*Css For Lists */
+        .listBlock{
+            margin-left: 15%;
+            margin-right: 15%;
+
+        }
         .listBox{
             margin-top: 50px;
             border-radius: 25px;
@@ -614,6 +619,27 @@ h2 {
             
             
         }
+
+        /* Link Buttons CSS */
+
+        a.button {
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        appearance: button;
+
+        font-weight: 500;
+        color: #ffffff;
+        background-color: #36846b;
+        border: none;
+        padding: 1em;
+        border-radius: .5em;
+        margin: 1em;
+        cursor: pointer;
+        
+            
+        }
+
+        
 
 
           /* Admin Page CSS */
