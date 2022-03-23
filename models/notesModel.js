@@ -1,5 +1,3 @@
-const bcrypt = require('bcryptjs');
-
 var knex = require('knex')({
     client: 'sqlite3',
     connection: { filename: './database/ip3Diary.db' },
@@ -8,14 +6,14 @@ var knex = require('knex')({
 
 class NotesDAO {
     init() {
-        //creates users table on first time set up with 1 admin row
+        //creates notes table
         knex.schema.hasTable('notes').then(function (exists) {
             if (!exists) {
                 return knex.schema.createTable('notes', function (t) {
                     t.increments('noteID').primary();
                     t.string('noteTitle');
                     t.string('noteContent');
-                    t.integer('foreignID')
+                    t.integer('foreignID');
                     t.foreign('foreignID').references('users.id').deferrable('deferred');
                 });
             }
@@ -25,6 +23,7 @@ class NotesDAO {
         //user input to variables
         const title = req.body.noteTitle;
         const content = req.body.noteContent;
+        //writes to notes table
         try {
             await knex('notes').insert({ noteTitle: title, noteContent: content });
             console.log("note added");
@@ -32,7 +31,7 @@ class NotesDAO {
             console.log('Something broke!');
         }
     }
-    async login(req, res) {
+    async edit(req, res) {
 
     }
 }

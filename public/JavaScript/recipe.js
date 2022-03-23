@@ -26,3 +26,8 @@ function remove() {
     var y=document.getElementById("remove-button");
     y.hidden = false;
   }
+
+  function newNote() {
+    var x= document.getElementById("newRecipeDiv");
+      x.hidden = false;
+}

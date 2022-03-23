@@ -1,5 +1,6 @@
 const userDao = require("../models/userModel.js");
 const notesDao = require("../models/notesModel.js");
+const recipesDao = require("../models/recipesModel.js");
 
 exports.get_login = function (req, res) {
     res.redirect("index.html");
@@ -45,4 +46,8 @@ exports.post_notes = async function (req, res) {
 
 exports.get_recipes = function (req, res) {
     res.redirect('recipes.html');
+};
+
+exports.post_recipes = function (req, res) {
+    recipesDao.upload(req, res);
 };

@@ -475,7 +475,7 @@ h2 {
             content: "\40";
         }
 
-        .password::before{
+        .accpassword::before{
             font: var(--fa-font-solid);
             content: "\f023";
         }

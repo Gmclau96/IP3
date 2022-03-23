@@ -22,6 +22,7 @@ router.get('/notes', controller.get_notes);
 router.post('/notes', controller.post_notes);
 //GET recipes page
 router.get('/recipes', controller.get_recipes);
+router.post('/recipes', controller.post_recipes);
 //GET landing page TODO
 
 //404 error
