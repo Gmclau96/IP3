@@ -96,16 +96,16 @@ input[type="checkbox"].toggle {
     cursor: pointer;
     left: -9000px;  /*removes checkbox from being visible on page while remaining functional */
     top: -9000px;
-}
-
-input[type="checkbox"].toggle + label {
+    }
+    
+    input[type="checkbox"].toggle + label {
     position: relative;
     display: flex;
     align-items: center;
     cursor: pointer;
-}
-
-input[type="checkbox"].toggle + label::before {
+    }
+    
+    input[type="checkbox"].toggle + label::before {
     content: "";
     width: 8em;
     height: 2em;
@@ -113,9 +113,9 @@ input[type="checkbox"].toggle + label::before {
     outline: 2px solid #000000;
     border-radius: 1em;
     transition: 200ms ease-in-out;
-}
-
-input[type="checkbox"].toggle + label::after {
+    }
+    
+    input[type="checkbox"].toggle + label::after {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,48 +128,49 @@ input[type="checkbox"].toggle + label::after {
     background-color: #36846b;
     border-radius: 1em;
     transition: 200ms ease-in-out;
-}
-
-input[type="checkbox"].toggle:checked + label::after {
+    }
+    
+    input[type="checkbox"].toggle:checked + label::after {
     transform: translateX(55%);
     background-color: #36846b;
     content: "Day";
-}
-
-#view-button {
+    }
+    
+    #view-button {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* Monthly View */    
-.calendar {
+    }
+    
+    /* Monthly View */    
+    .calendar {
+    display: block;
     background-color: #ffffff;
     width: 40rem;
-    height: 40rem;
+    height: 45rem;
     margin: 3rem auto;
     outline: #000000 solid 2px;
-}
-
-.arrow {
+    }
+    
+    .arrow {
     border: solid black;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
     cursor: pointer;
-}
-
-.right {
+    }
+    
+    .right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-}
-
-.left {
+    }
+    
+    .left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
-}
-
-.month {
+    }
+    
+    .month {
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
@@ -179,101 +180,103 @@ input[type="checkbox"].toggle:checked + label::after {
     padding: 0 5rem;
     text-align: center;
     outline: #000000 solid 2px;
-}
-
-h2 {
+    }
+    
+    h2 {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1.8rem;
-}
-
-.month p {
+    }
+    
+    .month p {
     font-size: 1.3rem;
-}
-
-.month i {
+    }
+    
+    .month i {
     padding: .5rem .5rem;
-}
-
-.weekdays {
+    }
+    
+    .weekdays {
     display: flex;
     align-items: center;
     padding: 0 0.8rem;
     width: 100%;
     height: 5rem;
-}
-
-.weekdays div {
+    }
+    
+    .weekdays div {
     letter-spacing: .1rem;
     width: calc(38.4rem/7); /* [(calendar width - weekdays padding)/7] [(40-1.6)/7] */
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.days {
+    }
+    
+    .days {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     padding: .1rem;
-}
-
-.days div {
+    }
+    
+    .days div {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: .4rem;
     width: calc(34.2rem/7); /* [(calendar width - weekdays padding - days padding - days margin)/7] [(40 - (1.6 + 0.2 + (0.4 * 14) /7] */
     height: 4rem;
-}
-
-.days div:hover {
+    }
+    
+    .days div:hover {
     border: .25rem solid #000000;
     border-radius: 2rem;
     cursor: pointer;
-}
-
-.prev-date,
-.next-date {
+    }
+    
+    .prev-date, .next-date {
     opacity: 0.5;
-}
-
-.today {
+    }
+    
+    .today {
     background-color: #ffffff;
     border-radius: 2rem;
     border: solid 2px #000000;
-}
-
-/* Day View */
-#day-view {
+    }
+    
+    /* Day View */
+    #day-view {
     display: none;
     background-color: #ffffff;
     width: 40rem;
     margin: 3rem auto;
     outline: #000000 solid 2px;
-}
-
-.hour-slot {
+    }
+    
+    .hour-slot {
     display: flex;
     flex-direction: row;
     height: 3em;
     border: solid 2px #000000;
-}
-
-.hour {
+    }
+    
+    .hour {
     width: 8rem;
     padding: 1em 1em;
-}
-
-.user-events {
+    }
+    
+    .user-events {
     padding: 1em 1em;
-}
-
-#calendar-buttons {
+    }
+    
+    .calendar-buttons {
     margin: 2rem 0;
-}
-
-#calendar-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .calendar-buttons button {
     font-weight: 500;
     color: #ffffff;
     background-color: #36846b;
@@ -282,7 +285,63 @@ h2 {
     border-radius: .5em;
     margin: 1em;
     cursor: pointer;
-}
+    }
+    
+    .newEvent {
+    width: 50vw;
+    padding: 2em;
+    margin: auto;
+    }
+    
+    .newEvent button {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+    }
+    
+    #form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    #form-input input[type=submit]{
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 2em;
+    cursor: pointer;
+    }
+    
+    #form-input input{
+    height: 3em;
+    }
+    
+    #form-input input, label{
+    width: 350px;
+    margin-top: 1em;
+    }
+
+    #date-dropdown {
+        display: flex;
+    }
+
+    #date-dropdown select{
+        margin: 1em;
+        padding: .5em;
+        border: #000000 solid 2px;
+        background-color: #ffffff;
+        border-radius: 1px;
+    }
 
 
     /*Arrun's CSS*/
