@@ -81,17 +81,60 @@ document.querySelector(".next").addEventListener("click", () => {
 
 renderCalendar();
 
-/*
-document.addEventListener("onclick", () => {
-  var checkBox = document.getElementById("view-button");
-  var dayView = document.getElementById("day-view");
 
-  if (checkBox.checked == true){
-    dayView.style.display = "none";
+
+/* for changing view *///////////////////////// NOT FULLY FUNCTIONING
+
+
+var checkbox = document.querySelector("input[name=checkbox]");
+
+checkbox.addEventListener('change', function() {
+  //let monthView = document.getElementById("calendar");
+  let dayView = document.getElementById("day-view");
+  if (this.checked) {
+    console.log("Checkbox is checked..");
+    //monthView.style.display = "none";
+    dayView.style.display = "block";
   } else {
-    dayView.style.display = "flex";
+    console.log("Checkbox is not checked..");
+    //monthView.style.display = "block";
+    dayView.style.display = "none";
   }
-})*/
+});
+
+checkbox.addEventListener('change', function() {
+  let monthView = document.getElementById("calendar");
+  if (monthView.styledisplay === "block") {
+    console.log("Checkbox is checked..");
+    monthView.style.display = "none";
+  } else {
+    console.log("Checkbox is not checked..");
+    monthView.style.display = "block";
+  }
+});
+
+////////////////////////////////////////////
+
+/*
+document.querySelector("#view-button").addEventListener("onclick", () => {
+  var check = document.getElementById("view-choice");
+  console.log(check);
+});
+
+function changeView(){
+  console.log();
+  var check = document.getElementById("view-choice");
+  var monthView = document.getElementById("calendar");
+  var dayView = document.getElementById("day-view");
+  if (check.checked == true) {
+    monthView.style.display = "none";
+    dayView.style.display = "block";
+  } 
+  else {
+    monthView.style.display = "flex";
+    dayView.style.display = "none";
+  }
+}*/
 
 
   /*
@@ -107,6 +150,8 @@ db.run('CREATE TABLE IF NOT EXISTS calEvents(id TEXT, name TEXT, date DATETIME, 
 app.get('/', function(req,res){
     res.sendFile(path.join(__dirname,'./public/index.html'));
   });
+
+  
 // Insert
 app.post('/add', function(req,res){
     db.serialize(()=>{
@@ -173,3 +218,22 @@ app.post('/delete', function(req,res){
       res.send('Database connection successfully closed');
     });
   });*/
+
+
+/* For adding new event and controlling event form */
+  const newEventForm = document.querySelector("#newEvent");
+  const openForm = document.querySelector(".open-form-button");
+  const closeForm = document.querySelector(".close-form-button");
+  const exitBtn = document.querySelector("#exit-btn");
+
+  openForm.addEventListener("click", () => {
+    newEventForm.showModal();
+  })
+
+  closeForm.addEventListener("click", () => {
+    newEventForm.close();
+  })
+
+  exitBtn.addEventListener("click", () => {
+    newEventForm.close();
+  })
