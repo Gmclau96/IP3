@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<header>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>
+       Update Recipe
+    </title>
+</header>
+<body>
+        <h1>
+          Update Recipe
+        </h1>
+<!-- abillity to update recipe -->
+        <div id="updateNoteDiv" > 
+        
+           <form>
+           {{#recipes}}
+                <label id="recipeTitle"> Recipe Name</label>
+                <input id="recipeTitle" name="noteTitle" value="{{title}}" required> <br>
+                <label id="recipeIngredients"> Ingredients</label>
+                <input id="recipeIngredients" name="recipeIngredients" value="{{ingredients}}" required> <br>
+                <label id="recipeMethod"> Method</label>
+                <input id="recipeMethod" name="recipeMethod" value="{{method}}" required> <br>
+                <button id="add"type="submit" formaction="/updateRecipes/{{_id}}" formmethod="post">Edit</button>
+                <button id="add"type="submit" formaction="/deleteRecipes/{{_id}}" formmethod="post">Delete</button>
+                {{/recipes}}
+               </form>  
+        </div>
+</body>
+</html>

@@ -1,43 +1,28 @@
-var knex = require('knex')({
-    client: 'sqlite3',
-    connection: { filename: './database/ip3Diary.db' },
-    useNullAsDefault: true
+const mongoose = require('mongoose');
+
+//recipe table schema
+const recipeColumns = new mongoose.Schema({
+    title: {
+        type: String,
+        required: [true, 'Please enter a recipe title \n'],
+        minLength: 2,
+        maxLength: 50
+    },
+    ingredients: {
+        type: String,
+        required: [true, 'Please enter the ingredients \n']     
+    },
+    method: {
+        type: String,
+        required: [true, 'Please enter the method'],
+        minLength: 10
+    },
+    _email: {
+        type: String
+    }
 })
 
-class RecipesDAO {
-    init() {
-        //creates notes table
-        knex.schema.hasTable('recipes').then(function (exists) {
-            if (!exists) {
-                return knex.schema.createTable('recipes', function (t) {
-                    t.increments('recipeID').primary();
-                    t.string('recipeTitle').notNullable();
-                    t.string('recipeIngredients').notNullable();
-                    t.string('recipeMethod').notNullable();
-                    t.integer('foreignID');
-                    t.foreign('foreignID').references('users.id').deferrable('deferred');
-                });
-            }
-        });
-    }
-    async upload(req, res) {
-        //user input to variables
-        const recipeTitle = req.body.recipeTitle;
-        const ingredients = req.body.recipeIngredients;
-        const method = req.body.recipeMethod;
-        //writes to recipes table
-        try {
-            await knex('recipes').insert({ recipeTitle: recipeTitle, recipeIngredients: ingredients, recipeMethod: method });
-            console.log("recipe added");
-        } catch (e) {
-            console.log('Something broke!');
-        }
-    }
-    async edit(req, res) {
+//writes to recipes table
+const recipeDao = mongoose.model('recipe', recipeColumns);
 
-    }
-}
-const dao = new RecipesDAO();
-dao.init();
-
-module.exports = dao;
+module.exports = recipeDao;

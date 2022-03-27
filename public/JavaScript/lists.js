@@ -15,3 +15,13 @@ function newList(){
     document.body.scrollTop = document.documentElement.scrollTop = 0;
  }
 
+ //shows edit buttons
+function editList() {
+  let x = document.querySelectorAll('.edit');
+
+  [].forEach.call(x, function editLists(x) {
+    x.hidden = false;
+  });
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+

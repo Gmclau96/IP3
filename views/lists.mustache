@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>To-Do Lists</title>
+
+</head>
+<html>
+<body>
+    <div class="nav-menu">
+        <div id="burger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    <div id="nav-content">
+        <ul class="pages-container">
+            <li class="nav-page">
+                <a href="" class="nav-link">Calendar</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Lists</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Notes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Recipes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Account</a>
+            </li>
+        </ul>
+        <button id="logoutBtn">Sign Out</button>
+    </div>
+    <header>
+        <h1>To-Do Lists</h1>
+    </header>
+
+    <!-- abillity to add list -->
+    <div id="newListDiv" hidden="true">
+        <form>
+            <label id="listTitle"> list Title</label>
+            <input id="listTitle" name="listTitle"required> <br>
+            <label id="listItem1"> Item 1</label>
+            <input id="listItem1" name="listItem1" required> <br>
+
+            <label id="listItem2"> Item 2</label>
+            <input id="listItem2" name="listItem2"> <br>
+
+            <label id="listItem3"> Item 3</label>
+            <input id="listItem3" name="listItem3"> <br>
+
+            <label id="listItem4"> Item 4</label>
+            <input id="listItem4" name="listItem4"> <br>
+
+            <label id="listItem5"> Item 5</label>
+            <input id="listItem5" name="listItem5"> <br>
+
+            <label id="listItem6"> Item 6</label>
+            <input id="listItem6" name="listItem6"> <br>
+
+            <label id="listItem7"> Item 7</label>
+            <input id="listItem7" name="listItem7"> <br>
+
+            <label id="listItem8"> Item 8</label>
+            <input id="listItem8" name="listItem8"> <br>
+
+            <label id="listItem9"> Item 9</label>
+            <input id="listItem9" name="listItem9"> <br>
+
+            <label id="listItem10"> Item 10</label>
+            <input id="listItem10" name="listItem10"> <br>
+
+            <button id="add"type="submit" formaction="/lists" formmethod="post">Save</button>
+        </form>
+    </div>
+
+
+<ol id="list">
+{{#lists}}
+Title: 
+<li class="inliner">{{title}}</li>
+Items:
+<li> {{item1}}</li>
+<li> {{item2}}</li>
+<li> {{item3}} </li>
+<li> {{item4}} </li>
+<li> {{item5}} </li>
+<li> {{item6}} </li>
+<li> {{item7}} </li>
+<li> {{item8}} </li>
+<li> {{item9}} </li>
+<li> {{item10}} </li>
+<a href="lists/{{_id}}" class="edit" hidden="true">update</a>
+<button class="remove" hidden="true">remove list</button> <br>
+{{/lists}}
+</ol>
+
+
+<div class="recipe-buttons">
+            <button id="list-button" onclick="newList()">ADD LIST</button>
+            <button id="recipe-buttons"onclick="editList()">EDIT LIST</button>
+        </div>
+
+</div>
+<a href="/logout">LOGOUT</a>
+</body>
+
+<script src="./JavaScript/lists.js"></script>
+
+
+</html>

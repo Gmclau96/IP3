@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>IP3 Diary</title>
+</head>
+
+<body>
+    <!--Navigation Menu-->
+    <div class="nav-menu">
+        <div id="burger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    <div id="nav-content">
+        <ul class="pages-container">
+            <li class="nav-page">
+                <a href="" class="nav-link">Calendar</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Lists</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Notes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Recipes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Account</a>
+            </li>
+        </ul>
+        <button id="logoutBtn">Sign Out</button>
+    </div>
+
+    <main>
+        <header>
+            <h1>Welcome {{user.forename}}</h1>
+        </header>
+
+<ol id="list">
+{{#notes}}
+Title: 
+<li class="inliner">{{title}}</li>
+Content:
+<li> {{content}}</li>
+{{/notes}}
+</ol>
+<br>
+<ol id="list">
+{{#lists}}
+Title: 
+<li class="inliner">{{title}}</li>
+Items:
+<li> {{item1}}</li>
+<li> {{item2}}</li>
+<li> {{item3}} </li>
+<li> {{item4}} </li>
+<li> {{item5}} </li>
+<li> {{item6}} </li>
+<li> {{item7}} </li>
+<li> {{item8}} </li>
+<li> {{item9}} </li>
+<li> {{item10}} </li>
+{{/lists}}
+       
+    <a href="/logout">LOGOUT</a>
+    </main>
+    <script src="./JavaScript/recipe.js"></script>
+
+</body>
+
+</html>

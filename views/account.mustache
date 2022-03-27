@@ -48,7 +48,7 @@
     <main>
 
             <header>
-                <h1>IP3Diary</h1>
+                <h1>IP3Diary </h1>
             </header>
             
             <!-- Form for Account Page-->
@@ -58,15 +58,15 @@
 
                
                 <!-- Account Name -->
-                <label for="Editname" id="account-label" class="account">Account Name </label>
-                <input type="text" id="account-control" name="editname" placeholder="Edit Name">    
+                <label for="Editname" id="account-label" class="account">{{user.forename}} </label>
+                <input type="text" id="account-control" name="editname" placeholder="Edit Name"></input>    
                 <button type="text" id="account-buttons" name="editname">Edit Name</button>
                 <br>
 
               
 
                 <!-- Email Address-->
-                <label for="Editemail" id="account-label" class="account-email">Email Address</label>
+                <label for="Editemail" id="account-label" class="account-email">{{user.email}}</label>
                 <input type="text" id="account-control" name="editemail" placeholder="Edit Email">
                 <button type="text" id="account-buttons" name="editemail">Edit Email Address</button>
                 <br>
@@ -98,6 +98,7 @@
                
             </fieldset>
         </form>
+        <a href="/logout">LOGOUT</a>
 <br>
 
 </main>

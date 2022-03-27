@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Recipes</title>
+</head>
+
+<body>
+    <!--Navigation Menu-->
+    <div class="nav-menu">
+        <div id="burger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    <div id="nav-content">
+        <ul class="pages-container">
+            <li class="nav-page">
+                <a href="" class="nav-link">Calendar</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Lists</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Notes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Recipes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Account</a>
+            </li>
+        </ul>
+        <button id="logoutBtn">Sign Out</button>
+    </div>
+
+    <main>
+        <header>
+            <h1>Recipes</h1>
+        </header>
+        <!-- abillity to add recipe -->
+        <div id="newRecipeDiv" hidden="true">
+            <form>
+                <label id="recipeTitlelb"> Recipe Title</label>
+                <input id="recipeTitle" placeholder="Type your recipe title here" name="recipeTitle"required> <br>
+                <label id="recipreIngredientslb"> Ingredients</label>
+                <input id="recipreIngredients" placeholder="Type your ingredients here" name="recipeIngredients" required> <br>
+                <label id="recipreMethodlb"> Method</label>
+                <input id="recipreMethod" placeholder="Type your methods here" name="recipeMethod" required> <br>
+                <div class="add-button">
+                    <button id="add"type="submit" formaction="/recipes" formmethod="post">Save</button>
+                </div>
+            </form>
+        </div>
+        
+<ol id="list">
+{{#recipes}}
+Recipe Name: 
+<li class="inliner">{{title}}</li>
+Ingredients:
+<li> {{ingredients}}</li>
+Method:
+<li> {{method}}</li>
+<a href="recipes/{{_id}}" class="edit" hidden="true">update</a>
+<button class="remove" hidden="true">remove note</button> <br>
+{{/recipes}}
+</ol>
+
+
+<div class="recipe-buttons">
+            <button id="recipe-button" onclick="newRecipe()">ADD RECIPE</button>
+            <button id="recipe-buttons"onclick="editRecipe()">EDIT RECIPE</button>
+        </div>
+
+</div>
+
+
+    <a href="/logout">LOGOUT</a>
+    </main>
+    <script src="./JavaScript/recipe.js"></script>
+
+</body>
+
+</html>

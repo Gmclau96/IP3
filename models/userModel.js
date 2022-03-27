@@ -1,151 +1,85 @@
+const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const res = require('express/lib/response');
+const dotenv = require('dotenv');
+dotenv.config()
 
-var knex = require('knex')({
-    client: 'sqlite3',
-    connection: { filename: './database/ip3Diary.db' },
-    useNullAsDefault: true
+//user table schema with regex validation
+const userColumns = new mongoose.Schema({
+    forename: {
+        type: String,
+        required: [true, 'Please enter a forename \n'],
+        lowercase: true,
+        minLength: 2,
+        maxLength: 20,
+        validate: [/^[A-Za-z]+$/, 'Enter a valid forename \n']
+    },
+    surname: {
+        type: String,
+        required: [true, 'Please enter a surname \n'],
+        lowercase: true,
+        minLength: 2,
+        maxLength: 25,
+        validate: [/^[A-Za-z]+$/, 'Enter a valid surname \n']
+    },
+    email: {
+        type: String,
+        required: [true, 'Please enter an email \n'],
+        lowercase: true,
+        minLength: 7,
+        maxLength: 40,
+        unique: true,
+        validate:
+            [/^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/,
+                "Please Enter a valid email address \n"]
+    },
+    password: {
+        type: String,
+        required: [true, 'Please enter a password'],
+        minLength: [8, 'Minimum of 8 characters'],
+        validate: [/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
+            "Must be: 8 characters min, \n contain 1 uppercase letter, \n 1 lowercase letter and 1 number, \n special characters are allowed."]
+    },
+    admin: {
+        type: Boolean,
+        default: false
+    }
 })
 
-class UserDAO {
-    init() {
-        //creates users table on first time set up with 1 admin row
-        knex.schema.hasTable("users").then(function (exists) {
-            if (!exists) {
-                knex.schema.createTable("users", (table) => {
-                    table.increments("id").primary()
-                    table.string("email").unique()
-                    table.string("hash")
-                    table.string("forename")
-                    table.string("surname")
-                    table.boolean("admin")
-                })
-                    .then(() =>
-                        knex("users").insert([
-                            { email: "Admin@ip3.com", hash: "Password123", forename: "Admin", surname: "Admin", admin: 1 },
-                        ])
-                    )
-            }
-        })
-    }
-    async create(req, res) {
-        //user input to variables
-        const forename = req.body.fname;
-        const surname = req.body.lname;
-        const email = req.body.email;
-        const password = req.body.password;
-        const password2 = req.body.password2;
+//uses bcrypt beofre saving to hash password
+userColumns.pre('save', async function (next) {
+    this.password = await bcrypt.hash(this.password, 10);
+    next();
+});
 
 
-        //signup validation schema
-        const Joi = require('@hapi/joi');
-        const schema = Joi.object()
-            .options({ abortEarly: false })
-            .keys({
-                forename: Joi.string()
-                    .pattern(new RegExp('^(([A-Za-z]+)(\s[A-Za-z]+)?)$'))
-                    .min(3)
-                    .max(20)
-                    .required()
-                    .messages({
-                        "string.base": `"forename" should be a type of 'text'`,
-                        "string.empty": `"forename" cannot be empty`,
-                        "string.pattern.base": '"forename" must contain only letters',
-                        "string.min": `"forename" should have a minimum length of {#limit}`,
-                        "string.max": `"forename" should have a maximum length of {#limit}`,
-                        "any.required": `"forename" is a required field`
-                    }),
-                surname: Joi.string()
-                    .pattern(new RegExp('^(([A-Za-z]+)(\s[A-Za-z]+)?)$'))
-                    .min(2)
-                    .max(20)
-                    .required()
-                    .messages({
-                        "string.base": `"surname" should be a type of 'text'`,
-                        "string.empty": `"surname" cannot be empty`,
-                        "string.pattern.base": '"surname" must contain only letters',
-                        "string.min": `"surname" should have a minimum length of {#limit}`,
-                        "string.max": `"surname" should have a maximum length of {#limit}`,
-                        "any.required": `"surname" is a required field`
-                    }),
-                email: Joi.string()
-                    .email()
-                    .min(6)
-                    .trim()
-                    .required()
-                    .messages({
-                        "string.base": `"email" should be a type of 'email'`,
-                        "string.empty": `"email" cannot be empty`,
-                        "string.min": `"email" should have a minimum length of {#limit}`,
-                        "any.required": `"email" is a required field`
-                    }),
-                password: Joi.string()
-                    .pattern(new RegExp('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$'))
-                    .required()
-                    .messages({
-                        "string.base": `"password" should be a type of 'text'`,
-                        "string.empty": `"password" cannot be empty`,
-                        "string.min": `"password" should have a minimum length of 8`,
-                        "string.pattern.base": '"password" should be at least 8 characters, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number. Can contain special characters',
-                        "any.required": `"password" is a required field`
-                    }),
-                password2: Joi.any()
-                    .equal(Joi.ref('password'))
-                    .required()
-                    .messages({
-                        "string.empty": `"password" cannot be empty`,
-                        "any.only": 'passwords do not match',
-                        "any.required": `"password" is a required field`
-                    })
-            });
-
-        //Checks for input errors
-        const { error } = schema.validate({ forename: forename, surname: surname, email: email, password: password, password2: password2 });
-
-        if (error) {
-            res.status(400).send(error.message);
-        } else {
-            //registers user
-            try {
-                const hash = await bcrypt.hash(password, 10);
-                await knex('users').insert({ email: email, hash: hash, forename: forename, surname: surname, admin: 0 });
-                console.log("User added");
-                res.redirect('index.html');
-            } catch (e) {
-                if (e.errno === 19) {
-                    res.send("account already exists");
-                    console.log(e);
-                } else {
-                    console.log('Something broke!');
-                }
-            }
+//logs user in
+userColumns.statics.login = async function (email, password) {
+    const user = await this.findOne({ email });
+    if (user) {
+        const validPass = await bcrypt.compare(password, user.password);
+        if (validPass) {
+            return user;
         }
+        throw Error("Incorrect password")
     }
-    async login(req, res) {
-
-        try {
-            //user input to variables
-            const email = req.body.email;
-            const password = req.body.password;
-            const user = await knex('users').first('*').where({ email: email });
-            //logs in user
-            if (user) {
-                const validPass = await bcrypt.compare(password, user.hash);
-                if (validPass) {
-                    res.redirect('account.html')
-                } else {
-                    res.send('Wrong password!');
-                }
-            } else {
-                res.send('User not found!');
-            }
-
-        } catch (e) {
-            // console.log(e); // Uncomment if needed for debug
-            res.status(400).send('Something broke!');
-        }
-    }
+    throw Error("incorrect email");
 }
-const dao = new UserDAO();
-dao.init();
 
-module.exports = dao;
+//registers user to user table
+const userDao = mongoose.model('user', userColumns);
+
+
+//inserts admin if not exists
+userDao.findOne({ email: "Admin@ip3.com" }, function (err, found) {
+    if (err) console.log(err);
+    if (found) {
+        console.log("Admin already exists");
+        //hashes the admin password from the .env file
+        this.process.env.AdminPassword  =  bcrypt.hash(process.env.AdminPassword, 10);
+    } else {
+        const admin = userDao.create({ forename: "Admin", surname: "Admin", email: "Admin@ip3.com", password: process.env.AdminPassword, admin: true });
+    }
+});
+
+module.exports = userDao;

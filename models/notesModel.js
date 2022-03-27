@@ -1,41 +1,22 @@
-var knex = require('knex')({
-    client: 'sqlite3',
-    connection: { filename: './database/ip3Diary.db' },
-    useNullAsDefault: true
+const res = require('express/lib/response');
+const mongoose = require('mongoose');
+
+//notes table schema
+const noteColumns = new mongoose.Schema({
+    title: {
+        type: String,
+        required: [true, 'Please enter a title \n']
+    },
+    content: {
+        type: String,
+        required: [true, 'Please enter the note content']
+    },
+    _email: { 
+        type: String
+     }
 })
 
-class NotesDAO {
-    init() {
-        //creates notes table
-        knex.schema.hasTable('notes').then(function (exists) {
-            if (!exists) {
-                return knex.schema.createTable('notes', function (t) {
-                    t.increments('noteID').primary();
-                    t.string('noteTitle').notNullable();
-                    t.string('noteContent').notNullable();
-                    t.integer('foreignID');
-                    t.foreign('foreignID').references('users.id').deferrable('deferred');
-                });
-            }
-        });
-    }
-    async upload(req, res) {
-        //user input to variables
-        const title = req.body.noteTitle;
-        const content = req.body.noteContent;
-        //writes to notes table
-        try {
-            await knex('notes').insert({ noteTitle: title, noteContent: content });
-            console.log("note added");
-        } catch (e) {
-            console.log('Something broke!');
-        }
-    }
-    async edit(req, res) {
+//writes to notes table
+const noteDao = mongoose.model('note', noteColumns);
 
-    }
-}
-const dao = new NotesDAO();
-dao.init();
-
-module.exports = dao;
+module.exports = noteDao;

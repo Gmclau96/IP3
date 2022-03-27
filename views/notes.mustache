@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <header>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,9 +11,7 @@
     </title>
 </header>
 
-
 <body>
-
     <!--Navigation Menu-->
     <div class="nav-menu">
         <div id="burger-menu">
@@ -45,7 +42,6 @@
     </div>
 
     <main>
-
         <h1>
             Notes
         </h1>
@@ -59,34 +55,25 @@
                 <button id="add"type="submit" formaction="/notes" formmethod="post">Save</button>
             </form>
         </div>
-        <div id="recipeBox">
-            <h2>
-                Note 1
-            </h2>
-            <p>Lorem ipsum dolor sit amet. Aut totam asperiores qui reprehenderit itaque et voluptas
-                tempore ab harum quasi. Ut quam dolor 33 consequatur libero et aperiam odio. In nulla
-                perspiciatis ab voluptas quia qui deleniti illo et asperiores quis non voluptas repellat
-                qui nihil ipsa.
-            </p>
-        </div>
 
 
-        <div id="recipeBox">
-            <p>Lorem ipsum dolor sit amet. Aut totam asperiores qui reprehenderit itaque et voluptas
-                tempore ab harum quasi. Ut quam dolor 33 consequatur libero et aperiam odio. In nulla
-                perspiciatis ab voluptas quia qui deleniti illo et asperiores quis non voluptas repellat
-                qui nihil ipsa.
-            </p>
-        </div>
-
+<ol id="list">
+{{#notes}}
+Title: 
+<li class="inliner">{{title}}</li>
+Content:
+<li> {{content}}</li>
+<a href="notes/{{_id}}" class="edit" hidden="true">update</a>
+<button class="remove" hidden="true">remove note</button> <br>
+{{/notes}}
+</ol>
         <br>
         <div class="recipe-buttons">
             <button id="note-button" onclick="newNote()">ADD NOTE</button>
-            <button id="recipe-buttons">EDIT NOTE</button>
-            <button id="recipe-buttons" onclick="myFunction3()">REMOVE NOTE</button>
+            <button id="recipe-buttons"onclick="editNote()">EDIT NOTE</button>
         </div>
-
     </main>
+    <a href="/logout">LOGOUT</a>
     <script src="./JavaScript/notes.js"></script>
 </body>
 

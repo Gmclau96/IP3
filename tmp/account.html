@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Script Link for Icons used in Interface through FontAwesome -->
+    <script src="https://kit.fontawesome.com/81b06af5ec.js" crossorigin="anonymous"></script>
+    <!-- Link to CSS Stylesheet-->
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Personal Organiser</title>
+
+</head>
+
+
+<body>
+
+    <!--Navigation Menu-->
+    <div class="nav-menu">
+        <div id="burger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    <div id="nav-content">
+        <ul class="pages-container">
+            <li class="nav-page">
+                <a href="" class="nav-link">Calendar</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Lists</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Notes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Recipes</a>
+            </li>
+            <li class="nav-page">
+                <a href="" class="nav-link">Account</a>
+            </li>
+        </ul>
+        <button id="logoutBtn">Sign Out</button>
+    </div>
+
+    <main>
+
+            <header>
+                <h1>IP3Diary</h1>
+            </header>
+            
+            <!-- Form for Account Page-->
+            <fieldset id="account-fieldset">
+
+            <form method="POST" id="account-form">
+
+               
+                <!-- Account Name -->
+                <label for="Editname" id="account-label" class="account">Account Name </label>
+                <input type="text" id="account-control" name="editname" placeholder="Edit Name">    
+                <button type="text" id="account-buttons" name="editname">Edit Name</button>
+                <br>
+
+              
+
+                <!-- Email Address-->
+                <label for="Editemail" id="account-label" class="account-email">Email Address</label>
+                <input type="text" id="account-control" name="editemail" placeholder="Edit Email">
+                <button type="text" id="account-buttons" name="editemail">Edit Email Address</button>
+                <br>
+                <br>
+
+                
+
+                <!--Edit Password -->
+                <label for="Editpassword" id="account-label" class="accpassword">Edit Password</label>
+                <input type="text" id="account-control" name="editpassword" placeholder="Edit Password"> 
+                <div class="flex-container">
+                <button type="text" id="account-buttons" name="editpassword">Edit Password</button>
+                
+
+                
+
+                <!-- Delete Account-->
+                <label for="Deleteaccount" id="account-label" class="delete">Delete Account</label>
+                <button type="text" id="account-buttons" name="deleteaccount">Delete Account</button>
+                
+
+                
+
+                <!-- Save Changes -->
+                <label for="Savechanges" id="account-label" class="save">Save Changes</label>
+                <button type="text" id="account-buttons" name="savechanges">Save Changes</button>
+                <br>
+
+               
+            </fieldset>
+        </form>
+        <a href="/logout">LOGOUT</a>
+<br>
+
+</main>
+
+<!-- Link to Account Script File-->
+<script scr="JavaScript/account.js"></script>
+            
+</body>
+    
+</html>

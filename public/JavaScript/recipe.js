@@ -27,8 +27,20 @@ function remove() {
     y.hidden = false;
   }
 
+  //show add recipe div
   function newRecipe() {
     var x= document.getElementById("newRecipeDiv");
       x.hidden = false;
       document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+//show update buttons under recipes
+//shows edit buttons
+function editRecipe() {
+  let x = document.querySelectorAll('.edit');
+
+  [].forEach.call(x, function editRecipes(x) {
+    x.hidden = false;
+  });
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
 }

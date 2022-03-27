@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP3 Diary - Sign up</title>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header-->
+    <header>
+        <h1>IP3Diary</h1>
+        <h2 id="sub-header">For all your planning and scheduling needs</h2>
+    </header>
+    <br><br><br>
+    <form id="signup-form">
+        <fieldset id="signup-fieldset">
+            <legend id="signup-legend">Sign up</legend>
+            <div class="first-name">
+                <label id="form-label">First Name:</label>
+                <input id="form-control" type="text" id='fname' name="fname" placeholder="Enter your first name">
+            </div>
+            <div class="last-name">
+                <label id="form-label">Last Name:</label>
+                <input id="form-control" type="text" id='sname' name="sname" placeholder="Enter your last name">
+            </div>
+            <div class="email">
+                <label id="form-label">Email:</label>
+                <input id="form-control" type="text" id='email' name="email" placeholder="Enter your email address">
+            </div>
+            <div class="password">
+                <label id="form-label">Password:</label>
+                <input id="form-control" type="password" id="password" name="password"
+                    placeholder="Min of 8 characters with min 1 uppercase letter and 1 number">
+            </div>
+            <!-- <div class="password2">
+                <label id="form-label">Retype Password:</label>
+                <input id="form-control" type="password" id="password2" name="password2"
+                    placeholder="Re-enter the password">
+            </div> -->
+            <div class="agree-checkbox">
+                <input id="form-checkbox" type="checkbox" id="agree" name="agree" required>
+                <label id="form-label">I agree to the <a href=>terms and
+                        conditions</a></label>
+            </div>
+            <button id="signup-buttons" type="submit" formaction="/signup" formmethod="post">SIGN UP</button>
+            <a href="/login" id="form-label">Have an account? Login here</a>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
