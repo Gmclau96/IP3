@@ -27,11 +27,17 @@ app.use('/', router);
 
 const mongoose = require('mongoose');
 
-const dbConnect = 'mongodb+srv://ip3Diary:gyntyc-xobBuw-nonpi3@cluster0.qtsqa.mongodb.net/ip3Diary';
+const dbConnect = 'mongodb+srv://Ip3Diary:XDw4qVewzGK6nuHI@cluster1.qtsqa.mongodb.net/ip3Diary';
+
 mongoose.connect(dbConnect, { useUnifiedTopology: true })
+
   .then(() => {
+
     console.log("server running on port 3000")
+
     app.listen(3000)
-    
+
+   
+
   });
 
