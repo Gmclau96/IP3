@@ -58,29 +58,30 @@
             </form>
         </div>
         
-<ol id="list">
+<ul id="list">
+<div id="recipeBox">
 {{#recipes}}
-Recipe Name: 
+<h3>Recipe Name:</h3>
 <li class="inliner">{{title}}</li>
-Ingredients:
+<h3>Ingredients:</h3>
 <li> {{ingredients}}</li>
-Method:
+<h3>Method:</h3>
 <li> {{method}}</li>
 <a href="recipes/{{_id}}" class="edit" hidden="true">update</a>
 <button class="remove" hidden="true">remove note</button> <br>
 {{/recipes}}
-</ol>
-
+</ul>
+</div>
 
 <div class="recipe-buttons">
-            <button id="recipe-button" onclick="newRecipe()">ADD RECIPE</button>
+            <button id="recipe-buttons" onclick="newRecipe()">ADD RECIPE</button>
             <button id="recipe-buttons"onclick="editRecipe()">EDIT RECIPE</button>
         </div>
 
 </div>
 
 
-    <a href="/logout">LOGOUT</a>
+    <a id ="recipe-buttons" href="/logout">LOGOUT</a>
     </main>
     <script src="./JavaScript/recipe.js"></script>
 
