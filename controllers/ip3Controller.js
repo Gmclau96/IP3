@@ -43,7 +43,7 @@ exports.post_landing = async function (req, res) {
 //Gets landing page with added elements
 exports.get_landing = async function (req, res, next) {
     const _email = res.locals.user.email;
-    const notes = await notesDao.find({}).sort({ _id: -1 }).limit(1).select("-_id");
+    const notes = await notesDao.where({ _email: _email }).sort({ _id: -1 }).limit(1).select("-_id");
     const lists = await listsDao.find({}).sort({ _id: -1 }).limit(1).select(" -_id");
     res.render("landing", { notes, lists });
 }
