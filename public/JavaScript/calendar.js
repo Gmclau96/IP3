@@ -83,7 +83,7 @@ renderCalendar();
 
 
 
-/* for changing view *///////////////////////// NOT FULLY FUNCTIONING
+/* for changing view //////////////////////// NOT FULLY FUNCTIONING
 
 
 var checkbox = document.querySelector("input[name=checkbox]");
@@ -104,7 +104,7 @@ checkbox.addEventListener('change', function() {
 
 checkbox.addEventListener('change', function() {
   let monthView = document.getElementById("calendar");
-  if (monthView.styledisplay === "block") {
+  if (monthView.style.display === "block") {
     console.log("Checkbox is checked..");
     monthView.style.display = "none";
   } else {
@@ -113,111 +113,26 @@ checkbox.addEventListener('change', function() {
   }
 });
 
-////////////////////////////////////////////
+*/
 
-/*
-document.querySelector("#view-button").addEventListener("onclick", () => {
-  var check = document.getElementById("view-choice");
-  console.log(check);
-});
+var monthBtn = document.querySelector("monthBtn");
+var dayBtn = document.querySelector("dayBtn");
 
-function changeView(){
-  console.log();
-  var check = document.getElementById("view-choice");
-  var monthView = document.getElementById("calendar");
-  var dayView = document.getElementById("day-view");
-  if (check.checked == true) {
+monthBtn.addEventListener('click', function() {
+  let monthView = document.getElementById("calendar");
+
+  if (monthView.style.display === "block") {
     monthView.style.display = "none";
-    dayView.style.display = "block";
-  } 
-  else {
-    monthView.style.display = "flex";
-    dayView.style.display = "none";
+  } else {
+    monthView.style.display = "block";
   }
-}*/
+})
 
+dayBtn.addEventListener('click', function() {
+  let dayView = document.getElementById("day-view");
+})
 
-  /*
-  let db = new sqlite3.Database('./database/organiser.db', sqlite3.OPEN_READWRITE, (err) => {
-    if (err) {
-      console.error(err.message);
-    } else
-    console.log('Connected to the organiser database.');
-  });
-
-db.run('CREATE TABLE IF NOT EXISTS calEvents(id TEXT, name TEXT, date DATETIME, notes TEXT)');
-//Display interface
-app.get('/', function(req,res){
-    res.sendFile(path.join(__dirname,'./public/index.html'));
-  });
-
-  
-// Insert
-app.post('/add', function(req,res){
-    db.serialize(()=>{
-      db.run('INSERT INTO calEvents(id,name,date,notes) VALUES(?,?,?,?)', [req.body.id, req.body.name, req.body.date, req.body.notes], function(err) {
-        if (err) {
-          return console.log(err.message);
-        }
-        console.log("New event has been added");
-        res.sendFile(path.join(__dirname,'./public/index.html'));
-      });
-  });
-  }); 
-  
-  // View
-  app.post('/view', function(req,res){
-    db.serialize(()=>{
-      db.each('SELECT id ID, name NAME, date DATE, notes NOTES FROM calEvent WHERE id =?', [req.body.id], function(err,row){     
-        if(err){
-          res.send("Error encountered while displaying");
-          return console.error(err.message);
-        }
-        res.send(` ID: ${row.ID},    Name: ${row.NAME},     Date: ${row.DATE},      Notes: ${row.NOTES}`);
-        console.log("Entry displayed successfully");
-      });
-    });
-  });
-
-//Update
-app.post('/update', function(req,res){
-    db.serialize(()=>{
-      db.run('UPDATE calEvent SET name = ?, notes =? WHERE id = ?', [req.body.name,req.body.id], function(err){
-        if(err){
-          res.send("Error encountered while updating");
-          return console.error(err.message);
-        }
-        res.send("Entry updated successfully");
-        console.log("Entry updated successfully");
-      });
-    });
-  });
-
-//Delete
-app.post('/delete', function(req,res){
-    db.serialize(()=>{
-      db.run('DELETE FROM calEvent WHERE id = ?', req.body.id, function(err) {
-        if (err) {
-          res.send("Error encountered while deleting");
-          return console.error(err.message);
-        }
-        res.send("Entry deleted");
-        console.log("Entry deleted");
-      });
-    });
-  });
-  
-  //Close
-  app.get('/close', function(req,res){
-    db.close((err) => {
-      if (err) {
-        res.send('There is some error in closing the database');
-        return console.error(err.message);
-      }
-      console.log('Closing the database connection.');
-      res.send('Database connection successfully closed');
-    });
-  });*/
+////////////////////////////////////////////
 
 
 /* For adding new event and controlling event form */
@@ -234,6 +149,3 @@ app.post('/delete', function(req,res){
     newEventForm.close();
   })
 
-  exitBtn.addEventListener("click", () => {
-    newEventForm.close();
-  })
