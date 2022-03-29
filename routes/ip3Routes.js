@@ -12,11 +12,18 @@ router.get('/signup', controller.get_signup);
 router.post('/signup', controller.post_signup);
 //GET reset password page
 router.get('/password', controller.get_password);
-//GET account page
+//GET & POST account page
 router.get('/account', authenticate, loggedIn, controller.get_account);
 router.get('/account/:id', authenticate, loggedIn, controller.updateAccount);
 router.post('/updateAccountDetails/:id', authenticate, loggedIn, controller.updateAccountDetails);
 router.post('/deleteAccount/:id', authenticate, loggedIn, controller.deleteAccount);
+
+//GET & POST Admin page
+router.get('/admin', authenticate, loggedIn, controller.get_admin);
+router.get('/admin/:id', authenticate, loggedIn, controller.adminDisplayUser);
+router.post('/adminUpdate/:id', authenticate, loggedIn, controller.adminUpdate);
+router.post('/adminDelete/:id', authenticate, loggedIn, controller.adminDelete);
+
 //GET & POST lists page
 router.get('/lists', authenticate, controller.get_lists);
 router.post('/lists', authenticate, loggedIn, controller.post_lists);

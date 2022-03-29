@@ -166,9 +166,70 @@ exports.deleteAccount = async function (req, res) {
         res.cookie('jwt', '', { maxAge: 1 });
         res.redirect('/');
     } else {
-        console.log("passwords dont match")
+        res.send("Wrong current password entered, try again!")
     }
 }
+
+
+exports.get_admin = async function (req, res) {
+    const admin = res.locals.user.admin;
+    let account = await userDao.find().select("email");
+    if (admin == true) {
+        res.render("admin", { account });
+    } else {
+        res.render("landing");
+    }
+};
+
+exports.adminDisplayUser = async function (req, res) {
+    const id = req.params.id;
+    let account = await userDao.findById(id).select("");
+    res.render("updateAdmin", { account });
+}
+
+
+exports.adminUpdate = async function (req, res) {
+    const id = req.params.id;
+    let currentEmail = await userDao.findById(id).select("email -_id");
+    const forename = req.body.fname;
+    const surname = req.body.sname;
+    const email = req.body.email;
+    let newpassword = req.body.password;
+    try {
+        newpassword = await bcrypt.hash(newpassword, 10);
+        await userDao.findByIdAndUpdate(id, {
+            forename: forename,
+            surname: surname,
+            email: email,
+            password: newpassword
+        }, { new: true, runValidators: true });
+        await notesDao.findOneAndUpdate({ _email: currentEmail }, {
+            _email: email
+        }, { new: true });
+        await listsDao.findOneAndUpdate({ _email: currentEmail }, {
+            _email: email
+        }, { new: true });
+        await recipesDao.findOneAndUpdate({ _email: currentEmail }, {
+            _email: email
+        }, { new: true });
+        res.redirect("/admin");
+    } catch (error) {
+        showErrors(error, res);
+        console.log("Error in updating!");
+    }
+}
+
+exports.adminDelete = async function (req, res) {
+    const id = req.params.id;
+    const _email = req.body.email;
+    await userDao.deleteOne({ _id: id });
+    await notesDao.deleteMany({ _email: _email });
+    await listsDao.deleteMany({ _email: _email });
+    await recipesDao.deleteMany({ _email: _email });
+    res.redirect('/admin');
+}
+
+
 
 exports.get_lists = async function (req, res) {
     const _email = res.locals.user.email;
