@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/81b06af5ec.js" crossorigin="anonymous"></script>
     <!-- Link to CSS Stylesheet-->
     <link rel="stylesheet" href="css/styles.css">
-    <title>Personal Organiser</title>
+    <title>IP3Diary - Account</title>
 
 </head>
 
@@ -48,58 +48,42 @@
     <main>
 
             <header>
-                <h1>IP3Diary </h1>
+                <h1>{{user.forename}}'s Account </h1>
             </header>
-            
+            <br><br><br>
             <!-- Form for Account Page-->
             <fieldset id="account-fieldset">
 
-            <form method="POST" id="account-form">
+    {{#account}}
 
                
                 <!-- Account Forename -->
-                <label for="Editname" id="account-label" class="account"> {{user.forename}} </label>
-                <button type="text" id="account-buttons" name="editname">Edit Forename</button>
+                <label for="Editname" id="account-label" class="account"> Forename: {{forename}} </label>
+                <br>
                 <br>
 
 
                 <!-- Account Surname -->
-                <label for="Editname" id="account-label" class="accountSname"> {{user.surname}} </label>
-                <button type="text" id="account-buttons" name="editname">Edit Surname</button>
+                <label for="Editname" id="account-label" class="accountSname"> Surname: {{surname}} </label>
+                <br>
                 <br>
 
               
 
                 <!-- Email Address-->
-                <label for="Editemail" id="account-label" class="account-email"> {{user.email}}</label>
-                <button type="text" id="account-buttons" name="editemail">Edit Email Address</button>
+                <label for="Editemail" id="account-label" class="account-email"> Email: {{email}}</label>
+                <br>
                 <br>
                 
                 
 
-                <!--Edit Password -->
-                <label for="Editpassword" id="account-label" class="accpassword">Password</label>
-                <div class="flex-container">
-                <button type="text" id="account-buttons" name="editpassword">Edit Password</button>
-                <br>
-
-                
-
-                <!-- Delete Account-->
-                <label for="Deleteaccount" id="account-label" class="delete">Delete Account</label>
-                <button type="text" id="account-buttons" name="deleteaccount">Delete Account</button>
-                <br>
-
-                
-
-                <!-- Save Changes -->
-                <label for="Savechanges" id="account-label" class="save">Save Changes</label>
-                <button type="text" id="account-buttons" name="savechanges">Save Changes</button>
-                <br>
-
-               
+                <!-- Edit Account -->
+            <form>
+                <button type="text" id="account-buttons" class="account-edit" formaction="/account/{{_id}}" formmethod="get"> Edit Account Details</button>
+            </form>
+               {{/account}}
             </fieldset>
-        </form>
+      
         <a href="/logout">LOGOUT</a>
 <br>
 

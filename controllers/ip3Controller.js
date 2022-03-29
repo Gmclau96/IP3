@@ -3,6 +3,7 @@ const notesDao = require("../models/notesModel.js");
 const recipesDao = require("../models/recipesModel.js");
 const listsDao = require("../models/listsModel.js");
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
 dotenv.config()
 
@@ -76,9 +77,98 @@ exports.get_password = function (req, res) {
     res.render("password");
 };
 
-exports.get_account = function (req, res) {
-    res.render("account");
+exports.get_account = async function (req, res) {
+    const _email = res.locals.user.email;
+    let account = await userDao.where({ email: _email }).select("");
+    res.render("account", { account })
 };
+
+exports.updateAccount = async function (req, res) {
+    const id = req.params.id;
+    let account = await userDao.findById(id).select("");
+    res.render("updateAccount", { account });
+}
+
+//updates account to db
+exports.updateAccountDetails = async function (req, res) {
+    const id = req.params.id;
+    const forename = req.body.fname;
+    const surname = req.body.sname;
+    const email = req.body.email;
+    const currentEmail = res.locals.user.email;
+    let newpassword = req.body.password;
+    let saveChanges = req.body.save;
+    const currentpassword = res.locals.user.password;
+    console.log(newpassword + " " + currentpassword)
+    saveChanges = await bcrypt.compare(saveChanges, currentpassword);
+    if (saveChanges) {
+        if (newpassword !== currentpassword) {
+            try {
+                newpassword = await bcrypt.hash(newpassword, 10);
+                await userDao.findByIdAndUpdate(id, {
+                    forename: forename,
+                    surname: surname,
+                    email: email,
+                    password: newpassword
+                }, { new: true, runValidators: true });
+                await notesDao.findOneAndUpdate({ _email: currentEmail }, {
+                    _email: email
+                }, { new: true });
+                await listsDao.findOneAndUpdate({ _email: currentEmail }, {
+                    _email: email
+                }, { new: true });
+                await recipesDao.findOneAndUpdate({ _email: currentEmail }, {
+                    _email: email
+                }, { new: true });
+                res.redirect("/account");
+            } catch (error) {
+                showErrors(error, res);
+                console.log("Error in updating!");
+            }
+        } else {
+            try {
+                await userDao.findByIdAndUpdate(id, {
+                    forename: forename,
+                    surname: surname,
+                    email: email
+                }, { new: true, runValidators: true });
+                await notesDao.findOneAndUpdate({ _email: currentEmail }, {
+                    _email: email
+                }, { new: true });
+                await listsDao.findOneAndUpdate({ _email: currentEmail }, {
+                    _email: email
+                }, { new: true });
+                await recipesDao.findOneAndUpdate({ _email: currentEmail }, {
+                    _email: email
+                }, { new: true });
+                res.redirect("/account");
+            } catch (error) {
+                showErrors(error, res);
+                console.log("Error in updating!");
+            }
+        }
+    } else {
+        res.send("Wrong current password entered, try again!")
+    }
+}
+
+exports.deleteAccount = async function (req, res) {
+    const id = req.params.id;
+    const _email = res.locals.user.email;
+    let deleteAccount = req.body.save;
+    const currentpassword = res.locals.user.password;
+    deleteAccount = await bcrypt.compare(deleteAccount, currentpassword);
+    if (deleteAccount) {
+        await userDao.deleteOne({ _id: id });
+        await notesDao.deleteMany({ _email: _email });
+        await listsDao.deleteMany({ _email: _email });
+        await recipesDao.deleteMany({ _email: _email });
+        res.cookie('jwt', '', { maxAge: 1 });
+        res.redirect('/');
+    } else {
+        console.log("passwords dont match")
+    }
+}
 
 exports.get_lists = async function (req, res) {
     const _email = res.locals.user.email;

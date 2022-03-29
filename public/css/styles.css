@@ -648,9 +648,9 @@ input[type="checkbox"].toggle {
             content: "\f2ed";
         }
 
-        .save::before{
+        .account-edit::before{
             font: var(--fa-font-solid);
-            content: "\f0c7";
+            content: "\f4ff";
         }
 
         /* Styling for button contained in account page */

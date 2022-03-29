@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<header>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styles.css">
+    <title>
+       Update Account Details
+    </title>
+</header>
+<body>
+        <h1>
+          Update Account Details
+        </h1>
+
+<!-- abillity to update account details -->
+        <div id="updateNoteDiv" > 
+        
+           <form>
+           {{#account}}
+                <label id="fname">Update Forename:</label>
+                <input id="fname" name="fname" value="{{account.forename}}"> <br>
+                <label id="sname">Update Surname:</label>
+                <input id="sname" name="sname" value="{{account.surname}}"> <br>
+                <label id="email">Update Email Address:</label>
+                <input id="email" name="email" value="{{account.email}}"> <br>
+                <label id="password">Update Password:</label>
+                <input id="password" name="password" value="{{password}}" type="password"> <br>
+                <label id="save">Enter Current Password To Save Changes:</label>
+                <input id="save" name="save" type="password" required="true"> <br>
+
+
+
+
+                <button id="add"type="submit" formaction="/updateAccountDetails/{{_id}}" formmethod="post">Save changes</button>
+                <button id="add"type="submit" formaction="/deleteAccount/{{_id}}" formmethod="post">Delete Account</button>
+                {{/account}}
+               </form>  
+        </div>
+</body>
+</html>

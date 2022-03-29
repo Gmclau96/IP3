@@ -14,6 +14,9 @@ router.post('/signup', controller.post_signup);
 router.get('/password', controller.get_password);
 //GET account page
 router.get('/account', authenticate, loggedIn, controller.get_account);
+router.get('/account/:id', authenticate, loggedIn, controller.updateAccount);
+router.post('/updateAccountDetails/:id', authenticate, loggedIn, controller.updateAccountDetails);
+router.post('/deleteAccount/:id', authenticate, loggedIn, controller.deleteAccount);
 //GET & POST lists page
 router.get('/lists', authenticate, controller.get_lists);
 router.post('/lists', authenticate, loggedIn, controller.post_lists);
