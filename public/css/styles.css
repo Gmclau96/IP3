@@ -345,10 +345,18 @@ input[type="checkbox"].toggle {
 
 
     /*Arrun's CSS*/
-    #recipeBox{
+    #break-style{background:aquamarine; 
+        border:0;
+        border-radius: 25px;
+         height:7px;
+        margin-left:-5%;
+    margin-right:-5%}
+       
+
+    .recipeBox{
         border-radius:25px;
         border:2px solid #000000;
-        padding:20px;
+        padding:1.5%;
         width:35%;
         height:fit-content;
         display: block;
