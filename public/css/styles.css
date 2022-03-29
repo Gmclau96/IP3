@@ -628,6 +628,11 @@ input[type="checkbox"].toggle {
             content: "\f007";
         }
 
+        .accountSname::before{
+            font: var(--fa-font-solid);
+            content: "\f5b7";
+        }
+
         .account-email::before{
             font: var(--fa-font-solid);
             content: "\40";

@@ -13,7 +13,7 @@ router.post('/signup', controller.post_signup);
 //GET reset password page
 router.get('/password', controller.get_password);
 //GET account page
-router.get('/account', authenticate, controller.get_account);
+router.get('/account', authenticate, loggedIn, controller.get_account);
 //GET & POST lists page
 router.get('/lists', authenticate, controller.get_lists);
 router.post('/lists', authenticate, loggedIn, controller.post_lists);

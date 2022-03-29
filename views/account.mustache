@@ -57,36 +57,38 @@
             <form method="POST" id="account-form">
 
                
-                <!-- Account Name -->
-                <label for="Editname" id="account-label" class="account">{{user.forename}} </label>
-                <input type="text" id="account-control" name="editname" placeholder="Edit Name"></input>    
-                <button type="text" id="account-buttons" name="editname">Edit Name</button>
+                <!-- Account Forename -->
+                <label for="Editname" id="account-label" class="account"> {{user.forename}} </label>
+                <button type="text" id="account-buttons" name="editname">Edit Forename</button>
+                <br>
+
+
+                <!-- Account Surname -->
+                <label for="Editname" id="account-label" class="accountSname"> {{user.surname}} </label>
+                <button type="text" id="account-buttons" name="editname">Edit Surname</button>
                 <br>
 
               
 
                 <!-- Email Address-->
-                <label for="Editemail" id="account-label" class="account-email">{{user.email}}</label>
-                <input type="text" id="account-control" name="editemail" placeholder="Edit Email">
+                <label for="Editemail" id="account-label" class="account-email"> {{user.email}}</label>
                 <button type="text" id="account-buttons" name="editemail">Edit Email Address</button>
                 <br>
-                <br>
-
+                
                 
 
                 <!--Edit Password -->
-                <label for="Editpassword" id="account-label" class="accpassword">Edit Password</label>
-                <input type="text" id="account-control" name="editpassword" placeholder="Edit Password"> 
+                <label for="Editpassword" id="account-label" class="accpassword">Password</label>
                 <div class="flex-container">
                 <button type="text" id="account-buttons" name="editpassword">Edit Password</button>
-                
+                <br>
 
                 
 
                 <!-- Delete Account-->
                 <label for="Deleteaccount" id="account-label" class="delete">Delete Account</label>
                 <button type="text" id="account-buttons" name="deleteaccount">Delete Account</button>
-                
+                <br>
 
                 
 
