@@ -167,6 +167,7 @@
             <dialog class="newEvent" id="newEvent">
                 <button id="exit-btn">X</button>
                 <div id="form-input">
+                <form>
                     <label for="eventName">Event name:</label><br>
                     <input type="text" id="eventName" name="eventName"><br>
                     <label for="date">Date (Month/Day/Time):</label><br>
@@ -247,14 +248,15 @@
                     </div>
                     <label for="EvtNote">Notes:</label><br>
                     <input type="text" id="EvtNote" name="EvtNote"><br>
-                    <input type="submit" value="CONFIRM" class="close-form-button">
+                    <button id="add"type="submit" formaction="/calendar" formmethod="post">Add Event</button>
+                    </form>
                 </div>
             </dialog>
         </div>
     </main>
     <a href="/logout">LOGOUT</a>
 
-    <script src="JavaScript/calendar.js"></script>
+    <script src="./JavaScript/calendar.js"></script>
 </body>
 
 </html>

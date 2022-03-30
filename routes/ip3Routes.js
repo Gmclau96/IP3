@@ -8,10 +8,12 @@ const { loggedIn } = require('../auth/auth.js');
 router.get("/", authenticate,  controller.get_landing);
 router.get('/login', controller.get_login);
 //GET & POST signup page
+
 router.get('/signup', controller.get_signup);
 router.post('/signup', controller.post_signup);
 //GET reset password page
 router.get('/password', controller.get_password);
+
 //GET & POST account page
 router.get('/account', authenticate, loggedIn, controller.get_account);
 router.get('/account/:id', authenticate, loggedIn, controller.updateAccount);
@@ -32,19 +34,22 @@ router.post('/updateLists/:id', authenticate, loggedIn, controller.updateLists);
 router.post('/deleteLists/:id', authenticate, loggedIn, controller.deleteLists);
 //GET Calender page
 router.get('/calendar', authenticate, controller.get_calendar);
+router.post('/calendar',authenticate, loggedIn, controller.post_calendar)
 //GET & POST notes page
 router.get('/notes', authenticate, controller.get_notes);
 router.post('/notes', authenticate, loggedIn, controller.post_notes);
 router.get('/notes/:id', authenticate, controller.updateNote);
 router.post('/updateNotes/:id', authenticate, loggedIn, controller.updateNotes);
 router.post('/deleteNotes/:id', authenticate, loggedIn, controller.deleteNotes);
+
 //GET & POST recipes page
 router.get('/recipes', authenticate, controller.get_recipes);
 router.post('/recipes', authenticate, loggedIn, controller.post_recipes);
 router.get('/recipes/:id', authenticate, controller.updateRecipe);
 router.post('/updateRecipes/:id', authenticate, loggedIn, controller.updateRecipes);
 router.post('/deleteRecipes/:id', authenticate, loggedIn, controller.deleteRecipes);
-//GET landing page TODO
+
+//GET landing page
 router.get('/landing', authenticate, controller.get_landing);
 router.post('/landing', loggedIn, controller.post_landing);
 

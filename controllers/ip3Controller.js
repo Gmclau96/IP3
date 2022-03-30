@@ -309,6 +309,16 @@ exports.get_calendar = function (req, res) {
     res.render("calendar");
 };
 
+exports.post_calendar = async function (req, res){
+    const id = req.params.id;
+    const eventName = req.body.eventName;
+    const day 
+    
+    const  note
+    const _email = res.locals.user.email;
+}
+
+
 exports.get_notes = async function (req, res) {
     const _email = res.locals.user.email;
     let notes = await notesDao.where({ _email: _email }).select("title content");

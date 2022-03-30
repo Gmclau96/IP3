@@ -117,7 +117,7 @@ checkbox.addEventListener('change', function() {
 
 var monthBtn = document.querySelector("monthBtn");
 var dayBtn = document.querySelector("dayBtn");
-
+/*
 monthBtn.addEventListener('click', function() {
   let monthView = document.getElementById("calendar");
 
@@ -127,12 +127,12 @@ monthBtn.addEventListener('click', function() {
     monthView.style.display = "block";
   }
 })
+*/
+// dayBtn.addEventListener('click', function() {
+//   let dayView = document.getElementById("day-view");
+// })
 
-dayBtn.addEventListener('click', function() {
-  let dayView = document.getElementById("day-view");
-})
-
-////////////////////////////////////////////
+// ////////////////////////////////////////////
 
 
 /* For adding new event and controlling event form */
