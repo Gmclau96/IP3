@@ -57,7 +57,8 @@
                 </div>
             </form>
         </div>
-<div class="recipeBox">      
+
+        <!--<div class="recipeBox">      
 <ul id="list">
 {{#recipes}}
 <h3>Recipe Name:</h3>
@@ -68,12 +69,41 @@
 <li> {{method}}</li>
 <a href="recipes/{{_id}}" class="edit" hidden="true">update</a>
 <br>
-<!--<hr id="break-style">-->
-<!--<li>.t${Hello World}*5</li>-->
 <br>
 {{/recipes}}
 </ul>
-</div>
+</div>-->
+
+
+{{#recipes}}
+<table>
+<tr class="recipeBox">
+<th>Recipe name:</th>
+</tr>
+<tr class="recipeBox">
+<td>{{title}}</td>
+</tr>
+<tr class="recipeBox">
+<th>Ingredients:</th>
+</tr>
+<tr class="recipeBox">
+<td>{{ingredients}}</td>
+</tr>
+<tr class="recipeBox">
+<th>Method:</th>
+</tr>
+<tr class="recipeBox">
+<td>{{method}}</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</table>
+{{/recipes}}
+
+
+
+
 
 
 <div class="recipe-buttons">
