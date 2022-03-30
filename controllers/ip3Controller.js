@@ -2,6 +2,7 @@ const userDao = require("../models/userModel.js");
 const notesDao = require("../models/notesModel.js");
 const recipesDao = require("../models/recipesModel.js");
 const listsDao = require("../models/listsModel.js");
+const calendarDao = require('../models/calendarModel.js')
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
@@ -310,12 +311,26 @@ exports.get_calendar = function (req, res) {
 };
 
 exports.post_calendar = async function (req, res){
-    const id = req.params.id;
+    const id = res.locals.user.id;
     const eventName = req.body.eventName;
-    const day 
-    
-    const  note
+    const eventday = req.body.dateday;
+    const eventmonth = req.body.datemonth;
+    const eventtime = req.body.datehour;
+    const year = "2022"
+    const t = "T";
+    const date = year+"-"+eventmonth+"-"+eventday+"-"+eventtime;
+    const  note = req.body.EvtNote;
     const _email = res.locals.user.email;
+    try {
+        const event = await calendarDao.create({ eventName, date, note, _email });
+        console.log(event);
+        let events = await calendarDao.where({ _email: _email }).select("eventName date note");
+        res.render("calendar", { events })
+
+    } catch (error) {
+        showErrors(error, res);
+        console.log("Error in creating note!");
+    }
 }
 
 

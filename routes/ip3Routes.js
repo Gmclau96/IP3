@@ -33,8 +33,8 @@ router.get('/lists/:id', authenticate, controller.updateList);
 router.post('/updateLists/:id', authenticate, loggedIn, controller.updateLists);
 router.post('/deleteLists/:id', authenticate, loggedIn, controller.deleteLists);
 //GET Calender page
-router.get('/calendar', authenticate, controller.get_calendar);
-router.post('/calendar',authenticate, loggedIn, controller.post_calendar)
+router.get('/calendar', authenticate, loggedIn, controller.get_calendar);
+router.post('/calendar', authenticate, loggedIn, controller.post_calendar)
 //GET & POST notes page
 router.get('/notes', authenticate, controller.get_notes);
 router.post('/notes', authenticate, loggedIn, controller.post_notes);
