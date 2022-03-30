@@ -45,9 +45,10 @@ exports.post_landing = async function (req, res) {
 //Gets landing page with added elements
 exports.get_landing = async function (req, res, next) {
     const _email = res.locals.user.email;
+    const events = await calendarDao.where({ _email: _email }).sort({ priority: 'desc' }).limit(5).select("-_id");
     const notes = await notesDao.where({ _email: _email }).sort({ _id: -1 }).limit(1).select("-_id");
     const lists = await listsDao.where({ _email: _email }).sort({ _id: -1 }).limit(1).select("-_id");
-    res.render("landing", { notes, lists });
+    res.render("landing", { notes, lists, events });
 }
 
 exports.get_signup = function (req, res) {
@@ -112,6 +113,9 @@ exports.updateAccountDetails = async function (req, res) {
                     email: email,
                     password: newpassword
                 }, { new: true, runValidators: true });
+                await calendarDao.findOneAndUpdate({ _email: currentEmail }, {
+                    _email: email
+                }, { new: true });
                 await notesDao.findOneAndUpdate({ _email: currentEmail }, {
                     _email: email
                 }, { new: true });
@@ -133,6 +137,9 @@ exports.updateAccountDetails = async function (req, res) {
                     surname: surname,
                     email: email
                 }, { new: true, runValidators: true });
+                await calendarDao.findOneAndUpdate({ _email: currentEmail }, {
+                    _email: email
+                }, { new: true });
                 await notesDao.findOneAndUpdate({ _email: currentEmail }, {
                     _email: email
                 }, { new: true });
@@ -161,6 +168,7 @@ exports.deleteAccount = async function (req, res) {
     deleteAccount = await bcrypt.compare(deleteAccount, currentpassword);
     if (deleteAccount) {
         await userDao.deleteOne({ _id: id });
+        await calendarDao.deleteMany({ email: _email });
         await notesDao.deleteMany({ _email: _email });
         await listsDao.deleteMany({ _email: _email });
         await recipesDao.deleteMany({ _email: _email });
@@ -204,6 +212,9 @@ exports.adminUpdate = async function (req, res) {
             email: email,
             password: newpassword
         }, { new: true, runValidators: true });
+        await calendarDao.findOneAndUpdate({ _email: currentEmail }, {
+            _email: email
+        }, { new: true });
         await notesDao.findOneAndUpdate({ _email: currentEmail }, {
             _email: email
         }, { new: true });
@@ -223,6 +234,7 @@ exports.adminUpdate = async function (req, res) {
 exports.adminDelete = async function (req, res) {
     const id = req.params.id;
     const _email = req.body.email;
+    await calendarDao.deleteMany({ email: _email });
     await userDao.deleteOne({ _id: id });
     await notesDao.deleteMany({ _email: _email });
     await listsDao.deleteMany({ _email: _email });
@@ -306,8 +318,10 @@ exports.deleteLists = async function (req, res) {
     res.redirect("/lists");
 }
 
-exports.get_calendar = function (req, res) {
-    res.render("calendar");
+exports.get_calendar = async function (req, res) {
+    const _email = res.locals.user.email;
+    let events = await calendarDao.where({ _email: _email }).select("eventName date note priority");
+        res.render("calendar", { events })
 };
 
 exports.post_calendar = async function (req, res){
@@ -317,19 +331,19 @@ exports.post_calendar = async function (req, res){
     const eventmonth = req.body.datemonth;
     const eventtime = req.body.datehour;
     const year = "2022"
-    const t = "T";
     const date = year+"-"+eventmonth+"-"+eventday+"-"+eventtime;
+    const priority = req.body.priority;
     const  note = req.body.EvtNote;
     const _email = res.locals.user.email;
     try {
-        const event = await calendarDao.create({ eventName, date, note, _email });
+        const event = await calendarDao.create({ eventName, date, note, priority, _email });
         console.log(event);
         let events = await calendarDao.where({ _email: _email }).select("eventName date note");
         res.render("calendar", { events })
 
     } catch (error) {
         showErrors(error, res);
-        console.log("Error in creating note!");
+        console.log("Error in creating calendar entry!");
     }
 }
 

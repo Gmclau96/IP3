@@ -1,7 +1,6 @@
 const res = require('express/lib/response');
 const mongoose = require('mongoose');
 
-
 //calendar table schema
 const calendarColumns = new mongoose.Schema({
     eventName: {
@@ -10,10 +9,14 @@ const calendarColumns = new mongoose.Schema({
     },
     date: {
         type: Date,
+        trim: true,
         required: [true, 'Please enter the event date']
     },
     note: {
         type: String
+    },
+    priority: {
+        type: Number,
     },
     _email: {
         type: String
