@@ -147,7 +147,7 @@ console.log(x);
 }
 
 //Removes timezone from appeaing on calendar entries
-let dates = document.getElementsByClassName('date');
+let dates = document.getElementsByClassName('event-title-output');
 for (let i=0; i < dates.length; i++) { 
   dates[i].innerHTML = dates[i].innerHTML.slice(0, -35);
 }
