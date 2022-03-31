@@ -13,120 +13,107 @@
 <html>
 <body>
 
-    <div class="nav-menu">
-        <div id="burger-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+    <!--For alligning menu icon and title-->
+    <div class="title-bar">
+        <div id="burger-menu" onclick="openNav()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        <!--Navigation Menu-->
+        <div id="nav-menu">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div id="nav-options">
+                <a href="/">Home</a>
+                <a href="/calendar">Calendar</a>
+                <a href="/lists">Lists</a>
+                <a href="/notes">Notes</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/account">Account</a>
+                <div id="spacer"></div>
+                <a href="/logout">LOGOUT</a>
+            </div>
         </div>
-    </div>
-    <div id="nav-content">
-        <ul class="pages-container">
-            <li class="nav-page">
-                <a href="" class="nav-link">Calendar</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Lists</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Notes</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Recipes</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Account</a>
-            </li>
-        </ul>
-        <button id="logoutBtn">Sign Out</button>
+
+        <header>
+            <h1>To-Do Lists</h1>
+        </header>
     </div>
 
     <main>
-    <header>
-        <h1>To-Do Lists </h1>
-    </header>
+        <!-- abillity to add list -->
+        <div id="newListDiv" hidden="true">
+            <form>
+                <label id="listTitlelb"> list Title</label>
+                <input id="listTitle" name="listTitle"required> <br>
+                <label id="listItemlb1"> Item 1</label>
+                <input id="listItem1" name="listItem1" required> <br>
 
-    <!-- abillity to add list -->
-    <div id="newListDiv" hidden="true">
-        <form>
-            <label id="listTitlelb"> list Title</label>
-            <input id="listTitle" name="listTitle"required> <br>
-            <label id="listItemlb1"> Item 1</label>
-            <input id="listItem1" name="listItem1" required> <br>
+                <label id="listItemlb2" hidden="true"> Item 2</label>
+                <input id="listItem2" name="listItem2" hidden="true"> <br>
 
-            <label id="listItemlb2" hidden="true"> Item 2</label>
-            <input id="listItem2" name="listItem2" hidden="true"> <br>
+                <label id="listItemlb3" hidden="true"> Item 3</label>
+                <input id="listItem3" name="listItem3" hidden="true"> <br>
 
-            <label id="listItemlb3" hidden="true"> Item 3</label>
-            <input id="listItem3" name="listItem3" hidden="true"> <br>
+                <label id="listItemlb4" hidden="true"> Item 4</label>
+                <input id="listItem4" name="listItem4" hidden="true"> <br>
 
-            <label id="listItemlb4" hidden="true"> Item 4</label>
-            <input id="listItem4" name="listItem4" hidden="true"> <br>
+                <label id="listItemlb5" hidden="true"> Item 5</label>
+                <input id="listItem5" name="listItem5" hidden="true"> <br>
 
-            <label id="listItemlb5" hidden="true"> Item 5</label>
-            <input id="listItem5" name="listItem5" hidden="true"> <br>
+                <label id="listItemlb6" hidden="true"> Item 6</label>
+                <input id="listItem6" name="listItem6" hidden="true"> <br>
 
-            <label id="listItemlb6" hidden="true"> Item 6</label>
-            <input id="listItem6" name="listItem6" hidden="true"> <br>
+                <label id="listItemlb7" hidden="true"> Item 7</label>
+                <input id="listItem7" name="listItem7" hidden="true"> <br>
 
-            <label id="listItemlb7" hidden="true"> Item 7</label>
-            <input id="listItem7" name="listItem7" hidden="true"> <br>
+                <label id="listItemlb8" hidden="true"> Item 8</label>
+                <input id="listItem8" name="listItem8" hidden="true"> <br>
 
-            <label id="listItemlb8" hidden="true"> Item 8</label>
-            <input id="listItem8" name="listItem8" hidden="true"> <br>
+                <label id="listItemlb9" hidden="true"> Item 9</label>
+                <input id="listItem9" name="listItem9" hidden="true"> <br>
 
-            <label id="listItemlb9" hidden="true"> Item 9</label>
-            <input id="listItem9" name="listItem9" hidden="true"> <br>
+                <label id="listItemlb10" hidden="true"> Item 10</label>
+                <input id="listItem10" name="listItem10" hidden="true"> <br>
 
-            <label id="listItemlb10" hidden="true"> Item 10</label>
-            <input id="listItem10" name="listItem10" hidden="true"> <br>
+                <button id="add"type="submit" formaction="/lists" formmethod="post">Save</button>
+                <button id="add"onclick="expandList()">Add Another Line</button>
+                
+            </form>
+        </div>
 
-            <button id="add"type="submit" formaction="/lists" formmethod="post">Save</button>
-            <button id="add"onclick="expandList()">Add Another Line</button>
-            
-        </form>
-    </div>
+        <div id="listBlock">
+            <ol id="list">
+            {{#lists}} 
+            <div id="listBox">
+                <h3><li class="inliner">{{title}}</li></H3>
+                <h4>Items: </h4>
+                <ul>
+                    <li>{{box1}} {{item1}}</li>
+                    <li>{{box2}} {{item2}}</li>
+                    <li>{{box3}} {{item3}} </li>
+                    <li>{{box4}} {{item4}} </li>
+                    <li>{{box5}} {{item5}} </li>
+                    <li>{{box6}} {{item6}} </li>
+                    <li>{{box7}} {{item7}} </li>
+                    <li>{{box8}} {{item8}} </li>
+                    <li>{{box9}} {{item9}} </li>
+                    <li>{{box10}} {{item10}} </li>
+                </ul>
 
-<div id="listBlock">
-<ol id="list">
+                <a href="lists/{{_id}}" class="edit" hidden="true">update</a>
+                <button class="remove" hidden="true">remove list</button> <br>
+            </div>
+            {{/lists}}
+            </ol>
+        </div>
 
-{{#lists}} 
-<div id="listBox">
-
-<h3><li class="inliner">{{title}}</li></H3>
-<h4>Items: </h4>
-<ul>
-<li>{{box1}} {{item1}}</li>
-<li>{{box2}} {{item2}}</li>
-<li>{{box3}} {{item3}} </li>
-<li>{{box4}} {{item4}} </li>
-<li>{{box5}} {{item5}} </li>
-<li>{{box6}} {{item6}} </li>
-<li>{{box7}} {{item7}} </li>
-<li>{{box8}} {{item8}} </li>
-<li>{{box9}} {{item9}} </li>
-<li>{{box10}} {{item10}} </li>
-</ul>
-
-<a href="lists/{{_id}}" class="edit" hidden="true">update</a>
-<button class="remove" hidden="true">remove list</button> <br>
-</div>
-{{/lists}}
-</ol>
-</div>
-
-<div id="listBtnBlock"
-<div class="recipe-buttons">
-            <button id="recipe-buttons" onclick="newList()">ADD LIST</button>
-            <button id="recipe-buttons" onclick="editList()">EDIT LIST</button>
-            <a href="/logout">LOGOUT</a>
-            
-</div>
-</div>
-
-
-
-
+        <div id="listBtnBlock">
+            <div class="recipe-buttons">
+                <button id="recipe-buttons" onclick="newList()">ADD LIST</button>
+                <button id="recipe-buttons" onclick="editList()">EDIT LIST</button>                    
+            </div>
+        </div>
 </body>
 
 <script src="./JavaScript/lists.js"></script>

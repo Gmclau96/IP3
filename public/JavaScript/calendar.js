@@ -99,6 +99,15 @@ renderCalendar();
         newEventForm.close();
   })
 
+//Nav Menu
+  function openNav() {
+    document.getElementById("nav-menu").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("nav-menu").style.width = "0";
+  }
+
   /*
   var editBtn = document.getElementById("delete-event-button");
   var removeBtns = document.getElementsByClassName(".remove-event-buttons");

@@ -10,39 +10,34 @@
 </head>
 
 <body>
-    <!--Navigation Menu-->
-    <div class="nav-menu">
-        <div id="burger-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+    <!--For alligning menu icon and title-->
+    <div class="title-bar">
+        <div id="burger-menu" onclick="openNav()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        <!--Navigation Menu-->
+        <div id="nav-menu">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div id="nav-options">
+                <a href="/">Home</a>
+                <a href="/calendar">Calendar</a>
+                <a href="/lists">Lists</a>
+                <a href="/notes">Notes</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/account">Account</a>
+                <div id="spacer"></div>
+                <a href="/logout">LOGOUT</a>
+            </div>
         </div>
-    </div>
-    <div id="nav-content">
-        <ul class="pages-container">
-            <li class="nav-page">
-                <a href="" class="nav-link">Calendar</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Lists</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Notes</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Recipes</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Account</a>
-            </li>
-        </ul>
-        <button id="logoutBtn">Sign Out</button>
-    </div>
 
-    <main>
         <header>
             <h1>Recipes</h1>
         </header>
+    </div>
+
+    <main>
         <!-- abillity to add recipe -->
         <div id="newRecipeDiv" hidden="true">
             <form>
@@ -75,53 +70,41 @@
 </div>-->
 
 
-{{#recipes}}
-<table>
-<tr class="recipeBox">
-<th>Recipe name:</th>
-</tr>
-<tr class="recipeBoxTitle">
-<td>{{title}}</td>
-</tr>
-<tr class="recipeBoxIngredients">
-<th>Ingredients:</th>
-</tr>
-<tr class="recipeBoxIngredients1">
-<td>{{ingredients}}</td>
-</tr>
-<tr class="recipeBoxTitle">
-<th>Method:</th>
-</tr>
-<tr class="recipeBoxMethod">
-<td>{{method}}</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-</table>
-<div class="recipe-buttons">
-<a href="recipes/{{_id}}" class="edit" hidden="true">update</a>
-</div>
-{{/recipes}}
+        {{#recipes}}
+        <table>
+            <tr class="recipeBox">
+                <th>Recipe name:</th>
+            </tr>
+            <tr class="recipeBoxTitle">
+                <td>{{title}}</td>
+            </tr>
+            <tr class="recipeBoxIngredients">
+                <th>Ingredients:</th>
+            </tr>
+            <tr class="recipeBoxIngredients1">
+                <td>{{ingredients}}</td>
+            </tr>
+            <tr class="recipeBoxTitle">
+                <th>Method:</th>
+            </tr>
+            <tr class="recipeBoxMethod">
+                <td>{{method}}</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+        <div class="recipe-buttons">
+            <a href="recipes/{{_id}}" class="edit" hidden="true">update</a>
+        </div>
+        {{/recipes}}
 
-
-
-
-
-
-
-<div class="recipe-buttons">
+        <div class="recipe-buttons">
             <button id="recipe-buttons" onclick="newRecipe()">ADD RECIPE</button>
             <button id="recipe-buttons"onclick="editRecipe()">EDIT RECIPE</button>
         </div>
-
-</div>
-
-
-    <a id ="recipe-buttons" href="/logout">LOGOUT</a>
     </main>
     <script src="./JavaScript/recipe.js"></script>
-
-</body>
+    </body>
 
 </html>

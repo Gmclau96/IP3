@@ -14,6 +14,10 @@
         min-height: 100vh;
     }
 
+    header{
+        margin: 0.5em auto;
+    }
+
     h1 {
         text-align: center;
         font-size: 3rem;
@@ -22,69 +26,68 @@
 
     main{
         width: 100vw;
-        height: 110vh;
+        height: 100vh;
+    }
+
+    .title-bar{
+        display: flex;
+        flex-direction: row;
     }
 
 /* Navigation Menu */
 
-    .nav-menu {
-        background-color: none;
-        width: 5vw;
-    }
+#burger-menu {
+    margin: 1em;
+    cursor: pointer;
+    display: inline;
+}
 
-    #burger-menu {
-        margin: 1rem auto;
-        cursor: pointer;
-    }
+.bar {                  /* for burger menu icon */
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 5px auto;
+    background-color: #000000;
+    border-radius: .2rem;
+}
 
-    .bar {                  /* for burger menu icon */
-        display: block;
-        width: 25px;
-        height: 4px;
-        margin: 5px auto;
-        background-color: #000000;
-        border-radius: .2rem;
-    }
+#nav-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  #nav-menu a {
+    padding: 9px 8px 9px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  #nav-menu a:hover {
+    color: #f1f1f1;
+  }
+  
+  #nav-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
 
-    #nav-content{
-        display: none;
-        width: 15vw;
-        background-color: #ffffff;
-        border-right: #000000 solid 2px;
-    }
-
-    .nav-page {
-        background-color: #ffffff;
-        color: #000000;
-        margin: 1em;
-        padding: 1em;
-        cursor: pointer;
-    }
-
-    li {
-        list-style-type: none;
-    }
-
-    .nav-page:hover {
-        border: .15rem solid #000000;
-        border-radius: 2rem;
-        cursor: pointer;
-    }
-
-    .nav-link {
-        text-decoration: none;
-        color: #000000;
-    }
-
-    #logoutBtn {
-        background-color: #32465B;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-    }
-
+  #spacer{
+      height: 350px;
+  }
 
 /* Calendar Content */
 
@@ -104,7 +107,7 @@
             .calendar {
             display: block;
             width: 30rem;
-            height: 37rem;
+            height: 35rem;
             margin: 1.5rem auto;
             outline: #000000 solid 2px;
             background-color: #bdccdb;
@@ -157,7 +160,7 @@
             .weekdays {
             display: flex;
             align-items: center;
-            padding: 0 0.8rem;
+            padding: 0 0.6em;
             width: 100%;
             height: 4rem;
             background-color: #bdccdb;
@@ -165,7 +168,7 @@
             
             .weekdays div {
             letter-spacing: .1rem;
-            width: calc(28.4rem/7); /* [(calendar width - weekdays padding)/7] [(30-1.6)/7] */
+            width: calc(29rem/7); /* [(calendar width - weekdays padding)/7] [(30-1.2)/7] */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -179,7 +182,7 @@
             display: flex;
             flex-wrap: wrap;
             width: 100%;
-            padding: .1rem;
+            padding: .35rem;
             background-color: #bdccdb;
             }
             
@@ -187,8 +190,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: .3rem;
-            width: calc(30.2rem/7); /* [calendar width + days padding*2 / 7] [(30 + 0.2) / 7]*/
+            margin: .38em ;
+            width: calc(23.8rem/7); /*[calendar width - (weekdays padding + days padding +( days margin * 14)/7] [(30 - (1.2 + 0.7 + (0.38 * 14) /7] */
             height: 3rem;
             }
             
@@ -248,7 +251,7 @@
                 cursor: pointer;
             }
             
-            #form-input {
+            .form-input {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;

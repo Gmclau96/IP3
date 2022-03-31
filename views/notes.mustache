@@ -12,40 +12,35 @@
 </header>
 
 <body>
-    <!--Navigation Menu-->
-    <div class="nav-menu">
-        <div id="burger-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+    <!--For alligning menu icon and title-->
+    <div class="title-bar">
+        <div id="burger-menu" onclick="openNav()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        <!--Navigation Menu-->
+        <div id="nav-menu">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div id="nav-options">
+                <a href="/">Home</a>
+                <a href="/calendar">Calendar</a>
+                <a href="/lists">Lists</a>
+                <a href="/notes">Notes</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/account">Account</a>
+                <div id="spacer"></div>
+                <a href="/logout">LOGOUT</a>
+            </div>
         </div>
-    </div>
-    <div id="nav-content">
-        <ul class="pages-container">
-            <li class="nav-page">
-                <a href="" class="nav-link">Calendar</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Lists</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Notes</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Recipes</a>
-            </li>
-            <li class="nav-page">
-                <a href="" class="nav-link">Account</a>
-            </li>
-        </ul>
-        <button id="logoutBtn">Sign Out</button>
+
+        <header>
+            <h1>Notes</h1>
+        </header>
     </div>
 
     <main>
-        <h1>
-            Notes
-        </h1>
-<!-- abillity to add note -->
+        <!-- abillity to add note -->
         <div id="newNoteDiv" hidden="true">
             <form>
                 <label id="noteTitle"> Note Title</label>
@@ -57,22 +52,22 @@
         </div>
 
 
-<ol id="list">
-{{#notes}}
-Title: 
-<li class="inliner">{{title}}</li>
-Content:
-<li> {{content}}</li>
-<a href="notes/{{_id}}" class="edit" hidden="true">update</a> <br>
-{{/notes}}
-</ol>
+        <ol id="list">
+        {{#notes}}
+            Title: 
+            <li class="inliner">{{title}}</li>
+            Content:
+            <li> {{content}}</li>
+            <a href="notes/{{_id}}" class="edit" hidden="true">update</a> <br>
+        {{/notes}}
+        </ol>
         <br>
         <div class="recipe-buttons">
             <button id="note-button" onclick="newNote()">ADD NOTE</button>
             <button id="recipe-buttons"onclick="editNote()">EDIT NOTE</button>
         </div>
     </main>
-    <a href="/logout">LOGOUT</a>
+
     <script src="./JavaScript/notes.js"></script>
 </body>
 
