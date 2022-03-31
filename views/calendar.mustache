@@ -15,253 +15,178 @@
  
     </div>
 
-    <!--Main section - contains that pages content-->
-    <main>
-        <header>
-            <h1>Calendar</h1>
-        </header>
+    <header>
+        <h1>Calendar</h1>
+    </header>
 
-        <!--View Change Button -->
-        <div id="toggle-button">
-            <input type="checkbox" id="view-choice" class="toggle">
-            <label for="view-choice"></label>
-        </div>
-
-        <!--Month View-->
-        <div class="calendar">
-            <div class="month">
-                <p><i class="arrow left prev"></i></p>
-                <div class="date">
-                    <h2></h2>
-                    <p></p>
+    <!--Main section - contains the pages content-->
+    <main id="calendar-main">
+        
+        <!--Section for user interaction-->
+        <section id="calendar-actions">    
+            <!--Calendar View-->
+            <div class="calendar">
+                <div class="month">
+                    <p><i class="arrow left prev"></i></p>
+                    <div class="date">
+                        <h2></h2>
+                        <p></p>
+                    </div>
+                    <p><i class="arrow right next"></i></p>
                 </div>
-                <p><i class="arrow right next"></i></p>
-            </div>
-            <div class="weekdays">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thur</div>
-                <div>Fri</div>
-                <div>Sat</div>
-            </div>
-            <div class="days">
-                
-            </div>
-        </div>
-
-        <!--Day View-->
-        <div id="day-view">
-            <div class="month">
-                <p><i class="arrow left"></i></p>
-                <div class="date">
-                    <h2>February</h2>
-                    <p>Wed February 23, 2022</p>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thur</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
                 </div>
-                <p><i class="arrow right"></i></p>
+                <div class="days">
+                </div>
             </div>
-            <div class="hour-slot">
-                <div class="hour">00:00</div>
-                <div class="user-events">Birthday</div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">01:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">02:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">03:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">04:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">05:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">06:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">07:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">08:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">09:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">10:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">11:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">12:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">13:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">14:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">15:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">16:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">17:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">18:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">19:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">20:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">21:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">22:00</div>
-                <div class="user-events"></div>
-            </div>
-            <div class="hour-slot">
-                <div class="hour">23:00</div>
-                <div class="user-events"></div>
-            </div>
-        </div>
 
-        <div class="calendar-buttons">
-            <button class="open-form-button">ADD EVENT</button>
-        </div>
+            <div class="calendar-buttons">
+                <button id="open-form-button">ADD EVENT</button>
+                <button id="delete-event-button">REMOVE EVENTS</button>
+            </div>
 
             <!--Adding New Event Form-->
             <dialog class="newEvent" id="newEvent">
                 <button id="exit-btn">X</button>
                 <div id="form-input">
-                <form>
-                    <label for="eventName">Event name:</label><br>
-                    <input type="text" id="eventName" name="eventName"><br>
-                    <label for="date">Date (Month/Day/Time):</label><br>
-                    <div id="date-dropdown">
-                          <select name="datemonth" id="date-month">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                        <select name="dateday" id="date-day">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="23">23</option>
-                            <option value="24">24</option>
-                            <option value="25">25</option>
-                            <option value="26">26</option>
-                            <option value="27">27</option>
-                            <option value="28">28</option>
-                            <option value="29">29</option>
-                            <option value="30">30</option>
-                            <option value="31">31</option>
-                        </select>
-                        <select name="datehour" id="date-hour">
-                            <option value="00:00">00:00</option>
-                            <option value="01:00">01:00</option>
-                            <option value="02:00">02:00</option>
-                            <option value="03:00">03:00</option>
-                            <option value="04:00">04:00</option>
-                            <option value="05:00">05:00</option>
-                            <option value="06:00">06:00</option>
-                            <option value="07:00">07:00</option>
-                            <option value="08:00">08:00</option>
-                            <option value="09:00">09:00</option>
-                            <option value="10:00">10:00</option>
-                            <option value="11:00">11:00</option>
-                            <option value="12:00">12:00</option>
-                            <option value="13:00">13:00</option>
-                            <option value="14:00">14:00</option>
-                            <option value="15:00">15:00</option>
-                            <option value="16:00">16:00</option>
-                            <option value="17:00">17:00</option>
-                            <option value="18:00">18:00</option>
-                            <option value="19:00">19:00</option>
-                            <option value="20:00">20:00</option>
-                            <option value="21:00">21:00</option>
-                            <option value="22:00">22:00</option>
-                            <option value="23:00">23:00</option>
-                        </select>
-                    </div>
-                    <label for="eventType">Event type:</label><br>
-                    <div id="eventType">
-                    <select name="eventType" id="eventType">
-                            <option value="Appointment">Appointment</option>
-                            <option value="Birthday">Birthday</option>
-                            <option value="Meeting">Meeting</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <label for="EvtNote">Notes:</label><br>
-                    <input type="text" id="EvtNote" name="EvtNote"><br>
-                    <button id="add"type="submit" formaction="/calendar" formmethod="post">Add Event</button>
+                    <form>
+                        <label for="eventName">Event name:</label><br>
+                        <input type="text" id="eventName" name="eventName"><br>
+                        <label for="date">Date (Month/Day/Time):</label><br>
+                        <div id="date-dropdown">
+                            <select name="datemonth" id="date-month">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <select name="dateday" id="date-day">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            <select name="datehour" id="date-hour">
+                                <option value="00:00">00:00</option>
+                                <option value="01:00">01:00</option>
+                                <option value="02:00">02:00</option>
+                                <option value="03:00">03:00</option>
+                                <option value="04:00">04:00</option>
+                                <option value="05:00">05:00</option>
+                                <option value="06:00">06:00</option>
+                                <option value="07:00">07:00</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="21:00">21:00</option>
+                                <option value="22:00">22:00</option>
+                                <option value="23:00">23:00</option>
+                            </select>
+                        </div>
+                        <label for="eventType">Event type:</label><br>
+                        <div id="eventType">
+                            <select name="eventType" id="eventType">
+                                <option value="Appointment">Appointment</option>
+                                <option value="Birthday">Birthday</option>
+                                <option value="Meeting">Meeting</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <label for="EvtNote">Notes:</label><br>
+                        <input type="text" id="EvtNote" name="EvtNote"><br>
+                        <button id="add"type="submit" formaction="/calendar" formmethod="post">Add Event</button>
                     </form>
                 </div>
             </dialog>
-        </div>
+        </section>
+
+        <!--Section of upcoming events-->
+        <section id="events">
+            {{#events}}
+            <table class="event-table">
+                <tr>
+                    <th class="event-title-col">Event name:</th>
+                    <td class="event-title-output">{{eventName}}</td>
+                    <td class="event-spacer"></td>
+                </tr>
+                <tr>
+                    <th class="event-title-col">Date:</th>
+                    <td class="event-title-output">{{date}}</td>
+                    <td class="event-spacer"></td>
+                </tr>
+                <tr>
+                    <th class="event-title-col">Notes:</th>
+                    <td class="event-title-output">{{note}}</td>
+                    <td class="event-spacer"></td>
+                </tr>
+
+                <tr>
+                    <th class="event-title-col">Event Type:</th>
+                    <td class="event-title-output">{{eventType}}</td>
+                    <td id="event-button">
+                        <button class="remove-event-buttons">
+                            <div class="tooltip">REMOVE
+                                <span class="tooltip-warning">This will permanently remove event!</span>
+                            </div>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+            {{/events}}
+            <button class="edit-complete">DONE</button>
+        </section>
     </main>
     <a href="/logout">LOGOUT</a>
 

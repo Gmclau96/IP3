@@ -81,64 +81,10 @@ document.querySelector(".next").addEventListener("click", () => {
 
 renderCalendar();
 
-
-
-/* for changing view //////////////////////// NOT FULLY FUNCTIONING
-
-
-var checkbox = document.querySelector("input[name=checkbox]");
-
-checkbox.addEventListener('change', function() {
-  //let monthView = document.getElementById("calendar");
-  let dayView = document.getElementById("day-view");
-  if (this.checked) {
-    console.log("Checkbox is checked..");
-    //monthView.style.display = "none";
-    dayView.style.display = "block";
-  } else {
-    console.log("Checkbox is not checked..");
-    //monthView.style.display = "block";
-    dayView.style.display = "none";
-  }
-});
-
-checkbox.addEventListener('change', function() {
-  let monthView = document.getElementById("calendar");
-  if (monthView.style.display === "block") {
-    console.log("Checkbox is checked..");
-    monthView.style.display = "none";
-  } else {
-    console.log("Checkbox is not checked..");
-    monthView.style.display = "block";
-  }
-});
-
-*/
-
-var monthBtn = document.querySelector("monthBtn");
-var dayBtn = document.querySelector("dayBtn");
-/*
-monthBtn.addEventListener('click', function() {
-  let monthView = document.getElementById("calendar");
-
-  if (monthView.style.display === "block") {
-    monthView.style.display = "none";
-  } else {
-    monthView.style.display = "block";
-  }
-})
-*/
-// dayBtn.addEventListener('click', function() {
-//   let dayView = document.getElementById("day-view");
-// })
-
-// ////////////////////////////////////////////
-
-
 /* For adding new event and controlling event form */
-  const newEventForm = document.querySelector("#newEvent");
-  const openForm = document.querySelector(".open-form-button");
-  const closeForm = document.querySelector(".close-form-button");
+  const newEventForm = document.querySelector(".newEvent");
+  const openForm = document.querySelector("#open-form-button");
+  const closeForm = document.querySelector("#close-form-button");
   const exitBtn = document.querySelector("#exit-btn");
 
   openForm.addEventListener("click", () => {
@@ -149,3 +95,43 @@ monthBtn.addEventListener('click', function() {
     newEventForm.close();
   })
 
+  exitBtn.addEventListener("click", () => {
+        newEventForm.close();
+  })
+
+  /*
+  var editBtn = document.getElementById("delete-event-button");
+  var removeBtns = document.getElementsByClassName(".remove-event-buttons");
+  var editComplete = document.getElementsByClassName(".edit-complete");
+  
+  editBtn.addEventListener("click", () => {
+    if(removeBtns.style.display == "none"){
+      removeBtns.style.display = "block";
+      editComplete.style.display = "block";
+    }
+  })
+  editComplete.addEventListener("click", () => {
+    if(removeBtns.style.display == "block"){
+      removeBtns.style.display = "none";
+      editComplete.style.display = "none";
+    }
+  })
+
+ 
+function showRemoveBtns() {
+  let removeBtns = document.getElementsByClassName(".remove-event-buttons");
+  let editComplete = document.getElementsByClassName(".edit-complete");
+  if(removeBtns.style.display === "none"){
+    removeBtns.style.display = "block";
+    editComplete.style.display = "block";
+  }
+}
+
+function completeEditing() {
+  let removeBtns = document.getElementsByClassName(".remove-event-buttons");
+  let editComplete = document.getElementsByClassName(".edit-complete");
+  if(removeBtns.style.display === "block"){
+    removeBtns.style.display = "none";
+    editComplete.style.display = "none";
+  }
+}*/
