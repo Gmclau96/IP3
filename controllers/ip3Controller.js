@@ -45,7 +45,11 @@ exports.post_landing = async function (req, res) {
 //Gets landing page with added elements
 exports.get_landing = async function (req, res, next) {
     const _email = res.locals.user.email;
-    const events = await calendarDao.where({ _email: _email }).sort({ date: 1 }).limit(2);
+    const dateString = Date.now();
+    const date = new Date(dateString);
+    const iso = date.toISOString()
+    console.log(iso);
+    const events = await calendarDao.find({"date":{$gt:iso}}).where({ _email: _email }).sort({"date":1}).limit(5);
     const notes = await notesDao.where({ _email: _email }).sort({ _id: -1 }).limit(1);
     const lists = await listsDao.where({ _email: _email }).sort({ _id: -1 }).limit(1);
     res.render("landing", { notes, lists, events });
