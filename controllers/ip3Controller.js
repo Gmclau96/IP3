@@ -50,7 +50,7 @@ exports.get_landing = async function (req, res, next) {
     const date = new Date(dateString);
     const iso = date.toISOString()
     //gets 5 closest calender entires from todays date
-    const events = await calendarDao.find({"date":{$gt:iso}}).where({ _email: _email }).sort({"date":1}).limit(5);
+    const events = await calendarDao.find({ "date": { $gt: iso } }).where({ _email: _email }).sort({ "date": 1 }).limit(5);
     const notes = await notesDao.where({ _email: _email }).sort({ _id: -1 }).limit(1);
     const lists = await listsDao.where({ _email: _email }).sort({ _id: -1 }).limit(1);
     res.render("landing", { notes, lists, events });
@@ -325,26 +325,28 @@ exports.deleteLists = async function (req, res) {
 
 exports.get_calendar = async function (req, res) {
     const _email = res.locals.user.email;
-    let events = await calendarDao.where({ _email: _email }).select("eventName date note eventType");
-        res.render("calendar", { events })
+    //variables for converting todays date to an ISO time
+    const dateString = Date.now();
+    const date = new Date(dateString);
+    const iso = date.toISOString()
+    const events = await calendarDao.find({ "date": { $gt: iso } }).where({ _email: _email }).sort({ "date": 1 })
+    res.render("calendar", { events })
 };
 
-exports.post_calendar = async function (req, res){
+exports.post_calendar = async function (req, res) {
     const id = res.locals.user.id;
     const eventName = req.body.eventName;
-    const eventday = req.body.dateday;
-    const eventmonth = req.body.datemonth;
-    const eventtime = req.body.datehour;
-    const year = "2022"
-    const date = year+"-"+eventmonth+"-"+eventday+"-"+eventtime;
+    const datetime = req.body.datetime;
+    const date = new Date(datetime);
+    const iso = date.toISOString();
     const eventType = req.body.eventType;
-    const  note = req.body.EvtNote;
+    const note = req.body.EvtNote;
     const _email = res.locals.user.email;
     try {
-        const event = await calendarDao.create({ eventName, date, note, eventType, _email });
+        const event = await calendarDao.create({ eventName, date: iso, note, eventType, _email });
         console.log(event);
-        let events = await calendarDao.where({ _email: _email }).select("eventName date note eventType");
-        res.render("calendar", { events })
+        await calendarDao.where({ _email: _email });
+        res.redirect("calendar");
 
     } catch (error) {
         showErrors(error, res);
