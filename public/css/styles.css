@@ -714,12 +714,22 @@ input[type="checkbox"].toggle {
         }
 
         /*Css For Lists */
-        .listBlock{
+        #listBlock{
             margin-left: 15%;
             margin-right: 15%;
 
         }
-        .listBox{
+
+        #listBtnBlock{
+           
+            left: 50%;
+            bottom: 20px;
+            transform: translate(-50%, -50%);
+            margin: 35%;
+
+        }
+
+        #listBox{
             margin-top: 50px;
             border-radius: 25px;
             border: 2px solid #000000;
@@ -732,7 +742,7 @@ input[type="checkbox"].toggle {
             margin-left: 40px;
         }
         
-        .listcontainer {
+        #listcontainer {
             display: block;
             position: relative;
             padding-left: 35px;
@@ -745,12 +755,51 @@ input[type="checkbox"].toggle {
             user-select: none;
           }
           
-          .listcontainer input {
+          #listcontainer input {
             position: absolute;
             opacity: 0;
             cursor: pointer;
             height: 0;
             width: 0;
+          }
+
+          #listTitle{
+            font-size: 1.75rem;
+        }
+    
+        #listItem{
+            font-size: 1.5rem;
+        }
+
+        #newListDiv{
+            margin: auto;
+            margin-top:20px;
+            padding: 10px; 
+            max-width: max-content;
+            border: solid 2px #36846b;
+          }
+
+          ul {
+            margin: 0;
+            padding: 0;
+          }
+          
+          /* Style the list items */
+          ul li {
+            cursor: pointer;
+            position: relative;
+            list-style-type: none;
+            transition: 0.2s;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+
+          
+          
+          ul li.checked {
+            text-decoration: line-through;
           }
           
           /* Check Box CSS */
