@@ -67,7 +67,7 @@
 
             <div class="calendar-buttons">
                 <button id="open-form-button">ADD EVENT</button>
-                <button id="delete-event-button">REMOVE EVENTS</button>
+                <button id="delete-event-button" onclick="showRemoveButton()">REMOVE EVENTS</button>
             </div>
 
             <!--Adding New Event Form-->
@@ -77,7 +77,10 @@
                     <form>
                         <label for="eventName">Event name:</label><br>
                         <input type="text" id="eventName" name="eventName"><br>
-                        <label for="date">Date (Month/Day/Time):</label><br>
+
+<input type="datetime-local" name="datetime" id="datetime">
+
+                        {{! <label for="date">Date (Month/Day/Time):</label><br>
                         <div id="date-dropdown">
                             <select name="datemonth" id="date-month">
                                 <option value="1">1</option>
@@ -152,7 +155,7 @@
                                 <option value="22:00">22:00</option>
                                 <option value="23:00">23:00</option>
                             </select>
-                        </div>
+                        </div> }}
                         <label for="eventType">Event type:</label><br>
                         <div id="eventType">
                             <select name="eventType" id="eventType">
@@ -194,7 +197,7 @@
                     <th class="event-title-col">Event Type:</th>
                     <td class="event-title-output">{{eventType}}</td>
                     <td id="event-button">
-                        <button class="remove-event-buttons">
+                        <button class="removeEvent" id="removeEvent" hidden="true">
                             <div class="tooltip">REMOVE
                                 <span class="tooltip-warning">This will permanently remove event!</span>
                             </div>

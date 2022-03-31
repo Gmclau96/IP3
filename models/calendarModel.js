@@ -9,7 +9,6 @@ const calendarColumns = new mongoose.Schema({
     },
     date: {
         type: Date,
-        trim: true,
         required: [true, 'Please enter the event date']
     },
     note: {

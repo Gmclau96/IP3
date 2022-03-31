@@ -99,43 +99,6 @@ renderCalendar();
         newEventForm.close();
   })
 
-//Nav Menu
-  function openNav() {
-    document.getElementById("nav-menu").style.width = "250px";
-  }
-  
-  function closeNav() {
-    document.getElementById("nav-menu").style.width = "0";
-  }
-
-  /*
-  var editBtn = document.getElementById("delete-event-button");
-  var removeBtns = document.getElementsByClassName(".remove-event-buttons");
-  var editComplete = document.getElementsByClassName(".edit-complete");
-  
-  editBtn.addEventListener("click", () => {
-    if(removeBtns.style.display == "none"){
-      removeBtns.style.display = "block";
-      editComplete.style.display = "block";
-    }
-  })
-  editComplete.addEventListener("click", () => {
-    if(removeBtns.style.display == "block"){
-      removeBtns.style.display = "none";
-      editComplete.style.display = "none";
-    }
-  })
-
- 
-function showRemoveBtns() {
-  let removeBtns = document.getElementsByClassName(".remove-event-buttons");
-  let editComplete = document.getElementsByClassName(".edit-complete");
-  if(removeBtns.style.display === "none"){
-    removeBtns.style.display = "block";
-    editComplete.style.display = "block";
-  }
-}
-
 function completeEditing() {
   let removeBtns = document.getElementsByClassName(".remove-event-buttons");
   let editComplete = document.getElementsByClassName(".edit-complete");
@@ -143,4 +106,29 @@ function completeEditing() {
     removeBtns.style.display = "none";
     editComplete.style.display = "none";
   }
-}*/
+}
+
+//shows remove buttons in tables
+function showRemoveButton() {
+  let x = document.getElementsByClassName('removeEvent');
+console.log(x);
+  [].forEach.call(x, function showDelete(x) {
+    x.hidden = false;
+  });
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+//Removes timezone from appeaing on calendar entries
+let dates = document.getElementsByClassName('event-title-output');
+for (let i=0; i < dates.length; i++) { 
+  dates[i].innerHTML = dates[i].innerHTML.slice(0, -35);
+}
+
+//Nav Menu
+function openNav() {
+  document.getElementById("nav-menu").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("nav-menu").style.width = "0";
+}
