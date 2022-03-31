@@ -458,12 +458,12 @@ input[type="checkbox"].toggle {
         
     }
     .edit{
-        font-weight: 300;
+        font-weight: 500;
         color: #ffffff;
         background-color: #36846b;
         border: none;
-        padding: 0.2rem;;
-        border-radius: 0.5rem;
+        padding: 1em;
+        border-radius: .5em;
         margin: 1em;
         cursor: pointer;
     }
