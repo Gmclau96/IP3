@@ -291,6 +291,7 @@
         /* Right side of calendar page */
             #events{
                 margin: 1.5em 2em 0 1em;
+                height: 80%;
                 overflow: scroll;
             }
 
