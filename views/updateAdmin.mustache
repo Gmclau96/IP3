@@ -32,11 +32,9 @@
                 <input id="password" name="password" value="{{password}}" type="password"> <br>
                
 
-
-
-
                 <button id="add"type="submit" formaction="/adminUpdate/{{_id}}" formmethod="post">Save changes</button>
-                <button id="add"type="submit" formaction="/adminDelete/{{_id}}" formmethod="post">Delete Account</button>
+                <button id="del"type="submit" formaction="/adminDelete/{{_id}}" formmethod="post">Delete Account</button>
+                <button id="back" type="submit" formaction="/admin" formmethod="get" formnovalidate>Back</button>
                 {{/account}}
                </form>  
         </div>

@@ -15,8 +15,8 @@ const calendarColumns = new mongoose.Schema({
     note: {
         type: String
     },
-    priority: {
-        type: Number,
+    eventType: {
+        type: String,
     },
     _email: {
         type: String

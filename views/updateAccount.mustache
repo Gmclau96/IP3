@@ -32,11 +32,9 @@
                 <label id="save">Enter Current Password To Save Changes:</label>
                 <input id="save" name="save" type="password" required="true"> <br>
 
-
-
-
                 <button id="add"type="submit" formaction="/updateAccountDetails/{{_id}}" formmethod="post">Save changes</button>
-                <button id="add"type="submit" formaction="/deleteAccount/{{_id}}" formmethod="post">Delete Account</button>
+                <button id="del"type="submit" formaction="/deleteAccount/{{_id}}" formmethod="post">Delete Account</button>
+                <button id="back" type="submit" formaction="/account" formmethod="get" formnovalidate>Back</button>
                 {{/account}}
                </form>  
         </div>

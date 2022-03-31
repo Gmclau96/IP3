@@ -43,7 +43,8 @@
                 <label id="item10"> item10</label>
                 <input id="item10" name="item10" value="{{item10}}"> <br>
                 <button id="add"type="submit" formaction="/updateLists/{{_id}}" formmethod="post">Edit</button>
-                <button id="add"type="submit" formaction="/deleteLists/{{_id}}" formmethod="post">Delete</button>
+                <button id="del"type="submit" formaction="/deleteLists/{{_id}}" formmethod="post">Delete</button>
+                <button id="back" type="submit" formaction="/lists" formmethod="get" formnovalidate>Back</button>
                 {{/lists}}
                </form>  
         </div>
