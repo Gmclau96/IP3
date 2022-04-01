@@ -39,6 +39,10 @@
         </header>
     </div>
 
+<<<<<<< HEAD
+=======
+    <main>
+>>>>>>> 9736f22a7ffad266eaf8e71c97740e410737f83c
         <!-- abillity to add note -->
         <div id="newNoteDiv" hidden="true">
         <div id="notes-center">
@@ -61,6 +65,7 @@
         </div>
 
 
+<<<<<<< HEAD
         <ul id="list">
         {{#notes}}
         <div id="notesBox">
@@ -72,6 +77,45 @@
             </div>
         {{/notes}}
         </ul>
+=======
+        <!--<ol id="list">
+            {{#notes}}
+                <div id="notesBox">
+                Title: 
+                <li class="inliner">{{title}}</li>
+                Content:
+                <li> {{content}}</li>
+                <a href="notes/{{_id}}" class="edit" hidden="true">update</a>
+                <br>
+                </div>
+            {{/notes}}
+        </ol>-->
+
+        {{#notes}}
+        <table class="notesTable">
+            <tr class="notesBox">
+                <th>Note Title:</th>
+            </tr>
+            <tr class="notesBoxTitle">
+                <td>{{title}}</td>
+            </tr>
+            <tr class="notesBoxTitle">
+                <th>Note Content:</th>
+            </tr>
+            <tr class="notesBoxContent">
+                <td>{{content}}</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="recipe-buttons">
+            <a href="notes/{{_id}}" class="edit" hidden="true">update</a>
+        </div>
+        {{/notes}}
+
+>>>>>>> 9736f22a7ffad266eaf8e71c97740e410737f83c
         <br>
         <div class="recipe-buttons">
             <button id="notes-buttons" onclick="newNote()">ADD NOTE</button>
