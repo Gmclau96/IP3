@@ -40,15 +40,7 @@
     </div>
 
     <main>
-<<<<<<< HEAD
-        <h1>
-            Notes
-        </h1>
-        <br>
-<!-- abillity to add note -->
-=======
         <!-- abillity to add note -->
->>>>>>> 897708e6eb133acc9dad5096baab5f0fd3fe8c96
         <div id="newNoteDiv" hidden="true">
         <div id="notes-center">
             <form>
@@ -70,31 +62,43 @@
         </div>
 
 
-<<<<<<< HEAD
-<ol id="list">
-{{#notes}}
-<div id="notesBox">
-Title: 
-<li class="inliner">{{title}}</li>
-Content:
-<li> {{content}}</li>
-<a href="notes/{{_id}}" class="edit" hidden="true">update</a>
-<br>
-</div>
-{{/notes}}
-</ol>
+        <!--<ol id="list">
+            {{#notes}}
+                <div id="notesBox">
+                Title: 
+                <li class="inliner">{{title}}</li>
+                Content:
+                <li> {{content}}</li>
+                <a href="notes/{{_id}}" class="edit" hidden="true">update</a>
+                <br>
+                </div>
+            {{/notes}}
+        </ol>-->
 
-=======
-        <ol id="list">
         {{#notes}}
-            Title: 
-            <li class="inliner">{{title}}</li>
-            Content:
-            <li> {{content}}</li>
-            <a href="notes/{{_id}}" class="edit" hidden="true">update</a> <br>
+        <table class="notesTable">
+            <tr class="notesBox">
+                <th>Note Title:</th>
+            </tr>
+            <tr class="notesBoxTitle">
+                <td>{{title}}</td>
+            </tr>
+            <tr class="notesBoxTitle">
+                <th>Note Content:</th>
+            </tr>
+            <tr class="notesBoxContent">
+                <td>{{content}}</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="recipe-buttons">
+            <a href="notes/{{_id}}" class="edit" hidden="true">update</a>
+        </div>
         {{/notes}}
-        </ol>
->>>>>>> 897708e6eb133acc9dad5096baab5f0fd3fe8c96
+
         <br>
         <div class="recipe-buttons">
             <button id="notes-buttons" onclick="newNote()">ADD NOTE</button>
