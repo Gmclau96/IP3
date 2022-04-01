@@ -424,15 +424,17 @@
     .recipeBoxIngredients{
         border:none;
         width:60%;
-        height:fit-content;
-        background-color: #FFF6EB;
-        float:right;
+        padding-top:2.1%;
+        padding-left:1.2%;
+        position: absolute;
+        left:26.5%;
     }
     .recipeBoxIngredients1{
         border:none;
         width:60%;
         padding-left:15%;
         padding-right:2%;
+        padding-top:5.5%;
         height:fit-content;
         background-color: #FFF6EB;
         float:right;
