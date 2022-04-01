@@ -251,7 +251,7 @@ exports.adminDelete = async function (req, res) {
 
 exports.get_lists = async function (req, res) {
     const _email = res.locals.user.email;
-    let lists = await listsDao.where({ _email: _email }).select("title item1 item2 item3 item4 item5 item6 item7 item8 item9 item10");
+    let lists = await listsDao.where({ _email: _email });
     res.render("lists", { lists })
 };
 
@@ -271,7 +271,7 @@ exports.post_lists = async function (req, res) {
     try {
         const list = await listsDao.create({ title, item1, item2, item3, item4, item5, item5, item6, item7, item8, item9, item10, _email });
         console.log(list);
-        let lists = await listsDao.where({ _email: _email }).select("title content");
+        let lists = await listsDao.where({ _email: _email });
         res.redirect("/lists")
     } catch (error) {
         showErrors(error, res);
@@ -357,7 +357,7 @@ exports.post_calendar = async function (req, res) {
 
 exports.get_notes = async function (req, res) {
     const _email = res.locals.user.email;
-    let notes = await notesDao.where({ _email: _email }).select("title content");
+    let notes = await notesDao.where({ _email: _email });
     res.render("notes", { notes })
 };
 
@@ -368,7 +368,7 @@ exports.post_notes = async function (req, res) {
     try {
         const note = await notesDao.create({ title, content, _email });
         console.log(note);
-        let notes = await notesDao.where({ _email: _email }).select("title content");
+        let notes = await notesDao.where({ _email: _email });
         res.render("notes", { notes })
 
     } catch (error) {
