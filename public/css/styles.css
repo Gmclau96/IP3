@@ -382,79 +382,65 @@
 
     /*Arrun's CSS*/
     .recipeBox{
-        border:2px solid #000000;
+        border:none;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         padding:0.5%;
-        width:35%;
+        width:60%;
         height:fit-content;
         display: block;
         margin-left:auto;
         margin-right:auto;
         margin-top: 35px;
-        background-color: #C0D6E4;
+        background-color: #FFF6EB;
+        padding-left:2%;
     }
     .recipeBoxTitle{
-        border:2px solid #000000;
+        border:none;
         padding:0.5%;
-        width:35%;
+        width:60%;
         height:fit-content;
         display: block;
         margin-left:auto;
         margin-right:auto;
-        background-color: #C0D6E4;
+        background-color: #FFF6EB;
+        padding-left:2%;
     }
 
     .recipeBoxMethod{
-        border:2px solid #000000;
+        border:none;
         padding:0.5%;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-        width:35%;
+        width:60%;
         height:fit-content;
         display: block;
         margin-left:auto;
         margin-right:auto;
-        background-color: #C0D6E4;
+        background-color: #FFF6EB;
+        padding-left:2%;
     }
 
     .recipeBoxIngredients{
-        padding:0.5%;
-        border:2px solid #000000;
-        width:35%;
+        border:none;
+        width:60%;
         height:fit-content;
-        display: block;
-        margin-left:auto;
-        margin-right:auto;
-        background-color: #C0D6E4;
+        background-color: #FFF6EB;
+        float:right;
     }
     .recipeBoxIngredients1{
-        padding:15px;
-        border: solid 3px #000000;
-        width:35%;
+        border:none;
+        width:60%;
+        padding-left:15%;
+        padding-right:2%;
         height:fit-content;
-        display: block;
-        margin-left:auto;
-        margin-right:auto;
-        background: #87cefa ;
-        background-clip: content-box;
-        box-shadow: inset 0 0 15px 15px #C0D6E4;
+        background-color: #FFF6EB;
+        float:right;
     }
    
 
 
-    #recipeBox2{
-        border-radius:25px;
-        border:2px solid #000000;
-        padding:20px;
-        width:535px;
-        height:fit-content;
-        display: block;
-        margin-left:auto;
-        margin-right:auto;
-        margin-top: 35px;
-        background-color: #C0D6E4;
-    }
+   
     #recipeName{
         text-transform: capitalize;
     }
