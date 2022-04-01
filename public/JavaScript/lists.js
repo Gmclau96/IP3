@@ -53,15 +53,15 @@ getElementById('li').toggle('checked');
 }*/
 
 
-document.querySelector('ul');
-list.addEventListener('click', function (ev) {
-  if (ev.target.tagName === 'LI') {
+// document.querySelector('ul');
+// list.addEventListener('click', function (ev) {
+//   if (ev.target.tagName === 'LI') {
 
-    ev.target.classList.toggle('checked');
+//     ev.target.classList.toggle('checked');
 
 
-  }
-}, false);
+//   }
+// }, false);
 
 //Nav Menu
 function openNav() {
@@ -72,25 +72,35 @@ function closeNav() {
   document.getElementById("nav-menu").style.width = "0";
 }
 
-//slices boolean state from output
+//removes horizontal scrolling
+document.documentElement.style.overflowX = 'hidden';
+
+//remembers checkbox state
+let itemBox = document.getElementsByClassName('itemBox');
 let itemLabel = document.getElementsByClassName('itemLabel');
-if (itemLabel.innerHTML.charAt(1) == "t") {
-  for (let i = 0; i < itemLabel.length; i++) {
-    itemLabel[i].innerHTML = itemLabel[i].innerHTML.slice(5);
-  }
-}else{
-  for (let i = 0; i < itemLabel.length; i++) {
-    itemLabel[i].innerHTML = itemLabel[i].innerHTML.slice(6);
+for (let i = 0; i < itemBox.length; i++) {
+  if (itemLabel[i].innerHTML.charAt(1) == "t") {
+    itemBox[i].checked = true;
+  } else {
+    itemBox[i].checked = false;
   }
 }
 
 
-let item1 = document.getElementById("item1lbl");
-console.log(item1.innerHTML);
-if (item1.innerHTML.charAt(1) == "t") {
-  item1.innerHTML = item1.innerHTML.slice(5);
-  console.log(item1.innerHTML);
-} else {
-  item1.innerHTML = item1.innerHTML.slice(6);
-  console.log(item1.innerHTML);
+//slices boolean state from output
+for (let i = 0; i < itemLabel.length; i++) {
+  if (itemLabel[i].innerHTML.charAt(1) == "t") {
+    itemLabel[i].innerHTML = itemLabel[i].innerHTML.slice(6);
+  } else {
+    itemLabel[i].innerHTML = itemLabel[i].innerHTML.slice(8);
+  }
+}
+
+//only shows chekboxes if there is an item attached to it
+for (let i = 0; i < itemBox.length; i++) {
+  if (itemLabel[i].innerHTML.length == 0) {
+    itemBox[i].style.opacity = 0;
+    itemBox[i].style.position = "absolute";
+    itemBox[i].style.left = "9999999px";
+  } 
 }
