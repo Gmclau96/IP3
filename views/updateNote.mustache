@@ -25,7 +25,8 @@
                 <label id="noteContent"> Note Content</label>
                 <input id="noteContent" name="noteContent" value="{{content}}" required> <br>
                 <button id="add"type="submit" formaction="/updateNotes/{{_id}}" formmethod="post">Edit</button>
-                <button id="add"type="submit" formaction="/deleteNotes/{{_id}}" formmethod="post">Delete</button>
+                <button id="del"type="submit" formaction="/deleteNotes/{{_id}}" formmethod="post">Delete</button>
+                <button id="back" type="submit" formaction="/notes" formmethod="get" formnovalidate>Back</button>
                 {{/notes}}
                </form>  
         </div>

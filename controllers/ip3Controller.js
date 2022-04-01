@@ -2,6 +2,7 @@ const userDao = require("../models/userModel.js");
 const notesDao = require("../models/notesModel.js");
 const recipesDao = require("../models/recipesModel.js");
 const listsDao = require("../models/listsModel.js");
+const calendarDao = require('../models/calendarModel.js')
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
@@ -44,9 +45,15 @@ exports.post_landing = async function (req, res) {
 //Gets landing page with added elements
 exports.get_landing = async function (req, res, next) {
     const _email = res.locals.user.email;
-    const notes = await notesDao.where({ _email: _email }).sort({ _id: -1 }).limit(1).select("-_id");
-    const lists = await listsDao.where({ _email: _email }).sort({ _id: -1 }).limit(1).select("-_id");
-    res.render("landing", { notes, lists });
+    //variables for converting todays date to an ISO time
+    const dateString = Date.now();
+    const date = new Date(dateString);
+    const iso = date.toISOString()
+    //gets 5 closest calender entires from todays date
+    const events = await calendarDao.find({ "date": { $gt: iso } }).where({ _email: _email }).sort({ "date": 1 }).limit(5);
+    const notes = await notesDao.where({ _email: _email }).sort({ _id: -1 }).limit(1);
+    const lists = await listsDao.where({ _email: _email }).sort({ _id: -1 }).limit(1);
+    res.render("landing", { notes, lists, events });
 }
 
 exports.get_signup = function (req, res) {
@@ -111,6 +118,9 @@ exports.updateAccountDetails = async function (req, res) {
                     email: email,
                     password: newpassword
                 }, { new: true, runValidators: true });
+                await calendarDao.findOneAndUpdate({ _email: currentEmail }, {
+                    _email: email
+                }, { new: true });
                 await notesDao.findOneAndUpdate({ _email: currentEmail }, {
                     _email: email
                 }, { new: true });
@@ -132,6 +142,9 @@ exports.updateAccountDetails = async function (req, res) {
                     surname: surname,
                     email: email
                 }, { new: true, runValidators: true });
+                await calendarDao.findOneAndUpdate({ _email: currentEmail }, {
+                    _email: email
+                }, { new: true });
                 await notesDao.findOneAndUpdate({ _email: currentEmail }, {
                     _email: email
                 }, { new: true });
@@ -160,6 +173,7 @@ exports.deleteAccount = async function (req, res) {
     deleteAccount = await bcrypt.compare(deleteAccount, currentpassword);
     if (deleteAccount) {
         await userDao.deleteOne({ _id: id });
+        await calendarDao.deleteMany({ email: _email });
         await notesDao.deleteMany({ _email: _email });
         await listsDao.deleteMany({ _email: _email });
         await recipesDao.deleteMany({ _email: _email });
@@ -203,6 +217,9 @@ exports.adminUpdate = async function (req, res) {
             email: email,
             password: newpassword
         }, { new: true, runValidators: true });
+        await calendarDao.findOneAndUpdate({ _email: currentEmail }, {
+            _email: email
+        }, { new: true });
         await notesDao.findOneAndUpdate({ _email: currentEmail }, {
             _email: email
         }, { new: true });
@@ -222,6 +239,7 @@ exports.adminUpdate = async function (req, res) {
 exports.adminDelete = async function (req, res) {
     const id = req.params.id;
     const _email = req.body.email;
+    await calendarDao.deleteMany({ email: _email });
     await userDao.deleteOne({ _id: id });
     await notesDao.deleteMany({ _email: _email });
     await listsDao.deleteMany({ _email: _email });
@@ -305,9 +323,37 @@ exports.deleteLists = async function (req, res) {
     res.redirect("/lists");
 }
 
-exports.get_calendar = function (req, res) {
-    res.render("calendar");
+exports.get_calendar = async function (req, res) {
+    const _email = res.locals.user.email;
+    //variables for converting todays date to an ISO time
+    const dateString = Date.now();
+    const date = new Date(dateString);
+    const iso = date.toISOString()
+    const events = await calendarDao.find({ "date": { $gt: iso } }).where({ _email: _email }).sort({ "date": 1 })
+    res.render("calendar", { events })
 };
+
+exports.post_calendar = async function (req, res) {
+    const id = res.locals.user.id;
+    const eventName = req.body.eventName;
+    const datetime = req.body.datetime;
+    const date = new Date(datetime);
+    const iso = date.toISOString();
+    const eventType = req.body.eventType;
+    const note = req.body.EvtNote;
+    const _email = res.locals.user.email;
+    try {
+        const event = await calendarDao.create({ eventName, date: iso, note, eventType, _email });
+        console.log(event);
+        await calendarDao.where({ _email: _email });
+        res.redirect("calendar");
+
+    } catch (error) {
+        showErrors(error, res);
+        console.log("Error in creating calendar entry!");
+    }
+}
+
 
 exports.get_notes = async function (req, res) {
     const _email = res.locals.user.email;

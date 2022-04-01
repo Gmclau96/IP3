@@ -8,10 +8,14 @@
     }
 
     body {
-        background-color: #ffffff;
+        background-color: #eae9e1;
         display: block;
         flex-direction: row;
         min-height: 100vh;
+    }
+
+    header{
+        margin: 0.5em auto;
     }
 
     h1 {
@@ -21,334 +25,367 @@
 
 
     main{
-        background-color: #ffffff;
         width: 100vw;
-        height: 110vh;
+        height: 100vh;
+    }
+
+    .title-bar{
+        display: flex;
+        flex-direction: row;
     }
 
 /* Navigation Menu */
 
-    .nav-menu {
-        background-color: none;
-        width: 5vw;
-    }
+#burger-menu {
+    margin: 1em;
+    cursor: pointer;
+    display: inline;
+}
 
-    #burger-menu {
-        margin: 1rem auto;
-        cursor: pointer;
-    }
+.bar {                  /* for burger menu icon */
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 5px auto;
+    background-color: #000000;
+    border-radius: .2rem;
+}
 
-    .bar {                  /* for burger menu icon */
-        display: block;
-        width: 25px;
-        height: 4px;
-        margin: 5px auto;
-        background-color: #000000;
-        border-radius: .2rem;
-    }
+#nav-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  #nav-menu a {
+    padding: 9px 8px 9px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  #nav-menu a:hover {
+    color: #f1f1f1;
+  }
+  
+  #nav-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
 
-    #nav-content{
-        display: none;
-        width: 15vw;
-        background-color: #ffffff;
-        border-right: #000000 solid 2px;
-    }
-
-    .nav-page {
-        background-color: #ffffff;
-        color: #000000;
-        margin: 1em;
-        padding: 1em;
-        cursor: pointer;
-    }
-
-    li {
-        list-style-type: none;
-    }
-
-    .nav-page:hover {
-        border: .15rem solid #000000;
-        border-radius: 2rem;
-        cursor: pointer;
-    }
-
-    .nav-link {
-        text-decoration: none;
-        color: #000000;
-    }
-
-    #logoutBtn {
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-    }
-
+  #spacer{
+      height: 350px;
+  }
 
 /* Calendar Content */
 
-/*Calendar View slide button*/
-input[type="checkbox"].toggle {
-    opacity: 0;
-    position: absolute;
-    cursor: pointer;
-    left: -9000px;  /*removes checkbox from being visible on page while remaining functional */
-    top: -9000px;
-    }
-    
-    input[type="checkbox"].toggle + label {
-    position: relative;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    }
-    
-    input[type="checkbox"].toggle + label::before {
-    content: "";
-    width: 8em;
-    height: 2em;
-    background-color: #ffffff;
-    outline: 2px solid #000000;
-    border-radius: 1em;
-    transition: 200ms ease-in-out;
-    }
-    
-    input[type="checkbox"].toggle + label::after {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: .1em;
-    content: "Month";
-    width: 5em;
-    height: 1.75em;
-    color: #ffffff;
-    background-color: #36846b;
-    border-radius: 1em;
-    transition: 200ms ease-in-out;
-    }
-    
-    input[type="checkbox"].toggle:checked + label::after {
-    transform: translateX(55%);
-    background-color: #36846b;
-    content: "Day";
-    }
-    
-    #view-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    /* Monthly View */    
-    .calendar {
-    display: block;
-    background-color: #ffffff;
-    width: 40rem;
-    height: 45rem;
-    margin: 3rem auto;
-    outline: #000000 solid 2px;
-    }
-    
-    .arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    cursor: pointer;
-    }
-    
-    .right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    }
-    
-    .left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    }
-    
-    .month {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 10rem;
-    padding: 0 5rem;
-    text-align: center;
-    outline: #000000 solid 2px;
-    }
-    
-    h2 {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 1.8rem;
-    }
-    
-    .month p {
-    font-size: 1.3rem;
-    }
-    
-    .month i {
-    padding: .5rem .5rem;
-    }
-    
-    .weekdays {
-    display: flex;
-    align-items: center;
-    padding: 0 0.8rem;
-    width: 100%;
-    height: 5rem;
-    }
-    
-    .weekdays div {
-    letter-spacing: .1rem;
-    width: calc(38.4rem/7); /* [(calendar width - weekdays padding)/7] [(40-1.6)/7] */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    .days {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: .1rem;
-    }
-    
-    .days div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: .4rem;
-    width: calc(34.2rem/7); /* [(calendar width - weekdays padding - days padding - days margin)/7] [(40 - (1.6 + 0.2 + (0.4 * 14) /7] */
-    height: 4rem;
-    }
-    
-    .days div:hover {
-    border: .25rem solid #000000;
-    border-radius: 2rem;
-    cursor: pointer;
-    }
-    
-    .prev-date, .next-date {
-    opacity: 0.5;
-    }
-    
-    .today {
-    background-color: #ffffff;
-    border-radius: 2rem;
-    border: solid 2px #000000;
-    }
-    
-    /* Day View */
-    #day-view {
-    display: none;
-    background-color: #ffffff;
-    width: 40rem;
-    margin: 3rem auto;
-    outline: #000000 solid 2px;
-    }
-    
-    .hour-slot {
-    display: flex;
-    flex-direction: row;
-    height: 3em;
-    border: solid 2px #000000;
-    }
-    
-    .hour {
-    width: 8rem;
-    padding: 1em 1em;
-    }
-    
-    .user-events {
-    padding: 1em 1em;
-    }
-    
-    .calendar-buttons {
-    margin: 2rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    .calendar-buttons button {
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #36846b;
-    border: none;
-    padding: 1em;
-    border-radius: .5em;
-    margin: 1em;
-    cursor: pointer;
-    }
-    
-    .newEvent {
-    width: 50vw;
-    padding: 2em;
-    margin: auto;
-    }
-    
-    .newEvent button {
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #36846b;
-    border: none;
-    padding: 1em;
-    border-radius: .5em;
-    margin: 1em;
-    cursor: pointer;
-    }
-    
-    #form-input {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    #form-input input[type=submit]{
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #36846b;
-    border: none;
-    padding: 1em;
-    border-radius: .5em;
-    margin: 2em;
-    cursor: pointer;
-    }
-    
-    #form-input input{
-    height: 3em;
-    }
-    
-    #form-input input, label{
-    width: 350px;
-    margin-top: 1em;
-    }
-
-    #date-dropdown {
+    /* Left side of calendar page */
+    #calendar-main{
         display: flex;
+        flex-direction: row;
     }
 
-    #date-dropdown select{
-        margin: 1em;
-        padding: .5em;
-        border: #000000 solid 2px;
-        background-color: #ffffff;
-        border-radius: 1px;
+    #calendar-actions{
+        display: flex;
+        flex-direction: column;
+        margin: 0 10%;
     }
+    
+        /* Calendar View */    
+            .calendar {
+            display: block;
+            width: 30rem;
+            height: 35rem;
+            margin: 1.5rem auto;
+            outline: #000000 solid 2px;
+            background-color: #bdccdb;
+            }
+            
+            .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            cursor: pointer;
+            }
+            
+            .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            }
+            
+            .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            }
+            
+            .month {
+            background-color: #32465B;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 7rem;
+            padding: 0 5rem;
+            text-align: center;
+            outline: #000000 solid 2px;
+            }
+            
+            h2 {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1.8rem;
+            }
+            
+            .month p {
+            font-size: 1.3rem;
+            }
+            
+            .month i {
+            padding: .5rem .5rem;
+            }
+            
+            .weekdays {
+            display: flex;
+            align-items: center;
+            padding: 0 0.6em;
+            width: 100%;
+            height: 4rem;
+            background-color: #bdccdb;
+            }
+            
+            .weekdays div {
+            letter-spacing: .1rem;
+            width: calc(29rem/7); /* [(calendar width - weekdays padding)/7] [(30-1.2)/7] */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
 
+            .weekdays hr {
+                width: 80%;
+            }
+            
+            .days {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: .35rem;
+            background-color: #bdccdb;
+            }
+            
+            .days div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: .38em ;
+            width: calc(23.8rem/7); /*[calendar width - (weekdays padding + days padding +( days margin * 14)/7] [(30 - (1.2 + 0.7 + (0.38 * 14) /7] */
+            height: 3rem;
+            }
+            
+            .days div:hover {
+            border: .25rem solid #32465B;
+            border-radius: 2rem;
+            cursor: pointer;
+            }
+            
+            .prev-date, .next-date {
+            opacity: 0.5;
+            }
+            
+            .today {
+            background-color: #bdccdb;
+            border-radius: 2rem;
+            border: solid 2px #000000;
+            }
+        
+        /*Buttons for user interaction*/
+            .calendar-buttons {
+            margin: 1em 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            }
+            
+            .calendar-buttons button {
+            font-weight: 500;
+            color: #ffffff;
+            background-color: #32465B;
+            border: none;
+            padding: 1em;
+            border-radius: .5em;
+            margin: 1em;
+            cursor: pointer;
+            width: 14em;
+            }
+            
+        /*New Event Form*/
+            .newEvent {
+                width: 50vw;
+                padding: 2em;
+                margin: auto;
+                background-color: #eae9e1;
+            }
+            
+            .newEvent button {
+                font-weight: 500;
+                color: #ffffff;
+                background-color: #32465B;
+                border: none;
+                padding: 1em;
+                border-radius: .5em;
+                margin: 1em;
+                cursor: pointer;
+            }
+            
+            .form-input {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            #form-input input[type=submit]{
+                font-weight: 500;
+                color: #ffffff;
+                background-color: #32465B;
+                border: none;
+                padding: 1em;
+                border-radius: .5em;
+                margin: 2em;
+                cursor: pointer;
+            }
+            
+            #form-input input{
+                height: 3em;
+            }
+            
+            #form-input input, label{
+                width: 350px;
+                margin-top: 1em;
+            }
+
+            #date-dropdown {
+                display: flex;
+            }
+
+            #form-input select{
+                margin: 1em;
+                padding: .5em;
+                border: #000000 solid 1px;
+                background-color: #ffffff;
+                border-radius: 1px;
+            }
+            
+
+        /* Right side of calendar page */
+            #events{
+                margin: 1.5em 2em 0 1em;
+                height: 75%;
+                overflow: scroll;
+            }
+
+            .event-table{
+                border: #000000 solid 2px;
+                margin: 0 4em 1em 1em;
+                border-collapse: collapse;
+            }
+            
+
+            .event-title-col{
+                width: 25%;
+                text-align: right;
+                vertical-align: top;
+                padding: 0.25em 1em ;
+                background-color: #32465B;
+            }
+
+            .event-title-output{
+                text-align: left;
+                vertical-align: top;
+                padding: 0.25em 1em ;
+                background-color: #bdccdb;
+            }
+
+            .event-spacer{
+                background-color: #bdccdb;
+            }
+
+            #event-button{
+                display: flex;
+                justify-content: right;
+                align-items: right;
+                background-color: #bdccdb;
+            }
+
+            .remove-event-buttons{
+                font-weight: 500;
+                color: #ffffff;
+                background-color: #32465B;
+                border: none;
+                padding: 0.5em;
+                border-radius: .5em;
+                margin-right: 0.5em;
+                margin-bottom: 0.5em;
+                cursor: pointer;
+            }
+
+            .tooltip {
+                position: relative;
+                display: inline-block;
+            }
+
+            .tooltip .tooltip-warning {
+                visibility: hidden;
+                width: 200px;
+                background-color: black;
+                opacity: 80%;
+                color: #fff;
+                text-align: center;
+                padding: 5px 0;
+                border-radius: 6px;
+                position: absolute;
+                top: -5px;
+                right: 105%;
+                z-index: 1;
+            }
+
+            .tooltip:hover .tooltip-warning {
+                visibility: visible;
+              }
+        
+            .edit-complete{
+                font-weight: 500;
+                color: #ffffff;
+                background-color: #32465B;
+                border: none;
+                padding: 0.5em;
+                border-radius: .5em;
+                margin-right: 0.5em;
+                margin-bottom: 0.5em;
+                cursor: pointer;
+                display: none;
+            }
 
     /*Arrun's CSS*/
-    #recipeBox{
-        border-radius:25px;
+    .recipeBox{
         border:2px solid #000000;
-        padding:20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding:0.5%;
         width:35%;
         height:fit-content;
         display: block;
@@ -357,6 +394,55 @@ input[type="checkbox"].toggle {
         margin-top: 35px;
         background-color: #C0D6E4;
     }
+    .recipeBoxTitle{
+        border:2px solid #000000;
+        padding:0.5%;
+        width:35%;
+        height:fit-content;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        background-color: #C0D6E4;
+    }
+
+    .recipeBoxMethod{
+        border:2px solid #000000;
+        padding:0.5%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width:35%;
+        height:fit-content;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        background-color: #C0D6E4;
+    }
+
+    .recipeBoxIngredients{
+        padding:0.5%;
+        border:2px solid #000000;
+        width:35%;
+        height:fit-content;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        background-color: #C0D6E4;
+    }
+    .recipeBoxIngredients1{
+        padding:15px;
+        border: solid 3px #000000;
+        width:35%;
+        height:fit-content;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        background: #87cefa ;
+        background-clip: content-box;
+        box-shadow: inset 0 0 15px 15px #C0D6E4;
+    }
+   
+
+
     #recipeBox2{
         border-radius:25px;
         border:2px solid #000000;
@@ -408,12 +494,12 @@ input[type="checkbox"].toggle {
         
     }
     .edit{
-        font-weight: 300;
+        font-weight: 500;
         color: #ffffff;
         background-color: #36846b;
         border: none;
-        padding: 0.2rem;;
-        border-radius: 0.5rem;
+        padding: 1em;
+        border-radius: .5em;
         margin: 1em;
         cursor: pointer;
     }
@@ -630,7 +716,7 @@ textarea{
 
 #email-and-submit-div{
     text-align: center; 
-    border: 1px solid"
+    border: 1px solid;
 }
 
     #password-reset-input{
@@ -711,12 +797,22 @@ textarea{
         }
 
         /*Css For Lists */
-        .listBlock{
+        #listBlock{
             margin-left: 15%;
             margin-right: 15%;
 
         }
-        .listBox{
+
+        #listBtnBlock{
+           
+            left: 50%;
+            bottom: 20px;
+            transform: translate(-50%, -50%);
+            margin: 35%;
+
+        }
+
+        #listBox{
             margin-top: 50px;
             border-radius: 25px;
             border: 2px solid #000000;
@@ -729,7 +825,7 @@ textarea{
             margin-left: 40px;
         }
         
-        .listcontainer {
+        #listcontainer {
             display: block;
             position: relative;
             padding-left: 35px;
@@ -742,12 +838,51 @@ textarea{
             user-select: none;
           }
           
-          .listcontainer input {
+          #listcontainer input {
             position: absolute;
             opacity: 0;
             cursor: pointer;
             height: 0;
             width: 0;
+          }
+
+          #listTitle{
+            font-size: 1.75rem;
+        }
+    
+        #listItem{
+            font-size: 1.5rem;
+        }
+
+        #newListDiv{
+            margin: auto;
+            margin-top:20px;
+            padding: 10px; 
+            max-width: max-content;
+            border: solid 2px #36846b;
+          }
+
+          ul {
+            margin: 0;
+            padding: 0;
+          }
+          
+          /* Style the list items */
+          ul li {
+            cursor: pointer;
+            position: relative;
+            list-style-type: none;
+            transition: 0.2s;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+
+          
+          
+          ul li.checked {
+            text-decoration: line-through;
           }
           
           /* Check Box CSS */

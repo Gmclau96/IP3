@@ -44,3 +44,12 @@ function editRecipe() {
   });
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
+
+//Nav Menu
+function openNav() {
+  document.getElementById("nav-menu").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("nav-menu").style.width = "0";
+}

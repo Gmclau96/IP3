@@ -27,7 +27,8 @@
                 <label id="recipeMethod"> Method</label>
                 <input id="recipeMethod" name="recipeMethod" value="{{method}}" required> <br>
                 <button id="add"type="submit" formaction="/updateRecipes/{{_id}}" formmethod="post">Edit</button>
-                <button id="add"type="submit" formaction="/deleteRecipes/{{_id}}" formmethod="post">Delete</button>
+                <button id="del"type="submit" formaction="/deleteRecipes/{{_id}}" formmethod="post">Delete</button>
+                <button id="back" type="submit" formaction="/recipes" formmethod="get" formnovalidate>Back</button>
                 {{/recipes}}
                </form>  
         </div>
