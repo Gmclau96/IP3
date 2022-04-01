@@ -39,32 +39,69 @@
         </header>
     </div>
 
-    <main>
         <!-- abillity to add note -->
         <div id="newNoteDiv" hidden="true">
+        <div id="notes-center">
             <form>
+            <div>
                 <label id="noteTitle"> Note Title</label>
-                <input id="noteTitle" name="noteTitle"required> <br>
+                <input id="noteTitle" name="noteTitle" class="notesForm-input" required> 
+            </div>
+                <br>
+                <br>
+            <div>
                 <label id="noteContent"> Note Content</label>
-                <input id="noteContent" name="noteContent" required> <br>
+                <textarea id="noteContent" name="noteContent" rows="4" cols="50" class="notesForm-textarea" required>Enter Note Information Here...</textarea> 
+            </div>
+                <br>
+                <br>
                 <button id="add"type="submit" formaction="/notes" formmethod="post">Save</button>
             </form>
+            </div>
         </div>
 
 
-        <ol id="list">
+        <!--<ol id="list">
+            {{#notes}}
+                <div id="notesBox">
+                Title: 
+                <li class="inliner">{{title}}</li>
+                Content:
+                <li> {{content}}</li>
+                <a href="notes/{{_id}}" class="edit" hidden="true">update</a>
+                <br>
+                </div>
+            {{/notes}}
+        </ol>-->
+
         {{#notes}}
-            Title: 
-            <li class="inliner">{{title}}</li>
-            Content:
-            <li> {{content}}</li>
-            <a href="notes/{{_id}}" class="edit" hidden="true">update</a> <br>
+        <table class="notesTable">
+            <tr class="notesBox">
+                <th>Note Title:</th>
+            </tr>
+            <tr class="notesBoxTitle">
+                <td>{{title}}</td>
+            </tr>
+            <tr class="notesBoxTitle">
+                <th>Note Content:</th>
+            </tr>
+            <tr class="notesBoxContent">
+                <td>{{content}}</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="recipe-buttons">
+            <a href="notes/{{_id}}" class="edit" hidden="true">update</a>
+        </div>
         {{/notes}}
-        </ol>
+
         <br>
         <div class="recipe-buttons">
-            <button id="note-button" onclick="newNote()">ADD NOTE</button>
-            <button id="recipe-buttons"onclick="editNote()">EDIT NOTE</button>
+            <button id="notes-buttons" onclick="newNote()">ADD NOTE</button>
+            <button id="notes-buttons"onclick="editNote()">EDIT NOTE</button>
         </div>
     </main>
 

@@ -605,7 +605,85 @@
         cursor: pointer;
     }
 
-   
+ /*Jamie's CSS*/
+ .notesBox{
+    border:2px solid #000000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding:0.5%;
+    width:75%;
+    height:fit-content;
+    display: block;
+    margin-left:15%;
+    margin-right:15%;
+    margin-top: 35px;
+    background-color: #C0D6E4;
+}
+
+#notes-buttons{
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+    
+}
+
+#notes-center{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.notesForm-input,
+.notesForm-textarea{
+ width: 300px;
+ height: 30px;
+ background:transparent;
+ border: 1px solid black;
+ border-radius: 2px;
+}
+
+textarea{
+    vertical-align: top;
+} 
+
+.notesol{
+    margin-left: 35%; /* used this for testing the amount of space required */
+}
+
+.notesBoxTitle{
+    border:2px solid #000000;
+    padding:0.5%;
+    width:75%;
+    height:fit-content;
+    display: block;
+    margin-left:15%;
+    margin-right:15%;
+    background-color: #C0D6E4;
+}
+
+.notesBoxContent{
+    border:2px solid #000000;
+    padding:0.5%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width:75%;
+    height:fit-content;
+    display: block;
+    margin-left:15%;
+    margin-right:15%;
+    background-color: #C0D6E4;
+}
+
+.notesTable{
+    width: 70%;
+    margin-left:15%;
+    margin-right:15%;
+}
 
 /* Common elements in login, signup & password reset pages */
 
