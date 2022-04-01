@@ -31,11 +31,12 @@
                 <label id="password">Update Password:</label>
                 <input id="password" name="password" value="{{password}}" type="password"> <br>
                
-
+                <div class="add-button">
                 <button id="add"type="submit" formaction="/adminUpdate/{{_id}}" formmethod="post">Save changes</button>
                 <button id="del"type="submit" formaction="/adminDelete/{{_id}}" formmethod="post">Delete Account</button>
                 <button id="back" type="submit" formaction="/admin" formmethod="get" formnovalidate>Back</button>
                 {{/account}}
+                </div>
                </form>  
         </div>
 </body>

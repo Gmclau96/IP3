@@ -502,6 +502,13 @@
         cursor: pointer;
     }
 
+    #updateNoteDiv{
+        margin: auto;
+        margin-top:20px;
+        padding: 10px; 
+        max-width: max-content;
+        border: solid 2px #36846b;
+      }
 
 
     #newRecipeDiv{
@@ -518,11 +525,11 @@
 
     
 
-    #recipreIngredientslb{
+    #recipeIngredientslb{
         font-size: 1.5rem;
     }
 
-    #recipreMethodlb{
+    #recipeMethodlb{
         font-size: 1.5rem;
     }
 
@@ -534,21 +541,21 @@
         max-width: max-content;
       }
     
-      #recipreIngredients{
+      #recipeIngredients{
         margin: auto;
         margin-bottom:20px;
         margin-left:5px;
         padding: 10px; 
         max-width: max-content;
       }
-      #recipreMethod{
+      #recipeMethod{
         margin: auto;
         margin-bottom:20px;
         margin-left:43px;
         padding: 10px; 
         max-width: max-content;
       }
-
+/**universal buttons**/
       #add{
         font-weight: 500;
         color: #ffffff;
@@ -561,6 +568,74 @@
         
         
     }
+    #del{
+        font-weight: 500;
+        color: #ffffff;
+        background-color: #36846b;
+        border: none;
+        padding: 1em;
+        border-radius: .5em;
+        margin: 1em;
+        cursor: pointer;
+        
+        
+    }
+    #back{
+        font-weight: 500;
+        color: #ffffff;
+        background-color: #36846b;
+        border: none;
+        padding: 1em;
+        border-radius: .5em;
+        margin: 1em;
+        cursor: pointer;
+    }
+
+    .inputs{
+        display:flex;
+        justify-content:right;
+        align-items: right;
+        
+        
+      }
+
+    #Titlelb{
+        font-size: 1.5rem;
+    }
+
+    
+
+    #contentlb{
+        font-size: 1.5rem;
+    }
+
+    #detaillb{
+        font-size: 1.5rem;
+    }
+
+    #Title{
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom:20px;
+        padding: 10px; 
+        max-width: max-content;
+      }
+    
+      #content{
+        margin: auto;
+        margin-bottom:20px;
+        margin-left:26px;
+        padding: 10px; 
+        max-width: max-content;
+        
+      }
+      #detail{
+        margin: auto;
+        margin-bottom:20px;
+        margin-left:65px;
+        padding: 10px; 
+        max-width: max-content;
+      }
 
     .add-button{
         display:flex;

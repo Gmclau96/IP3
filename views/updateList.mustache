@@ -16,7 +16,7 @@
           Update List
         </h1>
 <!-- abillity to update list -->
-        <div id="updatListDiv" > 
+        <div id="updatNoteDiv" > 
         
            <form>
            {{#lists}}
@@ -62,10 +62,12 @@
                 <input id="item10" name="item10" value="{{item10}}">
                 <label class="itemLabel">{{box10}}Mark as completed</label>
                 <input type="checkbox" class="itemBox" name="box10"><br>
+                <div class="add-button">
                 <button id="add"type="submit" formaction="/updateLists/{{_id}}" formmethod="post">Update</button>
                 <button id="del"type="submit" formaction="/deleteLists/{{_id}}" formmethod="post">Delete</button>
                 <button id="back" type="submit" formaction="/lists" formmethod="get" formnovalidate>Back</button>
                 {{/lists}}
+                </div>
                </form>  
         </div>
 </body>

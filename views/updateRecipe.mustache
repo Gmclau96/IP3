@@ -20,16 +20,18 @@
         
            <form>
            {{#recipes}}
-                <label id="recipeTitle"> Recipe Name</label>
-                <input id="recipeTitle" name="noteTitle" value="{{title}}" required> <br>
-                <label id="recipeIngredients"> Ingredients</label>
-                <input id="recipeIngredients" name="recipeIngredients" value="{{ingredients}}" required> <br>
-                <label id="recipeMethod"> Method</label>
-                <input id="recipeMethod" name="recipeMethod" value="{{method}}" required> <br>
+                <label id="Titlelb"> Recipe Name</label>
+                <input id="Title" name="noteTitle" value="{{title}}" required> <br>
+                <label id="contentlb"> Ingredients</label>
+                <input id="content" name="recipeIngredients" value="{{ingredients}}" required> <br>
+                <label id="detaillb"> Method</label>
+                <input id="detail" name="recipeMethod" value="{{method}}" required> <br>
+                <div class="add-button">
                 <button id="add"type="submit" formaction="/updateRecipes/{{_id}}" formmethod="post">Edit</button>
                 <button id="del"type="submit" formaction="/deleteRecipes/{{_id}}" formmethod="post">Delete</button>
                 <button id="back" type="submit" formaction="/recipes" formmethod="get" formnovalidate>Back</button>
                 {{/recipes}}
+                </div>
                </form>  
         </div>
 </body>
