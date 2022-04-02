@@ -25,6 +25,7 @@ function editList() {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
+// Add Line to Add List Page
 function expandList() {
 
   for (let i = 2; i < 11; i++) {
@@ -40,17 +41,47 @@ function expandList() {
   }
 }
 
-/** 
-function toggleList(){
-document.querySelector('ul');
-for (let i = 1; i < 11; i++){
-var completed = document.getElementsByClassName('box' + i)
-var task = document.getElementsByClassName('item' + i)
-if (completed = true){
-getElementById('li').toggle('checked');
+function expandEditList() {
+
+  for (let i = 2; i < 11; i++) {
+    var itemlb = document.getElementById('itemlb' + i);
+    var item = document.getElementById('item' + i);
+    var checkboxlb = document.getElementById('checkboxlb' + i);
+    var checkbox = document.getElementById('checkbox' + i);
+
+    if (item.hidden == true) {
+      itemlb.hidden = false;
+      item.hidden = false;
+      checkboxlb.hidden = false;
+      checkbox.hidden = false;
+
+      i = 99;
+    }
+  }
 }
+
+
+
+  for (let i = 2; i < 11; i++) {
+    var itemlb = document.getElementById('itemlb' + i);
+    var item = document.getElementById('item' + i);
+    var checkboxlb = document.getElementById('checkboxlb' + i);
+    var checkbox = document.getElementById('checkbox' + i);
+    
+    if (item.value  === '') {
+     
+      itemlb.hidden = true;
+      item.hidden = true;
+      checkboxlb.hidden = true;
+      checkbox.hidden = true;
+      
+    
+  }
 }
-}*/
+
+
+
+
 
 
 // document.querySelector('ul');
