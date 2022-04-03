@@ -695,7 +695,7 @@
     margin-left:15%;
     margin-right:15%;
     margin-top: 35px;
-    background-color: #C0D6E4;
+    background-color: #FFF6EB;
 }
 
 #notes-buttons{
@@ -761,7 +761,7 @@
     display: block;
     margin-left:15%;
     margin-right:15%;
-    background-color: #C0D6E4;
+    background-color: #FFF6EB;
 }
 
 .notesBoxContent{
@@ -774,15 +774,14 @@
     display: block;
     margin-left:15%;
     margin-right:15%;
-    background-color: #C0D6E4;
+    background-color: #FFF6EB;
 }
 
 #newNoteDiv{
     margin: auto;
     margin-top:20px;
     padding: 10px; 
-    width: 51%;
-    margin-left: 26%;
+    max-width: max-content;
     border: solid 2px #36846b;
   }
 
@@ -796,6 +795,7 @@
     margin: auto;
     margin-top: 20px;
     margin-bottom:20px;
+    margin-left: 32px;
     padding: 10px; 
     max-width: max-content;
   }
