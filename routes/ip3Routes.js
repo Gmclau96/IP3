@@ -35,6 +35,10 @@ router.post('/deleteLists/:id', authenticate, loggedIn, controller.deleteLists);
 //GET Calender page
 router.get('/calendar', authenticate, loggedIn, controller.get_calendar);
 router.post('/calendar', authenticate, loggedIn, controller.post_calendar)
+router.get('/calendar/:id', authenticate, controller.updateEvent);
+router.post('/updateEvents/:id', authenticate, loggedIn, controller.updateEvents);
+router.post('/deleteEvents/:id', authenticate, loggedIn, controller.deleteEvents);
+
 //GET & POST notes page
 router.get('/notes', authenticate, controller.get_notes);
 router.post('/notes', authenticate, loggedIn, controller.post_notes);

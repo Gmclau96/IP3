@@ -83,45 +83,67 @@ renderCalendar();
 
 
 //For adding new event and controlling event form 
-  const newEventForm = document.querySelector(".newEvent");
-  const openForm = document.querySelector("#open-form-button");
-  const closeForm = document.querySelector(".event-confirm");
-  const exitBtn = document.querySelector("#exit-btn");
+const newEventForm = document.querySelector(".newEvent");
+const openForm = document.querySelector("#open-form-button");
+const closeForm = document.querySelector(".event-confirm");
+const exitBtn = document.querySelector("#exit-btn");
 
-  openForm.addEventListener("click", () => {
-    newEventForm.showModal();
-  })
+openForm.addEventListener("click", () => {
+  newEventForm.showModal();
+})
 
-  closeForm.addEventListener("click", () => {
-    newEventForm.close();
-  })
+closeForm.addEventListener("click", () => {
+  newEventForm.close();
+})
 
-  exitBtn.addEventListener("click", () => {
-        newEventForm.close();
-  })
+exitBtn.addEventListener("click", () => {
+  newEventForm.close();
+})
 
-function completeEditing() {
+/*function completeEditing() {
   let removeBtns = document.getElementsByClassName(".remove-event-buttons");
   let editComplete = document.getElementsByClassName(".edit-complete");
-  if(removeBtns.style.display === "block"){
+  if (removeBtns.style.display === "block") {
     removeBtns.style.display = "none";
     editComplete.style.display = "none";
   }
-}
+}*/
 
-//shows remove buttons in tables
-function showRemoveButton() {
+//shows edit, remove, done buttons in tables
+function showEditingButtons() {
   let x = document.getElementsByClassName('removeEvent');
-console.log(x);
+  let y = document.getElementsByClassName('editEvent');
+  let comp = document.getElementsByClassName('edit-complete');
+  console.log(x);
   [].forEach.call(x, function showDelete(x) {
     x.hidden = false;
   });
+  [].forEach.call(y, function showEdit(y) {
+    y.hidden = false;
+  });
+  comp.hidden = false;
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+//Hides editing buttons
+function completeEditing() {
+  let x = document.getElementsByClassName('removeEvent');
+  let y = document.getElementsByClassName('editEvent');
+  let comp = document.getElementsByClassName('edit-complete');
+  console.log(x);
+  [].forEach.call(x, function showDelete(x) {
+    x.hidden = true;
+  });
+  [].forEach.call(y, function showEdit(y) {
+    y.hidden = true;
+  });
+  comp.hidden = true;
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
 //Removes timezone from appearing on calendar entries
 let dates = document.getElementsByClassName('event-title-output');
-for (let i=0; i < dates.length; i++) { 
+for (let i = 0; i < dates.length; i++) {
   dates[i].innerHTML = dates[i].innerHTML.slice(0, -35);
 }
 

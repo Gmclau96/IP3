@@ -1249,7 +1249,22 @@
     overflow: scroll;
 }
 
+#landing-right h3 {
+    margin-left: 1em;
+}
+
 .landing-list {
     padding: 1em;
     margin: 1em 2em;
+}
+
+/* Styling for Update Calendar Event */
+
+.eventLabel {
+    font-size: 1.5rem;
+}
+
+.pairing {
+    display: flex;
+    flex-direction: row;
 }

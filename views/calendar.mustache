@@ -67,7 +67,7 @@
 
             <div class="calendar-buttons">
                 <button id="open-form-button">ADD EVENT</button>
-                <button id="delete-event-button" onclick="showRemoveButton()">REMOVE EVENTS</button>
+                <button id="delete-event-button" onclick="showEditingButtons()">EDIT EVENTS</button>
             </div>
 
             <!--Adding New Event Form-->
@@ -113,9 +113,11 @@
                 <tr>
                     <th class="event-title-col">Notes:</th>
                     <td class="event-title-output">{{note}}</td>
-                    <td class="event-spacer"></td>
+                    <td class="event-spacer">
+                    <!--<button class="editEvent" id="editEvent" hidden="true">EDIT</button>-->
+                    <a href="calendar/{{_id}}" class="editEvent" hidden="true">UPDATE</a>
+                    </td>
                 </tr>
-
                 <tr>
                     <th class="event-title-col">Event Type:</th>
                     <td class="event-title-output">{{eventType}}</td>
@@ -129,7 +131,7 @@
                 </tr>
             </table>
             {{/events}}
-            <button class="edit-complete">DONE</button>
+            <button class="edit-complete" id="edit-complete" hidden="true">DONE</button>
         </section>
     </main>
 
