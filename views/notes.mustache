@@ -40,18 +40,20 @@
     </div>
 
     <main>
+    <br>
+    <br>
         <!-- abillity to add note -->
-        <div id="newNoteDiv" hidden="true">
+        {{! <div id="newNoteDiv" hidden="true">
         <div id="notes-center">
             <form>
             <div>
-                <label id="noteTitle"> Note Title</label>
+                <label id="noteTitle" class="notesForm-label"> Note Title</label>
                 <input id="noteTitle" name="noteTitle" class="notesForm-input" required> 
             </div>
                 <br>
                 <br>
             <div>
-                <label id="noteContent"> Note Content</label>
+                <label id="noteContent" class="notesForm-label"> Note Content</label>
                 <textarea id="noteContent" name="noteContent" rows="4" cols="50" class="notesForm-textarea" required>Enter Note Information Here...</textarea> 
             </div>
                 <br>
@@ -59,8 +61,20 @@
                 <button id="add"type="submit" formaction="/notes" formmethod="post">Save</button>
             </form>
             </div>
+        </div>  }}
+        <div id="newNoteDiv" hidden="true">
+            <form>
+            <h3>Add a new Note</h3>
+            <br>
+                <label id="noteTitlelb"> Note Title: </label> <br>
+                <input id="notesTitle" placeholder="Type your Note Title here..." name="noteTitle" size ="100" required> <br>
+                <label id="notesContentlb"> Note Content: </label> 
+                <input id="notesContent" placeholder="Type your Note Content here..." name="noteContent" size ="100" required> <br>
+                <div class="add-button">
+                    <button id="add"type="submit" formaction="/notes" formmethod="post">Save</button>
+                </div>
+            </form>
         </div>
-
 
         <!--<ol id="list">
             {{#notes}}
@@ -95,7 +109,7 @@
         </table>
 
         <div class="recipe-buttons">
-            <a href="notes/{{_id}}" class="edit" hidden="true">update</a>
+            <a href="notes/{{_id}}" class="edit" hidden="true">Update</a>
         </div>
         {{/notes}}
 

@@ -638,18 +638,38 @@
     align-items: center;
 }
 
-.notesForm-input,
-.notesForm-textarea{
- width: 300px;
- height: 30px;
- background:transparent;
- border: 1px solid black;
- border-radius: 2px;
+.notesForm-input{
+  width: 55%;
+  margin-left:25%;
+  margin-right:15%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-textarea{
+/* .notesForm-textarea{
+    width: 55%;
+    margin-left:25%;
+    margin-right:15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}  */
+
+.notesForm-label{
+    display: inline-block;
+    text-align: right;
+    width: 15%;
+}
+
+/* textarea{
     vertical-align: top;
-} 
+}  */
 
 .notesol{
     margin-left: 35%; /* used this for testing the amount of space required */
@@ -679,11 +699,36 @@ textarea{
     background-color: #C0D6E4;
 }
 
+#newNoteDiv{
+    margin: auto;
+    margin-top:20px;
+    padding: 10px; 
+    width: 51%;
+    margin-left: 26%;
+    border: solid 2px #36846b;
+  }
+
 .notesTable{
     width: 70%;
     margin-left:15%;
     margin-right:15%;
 }
+
+#notesTitle{
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom:20px;
+    padding: 10px; 
+    max-width: max-content;
+  }
+
+  #notesContent{
+    margin: auto;
+    margin-bottom:20px;
+    margin-left:5px;
+    padding: 10px; 
+    max-width: max-content;
+  }
 
 /* Common elements in login, signup & password reset pages */
 
