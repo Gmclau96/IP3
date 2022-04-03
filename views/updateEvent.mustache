@@ -16,40 +16,71 @@
           Update Calendar Event
         </h1>
 <!-- abillity to update recipe -->
-        <div id="updateNoteDiv" > 
+        <div id="updateEventDiv"> 
            <form>
-           {{#event}}
-                <label id="Titlelb"> Event Name:</label>
-                <input id="Title" name="eventTitle" value="{{eventName}}" required> <br>
-                <label class="eventLabel">Existing Date:</label><br>
-                <p class="event-title-output">{{date}}</p><br>
-                <!--<input id="content" name="eventDate" value="{{date}}" required> <br>-->
-                <label class="eventLabel">Confirm Date:</label>
-                <input type="datetime-local" name="datetime" id="datetime" value="{{date}}"><br>
-                <label class="eventLabel"> Notes</label>
-                <input id="detail" name="eventNote" value="{{note}}" required> <br>
-                <div class="pairing">
-                    <label class="eventLabel">Existing Event Type:</label>
-                    <p>{{eventType}}</p>
-                </div>
-                <div class="pairing">
-                    <label class="eventLabel">Confirm Event Type:</label>
-                    <!--<input id="detail" name="eventType" value="{{eventType}}" required> <br>-->
-                    <div id="eventType">
-                        <select name="eventType" id="eventType" value="{{eventTypeNew}}" placeholder="{{eventType}}">
-                            <option value="Appointment">Appointment</option>
-                            <option value="Birthday">Birthday</option>
-                            <option value="Meeting">Meeting</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div><br>
-                </div>
-                <div class="add-button">
-                <button id="add"type="submit" formaction="/updateEvents/{{_id}}" formmethod="post">Edit</button>
-                <button id="del"type="submit" formaction="/deleteEvents/{{_id}}" formmethod="post">Delete</button>
-                <button id="back" type="submit" formaction="/calendar" formmethod="get" formnovalidate>Back</button>
-            {{/event}}
-                </div>
+                {{#event}}
+                    <div class="pairing">
+                        <label class="eventLabel"> Event Name:</label>
+                        <input class="display-box" name="eventTitle" value="{{eventName}}" required> <br>
+                    </div>
+                    <div class="pairing">
+                        <label class="eventLabel">Existing Date:</label><br>
+                        <p class="event-title-output">{{date}}</p><br>      
+                    </div>
+                    <div class="pairing">
+                        <!--<input id="content" name="eventDate" value="{{date}}" required> <br>-->
+                        <label class="eventLabel">Confirm Date:</label>
+                        <input class="display-dropdown" type="datetime-local" name="datetime" id="datetime" value="{{date}}"><br><br>
+                    </div>
+                    <div class="pairing">
+                        <label class="eventLabel"> Notes:</label>
+                        <input class="display-box" name="eventNote" value="{{note}}" required> <br>
+                    </div>
+                    <div class="pairing">
+                        <label class="eventLabel">Existing Event Type:</label>
+                        <p id="existingEventType">{{eventType}}</p>
+                    </div>
+                    <div class="pairing">
+                        <label class="eventLabel">Confirm Event Type:</label>       
+                        <!--<input id="detail" name="eventType" value="{{eventType}}" required> <br>-->
+                            <select class="display-dropdown" name="eventType" id="eventType" value="{{eventTypeNew}}" placeholder="{{eventType}}">
+                                <option value="Appointment">Appointment</option>
+                                <option value="Birthday">Birthday</option>
+                                <option value="Meeting">Meeting</option>
+                                <option value="Other">Other</option>
+                            </select><br>
+                    </div>
+                    <div class="add-button">
+                        <button id="add"type="submit" formaction="/updateEvents/{{_id}}" formmethod="post">Edit</button>
+                        <button id="del"type="submit" formaction="/deleteEvents/{{_id}}" formmethod="post">Delete</button>
+                        <button id="back" type="submit" formaction="/calendar" formmethod="get" formnovalidate>Back</button>
+                    </div> 
+                {{/event}}
+            <!--
+                {{#event}}
+                    <div id="form-left">
+                        <label class="eventLabel"> Event Name:</label>
+                        <label class="eventLabel">Existing Date:</label>
+                        <label class="eventLabel">Confirm Date:</label>
+                        <label class="eventLabel"> Notes:</label>
+                        <label class="eventLabel">Existing Event Type:</label>
+                        <label class="eventLabel">Confirm Event Type:</label>  
+                    </div>
+                    <div id="form-right">
+                        <input class="display-box" id="display-box" name="eventTitle" value="{{eventName}}" required>
+                        <p class="event-title-output">{{date}}</p><br>
+                        <input class="display-dropdown" type="datetime-local" name="datetime" id="datetime" value="{{date}}">
+                        <input class="display-box" id="display-box" name="eventNote" value="{{note}}" required> 
+                        <p>{{eventType}}</p>
+                            <select  class="display-dropdown" name="eventType" id="eventType" value="{{eventTypeNew}}">
+                                <option value="Appointment">Appointment</option>
+                                <option value="Birthday">Birthday</option>
+                                <option value="Meeting">Meeting</option>
+                                <option value="Other">Other</option>
+                            </select>
+                    </div>
+                {{/event}}
+                -->
             </form>  
         </div>
         <script src="./JavaScript/calendar.js"></script>

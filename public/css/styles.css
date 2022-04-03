@@ -278,10 +278,6 @@
                 margin-top: 1em;
             }
 
-            #date-dropdown {
-                display: flex;
-            }
-
             #form-input select{
                 margin: 1em;
                 padding: .5em;
@@ -295,7 +291,7 @@
             #events{
                 margin: 1.5em 2em 0 1em;
                 height: 75%;
-                overflow: hidden;
+                overflow: scroll;
             }
 
             .event-table{
@@ -1259,12 +1255,42 @@
 }
 
 /* Styling for Update Calendar Event */
+#updateEventDiv {
+    margin: auto;
+    margin-top:20px;
+    padding: 10px; 
+    max-width: max-content;
+    border: solid 2px #36846b;
+}
 
 .eventLabel {
     font-size: 1.5rem;
+    width: 10em;
 }
 
 .pairing {
     display: flex;
     flex-direction: row;
+    margin: 1.5em auto;
+}
+
+.pairing p {
+    margin-top: 1em;
+}
+
+#existingEventType {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.display-box {
+    width: 40%;
+    padding: 10px; 
+    font-size: 1.25rem;
+}
+
+.display-dropdown {
+    width: 40%;
+    padding: 10px; 
+    font-size: 1.25rem;
 }

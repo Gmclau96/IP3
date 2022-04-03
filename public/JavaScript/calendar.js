@@ -149,7 +149,11 @@ for (let i = 0; i < dates.length; i++) {
 
 //Nav Menu
 function openNav() {
-  document.getElementById("nav-menu").style.width = "250px";
+  let adminLink = document.getElementById("adminLink");   //not opening nav now
+  if (res.locals.users.admin == true) {
+    adminLink.hidden = false;
+    }
+    document.getElementById("nav-menu").style.width = "250px";
 }
 
 function closeNav() {
