@@ -1,5 +1,7 @@
 const date = new Date();
 
+console.log(date);
+
 const renderCalendar = () => {
   date.setDate(1);
 
@@ -65,8 +67,9 @@ const renderCalendar = () => {
 
   for (let j = 1; j <= nextDays; j++) {
     days += `<div class="next-date">${j}</div>`;
-    monthDays.innerHTML = days;
+    //monthDays.innerHTML = days;
   }
+  monthDays.innerHTML = days;
 };
 
 document.querySelector(".prev").addEventListener("click", () => {
@@ -92,9 +95,11 @@ openForm.addEventListener("click", () => {
   newEventForm.showModal();
 })
 
+//deleting this section messes up the events being displayed
 closeForm.addEventListener("click", () => {
   newEventForm.close();
 })
+///////
 
 exitBtn.addEventListener("click", () => {
   newEventForm.close();
