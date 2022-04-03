@@ -251,7 +251,7 @@ exports.adminDelete = async function (req, res) {
 
 exports.get_lists = async function (req, res) {
     const _email = res.locals.user.email;
-    let lists = await listsDao.where({ _email: _email }).select("title item1 item2 item3 item4 item5 item6 item7 item8 item9 item10");
+    let lists = await listsDao.where({ _email: _email });
     res.render("lists", { lists })
 };
 
@@ -271,7 +271,7 @@ exports.post_lists = async function (req, res) {
     try {
         const list = await listsDao.create({ title, item1, item2, item3, item4, item5, item5, item6, item7, item8, item9, item10, _email });
         console.log(list);
-        let lists = await listsDao.where({ _email: _email }).select("title content");
+        let lists = await listsDao.where({ _email: _email });
         res.redirect("/lists")
     } catch (error) {
         showErrors(error, res);
@@ -303,15 +303,25 @@ exports.updateLists = async function (req, res) {
     let lists = await listsDao.findByIdAndUpdate(id, {
         title: title,
         item1: item1,
+        box1: box1 ? true: false,
         item2: item2,
+        box2: box2 ? true: false,
         item3: item3,
+        box3: box3 ? true: false,
         item4: item4,
+        box4: box4 ? true: false,
         item5: item5,
+        box5: box5 ? true: false,
         item6: item6,
+        box6: box6 ? true: false,
         item7: item7,
+        box7: box7 ? true: false,
         item8: item8,
+        box8: box8 ? true: false,
         item9: item9,
+        box9: box9 ? true: false,
         item10: item10,
+        box10: box10 ? true: false,
     }, { new: true });
     res.redirect("/lists");
 }
@@ -357,7 +367,7 @@ exports.post_calendar = async function (req, res) {
 
 exports.get_notes = async function (req, res) {
     const _email = res.locals.user.email;
-    let notes = await notesDao.where({ _email: _email }).select("title content");
+    let notes = await notesDao.where({ _email: _email });
     res.render("notes", { notes })
 };
 
@@ -368,7 +378,7 @@ exports.post_notes = async function (req, res) {
     try {
         const note = await notesDao.create({ title, content, _email });
         console.log(note);
-        let notes = await notesDao.where({ _email: _email }).select("title content");
+        let notes = await notesDao.where({ _email: _email });
         res.render("notes", { notes })
 
     } catch (error) {

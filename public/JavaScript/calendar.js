@@ -81,10 +81,11 @@ document.querySelector(".next").addEventListener("click", () => {
 
 renderCalendar();
 
-/* For adding new event and controlling event form */
+
+//For adding new event and controlling event form 
   const newEventForm = document.querySelector(".newEvent");
   const openForm = document.querySelector("#open-form-button");
-  const closeForm = document.querySelector("#close-form-button");
+  const closeForm = document.querySelector(".event-confirm");
   const exitBtn = document.querySelector("#exit-btn");
 
   openForm.addEventListener("click", () => {
@@ -118,7 +119,7 @@ console.log(x);
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
-//Removes timezone from appeaing on calendar entries
+//Removes timezone from appearing on calendar entries
 let dates = document.getElementsByClassName('event-title-output');
 for (let i=0; i < dates.length; i++) { 
   dates[i].innerHTML = dates[i].innerHTML.slice(0, -35);

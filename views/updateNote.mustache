@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>
        Update Note
     </title>
@@ -20,14 +20,16 @@
         
            <form>
            {{#notes}}
-                <label id="noteTitle"> Note Title</label>
+                <label id="Titlelb"> Note Title</label>
                 <input id="noteTitle" name="noteTitle" value="{{title}}" required> <br>
-                <label id="noteContent"> Note Content</label>
+                <label id="contentlb"> Note Content</label>
                 <input id="noteContent" name="noteContent" value="{{content}}" required> <br>
+                <div class="add-button">
                 <button id="add"type="submit" formaction="/updateNotes/{{_id}}" formmethod="post">Edit</button>
                 <button id="del"type="submit" formaction="/deleteNotes/{{_id}}" formmethod="post">Delete</button>
                 <button id="back" type="submit" formaction="/notes" formmethod="get" formnovalidate>Back</button>
                 {{/notes}}
+                </div>
                </form>  
         </div>
 </body>

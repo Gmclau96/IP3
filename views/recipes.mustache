@@ -43,10 +43,10 @@
             <form>
                 <label id="recipeTitlelb"> Recipe Title</label>
                 <input id="recipeTitle" placeholder="Type your recipe title here" name="recipeTitle"required> <br>
-                <label id="recipreIngredientslb"> Ingredients</label>
-                <input id="recipreIngredients" placeholder="Type your ingredients here" name="recipeIngredients" required> <br>
-                <label id="recipreMethodlb"> Method</label>
-                <input id="recipreMethod" placeholder="Type your methods here" name="recipeMethod" required> <br>
+                <label id="recipeIngredientslb"> Ingredients</label>
+                <input id="recipeIngredients" placeholder="Type your ingredients here" name="recipeIngredients" required> <br>
+                <label id="recipeMethodlb"> Method</label>
+                <input id="recipeMethod" placeholder="Type your methods here" name="recipeMethod" required> <br>
                 <div class="add-button">
                     <button id="add"type="submit" formaction="/recipes" formmethod="post">Save</button>
                 </div>
@@ -73,16 +73,11 @@
         {{#recipes}}
         <table>
             <tr class="recipeBox">
-                <th>Recipe name:</th>
+                <th>Recipe name:<td>{{title}}</td></th>
+                <th class="recipeBoxIngredients">Ingredients:</th>
             </tr>
             <tr class="recipeBoxTitle">
-                <td>{{title}}</td>
-            </tr>
-            <tr class="recipeBoxIngredients">
-                <th>Ingredients:</th>
-            </tr>
-            <tr class="recipeBoxIngredients1">
-                <td>{{ingredients}}</td>
+                <td class="recipeBoxIngredients1">{{ingredients}}</td>
             </tr>
             <tr class="recipeBoxTitle">
                 <th>Method:</th>

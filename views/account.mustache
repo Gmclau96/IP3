@@ -43,40 +43,29 @@
     </div>
 
     <main>
-            <br><br><br>
-            <!-- Form for Account Page-->
-            <fieldset id="account-fieldset">
+        <br><br><br>
+        <!-- Form for Account Page-->
+        <fieldset id="account-fieldset">
 
-    {{#account}}
-
-               
-                <!-- Account Forename -->
-                <label for="Editname" id="account-label" class="account"> Forename: {{forename}} </label>
-                <br>
-                <br>
-
-
-                <!-- Account Surname -->
-                <label for="Editname" id="account-label" class="accountSname"> Surname: {{surname}} </label>
-                <br>
-                <br>
-
-              
-
-                <!-- Email Address-->
-                <label for="Editemail" id="account-label" class="account-email"> Email: {{email}}</label>
-                <br>
-                <br>
-                
-                
-
-                <!-- Edit Account -->
+        {{#account}}
+            <!-- Account Forename -->
+            <label for="Editname" id="account-label" class="account"> Forename: {{forename}} </label>
+            <br>
+            <br>
+            <!-- Account Surname -->
+            <label for="Editname" id="account-label" class="accountSname"> Surname: {{surname}} </label>
+            <br>
+            <br>
+            <!-- Email Address-->
+            <label for="Editemail" id="account-label" class="account-email"> Email: {{email}}</label>
+            <br>
+            <br>
+            <!-- Edit Account -->
             <form>
                 <button type="text" id="account-buttons" class="account-edit" formaction="/account/{{_id}}" formmethod="get"> Edit Account Details</button>
             </form>
-               {{/account}}
-            </fieldset>
-
+            {{/account}}
+        </fieldset>
 </main>
 
 <!-- Link to Account Script File-->

@@ -6,47 +6,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>
        Update List
     </title>
 </header>
-<body>
+<body onload="hideUpdateList()">
         <h1>
           Update List
         </h1>
 <!-- abillity to update list -->
-        <div id="updatListDiv" > 
+        <div id="updatNoteDiv" > 
         
            <form>
            {{#lists}}
                 <label id="listTitle"> List Title</label>
                 <input id="listTitle" name="listTitle" value="{{title}}" required> <br>
-                <label id="item1"> item1</label>
-                <input id="item1" name="item1" value="{{item1}}" required><br>
-                <label id="item2"> item2</label>
-                <input id="item2" name="item2" value="{{item2}}"><br>
-                <label id="item3"> item3</label>
-                <input id="item3" name="item3" value="{{item3}}"> <br>
-                <label id="item4"> item4</label>
-                <input id="item4" name="item4" value="{{item4}}"> <br>
-                <label id="item5"> item5</label>
-                <input id="item5" name="item5" value="{{item5}}"><br>
-                <label id="item6"> item6</label>
-                <input id="item6" name="item6" value="{{item6}}"> <br>
-                <label id="item7"> item7</label>
-                <input id="item7" name="item7" value="{{item7}}"> <br>
-                <label id="item8"> item8</label>
-                <input id="item8" name="item8" value="{{item8}}"> <br>
-                <label id="item9"> item9</label>
-                <input id="item9" name="item9" value="{{item9}}"> <br>
-                <label id="item10"> item10</label>
-                <input id="item10" name="item10" value="{{item10}}"> <br>
-                <button id="add"type="submit" formaction="/updateLists/{{_id}}" formmethod="post">Edit</button>
+                <label id="itemlb1">item1</label>
+                <input id="item1" name="item1" value="{{item1}}" required>
+                <label id="checkboxlb1"class="itemLabel">{{box1}}Mark as completed</label>
+                <input id="checkbox1" type="checkbox" class="itemBox" name="box1"><br>
+                <label id="itemlb2"> item2</label>
+                <input id="item2" name="item2" value="{{item2}}">
+                <label id="checkboxlb2" class="itemLabel">{{box2}}Mark as completed</label>
+                <input id="checkbox2" type="checkbox" class="itemBox" name="box2"><br>
+                <label id="itemlb3"> item3</label>
+                <input id="item3" name="item3" value="{{item3}}"> 
+                <label id="checkboxlb3" class="itemLabel">{{box3}}Mark as completed</label>
+                <input id="checkbox3" type="checkbox" class="itemBox" name="box3"><br>
+                <label id="itemlb4"> item4</label>
+                <input id="item4" name="item4" value="{{item4}}"> 
+                <label id="checkboxlb4" class="itemLabel">{{box4}}Mark as completed</label>
+                <input id="checkbox4" type="checkbox" class="itemBox" name="box4"><br>
+                <label id="itemlb5"> item5</label>
+                <input id="item5" name="item5" value="{{item5}}">
+                <label id="checkboxlb5" class="itemLabel">{{box5}}Mark as completed</label>
+                <input id="checkbox5" type="checkbox" class="itemBox" name="box5"><br>
+                <label id="itemlb6"> item6</label>
+                <input id="item6" name="item6" value="{{item6}}"> 
+                <label id="checkboxlb6" class="itemLabel">{{box6}}Mark as completed</label>
+                <input id="checkbox6" type="checkbox" class="itemBox" name="box6"><br>
+                <label id="itemlb7"> item7</label>
+                <input id="item7" name="item7" value="{{item7}}"> 
+                <label id="checkboxlb7" class="itemLabel">{{box7}}Mark as completed</label>
+                <input id="checkbox7" type="checkbox" class="itemBox" name="box7"><br>
+                <label id="itemlb8"> item8</label>
+                <input id="item8" name="item8" value="{{item8}}"> 
+                <label id="checkboxlb8" class="itemLabel">{{box8}}Mark as completed</label>
+                <input id="checkbox8" type="checkbox" class="itemBox" name="box8"><br>
+                <label id="itemlb9"> item9</label>
+                <input id="item9" name="item9" value="{{item9}}"> 
+                <label id="checkboxlb9" class="itemLabel">{{box9}}Mark as completed</label>
+                <input id="checkbox9" type="checkbox" class="itemBox" name="box9"><br>
+                <label id="itemlb10" > item10</label>
+                <input id="item10"  name="item10" value="{{item10}}">
+                <label id="checkboxlb10" class="itemLabel">{{box10}}Mark as completed</label>
+                <input id="checkbox10" type="checkbox" class="itemBox" name="box10"><br>
+                <button id="add"type="submit" formaction="/updateLists/{{_id}}" formmethod="post">Update</button>
                 <button id="del"type="submit" formaction="/deleteLists/{{_id}}" formmethod="post">Delete</button>
                 <button id="back" type="submit" formaction="/lists" formmethod="get" formnovalidate>Back</button>
+                <button type="button" id="add"onclick="expandEditList()">Add Another Line</button>
+                <button type="button" id="add"onclick="hideUpdateList()">Add Another Line</button>
                 {{/lists}}
+                </div>
                </form>  
         </div>
 </body>
+ <script src="../JavaScript/lists.js"></script>
 </html>

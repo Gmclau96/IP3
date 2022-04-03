@@ -295,7 +295,7 @@
             #events{
                 margin: 1.5em 2em 0 1em;
                 height: 75%;
-                overflow: scroll;
+                overflow: hidden;
             }
 
             .event-table{
@@ -382,79 +382,67 @@
 
     /*Arrun's CSS*/
     .recipeBox{
-        border:2px solid #000000;
+        border:none;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         padding:0.5%;
-        width:35%;
+        width:60%;
         height:fit-content;
         display: block;
         margin-left:auto;
         margin-right:auto;
         margin-top: 35px;
-        background-color: #C0D6E4;
+        background-color: #FFF6EB;
+        padding-left:2%;
     }
     .recipeBoxTitle{
-        border:2px solid #000000;
+        border:none;
         padding:0.5%;
-        width:35%;
+        width:60%;
         height:fit-content;
         display: block;
         margin-left:auto;
         margin-right:auto;
-        background-color: #C0D6E4;
+        background-color: #FFF6EB;
+        padding-left:2%;
     }
 
     .recipeBoxMethod{
-        border:2px solid #000000;
+        border:none;
         padding:0.5%;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-        width:35%;
+        width:60%;
         height:fit-content;
         display: block;
         margin-left:auto;
         margin-right:auto;
-        background-color: #C0D6E4;
+        background-color: #FFF6EB;
+        padding-left:2%;
     }
 
     .recipeBoxIngredients{
-        padding:0.5%;
-        border:2px solid #000000;
-        width:35%;
-        height:fit-content;
-        display: block;
-        margin-left:auto;
-        margin-right:auto;
-        background-color: #C0D6E4;
+        border:none;
+        width:60%;
+        padding-top:2.1%;
+        padding-left:1.2%;
+        position: absolute;
+        left:26.5%;
     }
     .recipeBoxIngredients1{
-        padding:15px;
-        border: solid 3px #000000;
-        width:35%;
+        border:none;
+        width:60%;
+        padding-left:15%;
+        padding-right:2%;
+        padding-top:5.5%;
         height:fit-content;
-        display: block;
-        margin-left:auto;
-        margin-right:auto;
-        background: #87cefa ;
-        background-clip: content-box;
-        box-shadow: inset 0 0 15px 15px #C0D6E4;
+        background-color: #FFF6EB;
+        float:right;
     }
    
 
 
-    #recipeBox2{
-        border-radius:25px;
-        border:2px solid #000000;
-        padding:20px;
-        width:535px;
-        height:fit-content;
-        display: block;
-        margin-left:auto;
-        margin-right:auto;
-        margin-top: 35px;
-        background-color: #C0D6E4;
-    }
+   
     #recipeName{
         text-transform: capitalize;
     }
@@ -514,6 +502,13 @@
         cursor: pointer;
     }
 
+    #updateNoteDiv{
+        margin: auto;
+        margin-top:20px;
+        padding: 10px; 
+        max-width: max-content;
+        border: solid 2px #36846b;
+      }
 
 
     #newRecipeDiv{
@@ -530,11 +525,11 @@
 
     
 
-    #recipreIngredientslb{
+    #recipeIngredientslb{
         font-size: 1.5rem;
     }
 
-    #recipreMethodlb{
+    #recipeMethodlb{
         font-size: 1.5rem;
     }
 
@@ -546,21 +541,21 @@
         max-width: max-content;
       }
     
-      #recipreIngredients{
+      #recipeIngredients{
         margin: auto;
         margin-bottom:20px;
         margin-left:5px;
         padding: 10px; 
         max-width: max-content;
       }
-      #recipreMethod{
+      #recipeMethod{
         margin: auto;
         margin-bottom:20px;
         margin-left:43px;
         padding: 10px; 
         max-width: max-content;
       }
-
+/**universal buttons**/
       #add{
         font-weight: 500;
         color: #ffffff;
@@ -573,6 +568,89 @@
         
         
     }
+    #del{
+        font-weight: 500;
+        color: #ffffff;
+        background-color: #36846b;
+        border: none;
+        padding: 1em;
+        border-radius: .5em;
+        margin: 1em;
+        cursor: pointer;
+        
+        
+    }
+    #back{
+        font-weight: 500;
+        color: #ffffff;
+        background-color: #36846b;
+        border: none;
+        padding: 1em;
+        border-radius: .5em;
+        margin: 1em;
+        cursor: pointer;
+    }
+
+    .inputs{
+        display:flex;
+        justify-content:right;
+        align-items: right;
+        
+        
+      }
+
+    #Titlelb{
+        font-size: 1.5rem;
+    }
+
+    
+
+    #contentlb{
+        font-size: 1.5rem;
+    }
+
+    #detaillb{
+        font-size: 1.5rem;
+    }
+
+    #noteTitle{
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom:20px;
+        padding: 10px; 
+        margin-left:40px;
+        max-width: max-content;
+    }
+    #noteContent{
+        margin: auto;
+        margin-bottom:20px;
+        padding: 10px; 
+        max-width: max-content;
+        
+    }
+    #Title{
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom:20px;
+        padding: 10px; 
+        max-width: max-content;
+      }
+    
+      #content{
+        margin: auto;
+        margin-bottom:20px;
+        margin-left:26px;
+        padding: 10px; 
+        max-width: max-content;
+        
+      }
+      #detail{
+        margin: auto;
+        margin-bottom:20px;
+        margin-left:65px;
+        padding: 10px; 
+        max-width: max-content;
+      }
 
     .add-button{
         display:flex;
@@ -1136,3 +1214,42 @@
             position: relative;
             left: 36em;
         }
+
+/* Styling for Landing Page */
+#landing-main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
+
+#landing-left {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5em;
+}
+
+.landing-left-inner {
+    display: block;
+    width: 30rem;
+    height: 38%;
+    margin: 0 1em 2em 5em;
+    outline: #000000 solid 2px;
+    overflow: scroll;
+    box-sizing: border-box;
+    border: 1em solid #eae9e1;
+}
+
+#landing-right {
+    margin: 0 5% 0 3%;
+    width: 55%;
+    height: 80%;
+    padding: 3em;
+    overflow: hidden;
+    outline: #000000 solid 2px;
+    overflow: scroll;
+}
+
+.landing-list {
+    padding: 1em;
+    margin: 1em 2em;
+}

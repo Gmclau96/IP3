@@ -37,56 +37,91 @@
         </header>
     </div>
 
-    <main>
+    <main id="landing-main">
+        <section id="Landing-left">
+            <div class="landing-left-inner">
+                <ul id="list" class="landing-list">
+                    <h3>Most Recent Note</h3><br>
+                    {{#notes}}
+                    <p>Title:&ensp;{{title}}</p><br>
+                    <!--<li class="inliner">{{title}}</li>-->
+                    <p>Content:</p><br>
+                    <li> {{content}}</li>
+                    {{/notes}}
+                </ul>
+                <br>
+            </div>
+            <div class="landing-left-inner">
+                <ol id="list" class="landing-list">
+                    <h3>Most Recent List</h3><br>
+                    {{#lists}}
+                    <p>Title:&ensp;{{title}}</p><br></p>
+                        <!--<li class="inliner">{{title}}</li>-->
+                        <p>Items</p><br>
+                        <li> {{item1}}</li>
+                        <li> {{item2}}</li>
+                        <li> {{item3}} </li>
+                        <li> {{item4}} </li>
+                        <li> {{item5}} </li>
+                        <li> {{item6}} </li>
+                        <li> {{item7}} </li>
+                        <li> {{item8}} </li>
+                        <li> {{item9}} </li>
+                        <li> {{item10}} </li>
+                    {{/lists}}
+                    <br><br>
+                    <!--should there be a closing </ol ?-->
+            </div>
+        </section>
+        <section id="landing-right">
+            <h3>Upcoming Calendar Events</h3><br>
+            <!--<ol id="sdfsdf">
+                <p>Upcoming Calender entries</p>
+                {{#events}}  
+                <p>Name:</p>
+                <li class="inliner">{{eventName}}</li>
+                <p>Date:</p>
+                <li class="date">{{date}} </li>
+                <p>Event type:</p>
+                <li> {{eventType}}</li>
+                <p>Note:</p>
+                <li> {{note}}</li>
+                {{/events}}
+            </ol>-->
+            {{#events}}
+            <table class="event-table">
+                <tr>
+                    <th class="event-title-col">Event name:</th>
+                    <td class="event-title-output">{{eventName}}</td>
+                    <td class="event-spacer"></td>
+                </tr>
+                <tr>
+                    <th class="event-title-col">Date:</th>
+                    <td class="event-title-output">{{date}}</td>
+                    <td class="event-spacer"></td>
+                </tr>
+                <tr>
+                    <th class="event-title-col">Notes:</th>
+                    <td class="event-title-output">{{note}}</td>
+                    <td class="event-spacer"></td>
+                </tr>
 
-        <ol id="list">
-            <p>Most Recent Note</p>
-            {{#notes}}
-            <p>Title:</p>
-            <li class="inliner">{{title}}</li>
-            <p>Content:</p>
-            <li> {{content}}</li>
-            {{/notes}}
-        </ol>
-        <br>
-        <ol id="list">
-        <p>Most Recent List</p>
-        {{#lists}}
-        <p>Title:</p>
-            <li class="inliner">{{title}}</li>
-            <p>Items</p>
-            <li> {{item1}}</li>
-            <li> {{item2}}</li>
-            <li> {{item3}} </li>
-            <li> {{item4}} </li>
-            <li> {{item5}} </li>
-            <li> {{item6}} </li>
-            <li> {{item7}} </li>
-            <li> {{item8}} </li>
-            <li> {{item9}} </li>
-            <li> {{item10}} </li>
-        {{/lists}}
-        <br><br>
-        <!--should there be a closing </ol ?-->
-
-
-
-        <ol id="sdfsdf">
-            <p>Upcoming Calender entries</p>
-            {{#events}}  
-            <p>Name:</p>
-            <li class="inliner">{{eventName}}</li>
-            <p>Date:</p>
-            <li class="date">{{date}} </li>
-            <p>Event type:</p>
-            <li> {{eventType}}</li>
-            <p>Note:</p>
-            <li> {{note}}</li>
+                <tr>
+                    <th class="event-title-col">Event Type:</th>
+                    <td class="event-title-output">{{eventType}}</td>
+                    <td id="event-button">
+                        <button class="removeEvent" id="removeEvent" hidden="true">
+                            <div class="tooltip">REMOVE
+                                <span class="tooltip-warning">This will permanently remove event!</span>
+                            </div>
+                        </button>
+                    </td>
+                </tr>
+            </table>
         {{/events}}
-        </ol>
-       
-    </main>
-     <script src="./JavaScript/landing.js"></script>
+        </section>
+</main>
+<script src="./JavaScript/landing.js"></script>
 </body>
 
 </html>
