@@ -1,76 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Script Link for Icons used in Interface through FontAwesome -->
-    <script src="https://kit.fontawesome.com/81b06af5ec.js" crossorigin="anonymous"></script>
-    <!-- Link to CSS Stylesheet-->
-    <link rel="stylesheet" href="css/styles.css">
-    <title>IP3Diary - Account</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Script Link for Icons used in Interface through FontAwesome -->
+        <script src="https://kit.fontawesome.com/81b06af5ec.js" crossorigin="anonymous"></script>
+        <!-- Link to CSS Stylesheet-->
+        <link rel="stylesheet" href="css/styles.css">
+        <title>IP3Diary - Account</title>
+    </head>
 
-</head>
-
-
-<body>
-    <!--For alligning menu icon and title-->
-    <div class="title-bar">
-        <div id="burger-menu" onclick="openNav()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <body>
+        <!--For alligning menu icon and title-->
+        <div class="title-bar">
+            <div id="burger-menu" onclick="openNav()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            <!--Navigation Menu-->
+            <div id="nav-menu">
+                <a href="javascript:void(0)" class="closebtn" click="closeNav()">&times;</a>
+                <div id="nav-options">
+                    <a href="/">Home</a>
+                    <a href="/calendar">Calendar</a>
+                    <a href="/lists">Lists</a>
+                    <a href="/notes">Notes</a>
+                    <a href="/recipes">Recipes</a>
+                    <a href="/account">Account</a>
+                    <div id="spacer"></div>
+                    <a href="/logout">LOGOUT</a>
+                </div>
             </div>
-        <!--Navigation Menu-->
-        <div id="nav-menu">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div id="nav-options">
-                <a href="/">Home</a>
-                <a href="/calendar">Calendar</a>
-                <a href="/lists">Lists</a>
-                <a href="/notes">Notes</a>
-                <a href="/recipes">Recipes</a>
-                <a href="/account">Account</a>
-                <div id="spacer"></div>
-                <a href="/logout">LOGOUT</a>
-            </div>
+
+            <header>
+                <h1>{{user.forename}}'s Account </h1>
+            </header>
         </div>
 
-        <header>
-            <h1>{{user.forename}}'s Account </h1>
-        </header>
-    </div>
+        <main>
+            <br><br><br>
+            <!-- Form for Account Page-->
+            <fieldset id="account-fieldset">
+                {{#account}}
+                    <!-- Account Forename -->
+                    <label for="Editname" id="account-label" class="account"> Forename: {{forename}} </label>
+                    <br>
+                    <br>
+                    <!-- Account Surname -->
+                    <label for="Editname" id="account-label" class="accountSname"> Surname: {{surname}} </label>
+                    <br>
+                    <br>
+                    <!-- Email Address-->
+                    <label for="Editemail" id="account-label" class="account-email"> Email: {{email}}</label>
+                    <br>
+                    <br>
+                    <!-- Edit Account -->
+                    <form>
+                        <button type="text" id="account-buttons" class="account-edit" formaction="/account/{{_id}}" formmethod="get"> Edit Account Details</button>
+                    </form>
+                {{/account}}
+            </fieldset>
+        </main>
+        <!-- Link to Account Script File
+        <script scr="../public/JavaScript/account.js"></script>-->
+        <script>
+            //Nav Menu
+            function openNav() {
+            document.getElementById("nav-menu").style.width = "250px";
+            }
 
-    <main>
-        <br><br><br>
-        <!-- Form for Account Page-->
-        <fieldset id="account-fieldset">
-
-        {{#account}}
-            <!-- Account Forename -->
-            <label for="Editname" id="account-label" class="account"> Forename: {{forename}} </label>
-            <br>
-            <br>
-            <!-- Account Surname -->
-            <label for="Editname" id="account-label" class="accountSname"> Surname: {{surname}} </label>
-            <br>
-            <br>
-            <!-- Email Address-->
-            <label for="Editemail" id="account-label" class="account-email"> Email: {{email}}</label>
-            <br>
-            <br>
-            <!-- Edit Account -->
-            <form>
-                <button type="text" id="account-buttons" class="account-edit" formaction="/account/{{_id}}" formmethod="get"> Edit Account Details</button>
-            </form>
-            {{/account}}
-        </fieldset>
-</main>
-
-<!-- Link to Account Script File-->
-<script scr="JavaScript/account.js"></script>
-            
-</body>
+            function closeNav() {
+            document.getElementById("nav-menu").style.width = "0";
+            }
+            console.log("its working");
+        </script>
+    </body>
     
 </html>
