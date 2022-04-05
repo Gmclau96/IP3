@@ -45,7 +45,7 @@
                 <ul id="list" class="landing-list">
                     <h3>Most Recent Note</h3><br>
                     {{#notes}}
-                    <p>Title:&ensp;{{title}}</p><br>
+                    <p>Title:&ensp;{{title}}</p><hr><br>
                     <!--<li class="inliner">{{title}}</li>-->
                     <p>Content:</p><br>
                     <li> {{content}}</li>
@@ -58,7 +58,7 @@
                 <ol id="list" class="landing-list">
                     <h3>Most Recent List</h3><br>
                     {{#lists}}
-                    <p>Title:&ensp;{{title}}</p><br></p>
+                    <p>Title:&ensp;{{title}}</p><hr><br>
                         <!--<li class="inliner">{{title}}</li>-->
                         <p>Items</p><br>
                         <li> {{item1}}</li>
@@ -73,56 +73,25 @@
                         <li> {{item10}} </li>
                     {{/lists}}
                     <br><br>
-                    <!--should there be a closing </ol ?-->
+                    </ol>
             </div>
         </section>
         <!--Displays 5 closest events from users calendar-->
         <section id="landing-right">
             <h3>Upcoming Calendar Events</h3><br>
-            <!--<ol id="sdfsdf">
-                <p>Upcoming Calender entries</p>
+            <!--For 1 calendar event-->
+             <ul id="landing-event">
                 {{#events}}  
-                <p>Name:</p>
-                <li class="inliner">{{eventName}}</li>
-                <p>Date:</p>
-                <li class="date">{{date}} </li>
-                <p>Event type:</p>
-                <li> {{eventType}}</li>
-                <p>Note:</p>
-                <li> {{note}}</li>
+                    <li class="event">
+                        <div id="event-content">
+                            <h3>Name: <span class="inliner">{{eventName}}</span></h3><hr>
+                            <p>Date: <span class="date">{{date}}</span></p><hr>
+                            <p>Event Type: <span>{{eventName}}</span></p><hr>
+                            <p>Notes: <span>{{note}}</span></p>
+                        </div>
+                    </li>
                 {{/events}}
-            </ol>-->
-            {{#events}}
-            <table class="event-table">
-                <tr>
-                    <th class="event-title-col">Event name:</th>
-                    <td class="event-title-output">{{eventName}}</td>
-                    <td class="event-spacer"></td>
-                </tr>
-                <tr>
-                    <th class="event-title-col">Date:</th>
-                    <td class="event-title-output">{{date}}</td>
-                    <td class="event-spacer"></td>
-                </tr>
-                <tr>
-                    <th class="event-title-col">Notes:</th>
-                    <td class="event-title-output">{{note}}</td>
-                    <td class="event-spacer"></td>
-                </tr>
-
-                <tr>
-                    <th class="event-title-col">Event Type:</th>
-                    <td class="event-title-output">{{eventType}}</td>
-                    <td id="event-button">
-                        <button class="removeEvent" id="removeEvent" hidden="true">
-                            <div class="tooltip">REMOVE
-                                <span class="tooltip-warning">This will permanently remove event!</span>
-                            </div>
-                        </button>
-                    </td>
-                </tr>
-            </table>
-        {{/events}}
+            </ul>
         </section>
 </main>
 <script src="./JavaScript/landing.js"></script>

@@ -96,43 +96,29 @@
                 </div>
             </dialog>
         </section>
-
-        <!--Section of upcoming events-->
+        <!--Section of added events-->
         <section id="events">
-                {{#events}}
-                <table class="event-table">
-                    <tr>
-                        <th class="event-title-col">Event name:</th>
-                        <td class="event-title-output">{{eventName}}</td>
-                        <td class="event-spacer"></td>
-                    </tr>
-                    <tr>
-                        <th class="event-title-col">Date:</th>
-                        <td class="event-title-output">{{date}}</td>
-                        <td class="event-spacer"></td>
-                    </tr>
-                    <tr>
-                        <th class="event-title-col">Notes:</th>
-                        <td class="event-title-output">{{note}}</td>
-                        <td class="event-spacer">
-                        <!--<button class="editEvent" id="editEvent" hidden="true">EDIT</button>-->
-                        <a href="calendar/{{_id}}" class="editEvent" hidden="true">UPDATE</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="event-title-col">Event Type:</th>
-                        <td class="event-title-output">{{eventType}}</td>
-                        <td id="event-button">
+            <ul id="landing-event">
+                {{#events}}  
+                    <li class="event">
+                        <div id="event-content">
+                            <h3>Name: <span class="inliner">{{eventName}}</span></h3><hr>
+                            <p>Date: <span class="eventDate">{{date}}</span></p><hr>
+                            <p>Event Type: <span>{{eventName}}</span></p><hr>
+                            <p>Notes: <span>{{note}}</span></p>
+                        </div>
+                        <div id="event-btns">
+                            <a href="calendar/{{_id}}" class="editEvent" hidden="true">UPDATE</a>
                             <button class="removeEvent" id="removeEvent" hidden="true">
                                 <div class="tooltip">REMOVE
                                     <span class="tooltip-warning">This will permanently remove event!</span>
                                 </div>
                             </button>
-                        </td>
-                    </tr>
-                </table>
+                        </div>
+                    </li>
                 {{/events}}
-                <!--This button is not rendering for some reason-->
+            </ul>
+            <!--This button is not rendering for some reason-->
             <button class="edit-complete" id="edit-complete" hidden="true" onclick="hideEditingButtons()">DONE</button>
         </section>
     </main>

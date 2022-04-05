@@ -84,27 +84,20 @@ document.querySelector(".next").addEventListener("click", () => {
 
 renderCalendar();
 
+//Removes timezone from appearing on calendar entries
+let dates = document.getElementsByClassName('eventDate');
+for (let i = 0; i < dates.length; i++) {
+  dates[i].innerHTML = dates[i].innerHTML.slice(0, -34);
+}
 
-//For adding new event and controlling event form 
-const newEventForm = document.querySelector(".newEvent");
-const openForm = document.querySelector("#open-form-button");
-const closeForm = document.querySelector(".event-confirm");
-const exitBtn = document.querySelector("#exit-btn");
+//Nav Menu
+function openNav() {
+  document.getElementById("nav-menu").style.width = "250px";
+}
 
-openForm.addEventListener("click", () => {
-  newEventForm.showModal();
-})
-
-//deleting this section messes up the events being displayed
-closeForm.addEventListener("click", () => {
-  newEventForm.close();
-})
-///////
-
-exitBtn.addEventListener("click", () => {
-  newEventForm.close();
-})
-
+function closeNav() {
+  document.getElementById("nav-menu").style.width = "0";
+}
 
 //shows edit, remove, done buttons in tables
 function showEditingButtons() {
@@ -150,20 +143,27 @@ function hideEditingButtons() {
   hideCompleteButton();
 }
 
-//Removes timezone from appearing on calendar entries
-let dates = document.getElementsByClassName('event-title-output');
-for (let i = 0; i < dates.length; i++) {
-  dates[i].innerHTML = dates[i].innerHTML.slice(0, -35);
-}
+//For adding new event and controlling event form 
+const newEventForm = document.querySelector(".newEvent");
+const openForm = document.querySelector("#open-form-button");
+const closeForm = document.querySelector(".event-confirm");
+const exitBtn = document.querySelector("#exit-btn");
 
-//Nav Menu
-function openNav() {
-  document.getElementById("nav-menu").style.width = "250px";
-}
+openForm.addEventListener("click", () => {
+  newEventForm.showModal();
+})
 
-function closeNav() {
-  document.getElementById("nav-menu").style.width = "0";
-}
+//deleting this section messes up the events being displayed
+closeForm.addEventListener("click", () => {
+  newEventForm.close();
+})
+///////
+
+exitBtn.addEventListener("click", () => {
+  newEventForm.close();
+})
+
+
 
 //let role = document.getElementById("userRole");
 //console.log("role" + role);
