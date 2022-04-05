@@ -364,6 +364,35 @@ exports.post_calendar = async function (req, res) {
     }
 }
 
+//shows update event page
+exports.updateEvent = async function (req, res) {
+    const id = req.params.id;
+    let event = await calendarDao.findById(id).select("");
+    res.render("updateEvent", { event });
+}
+
+//updates events to db
+exports.updateEvents = async function (req, res) {
+    const id = req.params.id;
+    const eventName = req.body.eventTitle;
+    const date = req.body.datetime;
+    const notes = req.body.eventNote;
+    const eventType = req.body.eventType;
+    let events = await calendarDao.findByIdAndUpdate(id, {
+        eventName: eventName,
+        date: date,
+        note: notes,
+        eventType: eventType,
+    }, { new: true });
+    res.redirect("/calendar");
+}
+
+//deletes events from db
+exports.deleteEvents = async function (req, res) {
+    const id = req.params.id;
+    await calendarDao.deleteOne({ _id: id });
+    res.redirect("/calendar");
+}
 
 exports.get_notes = async function (req, res) {
     const _email = res.locals.user.email;

@@ -1,5 +1,7 @@
 const date = new Date();
 
+console.log(date);
+
 const renderCalendar = () => {
   date.setDate(1);
 
@@ -65,8 +67,9 @@ const renderCalendar = () => {
 
   for (let j = 1; j <= nextDays; j++) {
     days += `<div class="next-date">${j}</div>`;
-    monthDays.innerHTML = days;
+    //monthDays.innerHTML = days;
   }
+  monthDays.innerHTML = days;
 };
 
 document.querySelector(".prev").addEventListener("click", () => {
@@ -81,48 +84,10 @@ document.querySelector(".next").addEventListener("click", () => {
 
 renderCalendar();
 
-
-//For adding new event and controlling event form 
-  const newEventForm = document.querySelector(".newEvent");
-  const openForm = document.querySelector("#open-form-button");
-  const closeForm = document.querySelector(".event-confirm");
-  const exitBtn = document.querySelector("#exit-btn");
-
-  openForm.addEventListener("click", () => {
-    newEventForm.showModal();
-  })
-
-  closeForm.addEventListener("click", () => {
-    newEventForm.close();
-  })
-
-  exitBtn.addEventListener("click", () => {
-        newEventForm.close();
-  })
-
-function completeEditing() {
-  let removeBtns = document.getElementsByClassName(".remove-event-buttons");
-  let editComplete = document.getElementsByClassName(".edit-complete");
-  if(removeBtns.style.display === "block"){
-    removeBtns.style.display = "none";
-    editComplete.style.display = "none";
-  }
-}
-
-//shows remove buttons in tables
-function showRemoveButton() {
-  let x = document.getElementsByClassName('removeEvent');
-console.log(x);
-  [].forEach.call(x, function showDelete(x) {
-    x.hidden = false;
-  });
-  document.body.scrollTop = document.documentElement.scrollTop = 0;
-}
-
 //Removes timezone from appearing on calendar entries
-let dates = document.getElementsByClassName('event-title-output');
-for (let i=0; i < dates.length; i++) { 
-  dates[i].innerHTML = dates[i].innerHTML.slice(0, -35);
+let dates = document.getElementsByClassName('eventDate');
+for (let i = 0; i < dates.length; i++) {
+  dates[i].innerHTML = dates[i].innerHTML.slice(0, -34);
 }
 
 //Nav Menu
@@ -133,3 +98,59 @@ function openNav() {
 function closeNav() {
   document.getElementById("nav-menu").style.width = "0";
 }
+
+//shows edit, remove, done buttons in tables
+function showEditingButtons() {
+  let x = document.getElementsByClassName('removeEvent');
+  let y = document.getElementsByClassName('editEvent');
+  let comp = document.getElementsByClassName('edit-complete');
+  console.log("comp" + comp);
+  console.log(x);
+  [].forEach.call(x, function showDelete(x) {
+    x.hidden = false;
+  });
+  [].forEach.call(y, function showEdit(y) {
+    y.hidden = false;
+  });
+  comp.hidden = false;
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+//Hides editing buttons
+function hideEditingButtons() {
+  let x = document.getElementsByClassName('removeEvent');
+  let y = document.getElementsByClassName('editEvent');
+  let comp = document.getElementsById('edit-complete');
+  console.log(x);
+  [].forEach.call(x, function showDelete(x) {
+    x.hidden = true;
+  });
+  [].forEach.call(y, function showEdit(y) {
+    y.hidden = true;
+  });
+  comp.hidden = true;
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+//For adding new event and controlling event form 
+const newEventForm = document.querySelector(".newEvent");
+const openForm = document.querySelector("#open-form-button");
+const closeForm = document.querySelector(".event-confirm");
+const exitBtn = document.getElementById("exit-btn");
+
+openForm.addEventListener("click", () => {
+  newEventForm.showModal();
+})
+
+closeForm.addEventListener("click", () => {
+  newEventForm.close();
+})
+
+exitBtn.addEventListener("click", () => {
+  newEventForm.close();
+})
+
+
+
+//let role = document.getElementById("userRole");
+//console.log("role" + role);

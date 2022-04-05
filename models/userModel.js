@@ -46,7 +46,7 @@ const userColumns = new mongoose.Schema({
     }
 })
 
-//uses bcrypt beofre saving to hash password
+//uses bcrypt before saving to hash password
 userColumns.pre('save', async function (next) {
     this.password = await bcrypt.hash(this.password, 10);
     next();

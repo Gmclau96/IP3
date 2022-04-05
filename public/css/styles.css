@@ -34,6 +34,16 @@
         flex-direction: row;
     }
 
+    hr {
+        margin-top: 5px;
+    }
+
+/* Utility Classes */
+
+    .hide {
+        visibility: hidden;;
+    }
+
 /* Navigation Menu */
 
 #burger-menu {
@@ -86,7 +96,7 @@
   }
 
   #spacer{
-      height: 350px;
+      height: 250px;
   }
 
 /* Calendar Content */
@@ -100,7 +110,7 @@
     #calendar-actions{
         display: flex;
         flex-direction: column;
-        margin: 0 10%;
+        margin: 0 5% 0 10%;
     }
     
         /* Calendar View */    
@@ -143,7 +153,7 @@
             outline: #000000 solid 2px;
             }
             
-            h2 {
+            .date h2 {
             text-transform: uppercase;
             font-weight: 600;
             font-size: 1.8rem;
@@ -278,10 +288,6 @@
                 margin-top: 1em;
             }
 
-            #date-dropdown {
-                display: flex;
-            }
-
             #form-input select{
                 margin: 1em;
                 padding: .5em;
@@ -292,56 +298,74 @@
             
 
         /* Right side of calendar page */
-            #events{
+            #calendar-right {
                 margin: 1.5em 2em 0 1em;
-                height: 75%;
-                overflow: hidden;
+                display: flex;
+                flex-direction: column;
             }
 
-            .event-table{
+            #events{
+                display: flex;
+                flex-direction: column;
+                height: 75%;
+                overflow: scroll;
+                width: 40em;
+            }
+
+            .event {
+                display: flex;
+                flex-direction: row;
+                padding: 1em;
+                margin: 1em auto;
                 border: #000000 solid 2px;
-                margin: 0 4em 1em 1em;
-                border-collapse: collapse;
+               /* max-width: 40em;*/
+               max-width: 100%;
+            }
+
+            #event-content{
+                width: 80%;
             }
             
-
-            .event-title-col{
-                width: 25%;
-                text-align: right;
-                vertical-align: top;
-                padding: 0.25em 1em ;
-                background-color: #32465B;
+            #event-content p{
+                padding: 0.5em;
             }
 
-            .event-title-output{
-                text-align: left;
-                vertical-align: top;
-                padding: 0.25em 1em ;
-                background-color: #bdccdb;
-            }
-
-            .event-spacer{
-                background-color: #bdccdb;
-            }
-
-            #event-button{
+            #event-btns {
                 display: flex;
-                justify-content: right;
-                align-items: right;
-                background-color: #bdccdb;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 10em;
             }
-
-            .remove-event-buttons{
+            
+            #event-btns button{
                 font-weight: 500;
                 color: #ffffff;
                 background-color: #32465B;
                 border: none;
-                padding: 0.5em;
+                padding: 1em;
                 border-radius: .5em;
-                margin-right: 0.5em;
-                margin-bottom: 0.5em;
+                margin: 1em;
                 cursor: pointer;
+                width: 8em;
+                text-decoration: none;
             }
+            
+            #event-btns a{
+                font-weight: 500;
+                color: #ffffff;
+                background-color: #32465B;
+                border: none;
+                border-radius: .5em;
+                margin: 1em;
+                padding: 0.8em;
+                cursor: pointer;
+                width: 7em;
+                text-decoration: none;
+                text-align: center;
+            }
+
+
 
             .tooltip {
                 position: relative;
@@ -374,11 +398,14 @@
                 border: none;
                 padding: 0.5em;
                 border-radius: .5em;
-                margin-right: 0.5em;
-                margin-bottom: 0.5em;
                 cursor: pointer;
-                display: none;
             }
+
+            #completeButton {
+                visibility: visible;
+                background-color: red;
+            }
+            
 
     /*Arrun's CSS*/
     .recipeBox{
@@ -695,7 +722,7 @@
     margin-left:15%;
     margin-right:15%;
     margin-top: 35px;
-    background-color: #C0D6E4;
+    background-color: #FFF6EB;
 }
 
 #notes-buttons{
@@ -761,7 +788,7 @@
     display: block;
     margin-left:15%;
     margin-right:15%;
-    background-color: #C0D6E4;
+    background-color: #FFF6EB;
 }
 
 .notesBoxContent{
@@ -774,15 +801,14 @@
     display: block;
     margin-left:15%;
     margin-right:15%;
-    background-color: #C0D6E4;
+    background-color: #FFF6EB;
 }
 
 #newNoteDiv{
     margin: auto;
     margin-top:20px;
     padding: 10px; 
-    width: 51%;
-    margin-left: 26%;
+    max-width: max-content;
     border: solid 2px #36846b;
   }
 
@@ -796,6 +822,7 @@
     margin: auto;
     margin-top: 20px;
     margin-bottom:20px;
+    margin-left: 32px;
     padding: 10px; 
     max-width: max-content;
   }
@@ -1247,40 +1274,102 @@
         }
 
 /* Styling for Landing Page */
-#landing-main {
+    #landing-main {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1em;
+    }
+
+    #landing-left {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5em;
+    }
+
+    .landing-left-inner {
+        display: block;
+        max-width: 30rem;
+        height: 38%;
+        margin: 0 1em 2em 5em;
+        padding: 1.5em 2em 3em 2em;
+        outline: #000000 solid 2px;
+        overflow: scroll;
+        box-sizing: border-box;
+        border: 1em solid #eae9e1;
+    }
+
+    #landing-right {
+        margin: 0 5% 0 3%;
+        width: 55%;
+        height: 80%;
+        padding: 2em 2em 3em 2em;
+        overflow: hidden;
+        outline: #000000 solid 2px;
+        overflow: scroll;
+        
+    }
+
+    #landing-right h3 {
+        margin-left: 1.5em;
+    }
+
+    .landing-list {
+        padding: 1em;
+        margin: 1em auto;
+        border: #000000 solid 2px;
+        width: 100%;
+    }
+
+    #landing-event {
+        padding: 0 1em 1em 1em;
+        margin: 0 0.5em;
+    }
+    
+    #landing-event h3{
+        margin-left: 0;
+    }
+
+    /*  The styling for the events section on the landing page uses the code from
+        the calendar section */
+
+
+/* Styling for Update Calendar Event */
+#updateEventDiv {
+    margin: auto;
+    margin-top:20px;
+    padding: 10px; 
+    max-width: max-content;
+    border: solid 2px #36846b;
+}
+
+.eventLabel {
+    font-size: 1.5rem;
+    width: 10em;
+}
+
+.pairing {
     display: flex;
     flex-direction: row;
+    margin: 1.5em auto;
+}
+
+.pairing p {
     margin-top: 1em;
 }
 
-#landing-left {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5em;
+#existingEventType {
+    font-size: 1.5rem;
+    margin-bottom: 0;
 }
 
-.landing-left-inner {
-    display: block;
-    width: 30rem;
-    height: 38%;
-    margin: 0 1em 2em 5em;
-    outline: #000000 solid 2px;
-    overflow: scroll;
-    box-sizing: border-box;
-    border: 1em solid #eae9e1;
+.display-box {
+    width: 40%;
+    padding: 10px; 
+    font-size: 1.25rem;
 }
 
-#landing-right {
-    margin: 0 5% 0 3%;
-    width: 55%;
-    height: 80%;
-    padding: 3em;
-    overflow: hidden;
-    outline: #000000 solid 2px;
-    overflow: scroll;
-}
-
-.landing-list {
-    padding: 1em;
-    margin: 1em 2em;
+.display-dropdown {
+    width: 40%;
+    padding: 10px; 
+    font-size: 1.25rem;
 }
