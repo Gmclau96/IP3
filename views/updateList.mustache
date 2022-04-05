@@ -16,7 +16,7 @@
           Update List
         </h1>
 <!-- abillity to update list -->
-        <div id="updatNoteDiv" > 
+        <div id="updateNoteDiv" > 
         
            <form>
            {{#lists}}
@@ -66,7 +66,7 @@
                 <button id="del"type="submit" formaction="/deleteLists/{{_id}}" formmethod="post">Delete</button>
                 <button id="back" type="submit" formaction="/lists" formmethod="get" formnovalidate>Back</button>
                 <button type="button" id="add"onclick="expandEditList()">Add Another Line</button>
-                <button type="button" id="add"onclick="hideUpdateList()">Add Another Line</button>
+                
                 {{/lists}}
                 </div>
                </form>  

@@ -954,21 +954,50 @@
         #listBlock{
             margin-left: 15%;
             margin-right: 15%;
+            grid-auto-rows: 4fr;
 
         }
 
         #listBtnBlock{
-           
-            left: 50%;
-            bottom: 20px;
-            transform: translate(-50%, -50%);
-            margin: 35%;
+
+        margin-left: 42%;
+        margin-right: 20%;
+        left: 50%;
+        justify-content:center;
+        align-items: center;
+
 
         }
+.listButton{
+    
+      
+        
+        font-weight: 500;
+        color: #ffffff;
+        background-color: #36846b;
+        border: none;
+        padding: 1em;
+        border-radius: .5em;
+        margin: 1em;
+        cursor: pointer;
+       
+        
+        
+      }
+
+        #blankRow{
+            visibility: hidden; 
+            font-size: 100px;
+
+        }
+        
 
         #listBox{
-            margin-top: 50px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding:0.5%;
             border-radius: 25px;
+            background-color: #FFF6EB;
             border: 2px solid #000000;
             padding: 20px;
             width: 175px;
@@ -977,6 +1006,8 @@
             justify-content: center;
             float: left;
             margin-left: 40px;
+            margin-top: 50px;
+            
         }
         
         #listcontainer {
