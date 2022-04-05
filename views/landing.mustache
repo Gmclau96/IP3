@@ -42,10 +42,10 @@
         <section id="Landing-left">
             <!--Displays latest note from user-->
             <div class="landing-left-inner">
+                <h3>Most Recent Note</h3><br>
                 <ul id="list" class="landing-list">
-                    <h3>Most Recent Note</h3><br>
                     {{#notes}}
-                    <p>Title:&ensp;{{title}}</p><hr><br>
+                    <h3>Title:&ensp;{{title}}</h3><hr><br>
                     <!--<li class="inliner">{{title}}</li>-->
                     <p>Content:</p><br>
                     <li> {{content}}</li>
@@ -55,10 +55,10 @@
             </div>
             <!--Displays latest list by user-->
             <div class="landing-left-inner">
+                <h3>Most Recent List</h3><br>
                 <ol id="list" class="landing-list">
-                    <h3>Most Recent List</h3><br>
                     {{#lists}}
-                    <p>Title:&ensp;{{title}}</p><hr><br>
+                    <h3>Title:&ensp;{{title}}</h3><hr><br>
                         <!--<li class="inliner">{{title}}</li>-->
                         <p>Items</p><br>
                         <li> {{item1}}</li>

@@ -96,6 +96,7 @@
                 </div>
             </dialog>
         </section>
+        
         <!--Section of added events-->
         <section id="events">
             <ul id="landing-event">
@@ -118,8 +119,10 @@
                     </li>
                 {{/events}}
             </ul>
+            <div id="completeButton">
             <!--This button is not rendering for some reason-->
-            <button class="edit-complete" id="edit-complete" hidden="true" onclick="hideEditingButtons()">DONE</button>
+                <button class="edit-complete" id="edit-complete" hidden="false" onclick="hideEditingButtons()">DONE</button>
+            </div>
         </section>
     </main>
     <script src="./JavaScript/calendar.js"></script>

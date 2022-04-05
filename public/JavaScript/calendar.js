@@ -104,6 +104,7 @@ function showEditingButtons() {
   let x = document.getElementsByClassName('removeEvent');
   let y = document.getElementsByClassName('editEvent');
   let comp = document.getElementsByClassName('edit-complete');
+  console.log("comp" + comp);
   console.log(x);
   [].forEach.call(x, function showDelete(x) {
     x.hidden = false;
@@ -113,17 +114,6 @@ function showEditingButtons() {
   });
   comp.hidden = false;
   document.body.scrollTop = document.documentElement.scrollTop = 0;
-  showCompleteButton();
-}
-
-function showCompleteButton() {
-  let comp = document.getElementsByClassName('edit-complete');
-  comp.hidden = false;
-}
-
-function hideCompleteButton() {
-  let comp = document.getElementsByClassName('edit-complete');
-  comp.hidden = false;
 }
 
 //Hides editing buttons
@@ -140,24 +130,21 @@ function hideEditingButtons() {
   });
   comp.hidden = true;
   document.body.scrollTop = document.documentElement.scrollTop = 0;
-  hideCompleteButton();
 }
 
 //For adding new event and controlling event form 
 const newEventForm = document.querySelector(".newEvent");
 const openForm = document.querySelector("#open-form-button");
 const closeForm = document.querySelector(".event-confirm");
-const exitBtn = document.querySelector("#exit-btn");
+const exitBtn = document.getElementById("exit-btn");
 
 openForm.addEventListener("click", () => {
   newEventForm.showModal();
 })
 
-//deleting this section messes up the events being displayed
 closeForm.addEventListener("click", () => {
   newEventForm.close();
 })
-///////
 
 exitBtn.addEventListener("click", () => {
   newEventForm.close();
