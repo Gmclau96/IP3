@@ -56,31 +56,6 @@
                         <button id="back" type="submit" formaction="/calendar" formmethod="get" formnovalidate>Back</button>
                     </div> 
                 {{/event}}
-            <!--
-                {{#event}}
-                    <div id="form-left">
-                        <label class="eventLabel"> Event Name:</label>
-                        <label class="eventLabel">Existing Date:</label>
-                        <label class="eventLabel">Confirm Date:</label>
-                        <label class="eventLabel"> Notes:</label>
-                        <label class="eventLabel">Existing Event Type:</label>
-                        <label class="eventLabel">Confirm Event Type:</label>  
-                    </div>
-                    <div id="form-right">
-                        <input class="display-box" id="display-box" name="eventTitle" value="{{eventName}}" required>
-                        <p class="event-title-output">{{date}}</p><br>
-                        <input class="display-dropdown" type="datetime-local" name="datetime" id="datetime" value="{{date}}">
-                        <input class="display-box" id="display-box" name="eventNote" value="{{note}}" required> 
-                        <p>{{eventType}}</p>
-                            <select  class="display-dropdown" name="eventType" id="eventType" value="{{eventTypeNew}}">
-                                <option value="Appointment">Appointment</option>
-                                <option value="Birthday">Birthday</option>
-                                <option value="Meeting">Meeting</option>
-                                <option value="Other">Other</option>
-                            </select>
-                    </div>
-                {{/event}}
-                -->
             </form>  
         </div>
         <script src="./JavaScript/calendar.js"></script>

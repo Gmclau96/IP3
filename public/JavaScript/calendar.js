@@ -105,14 +105,6 @@ exitBtn.addEventListener("click", () => {
   newEventForm.close();
 })
 
-/*function completeEditing() {
-  let removeBtns = document.getElementsByClassName(".remove-event-buttons");
-  let editComplete = document.getElementsByClassName(".edit-complete");
-  if (removeBtns.style.display === "block") {
-    removeBtns.style.display = "none";
-    editComplete.style.display = "none";
-  }
-}*/
 
 //shows edit, remove, done buttons in tables
 function showEditingButtons() {
@@ -128,13 +120,24 @@ function showEditingButtons() {
   });
   comp.hidden = false;
   document.body.scrollTop = document.documentElement.scrollTop = 0;
+  showCompleteButton();
+}
+
+function showCompleteButton() {
+  let comp = document.getElementsByClassName('edit-complete');
+  comp.hidden = false;
+}
+
+function hideCompleteButton() {
+  let comp = document.getElementsByClassName('edit-complete');
+  comp.hidden = false;
 }
 
 //Hides editing buttons
-function completeEditing() {
+function hideEditingButtons() {
   let x = document.getElementsByClassName('removeEvent');
   let y = document.getElementsByClassName('editEvent');
-  let comp = document.getElementsByClassName('edit-complete');
+  let comp = document.getElementsById('edit-complete');
   console.log(x);
   [].forEach.call(x, function showDelete(x) {
     x.hidden = true;
@@ -144,6 +147,7 @@ function completeEditing() {
   });
   comp.hidden = true;
   document.body.scrollTop = document.documentElement.scrollTop = 0;
+  hideCompleteButton();
 }
 
 //Removes timezone from appearing on calendar entries
@@ -154,13 +158,12 @@ for (let i = 0; i < dates.length; i++) {
 
 //Nav Menu
 function openNav() {
-  let adminLink = document.getElementById("adminLink");   //not opening nav now
-  if (res.locals.users.admin == true) {
-    adminLink.hidden = false;
-    }
-    document.getElementById("nav-menu").style.width = "250px";
+  document.getElementById("nav-menu").style.width = "250px";
 }
 
 function closeNav() {
   document.getElementById("nav-menu").style.width = "0";
 }
+
+//let role = document.getElementById("userRole");
+//console.log("role" + role);

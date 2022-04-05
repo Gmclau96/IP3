@@ -13,10 +13,10 @@
     <!--For alligning menu icon and title-->
     <div class="title-bar">
         <div id="burger-menu" onclick="openNav()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <!--Navigation Menu-->
         <div id="nav-menu">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -27,6 +27,7 @@
                 <a href="/notes">Notes</a>
                 <a href="/recipes">Recipes</a>
                 <a href="/account">Account</a>
+                <a href="/admin" class="hide">Admin</a>
                 <div id="spacer"></div>
                 <a href="/logout">LOGOUT</a>
             </div>
@@ -39,6 +40,7 @@
 
     <main id="landing-main">
         <section id="Landing-left">
+            <!--Displays latest note from user-->
             <div class="landing-left-inner">
                 <ul id="list" class="landing-list">
                     <h3>Most Recent Note</h3><br>
@@ -51,6 +53,7 @@
                 </ul>
                 <br>
             </div>
+            <!--Displays latest list by user-->
             <div class="landing-left-inner">
                 <ol id="list" class="landing-list">
                     <h3>Most Recent List</h3><br>
@@ -73,6 +76,7 @@
                     <!--should there be a closing </ol ?-->
             </div>
         </section>
+        <!--Displays 5 closest events from users calendar-->
         <section id="landing-right">
             <h3>Upcoming Calendar Events</h3><br>
             <!--<ol id="sdfsdf">

@@ -9,6 +9,17 @@ function openNav() {
   document.getElementById("nav-menu").style.width = "250px";
 }
 
+/*
+function openNav() {
+  let role = document.getElementById("userRole"); 
+  let value = role.textContent;  //gets text contents of span
+  console.log("result = " + value); //check
+  if (value === true) {
+    role.hidden = false;
+  }
+  document.getElementById("nav-menu").style.width = "250px";
+}*/
+
 function closeNav() {
   document.getElementById("nav-menu").style.width = "0";
 }

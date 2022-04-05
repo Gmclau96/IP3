@@ -16,13 +16,13 @@
         <!--For alligning menu icon and title-->
         <div class="title-bar">
             <div id="burger-menu" onclick="openNav()">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
             <!--Navigation Menu-->
             <div id="nav-menu">
-                <a href="javascript:void(0)" class="closebtn" click="closeNav()">&times;</a>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div id="nav-options">
                     <a href="/">Home</a>
                     <a href="/calendar">Calendar</a>
@@ -30,10 +30,12 @@
                     <a href="/notes">Notes</a>
                     <a href="/recipes">Recipes</a>
                     <a href="/account">Account</a>
+                    <a href="/admin" class="hide">Admin</a>
                     <div id="spacer"></div>
                     <a href="/logout">LOGOUT</a>
                 </div>
             </div>
+        </div>
 
             <header>
                 <h1>{{user.forename}}'s Account </h1>
@@ -75,7 +77,6 @@
             function closeNav() {
             document.getElementById("nav-menu").style.width = "0";
             }
-            console.log("its working");
         </script>
     </body>
     

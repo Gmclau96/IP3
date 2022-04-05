@@ -13,10 +13,10 @@
     <!--For alligning menu icon and title-->
     <div class="title-bar">
         <div id="burger-menu" onclick="openNav()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <!--Navigation Menu-->
         <div id="nav-menu">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -27,7 +27,7 @@
                 <a href="/notes">Notes</a>
                 <a href="/recipes">Recipes</a>
                 <a href="/account">Account</a>
-                <a href="/admin" id="adminLink" hidden="true">ADMIN</a>
+                <a href="/admin" class="hide">Admin</a>
                 <div id="spacer"></div>
                 <a href="/logout">LOGOUT</a>
             </div>
@@ -99,40 +99,41 @@
 
         <!--Section of upcoming events-->
         <section id="events">
-            {{#events}}
-            <table class="event-table">
-                <tr>
-                    <th class="event-title-col">Event name:</th>
-                    <td class="event-title-output">{{eventName}}</td>
-                    <td class="event-spacer"></td>
-                </tr>
-                <tr>
-                    <th class="event-title-col">Date:</th>
-                    <td class="event-title-output">{{date}}</td>
-                    <td class="event-spacer"></td>
-                </tr>
-                <tr>
-                    <th class="event-title-col">Notes:</th>
-                    <td class="event-title-output">{{note}}</td>
-                    <td class="event-spacer">
-                    <!--<button class="editEvent" id="editEvent" hidden="true">EDIT</button>-->
-                    <a href="calendar/{{_id}}" class="editEvent" hidden="true">UPDATE</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="event-title-col">Event Type:</th>
-                    <td class="event-title-output">{{eventType}}</td>
-                    <td id="event-button">
-                        <button class="removeEvent" id="removeEvent" hidden="true">
-                            <div class="tooltip">REMOVE
-                                <span class="tooltip-warning">This will permanently remove event!</span>
-                            </div>
-                        </button>
-                    </td>
-                </tr>
-            </table>
-            {{/events}}
-            <button class="edit-complete" id="edit-complete" hidden="true">DONE</button>
+                {{#events}}
+                <table class="event-table">
+                    <tr>
+                        <th class="event-title-col">Event name:</th>
+                        <td class="event-title-output">{{eventName}}</td>
+                        <td class="event-spacer"></td>
+                    </tr>
+                    <tr>
+                        <th class="event-title-col">Date:</th>
+                        <td class="event-title-output">{{date}}</td>
+                        <td class="event-spacer"></td>
+                    </tr>
+                    <tr>
+                        <th class="event-title-col">Notes:</th>
+                        <td class="event-title-output">{{note}}</td>
+                        <td class="event-spacer">
+                        <!--<button class="editEvent" id="editEvent" hidden="true">EDIT</button>-->
+                        <a href="calendar/{{_id}}" class="editEvent" hidden="true">UPDATE</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="event-title-col">Event Type:</th>
+                        <td class="event-title-output">{{eventType}}</td>
+                        <td id="event-button">
+                            <button class="removeEvent" id="removeEvent" hidden="true">
+                                <div class="tooltip">REMOVE
+                                    <span class="tooltip-warning">This will permanently remove event!</span>
+                                </div>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+                {{/events}}
+                <!--This button is not rendering for some reason-->
+            <button class="edit-complete" id="edit-complete" hidden="true" onclick="hideEditingButtons()">DONE</button>
         </section>
     </main>
     <script src="./JavaScript/calendar.js"></script>

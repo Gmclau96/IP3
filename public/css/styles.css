@@ -34,6 +34,12 @@
         flex-direction: row;
     }
 
+/* Utility Classes */
+
+    .hide {
+        visibility: hidden;;
+    }
+
 /* Navigation Menu */
 
 #burger-menu {
@@ -86,7 +92,7 @@
   }
 
   #spacer{
-      height: 350px;
+      height: 250px;
   }
 
 /* Calendar Content */
@@ -288,8 +294,16 @@
             
 
         /* Right side of calendar page */
+            #calendar-right {
+                margin: 1.5em 2em 0 1em;
+                display: flex;
+                flex-direction: column;
+            }
+
             #events{
                 margin: 1.5em 2em 0 1em;
+                display: flex;
+                flex-direction: column;
                 height: 75%;
                 overflow: scroll;
             }
@@ -370,11 +384,9 @@
                 border: none;
                 padding: 0.5em;
                 border-radius: .5em;
-                margin-right: 0.5em;
-                margin-bottom: 0.5em;
                 cursor: pointer;
-                display: none;
             }
+            
 
     /*Arrun's CSS*/
     .recipeBox{
