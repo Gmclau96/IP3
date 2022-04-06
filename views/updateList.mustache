@@ -1,76 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<header>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>
-       Update List
-    </title>
-</header>
-<body onload="hideUpdateList()">
-        <h1>
-          Update List
-        </h1>
-<!-- abillity to update list -->
-        <div id="updateNoteDiv" > 
-        
-           <form>
-           {{#lists}}
-                <label id="listTitle"> List Title</label>
-                <input id="listTitle" name="listTitle" value="{{title}}" required> <br>
-                <label id="itemlb1">item1</label>
-                <input id="item1" name="item1" value="{{item1}}" required>
-                <label id="checkboxlb1"class="itemLabel">{{box1}}Mark as completed</label>
-                <input id="checkbox1" type="checkbox" class="itemBox" name="box1"><br>
-                <label id="itemlb2"> item2</label>
-                <input id="item2" name="item2" value="{{item2}}">
-                <label id="checkboxlb2" class="itemLabel">{{box2}}Mark as completed</label>
-                <input id="checkbox2" type="checkbox" class="itemBox" name="box2"><br>
-                <label id="itemlb3"> item3</label>
-                <input id="item3" name="item3" value="{{item3}}"> 
-                <label id="checkboxlb3" class="itemLabel">{{box3}}Mark as completed</label>
-                <input id="checkbox3" type="checkbox" class="itemBox" name="box3"><br>
-                <label id="itemlb4"> item4</label>
-                <input id="item4" name="item4" value="{{item4}}"> 
-                <label id="checkboxlb4" class="itemLabel">{{box4}}Mark as completed</label>
-                <input id="checkbox4" type="checkbox" class="itemBox" name="box4"><br>
-                <label id="itemlb5"> item5</label>
-                <input id="item5" name="item5" value="{{item5}}">
-                <label id="checkboxlb5" class="itemLabel">{{box5}}Mark as completed</label>
-                <input id="checkbox5" type="checkbox" class="itemBox" name="box5"><br>
-                <label id="itemlb6"> item6</label>
-                <input id="item6" name="item6" value="{{item6}}"> 
-                <label id="checkboxlb6" class="itemLabel">{{box6}}Mark as completed</label>
-                <input id="checkbox6" type="checkbox" class="itemBox" name="box6"><br>
-                <label id="itemlb7"> item7</label>
-                <input id="item7" name="item7" value="{{item7}}"> 
-                <label id="checkboxlb7" class="itemLabel">{{box7}}Mark as completed</label>
-                <input id="checkbox7" type="checkbox" class="itemBox" name="box7"><br>
-                <label id="itemlb8"> item8</label>
-                <input id="item8" name="item8" value="{{item8}}"> 
-                <label id="checkboxlb8" class="itemLabel">{{box8}}Mark as completed</label>
-                <input id="checkbox8" type="checkbox" class="itemBox" name="box8"><br>
-                <label id="itemlb9"> item9</label>
-                <input id="item9" name="item9" value="{{item9}}"> 
-                <label id="checkboxlb9" class="itemLabel">{{box9}}Mark as completed</label>
-                <input id="checkbox9" type="checkbox" class="itemBox" name="box9"><br>
-                <label id="itemlb10" > item10</label>
-                <input id="item10"  name="item10" value="{{item10}}">
-                <label id="checkboxlb10" class="itemLabel">{{box10}}Mark as completed</label>
-                <input id="checkbox10" type="checkbox" class="itemBox" name="box10"><br>
-                <button id="add"type="submit" formaction="/updateLists/{{_id}}" formmethod="post">Update</button>
-                <button id="del"type="submit" formaction="/deleteLists/{{_id}}" formmethod="post">Delete</button>
-                <button id="back" type="submit" formaction="/lists" formmethod="get" formnovalidate>Back</button>
-                <button type="button" id="add"onclick="expandEditList()">Add Another Line</button>
-                
-                {{/lists}}
-                </div>
-               </form>  
-        </div>
-</body>
- <script src="../JavaScript/lists.js"></script>
+        <header>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="../css/styles.css">
+                <title>Personal Organiser - Update List</title>
+        </header>
+        <body onload="hideUpdateList()">
+                <h1>Update List</h1>
+                <!-- abillity to update list -->
+                <section id="updatePageContent" > 
+                        <form>
+                        {{#lists}}
+                                <div class="pairing listTitle">
+                                        <label> List Title</label>
+                                        <input type="text" name="listTitle" value="{{title}}" required> <br>
+                                </div>
+                                <div class="listGroup">
+                                        <div class="pairing">
+                                                <label id="itemlb1">item1</label>
+                                                <input type="text" id="item1" name="item1" value="{{item1}}" required>
+                                        </div>
+                                        <div class="updateCheck">
+                                                <label id="checkboxlb1" class="itemLabel">{{box1}}Mark as completed</label>
+                                                <input type="checkbox" id="checkbox1" class="itemBox" name="box1"><br>
+                                        </div>
+                                </div>
+                                <div class="listGroup">
+                                        <div class="pairing">
+                                                <label id="itemlb2"> item2</label>
+                                                <input type="text"id="item2" name="item2" value="{{item2}}">
+                                        </div>
+                                        <div class="updateCheck">
+                                                <label id="checkboxlb2" class="itemLabel">{{box2}}Mark as completed</label>
+                                                <input type="checkbox" id="checkbox2" class="itemBox" name="box2"><br>
+                                        </div>
+                                </div>
+                                <div class="listGroup">
+                                        <div class="pairing">
+                                                <label id="itemlb3"> item3</label>
+                                                <input type="text" id="item3" name="item3" value="{{item3}}">
+                                        </div>
+                                        <div class="updateCheck">
+                                                <label id="checkboxlb3" class="itemLabel">{{box3}}Mark as completed</label>
+                                                <input type="checkbox" id="checkbox3" class="itemBox" name="box3"><br>
+                                        </div>
+                                </div>
+                                <div class="listGroup">
+                                        <div class="pairing">
+                                                <label id="itemlb4"> item4</label>
+                                                <input type="text" id="item4" name="item4" value="{{item4}}">
+                                        </div>
+                                                <div class="updateCheck">
+                                                        <label id="checkboxlb4" class="itemLabel">{{box4}}Mark as completed</label>
+                                                        <input type="checkbox" id="checkbox4" class="itemBox" name="box4"><br>
+                                                </div>
+                                </div>
+                                <div class="listGroup">
+                                        <div class="pairing">
+                                                <label id="itemlb5"> item5</label>
+                                                <input type="text" id="item5" name="item5" value="{{item5}}">
+                                        </div>
+                                                <div class="updateCheck">
+                                                        <label id="checkboxlb5" class="itemLabel">{{box5}}Mark as completed</label>
+                                                        <input type="checkbox" id="checkbox5" class="itemBox" name="box5"><br>
+                                                </div>
+                                </div>
+                                <div class="listGroup">
+                                <div class="pairing">
+                                        <label id="itemlb6"> item6</label>
+                                        <input type="text" id="item6" name="item6" value="{{item6}}">
+                                </div>
+                                        <div class="updateCheck">
+                                                <label id="checkboxlb6" class="itemLabel">{{box6}}Mark as completed</label>
+                                                <input type="checkbox" id="checkbox6" class="itemBox" name="box6"><br>
+                                        </div>
+                                </div>
+                                <div class="listGroup">
+                                <div class="pairing">
+                                        <label id="itemlb7"> item7</label>
+                                        <input type="text" id="item7" name="item7" value="{{item7}}">
+                                </div>
+                                        <div class="updateCheck">
+                                                <label id="checkboxlb7" class="itemLabel">{{box7}}Mark as completed</label>
+                                                <input type="checkbox" id="checkbox7" class="itemBox" name="box7"><br>
+                                        </div>
+                                </div>
+                                <div class="listGroup">
+                                <div class="pairing">
+                                        <label id="itemlb8"> item8</label>
+                                        <input type="text" id="item8" name="item8" value="{{item8}}">
+                                </div>
+                                        <div class="updateCheck">
+                                                <label id="checkboxlb8" class="itemLabel">{{box8}}Mark as completed</label>
+                                                <input type="checkbox" id="checkbox8" class="itemBox" name="box8"><br>
+                                        </div>
+                                </div>
+                                <div class="listGroup">
+                                <div class="pairing">
+                                        <label id="itemlb9"> item9</label>
+                                        <input type="text" id="item9" name="item9" value="{{item9}}">
+                                </div>
+                                        <div class="updateCheck">
+                                                <label id="checkboxlb9" class="itemLabel">{{box9}}Mark as completed</label>
+                                                <input type="checkbox" id="checkbox9" class="itemBox" name="box9"><br>
+                                        </div>
+                                </div>
+                                <div class="listGroup">
+                                <div class="pairing">
+                                        <label id="itemlb10" > item10</label>
+                                        <input type="text" id="item10"  name="item10" value="{{item10}}">
+                                </div>
+                                        <div class="updateCheck">
+                                                <label id="checkboxlb10" class="itemLabel">{{box10}}Mark as completed</label>
+                                                <input type="checkbox" id="checkbox10" class="itemBox" name="box10"><br>
+                                        </div>
+                                </div>
+                                <div class="buttonsDiv">
+                                        <button class="actionButton" type="submit" formaction="/updateLists/{{_id}}" formmethod="post">UPDATE</button>
+                                        <button class="actionButton" type="button"  onclick="expandEditList()">ADD ITEM</button>
+                                        <button class="actionButton" type="submit" formaction="/deleteLists/{{_id}}" formmethod="post">DELETE</button>
+                                        <button class="actionButton" type="submit" formaction="/lists" formmethod="get" formnovalidate>BACK</button>
+                                </div>
+                                {{/lists}}
+                        </form>  
+                </section>
+        </body>
+        <script src="../JavaScript/lists.js"></script>
 </html>

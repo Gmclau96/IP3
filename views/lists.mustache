@@ -94,32 +94,35 @@
          <!--Display for a list-->
          <section id="listBlock">
             <div>
-               <ul id="list">   <!--what is this ul for???-->
+               <ul id="list"> 
                   {{#lists}} 
                   <div class="listBox">
-                     <h3>
-                        <li>{{title}}</li>
-                     </h3><br>
-                     <ul>
-                        <li><input type="checkbox" class="itemBox" id="item1" name="item1" onclick="return false;"><label class="itemLabel" for="item1">{{box1}}{{item1}}</label></li>
-                        <li><input type="checkbox" class="itemBox" id="item2" name="item2" onclick="return false;"><label class="itemLabel" for="item2">{{box2}}{{item2}}</label></li>
-                        <li><input type="checkbox" class="itemBox" id="item3" name="item3" onclick="return false;"><label class="itemLabel" for="item3">{{box3}}{{item3}}</label></li>
-                        <li><input type="checkbox" class="itemBox" id="item4" name="item4" onclick="return false;"><label class="itemLabel" for="item4">{{box4}}{{item4}}</label></li>
-                        <li><input type="checkbox" class="itemBox" id="item5" name="item5" onclick="return false;"><label class="itemLabel" for="item5">{{box5}}{{item5}}</label></li>
-                        <li><input type="checkbox" class="itemBox" id="item6" name="item6" onclick="return false;"><label class="itemLabel" for="item6">{{box6}}{{item6}}</label></li>
-                        <li><input type="checkbox" class="itemBox" id="item7" name="item7" onclick="return false;"><label class="itemLabel" for="item7">{{box7}}{{item7}}</label></li>
-                        <li><input type="checkbox" class="itemBox" id="item8" name="item8" onclick="return false;"><label class="itemLabel" for="item8">{{box8}}{{item8}}</label></li>
-                        <li><input type="checkbox" class="itemBox" id="item9" name="item9" onclick="return false;"><label class="itemLabel" for="item9">{{box9}}{{item9}}</label></li>
-                        <li><input type="checkbox" class="itemBox" id="item10" name="item10" onclick="return false;"><label class="itemLabel" for="item10">{{box10}}{{item10}}</label></li>
-                     </ul>
+                     <div id="list-content">
+                        <h3>
+                           <li>{{title}}</li>
+                        </h3><hr><br>
+                        <ul>
+                           <li><input type="checkbox" class="itemBox" id="item1" name="item1" onclick="return false;"><label class="itemLabel" for="item1">{{box1}}{{item1}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item2" name="item2" onclick="return false;"><label class="itemLabel" for="item2">{{box2}}{{item2}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item3" name="item3" onclick="return false;"><label class="itemLabel" for="item3">{{box3}}{{item3}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item4" name="item4" onclick="return false;"><label class="itemLabel" for="item4">{{box4}}{{item4}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item5" name="item5" onclick="return false;"><label class="itemLabel" for="item5">{{box5}}{{item5}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item6" name="item6" onclick="return false;"><label class="itemLabel" for="item6">{{box6}}{{item6}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item7" name="item7" onclick="return false;"><label class="itemLabel" for="item7">{{box7}}{{item7}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item8" name="item8" onclick="return false;"><label class="itemLabel" for="item8">{{box8}}{{item8}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item9" name="item9" onclick="return false;"><label class="itemLabel" for="item9">{{box9}}{{item9}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item10" name="item10" onclick="return false;"><label class="itemLabel" for="item10">{{box10}}{{item10}}</label></li>
+                        </ul>
+                     </div>
                      <br>
-                     <a href="lists/{{_id}}" class="edit" hidden="true">update</a>
-                     <button class="remove" hidden="true">remove list</button> <br>
+                     <div class="buttonDiv">
+                        <a href="lists/{{_id}}" class="anchorButton" hidden="true">UPDATE</a>
+                     </div>
                   </div>
                   {{/lists}}
                </ul>
             </div>
-            <div id="buttonDiv">
+            <div class="buttonDiv">
                   <button class="actionButton" onclick="newList()">ADD LIST</button>
                   <button class="actionButton" onclick="editList()">EDIT LIST</button>                    
             </div>
