@@ -17,7 +17,7 @@ function newList() {
 
 //shows edit buttons
 function editList() {
-  let x = document.querySelectorAll('.edit');
+  let x = document.querySelectorAll('.anchorButton');
 
   [].forEach.call(x, function editLists(x) {
     x.hidden = false;
@@ -41,7 +41,6 @@ function expandList() {
   }
 }
 
-//is this needed??
 function expandEditList() {
 
   for (let i = 2; i < 11; i++) {
@@ -62,7 +61,6 @@ function expandEditList() {
 }
 
 
-//what is this for??
   for (let i = 2; i < 11; i++) {
     var itemlb = document.getElementById('itemlb' + i);
     var item = document.getElementById('item' + i);
@@ -79,8 +77,6 @@ function expandEditList() {
     
   }
 }
-
-
 
 //Nav Menu
 function openNav() {
@@ -123,3 +119,14 @@ for (let i = 0; i < itemBox.length; i++) {
     itemBox[i].style.left = "9999999px";
   } 
 }
+
+//FOR UPDATING LISTS PAGE//
+
+//only show div section if there is an existing list item
+/*
+let present =  document.getElementsByClassName('listGroup');
+for (let i = 0; i < present.length; i++) {
+  if (itemLabel[i].innerHTML.length == 0) {
+    present[i].style.display = 'none';
+  }
+}*/
