@@ -81,19 +81,6 @@ function expandEditList() {
 
 
 
-
-
-
-// document.querySelector('ul');
-// list.addEventListener('click', function (ev) {
-//   if (ev.target.tagName === 'LI') {
-
-//     ev.target.classList.toggle('checked');
-
-
-//   }
-// }, false);
-
 //Nav Menu
 function openNav() {
   document.getElementById("nav-menu").style.width = "250px";

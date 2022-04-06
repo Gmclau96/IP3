@@ -73,7 +73,7 @@
                   <h3>
                      <li class="inliner">{{title}}</li>
                   </H3>
-                  <h4>Items: </h4>
+                  <h4>To-Do: </h4>
                   <ul>
                      <li><input type="checkbox" class="itemBox" id="item1" name="item1" onclick="return false;"><label class="itemLabel" for="item1">{{box1}}{{item1}}</label></li>
                      <li><input type="checkbox" class="itemBox" id="item2" name="item2" onclick="return false;"><label class="itemLabel" for="item2">{{box2}}{{item2}}</label></li>
@@ -86,17 +86,19 @@
                      <li><input type="checkbox" class="itemBox" id="item9" name="item9" onclick="return false;"><label class="itemLabel" for="item9">{{box9}}{{item9}}</label></li>
                      <li><input type="checkbox" class="itemBox" id="item10" name="item10" onclick="return false;"><label class="itemLabel" for="item10">{{box10}}{{item10}}</label></li>
                   </ul>
+                  <br>
                   <a href="lists/{{_id}}" class="edit" hidden="true">update</a>
                   <button class="remove" hidden="true">remove list</button> <br>
                </div>
                {{/lists}}
             </ul>
          </div>
+         <label id="blankRow">ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</label>
          <div id="listBtnBlock">
-            <div class="recipe-buttons">
-               <button id="recipe-buttons" onclick="newList()">ADD LIST</button>
-               <button id="recipe-buttons" onclick="editList()">EDIT LIST</button>                    
-            </div>
+            
+               <button class="listButton" onclick="newList()">ADD LIST</button>
+               <button class="listButton" onclick="editList()">EDIT LIST</button>                    
+            
          </div>
       </body>
       <script src="./JavaScript/lists.js"></script>
