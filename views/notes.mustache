@@ -39,6 +39,22 @@
             <h1>Notes</h1>
         </header>
     </div>
+
+        
+        <div id="newNoteDiv" hidden="true">
+            <form>
+                <label id="noteTitlelb"> Note Title: </label>
+                <input id="notesTitle" placeholder="Type your Note Title here..." name="noteTitle" required> <br>
+                <label id="notesContentlb"> Note Content: </label>
+                <input id="notesContent" placeholder="Type your Note Content here..." name="noteContent" required> <br>
+                <div class="add-button">
+                    <button id="add"type="submit" formaction="/notes" formmethod="post">Save</button>
+                </div>
+            </form>
+        </div>
+
+   
+
         {{#notes}}
         <table class="notesTable">
             <tr class="notesBox">
@@ -58,15 +74,15 @@
             </tr>
         </table>
 
-        <div class="recipe-buttons">
-            <a href="notes/{{_id}}" class="edit" hidden="true">Update</a>
+        <div class="buttonDiv">
+            <a href="notes/{{_id}}" class="anchorButton" hidden="true">Update</a>
         </div>
         {{/notes}}
 
         <br>
-        <div class="recipe-buttons">
-            <button id="notes-buttons" onclick="newNote()">ADD NOTE</button>
-            <button id="notes-buttons"onclick="editNote()">EDIT NOTE</button>
+        <div class="buttonDiv">
+            <button class="actionButton" id="notes-buttons" onclick="newNote()">ADD NOTE</button>
+            <button class="actionButton" id="notes-buttons"onclick="editNote()">EDIT NOTE</button>
         </div>
     </main>
 

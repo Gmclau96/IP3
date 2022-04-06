@@ -7,7 +7,7 @@ function newNote() {
 
 //shows edit buttons
 function editNote() {
-  let x = document.querySelectorAll('.edit');
+  let x = document.querySelectorAll('.anchorButton');
 
   [].forEach.call(x, function editNotes(x) {
     x.hidden = false;

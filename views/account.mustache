@@ -60,14 +60,12 @@
                     <br>
                     <br>
                     <!-- Edit Account -->
-                    <form>
-                        <button type="text" id="account-buttons" class="account-edit" formaction="/account/{{_id}}" formmethod="get"> Edit Account Details</button>
+                    <form id="editAccount">
+                        <button type="text" class="actionButton" formaction="/account/{{_id}}" formmethod="get"> Edit Details</button>
                     </form>
                 {{/account}}
             </fieldset>
         </main>
-        <!-- Link to Account Script File
-        <script scr="../public/JavaScript/account.js"></script>-->
         <script>
             //Nav Menu
             function openNav() {

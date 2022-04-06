@@ -46,13 +46,13 @@
             <fieldset id="account-fieldset">
                 <form>
                     <p>Select an account to manage:</p>           
-                    <ol id="list"><br>
+                    <ul><br>
                         {{#account}}
                         <li>{{email}}</li>
-                        <a href="admin/{{_id}}">Edit Account</a><br>
+                        <a class="anchorButton" href="admin/{{_id}}">Edit Account</a><br>
                         <hr>
                         {{/account}}
-                    </ol><br><br>
+                    </ul><br><br>
                 </form>
             </fieldset>
         </main>  
