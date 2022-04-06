@@ -310,6 +310,7 @@
                 height: 75%;
                 overflow: scroll;
                 width: 40em;
+                margin-top: 1em;
             }
 
             .event {
