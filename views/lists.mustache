@@ -38,67 +38,93 @@
          </div>
          <main>
          <!-- abillity to add list -->
-         <div id="newListDiv" hidden="true">
+         <section id="newListDiv" hidden="true">
             <form>
-               <label id="listTitlelb"> List Title</label>
-               <input id="listTitle" name="listTitle"required> <br>
-               <label id="listItemlb1"> Item 1</label>
-               <input id="listItem1" name="listItem1" required> <br>
-               <label id="listItemlb2" hidden="true"> Item 2</label>
-               <input id="listItem2" name="listItem2" hidden="true"> <br>
-               <label id="listItemlb3" hidden="true"> Item 3</label>
-               <input id="listItem3" name="listItem3" hidden="true"> <br>
-               <label id="listItemlb4" hidden="true"> Item 4</label>
-               <input id="listItem4" name="listItem4" hidden="true"> <br>
-               <label id="listItemlb5" hidden="true"> Item 5</label>
-               <input id="listItem5" name="listItem5" hidden="true"> <br>
-               <label id="listItemlb6" hidden="true"> Item 6</label>
-               <input id="listItem6" name="listItem6" hidden="true"> <br>
-               <label id="listItemlb7" hidden="true"> Item 7</label>
-               <input id="listItem7" name="listItem7" hidden="true"> <br>
-               <label id="listItemlb8" hidden="true"> Item 8</label>
-               <input id="listItem8" name="listItem8" hidden="true"> <br>
-               <label id="listItemlb9" hidden="true"> Item 9</label>
-               <input id="listItem9" name="listItem9" hidden="true"> <br>
-               <label id="listItemlb10" hidden="true"> Item 10</label>
-               <input id="listItem10" name="listItem10" hidden="true"> <br>
-               <button id="add"type="submit" formaction="/lists" formmethod="post">Save</button>
-               <button type="button" id="add"onclick="expandList()">Add Another Line</button>
-            </form>
-         </div>
-         <div id="listBlock">
-            <ul id="list">
-               {{#lists}} 
-               <div class="listBox">
-                  <h3>
-                     <li class="inliner">{{title}}</li>
-                  </H3>
-                  <h4>To-Do: </h4>
-                  <ul>
-                     <li><input type="checkbox" class="itemBox" id="item1" name="item1" onclick="return false;"><label class="itemLabel" for="item1">{{box1}}{{item1}}</label></li>
-                     <li><input type="checkbox" class="itemBox" id="item2" name="item2" onclick="return false;"><label class="itemLabel" for="item2">{{box2}}{{item2}}</label></li>
-                     <li><input type="checkbox" class="itemBox" id="item3" name="item3" onclick="return false;"><label class="itemLabel"  for="item3">{{box3}}{{item3}}</label></li>
-                     <li><input type="checkbox" class="itemBox" id="item4" name="item4" onclick="return false;"><label class="itemLabel" for="item4">{{box4}}{{item4}}</label></li>
-                     <li><input type="checkbox" class="itemBox" id="item5" name="item5" onclick="return false;"><label class="itemLabel" for="item5">{{box5}}{{item5}}</label></li>
-                     <li><input type="checkbox" class="itemBox" id="item6" name="item6" onclick="return false;"><label class="itemLabel" for="item6">{{box6}}{{item6}}</label></li>
-                     <li><input type="checkbox" class="itemBox" id="item7" name="item7" onclick="return false;"><label class="itemLabel" for="item7">{{box7}}{{item7}}</label></li>
-                     <li><input type="checkbox" class="itemBox" id="item8" name="item8" onclick="return false;"><label class="itemLabel" for="item8">{{box8}}{{item8}}</label></li>
-                     <li><input type="checkbox" class="itemBox" id="item9" name="item9" onclick="return false;"><label class="itemLabel" for="item9">{{box9}}{{item9}}</label></li>
-                     <li><input type="checkbox" class="itemBox" id="item10" name="item10" onclick="return false;"><label class="itemLabel" for="item10">{{box10}}{{item10}}</label></li>
-                  </ul>
-                  <br>
-                  <a href="lists/{{_id}}" class="edit" hidden="true">update</a>
-                  <button class="remove" hidden="true">remove list</button> <br>
+               <div class="pairing">
+                  <label id="listTitlelb"> List Title</label>
+                  <input type="text" id="listTitle" name="listTitle"required>
+               </div>   
+               <div class="pairing">
+                  <label id="listItemlb1"> Item 1</label>
+                  <input type="text" id="listItem1" name="listItem1" required>
                </div>
-               {{/lists}}
-            </ul>
-         </div>
-         <div id="listBtnBlock">
-            
-               <button class="listButton" onclick="newList()">ADD LIST</button>
-               <button class="listButton" onclick="editList()">EDIT LIST</button>                    
-            
-         </div>
+               <div class="pairing">
+                  <label id="listItemlb2" hidden="true"> Item 2</label>
+                  <input type="text" id="listItem2" name="listItem2" hidden="true">
+               </div>
+               <div class="pairing">
+                  <label id="listItemlb3" hidden="true"> Item 3</label>
+                  <input type="text" id="listItem3" name="listItem3" hidden="true">
+               </div>
+               <div class="pairing">
+                  <label id="listItemlb4" hidden="true"> Item 4</label>
+                  <input type="text" id="listItem4" name="listItem4" hidden="true">
+               </div>
+               <div class="pairing">
+                  <label id="listItemlb5" hidden="true"> Item 5</label>
+                  <input type="text" id="listItem5" name="listItem5" hidden="true">
+               </div>
+               <div class="pairing">
+                  <label id="listItemlb6" hidden="true"> Item 6</label>
+                  <input type="text" id="listItem6" name="listItem6" hidden="true">
+               </div>
+               <div class="pairing">
+                  <label id="listItemlb7" hidden="true"> Item 7</label>
+                  <input type="text" id="listItem7" name="listItem7" hidden="true">
+               </div>
+               <div class="pairing">
+                  <label id="listItemlb8" hidden="true"> Item 8</label>
+                  <input type="text" id="listItem8" name="listItem8" hidden="true">
+               </div>
+               <div class="pairing">
+                  <label id="listItemlb9" hidden="true"> Item 9</label>
+                  <input type="text" id="listItem9" name="listItem9" hidden="true">
+               </div>
+               <div class="pairing">
+                  <label id="listItemlb10" hidden="true"> Item 10</label>
+                  <input type="text" id="listItem10" name="listItem10" hidden="true">
+               </div>
+               <div class="buttonDiv">
+                  <button class="actionButton" type="submit" formaction="/lists" formmethod="post">SAVE</button>
+                  <button type="button" class="actionButton" onclick="expandList()">ADD ITEM</button>
+               </div>
+            </form>
+         </section>
+
+         <!--Display for a list-->
+         <section id="listBlock">
+            <div>
+               <ul id="list">   <!--what is this ul for???-->
+                  {{#lists}} 
+                  <div class="listBox">
+                     <h3>
+                        <li class="inliner">{{title}}</li>
+                     </h3>
+                     <h4>To-Do: </h4>
+                     <ul>
+                        <li><input type="checkbox" class="itemBox" id="item1" name="item1" onclick="return false;"><label class="itemLabel" for="item1">{{box1}}{{item1}}</label></li>
+                        <li><input type="checkbox" class="itemBox" id="item2" name="item2" onclick="return false;"><label class="itemLabel" for="item2">{{box2}}{{item2}}</label></li>
+                        <li><input type="checkbox" class="itemBox" id="item3" name="item3" onclick="return false;"><label class="itemLabel"  for="item3">{{box3}}{{item3}}</label></li>
+                        <li><input type="checkbox" class="itemBox" id="item4" name="item4" onclick="return false;"><label class="itemLabel" for="item4">{{box4}}{{item4}}</label></li>
+                        <li><input type="checkbox" class="itemBox" id="item5" name="item5" onclick="return false;"><label class="itemLabel" for="item5">{{box5}}{{item5}}</label></li>
+                        <li><input type="checkbox" class="itemBox" id="item6" name="item6" onclick="return false;"><label class="itemLabel" for="item6">{{box6}}{{item6}}</label></li>
+                        <li><input type="checkbox" class="itemBox" id="item7" name="item7" onclick="return false;"><label class="itemLabel" for="item7">{{box7}}{{item7}}</label></li>
+                        <li><input type="checkbox" class="itemBox" id="item8" name="item8" onclick="return false;"><label class="itemLabel" for="item8">{{box8}}{{item8}}</label></li>
+                        <li><input type="checkbox" class="itemBox" id="item9" name="item9" onclick="return false;"><label class="itemLabel" for="item9">{{box9}}{{item9}}</label></li>
+                        <li><input type="checkbox" class="itemBox" id="item10" name="item10" onclick="return false;"><label class="itemLabel" for="item10">{{box10}}{{item10}}</label></li>
+                     </ul>
+                     <br>
+                     <a href="lists/{{_id}}" class="edit" hidden="true">update</a>
+                     <button class="remove" hidden="true">remove list</button> <br>
+                  </div>
+                  {{/lists}}
+               </ul>
+            </div>
+            <div id="buttonDiv">
+                  <button class="actionButton" onclick="newList()">ADD LIST</button>
+                  <button class="actionButton" onclick="editList()">EDIT LIST</button>                    
+            </div>
+         </section>
       </body>
       <script src="./JavaScript/lists.js"></script>
    </html>

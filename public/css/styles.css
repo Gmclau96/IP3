@@ -46,8 +46,6 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
 .actionButton {
@@ -69,7 +67,7 @@ hr {
     margin: 1em 25%;
 }
 
-
+/* Anchors styled as buttons as links to other pages */
 .anchorButton {
     font-weight: bold;
     color: #DCD6C8;
@@ -89,32 +87,45 @@ hr {
 
 /* list boxes on lists page */
 .listBox {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     padding: 0.5%;
-    border-radius: 25px;
-    background-color: #FFF6EB;
-    border: 2px solid #000000;
-    padding: 20px;
-    width: 175px;
+    margin-top: 0.5em;
+    border: 0.1em solid #172625;
+    border-radius: 0.2em;
+    box-shadow: 0.2em 0.2em #365B56;
     height: auto;
     text-align: left;
     justify-content: left;
     float: left;
-    margin-left: 40px;
-    margin-top: 50px;
 
 }
 
-/* Utility Classes */
+input[type=text]  {
+    min-height: 3em;
+    margin-top: 0.5em;
+    border: 0.1em solid #172625;
+    border-radius: 0.2em;
+    box-shadow: 0.2em 0.2em #365B56;
+}
+
+/* Utility Classes - classes that have a generic 
+job that is used throughout project*/
 
 .hide {
     visibility: hidden;
-    ;
 }
 
-/* Navigation Menu */
+.pairing {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
 
+.pairing p {
+    margin-top: 1em;
+}
+
+
+/* Navigation Menu */
 #burger-menu {
     margin: 1em;
     cursor: pointer;
@@ -664,7 +675,7 @@ label {
     max-width: max-content;
 }
 
-/**universal buttons**/
+/**universal buttons*
 #add {
     font-weight: 500;
     color: #ffffff;
@@ -674,9 +685,7 @@ label {
     border-radius: .5em;
     margin: 1em;
     cursor: pointer;
-
-
-}
+}*/
 
 #del {
     font-weight: 500;
@@ -1680,47 +1689,14 @@ label {
         left: 36em;
     }
 
-    /*Css For Lists */
+/*Styling for LISTS page */
     #listBlock {
-        margin-left: 15%;
-        margin-right: 15%;
+        margin: 0 15%;
         grid-auto-rows: 4fr;
-
+        display: flex;
+        flex-direction: column;
     }
 
-    #listBtnBlock {
-
-        margin-left: 42%;
-        margin-right: 20%;
-        left: 50%;
-        justify-content: center;
-        align-items: center;
-
-
-    }
-
-    .listButton {
-
-
-
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-
-
-
-    }
-
-    #blankRow {
-        visibility: hidden;
-        font-size: 100px;
-
-    }
 
 
 
@@ -1745,20 +1721,15 @@ label {
         width: 0;
     }
 
-    #listTitle {
-        font-size: 1.75rem;
-    }
-
-    #listItem {
-        font-size: 1.5rem;
-    }
-
     #newListDiv {
-        margin: auto;
-        margin-top: 20px;
-        padding: 10px;
+        margin: 1em auto;
+        padding: 1em 3em;
         max-width: max-content;
-        border: solid 2px #36846b;
+        background-color: #C77A4C;
+        box-sizing: border-box;
+        border: 1em solid #C77A4C;
+        box-shadow: 0.5em 0.5em #365B56;
+        border: 2px solid #365B56;
     }
 
     ul {
@@ -2024,16 +1995,6 @@ label {
     .eventLabel {
         font-size: 1.5rem;
         width: 10em;
-    }
-
-    .pairing {
-        display: flex;
-        flex-direction: row;
-        margin: 1.5em auto;
-    }
-
-    .pairing p {
-        margin-top: 1em;
     }
 
     #existingEventType {
