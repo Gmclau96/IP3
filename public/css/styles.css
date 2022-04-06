@@ -89,7 +89,7 @@ ul {
     line-height: 0.6em;
 }
 
-input[type=text]  {
+input[type=text] {
     min-height: 3em;
     margin-top: 0.5em;
     border: 0.1em solid #172625;
@@ -796,933 +796,817 @@ label {
     cursor: pointer;
 }
 
-/* Notes Page*/
-.notesBox {
-    border: 2px solid #000000;
+
+/* Left side of calendar page */
+#calendar-main {
+    display: flex;
+    flex-direction: row;
+}
+
+#calendar-actions {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5% 0 10%;
+}
+
+/* Calendar View */
+.calendar {
+    display: block;
+    width: 30rem;
+    height: 35rem;
+    margin: 1.5rem auto;
+    outline: #000000 solid 2px;
+    background-color: #bdccdb;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.month {
+    background-color: #32465B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 7rem;
+    padding: 0 5rem;
+    text-align: center;
+    outline: #000000 solid 2px;
+}
+
+.date h2 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.month p {
+    font-size: 1.3rem;
+}
+
+.month i {
+    padding: .5rem .5rem;
+}
+
+.weekdays {
+    display: flex;
+    align-items: center;
+    padding: 0 0.6em;
+    width: 100%;
+    height: 4rem;
+    background-color: #bdccdb;
+}
+
+.weekdays div {
+    letter-spacing: .1rem;
+    width: calc(29rem/7);
+    /* [(calendar width - weekdays padding)/7] [(30-1.2)/7] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weekdays hr {
+    width: 80%;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: .35rem;
+    background-color: #bdccdb;
+}
+
+.days div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .38em;
+    width: calc(23.8rem/7);
+    /*[calendar width - (weekdays padding + days padding +( days margin * 14)/7] [(30 - (1.2 + 0.7 + (0.38 * 14) /7] */
+    height: 3rem;
+}
+
+.days div:hover {
+    border: .25rem solid #32465B;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+    opacity: 0.5;
+}
+
+.today {
+    background-color: #bdccdb;
+    border-radius: 2rem;
+    border: solid 2px #000000;
+}
+
+/*Buttons for user interaction*/
+.calendar-buttons {
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.calendar-buttons button {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #32465B;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+    width: 14em;
+}
+
+/*New Event Form*/
+.newEvent {
+    width: 50vw;
+    padding: 2em;
+    margin: auto;
+    background-color: #eae9e1;
+}
+
+.newEvent button {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #32465B;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-input input[type=submit] {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #32465B;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 2em;
+    cursor: pointer;
+}
+
+#form-input input {
+    height: 3em;
+}
+
+#form-input input,
+label {
+    width: 350px;
+    margin-top: 1em;
+}
+
+#form-input select {
+    margin: 1em;
+    padding: .5em;
+    border: #000000 solid 1px;
+    background-color: #ffffff;
+    border-radius: 1px;
+}
+
+
+/* Right side of calendar page */
+#calendar-right {
+    margin: 1.5em 2em 0 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+#events {
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    overflow: scroll;
+    width: 40em;
+    margin-top: 1em;
+}
+
+.event {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    margin: 1em auto;
+    border: #000000 solid 2px;
+    /* max-width: 40em;*/
+    max-width: 100%;
+}
+
+#event-content {
+    width: 80%;
+}
+
+#event-content p {
+    padding: 0.5em;
+}
+
+#event-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+}
+
+#event-btns button {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #32465B;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+    width: 8em;
+    text-decoration: none;
+}
+
+#event-btns a {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #32465B;
+    border: none;
+    border-radius: .5em;
+    margin: 1em;
+    padding: 0.8em;
+    cursor: pointer;
+    width: 7em;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-warning {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    opacity: 80%;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    top: -5px;
+    right: 105%;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltip-warning {
+    visibility: visible;
+}
+
+.edit-complete {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #32465B;
+    border: none;
+    padding: 0.5em;
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+#completeButton {
+    visibility: visible;
+    background-color: red;
+    border: #bdccdb;
+}
+
+
+/*Arrun's CSS*/
+.recipeBox {
+    border: none;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 0.5%;
-    width: 75%;
+    width: 60%;
     height: fit-content;
     display: block;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 35px;
     background-color: #FFF6EB;
+    padding-left: 2%;
 }
 
-    /* Left side of calendar page */
-    #calendar-main {
-        display: flex;
-        flex-direction: row;
-    }
-
-    #calendar-actions {
-        display: flex;
-        flex-direction: column;
-        margin: 0 5% 0 10%;
-    }
-
-    /* Calendar View */
-    .calendar {
-        display: block;
-        width: 30rem;
-        height: 35rem;
-        margin: 1.5rem auto;
-        outline: #000000 solid 2px;
-        background-color: #bdccdb;
-    }
-
-    .arrow {
-        border: solid black;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 3px;
-        cursor: pointer;
-    }
-
-    .right {
-        transform: rotate(-45deg);
-        -webkit-transform: rotate(-45deg);
-    }
-
-    .left {
-        transform: rotate(135deg);
-        -webkit-transform: rotate(135deg);
-    }
-
-    .month {
-        background-color: #32465B;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: 7rem;
-        padding: 0 5rem;
-        text-align: center;
-        outline: #000000 solid 2px;
-    }
-
-    .date h2 {
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: 1.8rem;
-    }
-
-    .month p {
-        font-size: 1.3rem;
-    }
-
-    .month i {
-        padding: .5rem .5rem;
-    }
-
-    .weekdays {
-        display: flex;
-        align-items: center;
-        padding: 0 0.6em;
-        width: 100%;
-        height: 4rem;
-        background-color: #bdccdb;
-    }
-
-    .weekdays div {
-        letter-spacing: .1rem;
-        width: calc(29rem/7);
-        /* [(calendar width - weekdays padding)/7] [(30-1.2)/7] */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .weekdays hr {
-        width: 80%;
-    }
-
-    .days {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        padding: .35rem;
-        background-color: #bdccdb;
-    }
-
-    .days div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: .38em;
-        width: calc(23.8rem/7);
-        /*[calendar width - (weekdays padding + days padding +( days margin * 14)/7] [(30 - (1.2 + 0.7 + (0.38 * 14) /7] */
-        height: 3rem;
-    }
-
-    .days div:hover {
-        border: .25rem solid #32465B;
-        border-radius: 2rem;
-        cursor: pointer;
-    }
-
-    .prev-date,
-    .next-date {
-        opacity: 0.5;
-    }
-
-    .today {
-        background-color: #bdccdb;
-        border-radius: 2rem;
-        border: solid 2px #000000;
-    }
-
-    /*Buttons for user interaction*/
-    .calendar-buttons {
-        margin: 1em 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .calendar-buttons button {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #32465B;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-        width: 14em;
-    }
-
-    /*New Event Form*/
-    .newEvent {
-        width: 50vw;
-        padding: 2em;
-        margin: auto;
-        background-color: #eae9e1;
-    }
-
-    .newEvent button {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #32465B;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-    }
-
-    .form-input {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #form-input input[type=submit] {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #32465B;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 2em;
-        cursor: pointer;
-    }
-
-    #form-input input {
-        height: 3em;
-    }
-
-    #form-input input,
-    label {
-        width: 350px;
-        margin-top: 1em;
-    }
-
-    #form-input select {
-        margin: 1em;
-        padding: .5em;
-        border: #000000 solid 1px;
-        background-color: #ffffff;
-        border-radius: 1px;
-    }
-
-
-    /* Right side of calendar page */
-    #calendar-right {
-        margin: 1.5em 2em 0 1em;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #events {
-        display: flex;
-        flex-direction: column;
-        height: 75%;
-        overflow: scroll;
-        width: 40em;
-        margin-top: 1em;
-    }
-
-    .event {
-        display: flex;
-        flex-direction: row;
-        padding: 1em;
-        margin: 1em auto;
-        border: #000000 solid 2px;
-        /* max-width: 40em;*/
-        max-width: 100%;
-    }
-
-    #event-content {
-        width: 80%;
-    }
-
-    #event-content p {
-        padding: 0.5em;
-    }
-
-    #event-btns {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 10em;
-    }
-
-    #event-btns button {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #32465B;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-        width: 8em;
-        text-decoration: none;
-    }
-
-    #event-btns a {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #32465B;
-        border: none;
-        border-radius: .5em;
-        margin: 1em;
-        padding: 0.8em;
-        cursor: pointer;
-        width: 7em;
-        text-decoration: none;
-        text-align: center;
-    }
-
-
-
-    .tooltip {
-        position: relative;
-        display: inline-block;
-    }
-
-    .tooltip .tooltip-warning {
-        visibility: hidden;
-        width: 200px;
-        background-color: black;
-        opacity: 80%;
-        color: #fff;
-        text-align: center;
-        padding: 5px 0;
-        border-radius: 6px;
-        position: absolute;
-        top: -5px;
-        right: 105%;
-        z-index: 1;
-    }
-
-    .tooltip:hover .tooltip-warning {
-        visibility: visible;
-    }
-
-    .edit-complete {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #32465B;
-        border: none;
-        padding: 0.5em;
-        border-radius: .5em;
-        cursor: pointer;
-    }
-
-    #completeButton {
-        visibility: visible;
-        background-color: red;
-        border: #bdccdb;
-    }
-
-
-    /*Arrun's CSS*/
-    .recipeBox {
-        border: none;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        padding: 0.5%;
-        width: 60%;
-        height: fit-content;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 35px;
-        background-color: #FFF6EB;
-        padding-left: 2%;
-    }
-
-    .recipeBoxTitle {
-        border: none;
-        padding: 0.5%;
-        width: 60%;
-        height: fit-content;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #FFF6EB;
-        padding-left: 2%;
-    }
-
-    .recipeBoxMethod {
-        border: none;
-        padding: 0.5%;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        width: 60%;
-        height: fit-content;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #FFF6EB;
-        padding-left: 2%;
-    }
-
-    .recipeBoxIngredients {
-        border: none;
-        width: 60%;
-        padding-top: 2.1%;
-        padding-left: 1.2%;
-        position: absolute;
-        left: 26.5%;
-    }
-
-    .recipeBoxIngredients1 {
-        border: none;
-        width: 60%;
-        padding-left: 15%;
-        padding-right: 2%;
-        padding-top: 5.5%;
-        height: fit-content;
-        background-color: #FFF6EB;
-        float: right;
-    }
-
-
-
-
-    #recipeName {
-        text-transform: capitalize;
-    }
-
-    #recipeParagraph {
-        width: 400px;
-    }
-
-    .ingredients {
-        background-color: #60BAD6;
-        height: fit-content;
-        width: fit-content;
-        float: right;
-        border-radius: 10px;
-        padding: 15px;
-        font-size: 14px;
-    }
-
-
-
-
-    #recipe-buttons {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-
-    }
-
-    .edit {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-    }
-
-    .remove {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-    }
-
-    #updateNoteDiv {
-        margin: auto;
-        margin-top: 20px;
-        padding: 10px;
-        max-width: max-content;
-        border: solid 2px #36846b;
-    }
-
-
-    #newRecipeDiv {
-        margin: auto;
-        margin-top: 20px;
-        padding: 10px;
-        max-width: max-content;
-        border: solid 2px #36846b;
-    }
-
-    #recipeTitlelb {
-        font-size: 1.5rem;
-    }
-
-
-
-    #recipeIngredientslb {
-        font-size: 1.5rem;
-    }
-
-    #recipeMethodlb {
-        font-size: 1.5rem;
-    }
-
-    #recipeTitle {
-        margin: auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding: 10px;
-        max-width: max-content;
-    }
-
-    #recipeIngredients {
-        margin: auto;
-        margin-bottom: 20px;
-        margin-left: 5px;
-        padding: 10px;
-        max-width: max-content;
-    }
-
-    #recipeMethod {
-        margin: auto;
-        margin-bottom: 20px;
-        margin-left: 43px;
-        padding: 10px;
-        max-width: max-content;
-    }
-
-    /**universal buttons**/
-    #add {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-
-
-    }
-
-    #del {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-
-
-    }
-
-    #back {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-    }
-
-    .inputs {
-        display: flex;
-        justify-content: right;
-        align-items: right;
-
-
-    }
-
-    #Titlelb {
-        font-size: 1.5rem;
-    }
-
-
-
-    #contentlb {
-        font-size: 1.5rem;
-    }
-
-    #detaillb {
-        font-size: 1.5rem;
-    }
-
-    #noteTitle {
-        margin: auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding: 10px;
-        margin-left: 40px;
-        max-width: max-content;
-    }
-
-    #noteContent {
-        margin: auto;
-        margin-bottom: 20px;
-        padding: 10px;
-        max-width: max-content;
-
-    }
-
-    #Title {
-        margin: auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding: 10px;
-        max-width: max-content;
-    }
-
-    #content {
-        margin: auto;
-        margin-bottom: 20px;
-        margin-left: 26px;
-        padding: 10px;
-        max-width: max-content;
-
-    }
-
-    #detail {
-        margin: auto;
-        margin-bottom: 20px;
-        margin-left: 65px;
-        padding: 10px;
-        max-width: max-content;
-    }
-
-    .add-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-
-    }
-
-    #delete-button {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-
-    }
-
-    #remove-button {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-    }
-
-    /*Jamie's CSS NOTES PAGE*/
-    .notesBox {
-        border: 2px solid #000000;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        padding: 0.5%;
-        width: 75%;
-        height: fit-content;
-        display: block;
-        margin-left: 15%;
-        margin-right: 15%;
-        margin-top: 35px;
-        background-color: #FFF6EB;
-    }
-
-
-
-    #notes-center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .notesForm-input {
-        width: 55%;
-        margin-left: 25%;
-        margin-right: 15%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-
-    /* .notesForm-textarea{
-    width: 55%;
-    margin-left:25%;
-    margin-right:15%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}  */
-
-    .notesForm-label {
-        display: inline-block;
-        text-align: right;
-        width: 15%;
-    }
-
-    /* textarea{
-    vertical-align: top;
-}  */
-
-    .notesol {
-        margin-left: 35%;
-        /* used this for testing the amount of space required */
-    }
-
-    .notesBoxTitle {
-        border: 2px solid #000000;
-        padding: 0.5%;
-        width: 75%;
-        height: fit-content;
-        display: block;
-        margin-left: 15%;
-        margin-right: 15%;
-        background-color: #FFF6EB;
-    }
-
-    .notesBoxContent {
-        border: 2px solid #000000;
-        padding: 0.5%;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        width: 75%;
-        height: fit-content;
-        display: block;
-        margin-left: 15%;
-        margin-right: 15%;
-        background-color: #FFF6EB;
-    }
-
-    #newNoteDiv {
-        margin: auto;
-        margin-top: 20px;
-        padding: 10px;
-        max-width: max-content;
-        border: solid 2px #36846b;
-    }
-
-    .notesTable {
-        width: 70%;
-        margin-left: 15%;
-        margin-right: 15%;
-    }
-
-    #notesTitle {
-        margin: auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: 32px;
-        padding: 10px;
-        max-width: max-content;
-    }
-
-    #notesContent {
-        margin: auto;
-        margin-bottom: 20px;
-        margin-left: 5px;
-        padding: 10px;
-        max-width: max-content;
-    }
-
-    /* Common elements in login, signup & password reset pages */
-
-    #sub-header {
-        text-align: center;
-    }
-
-    #login-fieldset,
-    #signup-fieldset {
-        margin: auto;
-        padding: 10px;
-        max-width: max-content;
-        border: solid 2px #36846b;
-    }
-
-    #login-legend,
-    #signup-legend {
-        font-size: 2rem;
-    }
-
-    #form-label {
-        font-size: 1.5rem;
-    }
-
-    #form-control {
-        font-size: 1.5rem;
-        width: 100%;
-    }
-
-    #login-buttons,
-    #signup-buttons,
-    #password-buttons {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
-
-    }
-
-    /* icons for login page */
-
-    .email-class::before {
-        font: var(--fa-font-solid);
-        content: "\40";
-    }
-
-    .password-class::before {
-        font: var(--fa-font-solid);
-        content: "\f023";
-    }
-
-    /* Password reset page */
-
-    #password-reset-label {
-        font-size: 1.5rem;
-        display: block;
-        text-align: center;
-    }
-
-    /* Divider for password reset page with text enrty and buttons */
-
-    #email-and-submit-div {
-        text-align: center;
-        border: 1px solid;
-    }
-
-    #password-reset-input {
-        font-size: 1.5rem;
-    }
-
-    /* Account Page CSS */
-    #account-label {
-        font-size: 1.5rem;
-    }
-
-    #account-control {
-        font-size: 1.5rem;
-        width: 45%;
-    }
-
-    #account-fieldset {
-        margin: auto;
-        padding: 10px;
-        max-width: max-content;
-        border: solid 2px #36846b;
-    }
-
-    /* Icons for Account Page Using FontAwesome */
-
-    .account::before {
-        font: var(--fa-font-solid);
-        content: "\f007";
-    }
-
-    .accountSname::before {
-        font: var(--fa-font-solid);
-        content: "\f5b7";
-    }
-
-    .account-email::before {
-        font: var(--fa-font-solid);
-        content: "\40";
-    }
-
-    .accpassword::before {
-        font: var(--fa-font-solid);
-        content: "\f023";
-    }
-
-    .delete::before {
-        font: var(--fa-font-solid);
-        content: "\f2ed";
-    }
-
-    .account-edit::before {
-        font: var(--fa-font-solid);
-        content: "\f4ff";
-    }
-
-    /* Styling for button contained in account page */
-
-    .flex-container>button {
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        position: relative;
-        left: 36em;
-    }
+.recipeBoxTitle {
+    border: none;
+    padding: 0.5%;
+    width: 60%;
+    height: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFF6EB;
+    padding-left: 2%;
+}
+
+.recipeBoxMethod {
+    border: none;
+    padding: 0.5%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 60%;
+    height: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFF6EB;
+    padding-left: 2%;
+}
+
+.recipeBoxIngredients {
+    border: none;
+    width: 60%;
+    padding-top: 2.1%;
+    padding-left: 1.2%;
+    position: absolute;
+    left: 26.5%;
+}
+
+.recipeBoxIngredients1 {
+    border: none;
+    width: 60%;
+    padding-left: 15%;
+    padding-right: 2%;
+    padding-top: 5.5%;
+    height: fit-content;
+    background-color: #FFF6EB;
+    float: right;
+}
+
+
+
+
+#recipeName {
+    text-transform: capitalize;
+}
+
+#recipeParagraph {
+    width: 400px;
+}
+
+.ingredients {
+    background-color: #60BAD6;
+    height: fit-content;
+    width: fit-content;
+    float: right;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 14px;
+}
+
+
+
+
+#recipe-buttons {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+
+}
+
+.edit {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+}
+
+.remove {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+}
+
+#updateNoteDiv {
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: max-content;
+    border: solid 2px #36846b;
+}
+
+
+#newRecipeDiv {
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: max-content;
+    border: solid 2px #36846b;
+}
+
+#recipeTitlelb {
+    font-size: 1.5rem;
+}
+
+
+
+#recipeIngredientslb {
+    font-size: 1.5rem;
+}
+
+#recipeMethodlb {
+    font-size: 1.5rem;
+}
+
+#recipeTitle {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    max-width: max-content;
+}
+
+#recipeIngredients {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    padding: 10px;
+    max-width: max-content;
+}
+
+#recipeMethod {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-left: 43px;
+    padding: 10px;
+    max-width: max-content;
+}
+
+/**universal buttons**/
+#add {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+
+
+}
+
+#del {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+
+
+}
+
+#back {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+}
+
+.inputs {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+
+
+}
+
+#Titlelb {
+    font-size: 1.5rem;
+}
+
+
+
+#contentlb {
+    font-size: 1.5rem;
+}
+
+#detaillb {
+    font-size: 1.5rem;
+}
+
+/* Features in updateRecipes and updateEvents */
+#content {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-left: 26px;
+    padding: 10px;
+    max-width: max-content;
+
+}
+
+#detail {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-left: 65px;
+    padding: 10px;
+    max-width: max-content;
+}
+
+.add-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#delete-button {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+
+}
+
+#remove-button {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+}
+
+/*Jamie's CSS NOTES PAGE*/
+#notesBlock {
+    margin: auto;
+    padding: 1em;
+    grid-auto-rows: 4fr;
+    display: flex;
+    width: fit-content;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: #C77A4C;
+    box-sizing: border-box;
+    border: 1em solid #C77A4C;
+    box-shadow: 0.5em 0.5em #365B56;
+    border: 0.15em solid #365B56;
+    
+}
+
+.notesTable {
+    padding: 0.4em;
+    border: 0.15em solid #172625;
+    height: fit-content;
+    width: 20em;
+    margin: 1em;
+    text-align: left;
+    float: left;
+    background-color: #DCD6C8;
+    box-shadow: 0.2em 0.2em #365b56;   
+}
+
+
+#newNoteDiv {
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: max-content;
+    border: solid 2px #36846b;
+}
+
+/* Common elements in login, signup & password reset pages */
+
+#sub-header {
+    text-align: center;
+}
+
+#login-fieldset,
+#signup-fieldset {
+    margin: auto;
+    padding: 10px;
+    max-width: max-content;
+    border: solid 2px #36846b;
+}
+
+#login-legend,
+#signup-legend {
+    font-size: 2rem;
+}
+
+#form-label {
+    font-size: 1.5rem;
+}
+
+#form-control {
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+#login-buttons,
+#signup-buttons,
+#password-buttons {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
+
+}
+
+/* icons for login page */
+
+.email-class::before {
+    font: var(--fa-font-solid);
+    content: "\40";
+}
+
+.password-class::before {
+    font: var(--fa-font-solid);
+    content: "\f023";
+}
+
+/* Password reset page */
+
+#password-reset-label {
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+}
+
+/* Divider for password reset page with text enrty and buttons */
+
+#email-and-submit-div {
+    text-align: center;
+    border: 1px solid;
+}
+
+#password-reset-input {
+    font-size: 1.5rem;
+}
+
+/* Account Page CSS */
+#account-label {
+    font-size: 1.5rem;
+}
+
+#account-control {
+    font-size: 1.5rem;
+    width: 45%;
+}
+
+#account-fieldset {
+    margin: auto;
+    padding: 10px;
+    max-width: max-content;
+    border: solid 2px #36846b;
+}
+
+/* Icons for Account Page Using FontAwesome */
+
+.account::before {
+    font: var(--fa-font-solid);
+    content: "\f007";
+}
+
+.accountSname::before {
+    font: var(--fa-font-solid);
+    content: "\f5b7";
+}
+
+.account-email::before {
+    font: var(--fa-font-solid);
+    content: "\40";
+}
+
+.accpassword::before {
+    font: var(--fa-font-solid);
+    content: "\f023";
+}
+
+.delete::before {
+    font: var(--fa-font-solid);
+    content: "\f2ed";
+}
+
+.account-edit::before {
+    font: var(--fa-font-solid);
+    content: "\f4ff";
+}
+
+/* Styling for button contained in account page */
+
+.flex-container>button {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    position: relative;
+    left: 36em;
+}
 
 /*===============================================================*/
 /*Styling for LISTS page */
-    #listBlock {
-        margin: 2% 15%;
-        padding: 1em;
-        grid-auto-rows: 4fr;
-        display: flex;
-        flex-direction: column;
-        background-color: #C77A4C;
-        box-sizing: border-box;
-        border: 1em solid #C77A4C;
-        box-shadow: 0.5em 0.5em #365B56;
-        border: 2px solid #365B56;
-    }
-
-    /* list boxes on lists page */
-    #newListDiv {
-        margin: 2em auto;
-        padding: 1em 3em;
-        max-width: max-content;
-        background-color: #C77A4C;
-        box-sizing: border-box;
-        border: 1em solid #C77A4C;
-        box-shadow: 0.5em 0.5em #365B56;
-        border: 2px solid #365B56;
-    }
-
-    .listBox {
-        padding: 1em;
-        margin: 1em;
-        border: 0.1em solid #172625;
-        border-radius: 0.2em;
-        background-color: #DCD6C8;
-        box-shadow: 0.2em 0.2em #365B56;
-        height: 25em;
-        width: 13em;
-        text-align: left;
-        justify-content: left;
-        float: left;
+#listBlock {
+    margin: 2% 15%;
+    padding: 1em;
+    grid-auto-rows: 4fr;
+    display: flex;
+    flex-direction: column;
+    background-color: #C77A4C;
+    box-sizing: border-box;
+    border: 1em solid #C77A4C;
+    box-shadow: 0.5em 0.5em #365B56;
+    border: 2px solid #365B56;
 }
 
-    .listBox li {
-        margin: 0.5em 0.2em;
-    }
+/* list boxes on lists page */
+#newListDiv {
+    margin: 2em auto;
+    padding: 1em 3em;
+    max-width: max-content;
+    background-color: #C77A4C;
+    box-sizing: border-box;
+    border: 1em solid #C77A4C;
+    box-shadow: 0.5em 0.5em #365B56;
+    border: 2px solid #365B56;
+}
+
+.listBox {
+    padding: 1em;
+    margin: 1em;
+    border: 0.1em solid #172625;
+    border-radius: 0.2em;
+    background-color: #DCD6C8;
+    box-shadow: 0.2em 0.2em #365B56;
+    height: 25em;
+    width: 13em;
+    text-align: left;
+    justify-content: left;
+    float: left;
+}
+
+.listBox li {
+    margin: 0.5em 0.2em;
+}
 
 /*==============================================================*/
 
@@ -1850,179 +1734,179 @@ label {
 
 */
 
-    /* Admin Page CSS */
+/* Admin Page CSS */
 
-    #admin-buttons {
-        font-weight: 500;
-        color: #ffffff;
-        background-color: #36846b;
-        border: none;
-        padding: 1em;
-        border-radius: .5em;
-        margin: 1em;
-        cursor: pointer;
+#admin-buttons {
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #36846b;
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    cursor: pointer;
 
-    }
-
-
-    #admin-label {
-        font-size: 1.5rem;
-    }
-
-    #admin-control {
-        font-size: 1.5rem;
-        width: 45%;
-    }
-
-    #admin-fieldset {
-        margin: auto;
-        padding: 10px;
-        max-width: max-content;
-        border: solid 2px #36846b;
-    }
-
-    /* Icons for Admin Page Using FontAwesome */
-
-    .admin::before {
-        font: var(--fa-font-solid);
-        content: "\f002";
-    }
+}
 
 
-    .admin-name::before {
-        font: var(--fa-font-solid);
-        content: "\f007";
-    }
+#admin-label {
+    font-size: 1.5rem;
+}
 
-    .admin-email::before {
-        font: var(--fa-font-solid);
-        content: "\40";
-    }
+#admin-control {
+    font-size: 1.5rem;
+    width: 45%;
+}
 
-    .admin-password::before {
-        font: var(--fa-font-solid);
-        content: "\f023";
-    }
+#admin-fieldset {
+    margin: auto;
+    padding: 10px;
+    max-width: max-content;
+    border: solid 2px #36846b;
+}
 
-    .admin-delete::before {
-        font: var(--fa-font-solid);
-        content: "\f2ed";
-    }
+/* Icons for Admin Page Using FontAwesome */
 
-    .admin-save::before {
-        font: var(--fa-font-solid);
-        content: "\f0c7";
-    }
+.admin::before {
+    font: var(--fa-font-solid);
+    content: "\f002";
+}
 
-    /* Styling for button contained in admin page */
 
-    .flex-container>button {
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        position: relative;
-        left: 36em;
-    }
+.admin-name::before {
+    font: var(--fa-font-solid);
+    content: "\f007";
+}
 
-    /* Styling for Landing Page */
-    #landing-main {
-        display: flex;
-        flex-direction: row;
-        margin-top: 1em;
-    }
+.admin-email::before {
+    font: var(--fa-font-solid);
+    content: "\40";
+}
 
-    #landing-left {
-        display: flex;
-        flex-direction: column;
-        margin-left: 5em;
-    }
+.admin-password::before {
+    font: var(--fa-font-solid);
+    content: "\f023";
+}
 
-    .landing-left-inner {
-        display: block;
-        max-width: 30rem;
-        height: 38%;
-        margin: 0 1em 2em 5em;
-        padding: 1.5em 2em 3em 2em;
-        outline: #000000 solid 2px;
-        overflow: scroll;
-        box-sizing: border-box;
-        border: 1em solid #C77A4C;
-        background-color: #C77A4C;
-        box-shadow: 0.5em 0.5em #365B56;
-    }
+.admin-delete::before {
+    font: var(--fa-font-solid);
+    content: "\f2ed";
+}
 
-    .lists-point {
-        padding: 3px;
-        margin-left: 1em;
-    }
+.admin-save::before {
+    font: var(--fa-font-solid);
+    content: "\f0c7";
+}
 
-    #landing-right {
-        margin: 0 5% 0 3%;
-        width: 55%;
-        height: 80%;
-        padding: 2em 2em 3em 2em;
-        overflow: hidden;
-        outline: #000000 solid 2px;
-        overflow: scroll;
-        background-color: #C77A4C;
-        box-sizing: border-box;
-        border: 1em solid #C77A4C;
-        box-shadow: 0.5em 0.5em #365B56;
-    }
+/* Styling for button contained in admin page */
 
-    #landing-right h3 {
-        margin-left: 1.5em;
-    }
+.flex-container>button {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    position: relative;
+    left: 36em;
+}
 
-    .landing-list {
-        padding: 1em;
-        margin: 1em auto;
-        border: #000000 solid 2px;
-        width: 100%;
-        background-color: #DCD6C8;
-    }
+/* Styling for Landing Page */
+#landing-main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
 
-    #landing-event {
-        padding: 0 1em 1em 1em;
-        margin: 0 0.5em;
-        background-color: #C77A4C;
-    }
+#landing-left {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5em;
+}
 
-    #landing-event h3 {
-        margin-left: 0;
-    }
+.landing-left-inner {
+    display: block;
+    max-width: 30rem;
+    height: 38%;
+    margin: 0 1em 2em 5em;
+    padding: 1.5em 2em 3em 2em;
+    outline: #000000 solid 2px;
+    overflow: scroll;
+    box-sizing: border-box;
+    border: 1em solid #C77A4C;
+    background-color: #C77A4C;
+    box-shadow: 0.5em 0.5em #365B56;
+}
 
-    /*  The styling for the events section on the landing page uses the code from
+.lists-point {
+    padding: 3px;
+    margin-left: 1em;
+}
+
+#landing-right {
+    margin: 0 5% 0 3%;
+    width: 55%;
+    height: 80%;
+    padding: 2em 2em 3em 2em;
+    overflow: hidden;
+    outline: #000000 solid 2px;
+    overflow: scroll;
+    background-color: #C77A4C;
+    box-sizing: border-box;
+    border: 1em solid #C77A4C;
+    box-shadow: 0.5em 0.5em #365B56;
+}
+
+#landing-right h3 {
+    margin-left: 1.5em;
+}
+
+.landing-list {
+    padding: 1em;
+    margin: 1em auto;
+    border: #000000 solid 2px;
+    width: 100%;
+    background-color: #DCD6C8;
+}
+
+#landing-event {
+    padding: 0 1em 1em 1em;
+    margin: 0 0.5em;
+    background-color: #C77A4C;
+}
+
+#landing-event h3 {
+    margin-left: 0;
+}
+
+/*  The styling for the events section on the landing page uses the code from
         the calendar section */
 
 
-    /* Styling for Update Calendar Event */
-    #updateEventDiv {
-        margin: auto;
-        margin-top: 20px;
-        padding: 10px;
-        max-width: max-content;
-        border: solid 2px #36846b;
-    }
+/* Styling for Update Calendar Event */
+#updateEventDiv {
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: max-content;
+    border: solid 2px #36846b;
+}
 
-    .eventLabel {
-        font-size: 1.5rem;
-        width: 10em;
-    }
+.eventLabel {
+    font-size: 1.5rem;
+    width: 10em;
+}
 
-    #existingEventType {
-        font-size: 1.5rem;
-        margin-bottom: 0;
-    }
+#existingEventType {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
 
-    .display-box {
-        width: 40%;
-        padding: 10px;
-        font-size: 1.25rem;
-    }
+.display-box {
+    width: 40%;
+    padding: 10px;
+    font-size: 1.25rem;
+}
 
-    .display-dropdown {
-        width: 40%;
-        padding: 10px;
-        font-size: 1.25rem;
-    }
+.display-dropdown {
+    width: 40%;
+    padding: 10px;
+    font-size: 1.25rem;
+}

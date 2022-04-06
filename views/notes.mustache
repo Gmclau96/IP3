@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<header>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <title>
         Notes
     </title>
-</header>
+</head>
 
 <body>
     <!--For alligning menu icon and title-->
@@ -53,24 +53,14 @@
             </form>
         </div>
 
-   
-
-        {{#notes}}
+   <section id="notesBlock">
+{{#notes}}
         <table class="notesTable">
-            <tr class="notesBox">
-                <th>Note Title:</th>
+            <tr class="notesTitle">
+                <th>{{title}}</th>
             </tr>
-            <tr class="notesBoxTitle">
-                <td>{{title}}</td>
-            </tr>
-            <tr class="notesBoxTitle">
-                <th>Note Content:</th>
-            </tr>
-            <tr class="notesBoxContent">
+            <tr class="notesContent">
                 <td>{{content}}</td>
-            </tr>
-            <tr>
-                <td></td>
             </tr>
         </table>
 
@@ -78,7 +68,7 @@
             <a href="notes/{{_id}}" class="anchorButton" hidden="true">Update</a>
         </div>
         {{/notes}}
-
+</section>
         <br>
         <div class="buttonDiv">
             <button class="actionButton" id="notes-buttons" onclick="newNote()">ADD NOTE</button>
