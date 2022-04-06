@@ -8,7 +8,7 @@
     }
 
     body {
-        background-color: #eae9e1;
+        background-color: #D8B196;
         display: block;
         flex-direction: row;
         min-height: 100vh;
@@ -319,8 +319,9 @@
                 padding: 1em;
                 margin: 1em auto;
                 border: #000000 solid 2px;
-               /* max-width: 40em;*/
                max-width: 100%;
+               background-color: #DCD6C8;
+               box-shadow: 0.5em 0.5em #365B56;
             }
 
             #event-content{
@@ -407,7 +408,7 @@
                 background-color: red;
             }
             
-
+/*========================================================================================================*/
     /*Arrun's CSS*/
     .recipeBox{
         border:none;
@@ -711,7 +712,7 @@
         cursor: pointer;
     }
 
- /*Jamie's CSS*/
+ /* Notes Page*/
  .notesBox{
     border:2px solid #000000;
     border-top-left-radius: 10px;
@@ -1296,7 +1297,14 @@
         outline: #000000 solid 2px;
         overflow: scroll;
         box-sizing: border-box;
-        border: 1em solid #eae9e1;
+        border: 1em solid #C77A4C;
+        background-color: #C77A4C;
+        box-shadow: 0.5em 0.5em #365B56;
+    }
+
+    .lists-point {
+        padding: 3px;
+        margin-left: 1em;
     }
 
     #landing-right {
@@ -1307,7 +1315,10 @@
         overflow: hidden;
         outline: #000000 solid 2px;
         overflow: scroll;
-        
+        background-color: #C77A4C;
+        box-sizing: border-box;
+        border: 1em solid #C77A4C;
+        box-shadow: 0.5em 0.5em #365B56;
     }
 
     #landing-right h3 {
@@ -1319,11 +1330,13 @@
         margin: 1em auto;
         border: #000000 solid 2px;
         width: 100%;
+        background-color: #DCD6C8;
     }
 
     #landing-event {
         padding: 0 1em 1em 1em;
         margin: 0 0.5em;
+        background-color: #C77A4C;
     }
     
     #landing-event h3{

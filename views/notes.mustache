@@ -39,52 +39,6 @@
             <h1>Notes</h1>
         </header>
     </div>
-
-        <!-- abillity to add note -->
-        {{! <div id="newNoteDiv" hidden="true">
-        <div id="notes-center">
-            <form>
-            <div>
-                <label id="noteTitle" class="notesForm-label"> Note Title</label>
-                <input id="noteTitle" name="noteTitle" class="notesForm-input" required> 
-            </div>
-                <br>
-                <br>
-            <div>
-                <label id="noteContent" class="notesForm-label"> Note Content</label>
-                <textarea id="noteContent" name="noteContent" rows="4" cols="50" class="notesForm-textarea" required>Enter Note Information Here...</textarea> 
-            </div>
-                <br>
-                <br>
-                <button id="add"type="submit" formaction="/notes" formmethod="post">Save</button>
-            </form>
-            </div>
-        </div>  }}
-        <div id="newNoteDiv" hidden="true">
-            <form>
-                <label id="noteTitlelb"> Note Title: </label>
-                <input id="notesTitle" placeholder="Type your Note Title here..." name="noteTitle" required> <br>
-                <label id="notesContentlb"> Note Content: </label>
-                <input id="notesContent" placeholder="Type your Note Content here..." name="noteContent" required> <br>
-                <div class="add-button">
-                    <button id="add"type="submit" formaction="/notes" formmethod="post">Save</button>
-                </div>
-            </form>
-        </div>
-
-        <!--<ol id="list">
-            {{#notes}}
-                <div id="notesBox">
-                Title: 
-                <li class="inliner">{{title}}</li>
-                Content:
-                <li> {{content}}</li>
-                <a href="notes/{{_id}}" class="edit" hidden="true">update</a>
-                <br>
-                </div>
-            {{/notes}}
-        </ol>-->
-
         {{#notes}}
         <table class="notesTable">
             <tr class="notesBox">
