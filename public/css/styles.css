@@ -41,6 +41,10 @@ hr {
     margin-top: 5px;
 }
 
+ul {
+    list-style-type: none;
+}
+
 /* Div for all add/edit Buttons */
 .buttonDiv {
     display: flex;
@@ -83,20 +87,6 @@ hr {
     text-decoration: none;
     text-align: center;
     line-height: 0.6em;
-}
-
-/* list boxes on lists page */
-.listBox {
-    padding: 0.5%;
-    margin-top: 0.5em;
-    border: 0.1em solid #172625;
-    border-radius: 0.2em;
-    box-shadow: 0.2em 0.2em #365B56;
-    height: auto;
-    text-align: left;
-    justify-content: left;
-    float: left;
-
 }
 
 input[type=text]  {
@@ -1689,17 +1679,54 @@ label {
         left: 36em;
     }
 
+/*===============================================================*/
 /*Styling for LISTS page */
     #listBlock {
-        margin: 0 15%;
+        margin: 2% 15%;
+        padding: 1em;
         grid-auto-rows: 4fr;
         display: flex;
         flex-direction: column;
+        background-color: #C77A4C;
+        box-sizing: border-box;
+        border: 1em solid #C77A4C;
+        box-shadow: 0.5em 0.5em #365B56;
+        border: 2px solid #365B56;
     }
 
+    /* list boxes on lists page */
+    #newListDiv {
+        margin: 2em auto;
+        padding: 1em 3em;
+        max-width: max-content;
+        background-color: #C77A4C;
+        box-sizing: border-box;
+        border: 1em solid #C77A4C;
+        box-shadow: 0.5em 0.5em #365B56;
+        border: 2px solid #365B56;
+    }
 
+    .listBox {
+        padding: 1em;
+        margin: 1em;
+        border: 0.1em solid #172625;
+        border-radius: 0.2em;
+        background-color: #DCD6C8;
+        box-shadow: 0.2em 0.2em #365B56;
+        height: 25em;
+        width: 13em;
+        text-align: left;
+        justify-content: left;
+        float: left;
+}
 
+    .listBox li {
+        margin: 0.5em 0.2em;
+    }
 
+/*==============================================================*/
+
+/*
     #listcontainer {
         display: block;
         position: relative;
@@ -1721,23 +1748,9 @@ label {
         width: 0;
     }
 
-    #newListDiv {
-        margin: 1em auto;
-        padding: 1em 3em;
-        max-width: max-content;
-        background-color: #C77A4C;
-        box-sizing: border-box;
-        border: 1em solid #C77A4C;
-        box-shadow: 0.5em 0.5em #365B56;
-        border: 2px solid #365B56;
-    }
+    
 
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Style the list items */
+    /* Style the list items 
     ul li {
         cursor: pointer;
         position: relative;
@@ -1755,7 +1768,7 @@ label {
         text-decoration: line-through;
     }
 
-    /* Check Box CSS */
+    /* Check Box CSS 
     .checkmark {
         position: absolute;
         top: 0;
@@ -1835,7 +1848,7 @@ label {
 
     }
 
-
+*/
 
     /* Admin Page CSS */
 

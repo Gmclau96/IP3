@@ -41,6 +41,7 @@ function expandList() {
   }
 }
 
+//is this needed??
 function expandEditList() {
 
   for (let i = 2; i < 11; i++) {
@@ -61,7 +62,7 @@ function expandEditList() {
 }
 
 
-
+//what is this for??
   for (let i = 2; i < 11; i++) {
     var itemlb = document.getElementById('itemlb' + i);
     var item = document.getElementById('item' + i);
