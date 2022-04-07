@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<header>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>
-       Update Note
-    </title>
-</header>
-<body>
-        <h1>
-          Update Note
-        </h1>
-<!-- abillity to update note -->
-        <div id="updateNoteDiv" > 
-        
-           <form>
-           {{#notes}}
-                <label id="Titlelb"> Note Title</label>
-                <input id="noteTitle" name="noteTitle" value="{{title}}" required> <br>
-                <label id="contentlb"> Note Content</label>
-                <input id="noteContent" name="noteContent" value="{{content}}" required> <br>
-                <div class="add-button">
-                <button id="add"type="submit" formaction="/updateNotes/{{_id}}" formmethod="post">Edit</button>
-                <button id="del"type="submit" formaction="/deleteNotes/{{_id}}" formmethod="post">Delete</button>
-                <button id="back" type="submit" formaction="/notes" formmethod="get" formnovalidate>Back</button>
-                {{/notes}}
-                </div>
-               </form>  
-        </div>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="../css/styles.css">
+      <title>
+         Update Note
+      </title>
+   </head>
+   <body>
+      <header>
+         <h1>Update Note</h1>
+      </header>
+      <!-- abillity to update note -->
+      <section id="updatePageContent">
+         <form>
+         {{#notes}}
+         <div class="noteAlign">
+            <div class="pairing">
+               <label id="Titlelb"> Note Title: </label>
+               <input type="text" id="titleInput" value="{{title}}" name="noteTitle" required> <br>
+            </div>
+            <div class="pairing">
+               <label for="contentInput" id="contentlb"> Note Content: </label>
+               <textarea id="contentInput" placeholder="Type your Note Content here..." name="noteContent" required>{{content}}</textarea> <br>
+            </div>
+           </div>
+            <div class="add-button">
+               <button class="actionButton" type="submit" formaction="/updateNotes/{{_id}}" formmethod="post">Update</button>
+               <button class="actionButton" type="submit" formaction="/deleteNotes/{{_id}}" formmethod="post">Delete</button>
+               <button class="actionButton" type="submit" formaction="/notes" formmethod="get" formnovalidate>Back</button>
+               {{/notes}}
+            </div>
+         </form>
+      </section>
+   </body>
 </html>

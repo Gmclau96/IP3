@@ -1,82 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>
-        Notes
-    </title>
-</head>
-
-<body>
-    <!--For alligning menu icon and title-->
-    <div class="title-bar">
-        <div id="burger-menu" onclick="openNav()">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/styles.css">
+      <title>
+         Notes
+      </title>
+   </head>
+   <body>
+      <!--For alligning menu icon and title-->
+      <div class="title-bar">
+         <div id="burger-menu" onclick="openNav()">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
-        </div>
-        <!--Navigation Menu-->
-        <div id="nav-menu">
+         </div>
+         <!--Navigation Menu-->
+         <div id="nav-menu">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div id="nav-options">
-                <a href="/">Home</a>
-                <a href="/calendar">Calendar</a>
-                <a href="/lists">Lists</a>
-                <a href="/notes">Notes</a>
-                <a href="/recipes">Recipes</a>
-                <a href="/account">Account</a>
-                <a href="/admin" class="hide">Admin</a>
-                <div id="spacer"></div>
-                <a href="/logout">LOGOUT</a>
+               <a href="/">Home</a>
+               <a href="/calendar">Calendar</a>
+               <a href="/lists">Lists</a>
+               <a href="/notes">Notes</a>
+               <a href="/recipes">Recipes</a>
+               <a href="/account">Account</a>
+               <a href="/admin" class="hide">Admin</a>
+               <div id="spacer"></div>
+               <a href="/logout">LOGOUT</a>
             </div>
-        </div>
-
-        <header>
+         </div>
+         <header>
             <h1>Notes</h1>
-        </header>
-    </div>
-
-        
-        <div id="newNoteDiv" hidden="true">
-            <form>
-                <label id="noteTitlelb"> Note Title: </label>
-                <input id="notesTitle" placeholder="Type your Note Title here..." name="noteTitle" required> <br>
-                <label id="notesContentlb"> Note Content: </label>
-                <input id="notesContent" placeholder="Type your Note Content here..." name="noteContent" required> <br>
-                <div class="add-button">
-                    <button id="add"type="submit" formaction="/notes" formmethod="post">Save</button>
-                </div>
-            </form>
-        </div>
-
-   <section id="notesBlock">
-{{#notes}}
-        <table class="notesTable">
-            <tr class="notesTitle">
-                <th>{{title}}</th>
-            </tr>
-            <tr class="notesContent">
-                <td>{{content}}</td>
-            </tr>
-        </table>
-
-        <div class="buttonDiv">
-            <a href="notes/{{_id}}" class="anchorButton" hidden="true">Update</a>
-        </div>
-        {{/notes}}
-</section>
-        <br>
-        <div class="buttonDiv">
+         </header>
+      </div>
+      <section id="newNote" hidden="true">
+         <form>
+            <div class="pairing">
+               <label id="Titlelb"> Note Title: </label>
+               <input type="text" id="titleInput" placeholder="Type your Note Title here..." name="noteTitle" required> <br>
+            </div>
+            <div class="pairing">
+               <label for="contentInput" id="contentlb"> Note Content: </label>
+               <textarea id="contentInput" placeholder="Type your Note Content here..." name="noteContent" required></textarea> <br>
+            </div>
+            <div class="add-button">
+               <button class="actionButton" type="submit" formaction="/notes" formmethod="post">Save</button>
+            </div>
+         </form>
+      </section>
+      <section id="notesBlock">
+         <div>
+            <ul id="note">
+               {{#notes}} 
+               <div class="notesBox">
+                  <div id="notes-content">
+                     <h3>
+                        <li>{{title}}</li>
+                     </h3>
+                     <hr>
+                     <br>
+                     <ul>
+                        <li>{{content}}</li>
+                     </ul>
+                  </div>
+                  <br>
+                  <div class="buttonDiv">
+                     <a href="notes/{{_id}}" class="anchorButton" hidden="true">UPDATE</a>
+                  </div>
+               </div>
+               {{/notes}}
+            </ul>
+         </div>
+         <div class="buttonDiv">
             <button class="actionButton" id="notes-buttons" onclick="newNote()">ADD NOTE</button>
             <button class="actionButton" id="notes-buttons"onclick="editNote()">EDIT NOTE</button>
-        </div>
-    </main>
-
-    <script src="./JavaScript/notes.js"></script>
-</body>
-
+         </div>
+      </section>
+      </main>
+      <script src="./JavaScript/notes.js"></script>
+   </body>
 </html>
