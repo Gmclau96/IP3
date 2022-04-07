@@ -11,9 +11,11 @@
 
 body {
     background-color: #D8B196;
+    /*background-color: #E3C8B5;*/
     display: block;
     flex-direction: row;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 header {
@@ -102,6 +104,41 @@ input[type=text] {
 input[type=checkbox] {
     margin-right: 0.5em;
 }
+
+/*Scroll bar for chrome, edge, safari*/
+
+::-webkit-scrollbar {
+    width: 0.5em;
+    /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #365B56;
+    /* color of the scroll thumb */
+    border-radius: 1em;
+    /* roundness of the scroll thumb */
+    border: 0.5em solid #365B56;
+    /* creates padding around scroll thumb */
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+/* Scrollbar for firefox */
+.scrollbox {
+    /*Scroll bar details for firefox*/
+    scrollbar-width: thin;
+    /* "auto" or "thin" */
+    scrollbar-color: #365B56 #C77A4C;
+    /* scroll thumb and track */
+}
+
 
 /* Utility Classes - classes that have a generic 
 job that is used throughout project*/
@@ -390,7 +427,7 @@ label {
     display: flex;
     flex-direction: column;
     height: 75%;
-    overflow: scroll;
+    overflow-y: scroll;
     width: 40em;
     margin-top: 1em;
 }
@@ -805,7 +842,7 @@ label {
 }
 
 
-/* Left side of calendar page */
+/* Left side of calendar page
 #calendar-main {
     display: flex;
     flex-direction: row;
@@ -817,7 +854,6 @@ label {
     margin: 0 5% 0 10%;
 }
 
-/* Calendar View */
 .calendar {
     display: block;
     width: 30rem;
@@ -883,7 +919,7 @@ label {
 .weekdays div {
     letter-spacing: .1rem;
     width: calc(29rem/7);
-    /* [(calendar width - weekdays padding)/7] [(30-1.2)/7] */
+    /* [(calendar width - weekdays padding)/7] [(30-1.2)/7] 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -907,7 +943,7 @@ label {
     align-items: center;
     margin: .38em;
     width: calc(23.8rem/7);
-    /*[calendar width - (weekdays padding + days padding +( days margin * 14)/7] [(30 - (1.2 + 0.7 + (0.38 * 14) /7] */
+    /*[calendar width - (weekdays padding + days padding +( days margin * 14)/7] [(30 - (1.2 + 0.7 + (0.38 * 14) /7] 
     height: 3rem;
 }
 
@@ -928,7 +964,7 @@ label {
     border: solid 2px #000000;
 }
 
-/*Buttons for user interaction*/
+/*Buttons for user interaction
 .calendar-buttons {
     margin: 1em 0;
     display: flex;
@@ -949,7 +985,7 @@ label {
     width: 14em;
 }
 
-/*New Event Form*/
+/*New Event Form
 .newEvent {
     width: 50vw;
     padding: 2em;
@@ -1005,7 +1041,7 @@ label {
 }
 
 
-/* Right side of calendar page */
+/* Right side of calendar page 
 #calendar-right {
     margin: 1.5em 2em 0 1em;
     display: flex;
@@ -1016,7 +1052,7 @@ label {
     display: flex;
     flex-direction: column;
     height: 75%;
-    overflow: scroll;
+    overflow-y: scroll;
     width: 40em;
     margin-top: 1em;
 }
@@ -1027,7 +1063,7 @@ label {
     padding: 1em;
     margin: 1em auto;
     border: #000000 solid 2px;
-    /* max-width: 40em;*/
+    /* max-width: 40em;
     max-width: 100%;
 }
 
@@ -1114,11 +1150,11 @@ label {
     visibility: visible;
     background-color: red;
     border: #bdccdb;
-}
+} */
 
 
 /*Arrun's CSS*/
-.recipeBox {
+/* .recipeBox {
     border: none;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -1292,7 +1328,7 @@ label {
     max-width: max-content;
 }
 
-/**universal buttons**/
+/**universal buttons*
 #add {
     font-weight: 500;
     color: #ffffff;
@@ -1336,7 +1372,7 @@ label {
     align-items: right;
 
 
-}
+} 
 
 #Titlelb {
     font-size: 1.5rem;
@@ -1352,7 +1388,7 @@ label {
     font-size: 1.5rem;
 }
 
-/* Features in updateRecipes and updateEvents */
+/* Features in updateRecipes and updateEvents 
 #content {
     margin: auto;
     margin-bottom: 20px;
@@ -1415,7 +1451,7 @@ label {
     border: 1em solid #C77A4C;
     box-shadow: 0.5em 0.5em #365B56;
     border: 0.15em solid #365B56;
-    
+
 }
 
 .notesTable {
@@ -1427,7 +1463,7 @@ label {
     text-align: left;
     float: left;
     background-color: #DCD6C8;
-    box-shadow: 0.2em 0.2em #365b56;   
+    box-shadow: 0.2em 0.2em #365b56;
 }
 
 
@@ -1522,12 +1558,13 @@ label {
     width: 45%;
 }
 
+/*
 #account-fieldset {
     margin: auto;
     padding: 10px;
     max-width: max-content;
     border: solid 2px #36846b;
-}
+}*/
 
 /* Icons for Account Page Using FontAwesome */
 
@@ -1573,45 +1610,6 @@ label {
 
 /*===============================================================*/
 /*Styling for LISTS page */
-    #listBlock {
-        margin: 2% 15% 10% 15%;
-        padding: 1em;
-        grid-auto-rows: 4fr;
-        display: flex;
-        flex-direction: column;
-        background-color: #C77A4C;
-        box-sizing: border-box;
-        border: 1em solid #C77A4C;
-        box-shadow: 0.5em 0.5em #365B56;
-        border: 2px solid #365B56;
-    }
-
-    /* list boxes on lists page */
-    #newListDiv {
-        margin: 2em auto;
-        padding: 1em 3em;
-        max-width: max-content;
-        background-color: #C77A4C;
-        box-sizing: border-box;
-        border: 1em solid #C77A4C;
-        box-shadow: 0.5em 0.5em #365B56;
-        border: 2px solid #365B56;
-    }
-
-    .listBox {
-        padding: 1em;
-        margin: 1em;
-        border: 0.1em solid #172625;
-        border-radius: 0.2em;
-        background-color: #DCD6C8;
-        box-shadow: 0.2em 0.2em #365B56;
-        height: 27em;
-        width: 13em;
-        text-align: left;
-        justify-content: left;
-        float: left;
-    }
-
 /* list boxes on lists page */
 #newListDiv {
     margin: 2em auto;
@@ -1624,15 +1622,39 @@ label {
     border: 2px solid #365B56;
 }
 
+#listBlock {
+    margin: 2% auto 10% auto;
+    padding: 1em;
+    /* grid-auto-rows: 4fr; */
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background-color: #C77A4C;
+    box-sizing: border-box;
+    box-shadow: 0.5em 0.5em #365B56;
+    border: 2px solid #365B56;
+}
+
+/* list boxes on lists page */
+#newListDiv {
+    margin: 2em auto;
+    padding: 1em 3em;
+    max-width: max-content;
+    background-color: #C77A4C;
+    box-sizing: border-box;
+    box-shadow: 0.5em 0.5em #365B56;
+    border: 2px solid #365B56;
+}
+
 .listBox {
     padding: 1em;
-    margin: 1em;
+    margin: 1em 2em 1em 2em;
     border: 0.1em solid #172625;
     border-radius: 0.2em;
     background-color: #DCD6C8;
     box-shadow: 0.2em 0.2em #365B56;
-    height: 25em;
-    width: 13em;
+    height: 27em;
+    width: 20%;
     text-align: left;
     justify-content: left;
     float: left;
@@ -1642,192 +1664,76 @@ label {
     margin: 0.5em 0.2em;
 }
 
-    #list-content {
-        height: 20em;
-        overflow: scroll;
-    }
+#list-content {
+    height: 20em;
+    overflow-y: scroll;
+}
 
-    /* Update List Page Content */
-    .listGroup {
-        display: flex;
-        flex-direction: row;
-        margin: 0.8em 8%;
-        border: 0.2em solid #365B56;
-        box-shadow: 0.3em 0.3em #365B56;
-        border-radius: 0.5em;
-        padding: 1em;
-        background-color: #DCD6C8;
-    }
-
-    .listTitle{
-        align-items: center;
-        justify-content: center;
-    }
-
-    .listTitle input[type=text] {
-        width: 100%;
-    }
-
-    .updateCheck {
-        align-self: flex-end;   
-    }
-
-/*==============================================================*/
-
-/*
-    #listcontainer {
-        display: block;
-        position: relative;
-        padding-left: 35px;
-        margin-bottom: 12px;
-        cursor: pointer;
-        font-size: 22px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    #listcontainer input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-    }
-
-    
-
-    /* Style the list items 
-    ul li {
-        cursor: pointer;
-        position: relative;
-        list-style-type: none;
-        transition: 0.2s;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-
-
-    ul li.checked {
-        text-decoration: line-through;
-    }
-
-    /* Check Box CSS 
-    .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 25px;
-        width: 25px;
-        background-color: #eee;
-    }
-
-
-    .listcontainer:hover input~.checkmark {
-        background-color: #ccc;
-    }
-
-
-    .checkmark:after {
-        content: "";
-        position: absolute;
-        display: none;
-    }
-
-    .listcontainer input:checked~.checkmark:after {
-        display: block;
-    }
-
-    .listcontainer .checkmark:after {
-        left: 7px;
-        top: 1px;
-        width: 10px;
-        height: 22px;
-        border: solid rgb(0, 0, 0);
-        border-width: 0 3px 3px 0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
-
-    .invisbox {
-        margin-top: 50px;
-        border-radius: 25px;
-        border: 2px solid #000000;
-        padding: 20px;
-        width: 190px;
-        height: auto;
-        text-align: center;
-        float: left;
-        margin-left: 40px;
-        visibility: hidden;
-    }
-
-
-    .listcontainer .listbtn {
-        justify-content: flex-end;
-        display: flex;
-    }
-
-    .listBtnBox {
-        margin-top: 50px;
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-        display: inline-block;
-
-
-    }
-
-    .addEditListBox {
-        margin-top: 50px;
-
-        padding: 20px;
-
-        width: 100%;
-        height: auto;
-        text-align: center;
-        justify-content: center;
-
-
-    }
-
-*/
-/*====================================================================*/
-
-/* Admin Page CSS */
-
-#admin-buttons {
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #36846b;
-    border: none;
+/* Update List Page Content */
+.listGroup {
+    display: flex;
+    flex-direction: row;
+    margin: 0.8em 8%;
+    border: 0.2em solid #365B56;
+    box-shadow: 0.3em 0.3em #365B56;
+    border-radius: 0.5em;
     padding: 1em;
-    border-radius: .5em;
-    margin: 1em;
-    cursor: pointer;
-
+    background-color: #DCD6C8;
 }
 
-
-#admin-label {
-    font-size: 1.5rem;
+.listTitle {
+    align-items: center;
+    justify-content: center;
 }
 
-#admin-control {
-    font-size: 1.5rem;
-    width: 45%;
+.listTitle input[type=text] {
+    width: 100%;
 }
 
-#admin-fieldset {
-    margin: auto;
-    padding: 10px;
-    max-width: max-content;
-    border: solid 2px #36846b;
+.updateCheck {
+    align-self: flex-end;
+}
+
+/*====================================================================*/
+/*Styling for Admin Page */
+#accountsInfo {
+    margin: 1em auto;
+    padding: 1em;
+    width: 40%;
+    height: 75%;
+    background-color: #C77A4C;
+    box-sizing: border-box;
+    border: 1em solid #C77A4C;
+    box-shadow: 0.5em 0.5em #365B56;
+    border: 2px solid #365B56;
+    display: flex;
+    flex-direction: column;
+}
+
+#accountChoice {
+    display: flex;
+    flex-direction: row;
+    margin: 1em auto;
+    height: 8em;
+    width: 80%;
+    border: #000000 solid 2px;
+    background-color: #DCD6C8;
+    box-shadow: 0.5em 0.5em #365B56;
+}
+
+#accountIdentifier {
+    width: 80%;
+    padding: 1em;
+}
+
+#accountSelect {
+    width: 20%;
+    pad: 1em;
+}
+
+#accountChoice a {
+    margin-right: 10%;
+    padding: 1em;
 }
 
 /* Icons for Admin Page Using FontAwesome */
@@ -1864,38 +1770,38 @@ label {
 }
 
 /* Styling for button contained in admin page */
-
+/*
 .flex-container>button {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
     position: relative;
     left: 36em;
-}
+}*/
 
 /*====================================================================*/
 
-    /* Styling for Landing Page */
-    #landing-main {
-        display: flex;
-        flex-direction: row;
-        margin-top: 1em;
-    }
+/* Styling for Landing Page */
+#landing-main {
+    display: flex;
+    flex-direction: row;
+    margin: 1em 5%;
+}
 
 #landing-left {
     display: flex;
     flex-direction: column;
-    margin-left: 5em;
+    /* margin-left: 5em; */
 }
 
 .landing-left-inner {
     display: block;
-    max-width: 30rem;
+    max-width: 38rem;
     height: 38%;
     margin: 0 1em 2em 5em;
     padding: 1.5em 2em 3em 2em;
     outline: #000000 solid 2px;
-    overflow: scroll;
+    overflow-y: scroll;
     box-sizing: border-box;
     border: 1em solid #C77A4C;
     background-color: #C77A4C;
@@ -1903,18 +1809,17 @@ label {
 }
 
 .lists-point {
-    padding: 3px;
-    margin-left: 1em;
+    padding: 0.2em;
+    margin-left: 1.5em;
 }
 
 #landing-right {
-    margin: 0 5% 0 3%;
-    width: 55%;
+    margin: 0 auto 0 3%;
+    width: 47%;
     height: 80%;
     padding: 2em 2em 3em 2em;
-    overflow: hidden;
     outline: #000000 solid 2px;
-    overflow: scroll;
+    overflow-y: scroll;
     background-color: #C77A4C;
     box-sizing: border-box;
     border: 1em solid #C77A4C;
@@ -1974,11 +1879,11 @@ label {
     font-size: 1.25rem;
 }
 
-    .display-dropdown {
-        width: 40%;
-        padding: 10px;
-        font-size: 1.25rem;
-    }
+.display-dropdown {
+    width: 40%;
+    padding: 10px;
+    font-size: 1.25rem;
+}
 
 /* UNIVERSAL UPDATE PAGE STYLING */
 #updatePageContent {

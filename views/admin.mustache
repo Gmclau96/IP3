@@ -43,18 +43,25 @@
 
         <main>
             <!-- Account Selection -->
-            <fieldset id="account-fieldset">
+            <section id="accountsInfo">
                 <form>
-                    <p>Select an account to manage:</p>           
-                    <ul><br>
+                    <h3>Select an account to manage:</h3>       
+                    <ul>
                         {{#account}}
-                        <li>{{email}}</li>
-                        <a class="anchorButton" href="admin/{{_id}}">Edit Account</a><br>
-                        <hr>
+                            <li id="accountChoice">  
+                                <div id="accountIdentifier">
+                                <!--won't show account user name-->
+                                    <p><span>{{forename}}</span><span>{{surname}}</span></p><br>
+                                    <p>{{email}}</p>
+                                </div>
+                                <div id="accountSelect">
+                                    <a class="anchorButton" href="admin/{{_id}}">EDIT</a>
+                                </div>
+                            </li>
                         {{/account}}
-                    </ul><br><br>
+                    </ul>
                 </form>
-            </fieldset>
+            </section>
         </main>  
         <script>
             //Nav Menu

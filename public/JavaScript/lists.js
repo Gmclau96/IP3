@@ -3,6 +3,10 @@ function myFunction() {
   x.hidden = false;
 }
 
+function hideAddForm() {
+  document.getElementById('newListDiv').hidden = true;
+}
+
 function Delete() {
   var elem = document.getElementById('listBox');
   elem.parentNode.removeChild(elem);
