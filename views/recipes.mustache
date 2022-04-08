@@ -1,106 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Recipes</title>
-</head>
-
-<body>
-    <!--For alligning menu icon and title-->
-    <div class="title-bar">
-        <div id="burger-menu" onclick="openNav()">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/styles.css">
+      <title>Recipes</title>
+   </head>
+   <body>
+      <!--For alligning menu icon and title-->
+      <div class="title-bar">
+         <div id="burger-menu" onclick="openNav()">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
-        </div>
-        <!--Navigation Menu-->
-        <div id="nav-menu">
+         </div>
+         <!--Navigation Menu-->
+         <div id="nav-menu">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div id="nav-options">
-                <a href="/">Home</a>
-                <a href="/calendar">Calendar</a>
-                <a href="/lists">Lists</a>
-                <a href="/notes">Notes</a>
-                <a href="/recipes">Recipes</a>
-                <a href="/account">Account</a>
-                <a href="/admin" class="hide">Admin</a>
-                <div id="spacer"></div>
-                <a href="/logout">LOGOUT</a>
+               <a href="/">Home</a>
+               <a href="/calendar">Calendar</a>
+               <a href="/lists">Lists</a>
+               <a href="/notes">Notes</a>
+               <a href="/recipes">Recipes</a>
+               <a href="/account">Account</a>
+               <a href="/admin" class="hide">Admin</a>
+               <div id="spacer"></div>
+               <a href="/logout">LOGOUT</a>
             </div>
-        </div>
-
-        <header>
+         </div>
+         <header>
             <h1>Recipes</h1>
-        </header>
-    </div>
-
-    <main>
-        <!-- abillity to add recipe -->
-        <div id="newRecipeDiv" hidden="true">
+         </header>
+      </div>
+      <main>
+         <!-- abillity to add recipe -->
+         <section id="newRecipe" hidden="true">
             <form>
-                <label id="recipeTitlelb"> Recipe Title</label>
-                <input id="recipeTitle" placeholder="Type your recipe title here" name="recipeTitle"required> <br>
-                <label id="recipeIngredientslb"> Ingredients</label>
-                <input id="recipeIngredients" placeholder="Type your ingredients here" name="recipeIngredients" required> <br>
-                <label id="recipeMethodlb"> Method</label>
-                <input id="recipeMethod" placeholder="Type your methods here" name="recipeMethod" required> <br>
-                <div class="add-button">
-                    <button id="add"type="submit" formaction="/recipes" formmethod="post">Save</button>
-                </div>
+               <div class="pairing">
+                  <label class="sectionLabels"> Recipe Title</label>
+                  <input type="text" id="recipeTitle" placeholder="Type your recipe title here" name="recipeTitle"required> <br>
+               </div>
+               <div class="pairing">
+                  <label class="sectionLabels"> Ingredients</label>
+                  <textarea id="recipeIngredients" placeholder="Seperate ingredients by a comma" name="recipeIngredients" required></textarea> <br>
+               </div>
+               <div class="pairing">
+                  <label class="sectionLabels"> Method</label>
+                  <textarea id="recipeMethod" placeholder="Type your methods here" name="recipeMethod" required></textarea> <br>
+               </div>
+               <div class="buttonDiv">
+                  <button class="actionButton" type="submit" formaction="/recipes" formmethod="post">SAVE</button>         
+                  <button type="button" id="cancelBtn" class="actionButton" onclick="hideAddForm()">CANCEL</button>
+               </div>
             </form>
-        </div>
-
-        <!--<div class="recipeBox">      
-<ul id="list">
-{{#recipes}}
-<h3>Recipe Name:</h3>
-<li class="inliner">{{title}}</li>
-<h3>Ingredients:</h3>
-<li> {{ingredients}}</li>
-<h3>Method:</h3>
-<li> {{method}}</li>
-<a href="recipes/{{_id}}" class="edit" hidden="true">update</a>
-<br>
-<br>
-{{/recipes}}
-</ul>
-</div>-->
-
-
-        {{#recipes}}
-        <table>
-            <tr class="recipeBox">
-                <th>Recipe name:<td>{{title}}</td></th>
-                <th class="recipeBoxIngredients">Ingredients:</th>
-            </tr>
-            <tr class="recipeBoxTitle">
-                <td class="recipeBoxIngredients1">{{ingredients}}</td>
-            </tr>
-            <tr class="recipeBoxTitle">
-                <th>Method:</th>
-            </tr>
-            <tr class="recipeBoxMethod">
-                <td>{{method}}</td>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-        </table>
-        <div class="recipe-buttons">
-            <a href="recipes/{{_id}}" class="edit" hidden="true">update</a>
-        </div>
-        {{/recipes}}
-
-        <div class="recipe-buttons">
-            <button id="recipe-buttons" onclick="newRecipe()">ADD RECIPE</button>
-            <button id="recipe-buttons"onclick="editRecipe()">EDIT RECIPE</button>
-        </div>
-    </main>
-    <script src="./JavaScript/recipe.js"></script>
-    </body>
-
+         </section>
+         <section id="sectionBlock">
+            {{#recipes}}
+            <table class="recipeTable">
+               <thead class="recipeBackground">
+                  <tr>
+                     <th class="recipeTitle">
+                        <h3>{{title}}</h3>
+                     </th>
+                     <th></th>
+                  </tr>
+               </thead>
+               <tbody class="recipeBackground">
+                  <tr>
+                     <td class="recipeHeader">Method:</td>
+                     <td class="recipeHeader">Ingredients:</td>
+                  </tr>
+                  <tr>
+                     <td class="recipeMethod">{{method}}</td>
+                     <td class=recipeIngredients>{{ingredients}}</td>
+                  </tr>
+                  <br>
+                  <tr>
+                  </tr>
+               </tbody>
+            </table>
+            <div class="buttonDiv">
+               <a href="recipes/{{_id}}" class="anchorButton" hidden="true">UPDATE</a>
+            </div>
+            {{/recipes}}
+            <div class="buttonDiv">
+               <button class="actionButton" onclick="newRecipe()">ADD RECIPE</button>
+               <button class="actionButton" onclick="editRecipe()">EDIT RECIPE</button>
+            </div>
+         </section>
+      </main>
+      <script src="./JavaScript/recipe.js"></script>
+   </body>
 </html>

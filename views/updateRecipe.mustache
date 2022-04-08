@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<header>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>
-       Update Recipe
-    </title>
-</header>
-<body>
-        <h1>
-          Update Recipe
-        </h1>
-<!-- abillity to update recipe -->
-        <div id="updateNoteDiv" > 
-        
-           <form>
-           {{#recipes}}
-                <label id="Titlelb"> Recipe Name</label>
-                <input id="Title" name="noteTitle" value="{{title}}" required> <br>
-                <label id="contentlb"> Ingredients</label>
-                <input id="content" name="recipeIngredients" value="{{ingredients}}" required> <br>
-                <label id="detaillb"> Method</label>
-                <input id="detail" name="recipeMethod" value="{{method}}" required> <br>
-                <div class="add-button">
-                <button id="add"type="submit" formaction="/updateRecipes/{{_id}}" formmethod="post">Edit</button>
-                <button id="del"type="submit" formaction="/deleteRecipes/{{_id}}" formmethod="post">Delete</button>
-                <button id="back" type="submit" formaction="/recipes" formmethod="get" formnovalidate>Back</button>
-                {{/recipes}}
-                </div>
-               </form>  
-        </div>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="../css/styles.css">
+      <title>
+         Update Recipe
+      </title>
+   </head>
+   <body>
+      <h1>
+         Update Recipe
+      </h1>
+      <!-- abillity to update recipe -->
+      <section id="updatePageContent">
+         <form>
+            {{#recipes}}
+            <div class="updateAlign">
+            <div class="pairing">
+            <label class="sectionLabels"> Recipe Name</label>
+            <input id="Title" type="text" name="noteTitle" value="{{title}}" required> <br>
+            </div>
+            <div class="pairing">
+            <label class="sectionLabels"> Ingredients</label>
+            <textarea id="content" name="recipeIngredients" required>{{ingredients}}</textarea> <br>
+            </div>
+            <div class="pairing">
+            <label class="sectionLabels"> Method</label>
+            <textarea id="detail" name="recipeMethod" required>{{method}}</textarea> <br>
+            </div>
+            </div>
+            <div class="buttonDiv">
+               <button class="actionButton" id="add"type="submit" formaction="/updateRecipes/{{_id}}" formmethod="post">UPDATE</button>
+               <button class="actionButton" id="del"type="submit" formaction="/deleteRecipes/{{_id}}" formmethod="post">DELETE</button>
+               <button class="actionButton" id="back" type="submit" formaction="/recipes" formmethod="get" formnovalidate>BACK</button>
+               {{/recipes}}
+            </div>
+         </form>
+      </section>
+   </body>
 </html>

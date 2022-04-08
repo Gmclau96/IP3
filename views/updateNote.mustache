@@ -16,21 +16,21 @@
       <!-- abillity to update note -->
       <section id="updatePageContent">
          <form>
-         {{#notes}}
-         <div class="noteAlign">
-            <div class="pairing">
-               <label id="Titlelb"> Note Title: </label>
-               <input type="text" id="titleInput" value="{{title}}" name="noteTitle" required> <br>
+            {{#notes}}
+            <div class="updateAlign">
+               <div class="pairing">
+                  <label class="sectionLabels"> Note Title: </label>
+                  <input type="text" id="titleInput" value="{{title}}" name="noteTitle" required> <br>
+               </div>
+               <div class="pairing">
+                  <label for="contentInput" class="sectionLabels"> Note Content: </label>
+                  <textarea id="contentInput" placeholder="Type your Note Content here..." name="noteContent" required>{{content}}</textarea> <br>
+               </div>
             </div>
-            <div class="pairing">
-               <label for="contentInput" id="contentlb"> Note Content: </label>
-               <textarea id="contentInput" placeholder="Type your Note Content here..." name="noteContent" required>{{content}}</textarea> <br>
-            </div>
-           </div>
-            <div class="add-button">
-               <button class="actionButton" type="submit" formaction="/updateNotes/{{_id}}" formmethod="post">Update</button>
-               <button class="actionButton" type="submit" formaction="/deleteNotes/{{_id}}" formmethod="post">Delete</button>
-               <button class="actionButton" type="submit" formaction="/notes" formmethod="get" formnovalidate>Back</button>
+            <div class="buttonDiv">
+               <button class="actionButton" type="submit" formaction="/updateNotes/{{_id}}" formmethod="post">UPDATE</button>
+               <button class="actionButton" type="submit" formaction="/deleteNotes/{{_id}}" formmethod="post">DELETE</button>
+               <button class="actionButton" type="submit" formaction="/notes" formmethod="get" formnovalidate>BACK</button>
                {{/notes}}
             </div>
          </form>

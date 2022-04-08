@@ -1,43 +1,13 @@
-function Delete() {
-    var elem = document.getElementById('recipeBox');
-    elem.parentNode.removeChild(elem);
-    return false;
-}
-
-function remove() {
-    var elem = document.getElementById('recipeBox2');
-    elem.parentNode.removeChild(elem);
-    return false;
-}
-
-/**function myFunction() {
-    var x = document.getElementById("delete-button");
-    var y = document.getElementById("remove-button");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }**/
-
-  function myFunction(){
-     var x= document.getElementById("delete-button");
-      x.hidden = false;
-    var y=document.getElementById("remove-button");
-    y.hidden = false;
-  }
-
   //show add recipe div
   function newRecipe() {
-    var x= document.getElementById("newRecipeDiv");
+    var x= document.getElementById("newRecipe");
       x.hidden = false;
       document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
 //show update buttons under recipes
-//shows edit buttons
 function editRecipe() {
-  let x = document.querySelectorAll('.edit');
+  let x = document.querySelectorAll('.anchorButton');
 
   [].forEach.call(x, function editRecipes(x) {
     x.hidden = false;
@@ -52,4 +22,22 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("nav-menu").style.width = "0";
+}
+
+//Seperates each ingredient onto a new line
+let ingredients = document.getElementsByClassName('recipeIngredients');
+for (let i=0; i < ingredients.length; i++) { 
+  ingredients[i].innerHTML = ingredients[i].innerHTML.split(",").join("<br />")
+}
+
+//Seperates steps onto new lines by .
+//Seperates each ingredient onto a new line
+let steps = document.getElementsByClassName('recipeMethod');
+for (let i=0; i < steps.length; i++) { 
+  steps[i].innerHTML = steps[i].innerHTML.split(".").join("<br />")
+}
+
+//allows user to cancel an new entry
+function hideAddForm() {
+  document.getElementById('newRecipe').hidden = true;
 }

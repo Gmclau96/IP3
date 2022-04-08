@@ -39,19 +39,20 @@
       <section id="newNote" hidden="true">
          <form>
             <div class="pairing">
-               <label id="Titlelb"> Note Title: </label>
+               <label class="sectionLabels"> Note Title: </label>
                <input type="text" id="titleInput" placeholder="Type your Note Title here..." name="noteTitle" required> <br>
             </div>
             <div class="pairing">
-               <label for="contentInput" id="contentlb"> Note Content: </label>
+               <label for="contentInput" class="sectionLabels"> Note Content: </label>
                <textarea id="contentInput" placeholder="Type your Note Content here..." name="noteContent" required></textarea> <br>
             </div>
-            <div class="add-button">
-               <button class="actionButton" type="submit" formaction="/notes" formmethod="post">Save</button>
+            <div class="buttonDiv">
+               <button class="actionButton" type="submit" formaction="/notes" formmethod="post">SAVE</button>
+               <button type="button" id="cancelBtn" class="actionButton" onclick="hideAddForm()">CANCEL</button>
             </div>
          </form>
       </section>
-      <section id="notesBlock">
+      <section id="sectionBlock">
          <div>
             <ul id="note">
                {{#notes}} 

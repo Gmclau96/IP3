@@ -23,3 +23,8 @@ function openNav() {
 function closeNav() {
   document.getElementById("nav-menu").style.width = "0";
 }
+
+//allows user to cancel an new entry
+function hideAddForm() {
+  document.getElementById('newNote').hidden = true;
+}
