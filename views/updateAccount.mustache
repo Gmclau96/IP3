@@ -1,60 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../css/styles.css">
-    <title>
-       Update Account Details
-    </title>
-</head>
-<body>
-        <h1>
-          Update Account Details
-        </h1>
-  <div class="accountAlign">
-<section id="sectionBlock">
-<!-- abillity to update account details -->
-        <div id="updateNoteDiv" > 
-        
-           <form>
-           {{#account}}
-         
-           <div id="editAccountBox">
-           <div class="pairing">
-                <label >Update Forename:</label>
-                <input type="text" name="fname" value="{{account.forename}}"> <br>
-                </div>
-                <div class="pairing">
-                <label >Update Surname:</label>
-                <input type="text" name="sname" value="{{account.surname}}"> <br>
-                </div>
-                <div class="pairing">
-                <label >Update Email Address:</label>
-                <input type="email" name="email" value="{{account.email}}"> <br>
-                </div>
-                <div class="pairing">
-                <label >Update Password:</label>
-                <input name="password" value="{{password}}" type="password"> <br>
-                </div>
-                <div class="pairing">
-                <label>Enter Current Password To Save Changes:</label>
-                <input  name="save" type="password" required="true"> <br>
-                </div>
-                <div class="accountButton">
-                <button class="actionButton" type="submit" formaction="/updateAccountDetails/{{_id}}" formmethod="post">Save changes</button>
-                <button class="actionButton" type="submit" formaction="/deleteAccount/{{_id}}" formmethod="post">Delete Account</button>
-                <button class="actionButton"  type="submit" formaction="/account" formmethod="get" formnovalidate>Back</button>
-                {{/account}}
-                </div>
-                </div>
-                </div>
-               </form>  
-       
-        </section>
-         </div>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="../css/styles.css">
+      <title>
+         Update Account Details
+      </title>
+   </head>
+   <body>
+      <h1>
+         Update Account Details
+      </h1>
+      <div class="accountAlign">
+         <section id="sectionBlock">
+            <!-- abillity to update account details -->
+            <div id="updateNoteDiv" >
+               <form>
+                  {{#account}}
+                  <div id="editAccountBox">
+                     <div class="pairing">
+                        <label >Update Forename:</label>
+                        <input type="text" name="fname" value="{{account.forename}}"> <br>
+                     </div>
+                     <div class="pairing">
+                        <label >Update Surname:</label>
+                        <input type="text" name="sname" value="{{account.surname}}"> <br>
+                     </div>
+                     <div class="pairing">
+                        <label >Update Email Address:</label>
+                        <input type="email" name="email" value="{{account.email}}"> <br>
+                     </div>
+                     <div class="pairing">
+                        <label >Update Password:</label>
+                        <input name="password" value="{{password}}" type="password"> <br>
+                     </div>
+                     <div class="pairing">
+                        <label>Enter Current Password To Save Changes:</label>
+                        <input  name="save" type="password" required="true"> <br>
+                     </div>
+                     <div class="accountButton">
+                        <button class="actionButton" type="submit" formaction="/updateAccountDetails/{{_id}}" formmethod="post">Save changes</button>
+                        <button class="actionButton" type="submit" formaction="/deleteAccount/{{_id}}" formmethod="post">Delete Account</button>
+                        <button class="actionButton"  type="submit" formaction="/account" formmethod="get" formnovalidate>Back</button>
+                        {{/account}}
+                     </div>
+                  </div>
+            </div>
+            </form>  
+         </section>
+      </div>
+   </body>
 </html>
