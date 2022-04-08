@@ -18,18 +18,18 @@
          <form>
             {{#recipes}}
             <div class="updateAlign">
-            <div class="pairing">
-            <label class="sectionLabels"> Recipe Name</label>
-            <input id="Title" type="text" name="noteTitle" value="{{title}}" required> <br>
-            </div>
-            <div class="pairing">
-            <label class="sectionLabels"> Ingredients</label>
-            <textarea id="content" name="recipeIngredients" required>{{ingredients}}</textarea> <br>
-            </div>
-            <div class="pairing">
-            <label class="sectionLabels"> Method</label>
-            <textarea id="detail" name="recipeMethod" required>{{method}}</textarea> <br>
-            </div>
+               <div class="pairing">
+                  <label class="sectionLabels"> Recipe Name</label>
+                  <input id="Title" type="text" name="noteTitle" value="{{title}}" required> <br>
+               </div>
+               <div class="pairing">
+                  <label class="sectionLabels"> Ingredients</label>
+                  <textarea id="content" name="recipeIngredients" required>{{ingredients}}</textarea> <br>
+               </div>
+               <div class="pairing">
+                  <label class="sectionLabels"> Method</label>
+                  <textarea id="detail" name="recipeMethod" required>{{method}}</textarea> <br>
+               </div>
             </div>
             <div class="buttonDiv">
                <button class="actionButton" id="add"type="submit" formaction="/updateRecipes/{{_id}}" formmethod="post">UPDATE</button>

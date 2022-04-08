@@ -4,7 +4,7 @@
 *::after,
 *::before {
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -26,6 +26,10 @@ h1 {
     color: #26403E;
     text-align: center;
     font-size: 3rem;
+}
+
+h2 {
+    color: #26403E; 
 }
 
 
@@ -106,6 +110,17 @@ input[type=text] {
 
 input[type=checkbox] {
     margin-right: 0.5em;
+}
+
+input[type=password] {
+    min-height: 3em;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    max-width: 25em;
+    border: 0.1em solid #172625;
+    border-radius: 0.2em;
+    box-shadow: 0.2em 0.2em #365B56;
+    font-size: medium;
 }
 
 /* styling for textareas to match text inputs */
@@ -519,7 +534,7 @@ label {
     background-color: red;
 }
 
-/* ======================RECIPE START====================== */
+/* ======================RECIPE PAGE====================== */
 
 .recipeTable{
     border: 0.1em solid #172625;
@@ -566,8 +581,6 @@ label {
 }
 
 
-
-/* ======================RECIPE END====================== */
 
 /**universal buttons*
 #add {
@@ -703,7 +716,7 @@ label {
 
 
 
-/* ======================NOTES START====================== */
+/* ======================NOTES PAGE====================== */
 
 
 .notesBox {
@@ -735,49 +748,41 @@ float: left;
     border: 2px solid #365B56;
 }
 
-/* ======================NOTES END====================== */
 
-/* Common elements in login, signup & password reset pages */
+/* ======================SIGNUP PAGE====================== */
 
 #sub-header {
     text-align: center;
 }
 
-#login-fieldset,
-#signup-fieldset {
-    margin: auto;
-    padding: 10px;
-    max-width: max-content;
-    border: solid 2px #36846b;
+.signupAlign {
+    display: flex;
+    justify-content: left;
+    align-items: left;
 }
 
-#login-legend,
-#signup-legend {
-    font-size: 2rem;
-}
-
-#form-label {
-    font-size: 1.5rem;
-}
-
-#form-control {
-    font-size: 1.5rem;
-    width: 100%;
-}
-
-#login-buttons,
-#signup-buttons,
-#password-buttons {
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #36846b;
-    border: none;
+#signupBox {
     padding: 1em;
-    border-radius: .5em;
     margin: 1em;
-    cursor: pointer;
+    border: 0.1em solid #172625;
+    border-radius: 0.2em;
+    background-color: #DCD6C8;
+    box-shadow: 0.2em 0.2em #365B56;
+    text-align: left;
+    justify-content: left;
+    float: left;
+    }
 
-}
+    #accountBenifits {
+        padding: 1em;
+        margin: 1em;
+        margin-left: auto;
+        border: 0.1em solid #172625;
+        border-radius: 0.2em;
+        background-color: #DCD6C8;
+        box-shadow: 0.2em 0.2em #365B56;
+        }
+
 
 /* icons for login page */
 

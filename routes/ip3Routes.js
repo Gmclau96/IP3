@@ -7,10 +7,11 @@ const { loggedIn } = require('../auth/auth.js');
 //GET & POST index page
 router.get("/", authenticate,  controller.get_landing);
 router.get('/login', controller.get_login);
-//GET & POST signup page
 
+//GET & POST signup page
 router.get('/signup', controller.get_signup);
 router.post('/signup', controller.post_signup);
+
 //GET reset password page
 router.get('/password', controller.get_password);
 
