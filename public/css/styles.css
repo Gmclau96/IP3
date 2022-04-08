@@ -97,7 +97,7 @@ ul {
 
 /* Input fields styling */
 
-input[type=text], input[type=passowrd], input[type=email] {
+input[type=text], input[type=password], input[type=email] {
     min-height: 3em;
     margin-top: 0.5em;
     padding: 0.5em;
@@ -816,37 +816,62 @@ label {
     width: fit-content;
 }
 
+/* ======================ACCOUNT PAGE====================== */
 
-/* icons for login page */
-
-.email-class::before {
-    font: var(--fa-font-solid);
-    content: "\40";
+#accountSection {
+    margin: 1em auto;
+    padding: 1em;
+    width: fit-content;
+    height: 75%;
+    background-color: #C77A4C;
+    box-sizing: border-box;
+    border: 1em solid #C77A4C;
+    box-shadow: 0.5em 0.5em #365B56;
+    border: 2px solid #365B56;
+    display: flex;
+    flex-direction: column;
 }
 
-.password-class::before {
-    font: var(--fa-font-solid);
-    content: "\f023";
+#accountBox {
+    padding: 1em;
+    margin: 1em;
+    border: 0.1em solid #172625;
+    border-radius: 0.2em;
+    background-color: #DCD6C8;
+    box-shadow: 0.2em 0.2em #365B56;
+    text-align: center;
+    justify-content: center;
+    float: center;
+    width: fit-content;
 }
 
-
-/* Account Page CSS */
-#account-label {
-    font-size: 1.5rem;
+#accountButton{
+    text-align: left;
+    justify-content: left;
+    float: left;
+}
+.accountAlign{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
-#account-control {
-    font-size: 1.5rem;
-    width: 45%;
+#accountInfo{
+    font-size: large;
 }
 
-/*
-#account-fieldset {
-    margin: auto;
-    padding: 10px;
-    max-width: max-content;
-    border: solid 2px #36846b;
-}*/
+#editAccountBox {
+    padding: 1em;
+    margin: 1em;
+    border: 0.1em solid #172625;
+    border-radius: 0.2em;
+    background-color: #DCD6C8;
+    box-shadow: 0.2em 0.2em #365B56;
+    text-align: left;
+    justify-content: center;
+    float: center;
+    width: 50em;
+}
 
 /* Icons for Account Page Using FontAwesome */
 
@@ -865,30 +890,19 @@ label {
     content: "\40";
 }
 
-.accpassword::before {
+
+/* icons for login page */
+
+.email-class::before {
+    font: var(--fa-font-solid);
+    content: "\40";
+}
+
+.password-class::before {
     font: var(--fa-font-solid);
     content: "\f023";
 }
 
-.delete::before {
-    font: var(--fa-font-solid);
-    content: "\f2ed";
-}
-
-.account-edit::before {
-    font: var(--fa-font-solid);
-    content: "\f4ff";
-}
-
-/* Styling for button contained in account page */
-
-.flex-container>button {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    position: relative;
-    left: 36em;
-}
 
 /*===============================================================*/
 /*Styling for LISTS page */
@@ -1171,6 +1185,7 @@ label {
     background-color: #C77A4C;
     box-shadow: 0.5em 0.5em #365B56;
     border: 2px solid #365B56;
+    width: fit-content;
 }
 
 /* UNIVERSAL LABEL STYLING */

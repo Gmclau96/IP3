@@ -1,81 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Script Link for Icons used in Interface through FontAwesome -->
-        <script src="https://kit.fontawesome.com/81b06af5ec.js" crossorigin="anonymous"></script>
-        <!-- Link to CSS Stylesheet-->
-        <link rel="stylesheet" href="css/styles.css">
-        <title>IP3Diary - Account</title>
-    </head>
-
-    <body>
-        <!--For alligning menu icon and title-->
-        <div class="title-bar">
-            <div id="burger-menu" onclick="openNav()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Script Link for Icons used in Interface through FontAwesome -->
+      <script src="https://kit.fontawesome.com/81b06af5ec.js" crossorigin="anonymous"></script>
+      <!-- Link to CSS Stylesheet-->
+      <link rel="stylesheet" href="css/styles.css">
+      <title>IP3Diary - Account</title>
+   </head>
+   <body>
+      <!--For alligning menu icon and title-->
+      <div class="title-bar">
+         <div id="burger-menu" onclick="openNav()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+         </div>
+         <!--Navigation Menu-->
+         <div id="nav-menu">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div id="nav-options">
+               <a href="/">Home</a>
+               <a href="/calendar">Calendar</a>
+               <a href="/lists">Lists</a>
+               <a href="/notes">Notes</a>
+               <a href="/recipes">Recipes</a>
+               <a href="/account">Account</a>
+               <a href="/admin" class="hide">Admin</a>
+               <div id="spacer"></div>
+               <a href="/logout">LOGOUT</a>
             </div>
-            <!--Navigation Menu-->
-            <div id="nav-menu">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div id="nav-options">
-                    <a href="/">Home</a>
-                    <a href="/calendar">Calendar</a>
-                    <a href="/lists">Lists</a>
-                    <a href="/notes">Notes</a>
-                    <a href="/recipes">Recipes</a>
-                    <a href="/account">Account</a>
-                    <a href="/admin" class="hide">Admin</a>
-                    <div id="spacer"></div>
-                    <a href="/logout">LOGOUT</a>
-                </div>
+         </div>
+      </div>
+      <header>
+         <h1>{{user.forename}}'s Account </h1>
+      </header>
+      <main>
+         <br><br><br>
+         <!-- Form for Account Page-->
+         <section id="accountSection">
+            {{#account}}
+            <div class="accountAlign">
+               <div id="accountBox">
+                  <div id="accountInfo">
+                     <p>Here you can view you account as well as updating any of your details, or delete your account.</p>
+                     <p>When your account is deleted, all of your notes, lists, recipes and calander events will be deleted too.</p>
+                     <br>
+                  </div>
+                  <!-- Account Forename -->
+                  <label for="Editname" id="account-label" class="account"> Forename: {{forename}} </label>
+                  <br>
+                  <br>
+                  <!-- Account Surname -->
+                  <label for="Editname" id="account-label" class="accountSname"> Surname: {{surname}} </label>
+                  <br>
+                  <br>
+                  <!-- Email Address-->
+                  <label for="Editemail" id="account-label" class="account-email"> Email: {{email}}</label>
+                  <br>
+                  <br>
+                  <!-- Edit Account -->
+                  <form id="editAccount">
+                     <button class="actionButton" formaction="/account/{{_id}}" formmethod="get">EDIT DETAILS</button>
+                  </form>
+               </div>
             </div>
-        </div>
-
-            <header>
-                <h1>{{user.forename}}'s Account </h1>
-            </header>
-        </div>
-
-        <main>
-            <br><br><br>
-            <!-- Form for Account Page-->
-            <fieldset id="account-fieldset">
-                {{#account}}
-                    <!-- Account Forename -->
-                    <label for="Editname" id="account-label" class="account"> Forename: {{forename}} </label>
-                    <br>
-                    <br>
-                    <!-- Account Surname -->
-                    <label for="Editname" id="account-label" class="accountSname"> Surname: {{surname}} </label>
-                    <br>
-                    <br>
-                    <!-- Email Address-->
-                    <label for="Editemail" id="account-label" class="account-email"> Email: {{email}}</label>
-                    <br>
-                    <br>
-                    <!-- Edit Account -->
-                    <form id="editAccount">
-                        <button type="text" class="actionButton" formaction="/account/{{_id}}" formmethod="get"> Edit Details</button>
-                    </form>
-                {{/account}}
-            </fieldset>
-        </main>
-        <script>
-            //Nav Menu
-            function openNav() {
-            document.getElementById("nav-menu").style.width = "250px";
-            }
-
-            function closeNav() {
-            document.getElementById("nav-menu").style.width = "0";
-            }
-        </script>
-    </body>
-    
+            {{/account}}
+         </section>
+      </main>
+      <script>
+         //Nav Menu
+         function openNav() {
+         document.getElementById("nav-menu").style.width = "250px";
+         }
+         function closeNav() {
+         document.getElementById("nav-menu").style.width = "0";
+         }
+      </script>
+   </body>
 </html>

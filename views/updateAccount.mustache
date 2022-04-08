@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<header>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,34 +10,51 @@
     <title>
        Update Account Details
     </title>
-</header>
+</head>
 <body>
         <h1>
           Update Account Details
         </h1>
-
+  <div class="accountAlign">
+<section id="sectionBlock">
 <!-- abillity to update account details -->
         <div id="updateNoteDiv" > 
         
            <form>
            {{#account}}
-                <label id="fname">Update Forename:</label>
-                <input id="fname" name="fname" value="{{account.forename}}"> <br>
-                <label id="sname">Update Surname:</label>
-                <input id="sname" name="sname" value="{{account.surname}}"> <br>
-                <label id="email">Update Email Address:</label>
-                <input id="email" name="email" value="{{account.email}}"> <br>
-                <label id="password">Update Password:</label>
-                <input id="password" name="password" value="{{password}}" type="password"> <br>
-                <label id="save">Enter Current Password To Save Changes:</label>
-                <input id="save" name="save" type="password" required="true"> <br>
-                <div class="add-button">
-                <button id="add"type="submit" formaction="/updateAccountDetails/{{_id}}" formmethod="post">Save changes</button>
-                <button id="del"type="submit" formaction="/deleteAccount/{{_id}}" formmethod="post">Delete Account</button>
-                <button id="back" type="submit" formaction="/account" formmethod="get" formnovalidate>Back</button>
+         
+           <div id="editAccountBox">
+           <div class="pairing">
+                <label >Update Forename:</label>
+                <input type="text" name="fname" value="{{account.forename}}"> <br>
+                </div>
+                <div class="pairing">
+                <label >Update Surname:</label>
+                <input type="text" name="sname" value="{{account.surname}}"> <br>
+                </div>
+                <div class="pairing">
+                <label >Update Email Address:</label>
+                <input type="email" name="email" value="{{account.email}}"> <br>
+                </div>
+                <div class="pairing">
+                <label >Update Password:</label>
+                <input name="password" value="{{password}}" type="password"> <br>
+                </div>
+                <div class="pairing">
+                <label>Enter Current Password To Save Changes:</label>
+                <input  name="save" type="password" required="true"> <br>
+                </div>
+                <div class="accountButton">
+                <button class="actionButton" type="submit" formaction="/updateAccountDetails/{{_id}}" formmethod="post">Save changes</button>
+                <button class="actionButton" type="submit" formaction="/deleteAccount/{{_id}}" formmethod="post">Delete Account</button>
+                <button class="actionButton"  type="submit" formaction="/account" formmethod="get" formnovalidate>Back</button>
                 {{/account}}
                 </div>
+                </div>
+                </div>
                </form>  
-        </div>
+       
+        </section>
+         </div>
 </body>
 </html>
