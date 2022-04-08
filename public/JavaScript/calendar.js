@@ -103,16 +103,15 @@ function closeNav() {
 function showEditingButtons() {
   let x = document.getElementsByClassName('removeEvent');
   let y = document.getElementsByClassName('editEvent');
-  let comp = document.getElementsByClassName('edit-complete');
-  console.log("comp" + comp);
+  let comp = document.getElementById('editComplete');
   console.log(x);
   [].forEach.call(x, function showDelete(x) {
-    x.hidden = false;
+    x.classList.remove("hide");
   });
   [].forEach.call(y, function showEdit(y) {
-    y.hidden = false;
+    y.classList.remove("hide");
   });
-  comp.hidden = false;
+  comp.classList.remove("hide");
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
@@ -120,37 +119,32 @@ function showEditingButtons() {
 function hideEditingButtons() {
   let x = document.getElementsByClassName('removeEvent');
   let y = document.getElementsByClassName('editEvent');
-  let comp = document.getElementsById('edit-complete');
+  let comp = document.getElementById('editComplete');
+
+  console.log("hide editing function being called!");
+
   console.log(x);
   [].forEach.call(x, function showDelete(x) {
-    x.hidden = true;
+    x.classList.add("hide");
   });
   [].forEach.call(y, function showEdit(y) {
-    y.hidden = true;
+    y.classList.add("hide");
   });
-  comp.hidden = true;
+  comp.classList.add("hide");
+  console.log("hide");
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
 //For adding new event and controlling event form 
 const newEventForm = document.querySelector(".newEvent");
-const openForm = document.querySelector("#open-form-button");
-const closeForm = document.querySelector(".event-confirm");
-const exitBtn = document.getElementById("exit-btn");
 
-openForm.addEventListener("click", () => {
+function showForm() {
   newEventForm.showModal();
-})
+}
 
-closeForm.addEventListener("click", () => {
+function hideForm() {
   newEventForm.close();
-})
-
-exitBtn.addEventListener("click", () => {
-  newEventForm.close();
-})
-
-
+}
 
 //let role = document.getElementById("userRole");
 //console.log("role" + role);

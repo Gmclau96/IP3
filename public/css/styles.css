@@ -80,16 +80,18 @@ ul {
     background-color: #26403E;
     box-shadow: 0.3em 0.3em 0.2em #172625;
     border: none;
-    padding: 1em;
     border-radius: .5em;
+    padding: 1em;
     margin: 1em;
-    cursor: pointer;
     height: 2.5em;
     width: 8em;
     text-decoration: none;
     text-align: center;
     line-height: 0.6em;
+    cursor: pointer;
 }
+
+/* Input fields styling */
 
 input[type=text] {
     min-height: 3em;
@@ -99,10 +101,34 @@ input[type=text] {
     border: 0.1em solid #172625;
     border-radius: 0.2em;
     box-shadow: 0.2em 0.2em #365B56;
+    font-size: medium;
 }
 
 input[type=checkbox] {
     margin-right: 0.5em;
+}
+
+/* styling for textareas to match text inputs */
+textarea {
+    min-height: 10em;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    max-width: 25em;
+    border: 0.1em solid #172625;
+    border-radius: 0.2em;
+    box-shadow: 0.2em 0.2em #365B56;
+    resize: vertical;
+    font-size: medium;
+}
+
+.display-dropdown {
+    margin-top: 0.5em;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.25rem;
+    border: 0.01em solid #172625;
+    border-radius: 0.2em;
+    box-shadow: 0.2em 0.2em #365B56;
 }
 
 /*Scroll bar for chrome, edge, safari*/
@@ -139,18 +165,6 @@ input[type=checkbox] {
     /* scroll thumb and track */
 }
 
-
-/* styling for textareas to match text inputs */
-textarea {
-    min-height: 10em;
-    margin-top: 0.5em;
-    padding: 0.5em;
-    max-width: 25em;
-    border: 0.1em solid #172625;
-    border-radius: 0.2em;
-    box-shadow: 0.2em 0.2em #365B56;
-    resize: vertical;
-}
 /* Utility Classes - classes that have a generic 
 job that is used throughout project*/
 
@@ -164,8 +178,9 @@ job that is used throughout project*/
     margin: 0 auto;
 }
 
-.pairing p {
+.pairing p, label {
     margin-top: 1em;
+    font-size: 1.5rem;
 }
 
 
@@ -228,9 +243,18 @@ job that is used throughout project*/
 /* Calendar Content */
 
 /* Left side of calendar page */
-#calendar-main {
+
+#calendar-content {
     display: flex;
     flex-direction: row;
+    background-color: #C77A4C;
+    box-sizing: border-box;
+    border: 2px solid #365B56;
+    box-shadow: 1em 1em #365B56;
+    width: 80%;
+    height: 85%;
+    margin: 1% auto;
+    padding: 1%;
 }
 
 #calendar-actions {
@@ -245,8 +269,9 @@ job that is used throughout project*/
     width: 30rem;
     height: 35rem;
     margin: 1.5rem auto;
-    outline: #000000 solid 2px;
-    background-color: #bdccdb;
+    background-color: #DCD6C8;
+    box-shadow: 0.5em 0.5em #26403E;
+    border: 2px solid #26403E;
 }
 
 .arrow {
@@ -268,7 +293,7 @@ job that is used throughout project*/
 }
 
 .month {
-    background-color: #32465B;
+    background-color: #365B56;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -276,7 +301,6 @@ job that is used throughout project*/
     height: 7rem;
     padding: 0 5rem;
     text-align: center;
-    outline: #000000 solid 2px;
 }
 
 .date h2 {
@@ -299,7 +323,7 @@ job that is used throughout project*/
     padding: 0 0.6em;
     width: 100%;
     height: 4rem;
-    background-color: #bdccdb;
+    background-color: #DCD6C8;
 }
 
 .weekdays div {
@@ -320,7 +344,7 @@ job that is used throughout project*/
     flex-wrap: wrap;
     width: 100%;
     padding: .35rem;
-    background-color: #bdccdb;
+    background-color: #DCD6C8;
 }
 
 .days div {
@@ -334,7 +358,7 @@ job that is used throughout project*/
 }
 
 .days div:hover {
-    border: .25rem solid #32465B;
+    border: .25rem solid #365B56;
     border-radius: 2rem;
     cursor: pointer;
 }
@@ -345,9 +369,9 @@ job that is used throughout project*/
 }
 
 .today {
-    background-color: #bdccdb;
+    background-color: #DCD6C8;
     border-radius: 2rem;
-    border: solid 2px #000000;
+    border: solid 2px #365B56;
 }
 
 /*Buttons for user interaction*/
@@ -379,17 +403,6 @@ job that is used throughout project*/
     background-color: #eae9e1;
 }
 
-.newEvent button {
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #32465B;
-    border: none;
-    padding: 1em;
-    border-radius: .5em;
-    margin: 1em;
-    cursor: pointer;
-}
-
 .form-input {
     display: flex;
     flex-direction: column;
@@ -397,20 +410,6 @@ job that is used throughout project*/
     align-items: center;
 }
 
-#form-input input[type=submit] {
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #32465B;
-    border: none;
-    padding: 1em;
-    border-radius: .5em;
-    margin: 2em;
-    cursor: pointer;
-}
-
-#form-input input {
-    height: 3em;
-}
 
 #form-input input,
 label {
@@ -418,18 +417,9 @@ label {
     margin-top: 1em;
 }
 
-#form-input select {
-    margin: 1em;
-    padding: .5em;
-    border: #000000 solid 1px;
-    background-color: #ffffff;
-    border-radius: 1px;
-}
-
-
 /* Right side of calendar page */
 #calendar-right {
-    margin: 1.5em 2em 0 1em;
+    margin: 1.5em 1em;
     display: flex;
     flex-direction: column;
 }
@@ -437,10 +427,11 @@ label {
 #events {
     display: flex;
     flex-direction: column;
-    height: 75%;
+    height: 95%;
     overflow-y: scroll;
     width: 40em;
     margin-top: 1em;
+    background-color: #C77A4C;
 }
 
 .event {
@@ -448,10 +439,10 @@ label {
     flex-direction: row;
     padding: 1em;
     margin: 1em auto;
-    border: #000000 solid 2px;
+    border: #365B56 solid 2px;
     max-width: 100%;
     background-color: #DCD6C8;
-    box-shadow: 0.5em 0.5em #365B56;
+    box-shadow: 0.5em 0.5em #26403E;
 }
 
 #event-content {
@@ -470,34 +461,23 @@ label {
     width: 10em;
 }
 
-#event-btns button {
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #32465B;
+#event-btns a {
+    background-color: #26403E;
+    box-shadow: 0.3em 0.3em 0.2em #172625;
     border: none;
-    padding: 1em;
     border-radius: .5em;
+    padding: 1.3em 0.5em;
     margin: 1em;
-    cursor: pointer;
+    height: 2.8em;
     width: 8em;
     text-decoration: none;
-}
-
-#event-btns a {
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #32465B;
-    border: none;
-    border-radius: .5em;
-    margin: 1em;
-    padding: 0.8em;
-    cursor: pointer;
-    width: 7em;
-    text-decoration: none;
     text-align: center;
+    line-height: 0.6em;
+    font-weight: 600;
+    font-size:small;
+    color: #DCD6C8;
+    cursor: pointer;
 }
-
-
 
 .tooltip {
     position: relative;
@@ -517,6 +497,7 @@ label {
     top: -5px;
     right: 105%;
     z-index: 1;
+    line-height: 1em;
 }
 
 .tooltip:hover .tooltip-warning {
@@ -1633,6 +1614,7 @@ float: left;
 
 /*===============================================================*/
 /*Styling for LISTS page */
+
 /* list boxes on lists page */
 #newListDiv {
     margin: 2em auto;
@@ -1641,7 +1623,7 @@ float: left;
     background-color: #C77A4C;
     box-sizing: border-box;
     border: 1em solid #C77A4C;
-    box-shadow: 0.5em 0.5em #365B56;
+    box-shadow: 1em 1em #365B56;
     border: 2px solid #365B56;
 }
 
@@ -1654,7 +1636,7 @@ float: left;
     flex-direction: column;
     background-color: #C77A4C;
     box-sizing: border-box;
-    box-shadow: 0.5em 0.5em #365B56;
+    box-shadow: 1em 1em #365B56;
     border: 2px solid #365B56;
 }
 
@@ -1828,7 +1810,7 @@ float: left;
     box-sizing: border-box;
     border: 1em solid #C77A4C;
     background-color: #C77A4C;
-    box-shadow: 0.5em 0.5em #365B56;
+    box-shadow: 1em 1em #365B56;
 }
 
 .lists-point {
@@ -1846,7 +1828,7 @@ float: left;
     background-color: #C77A4C;
     box-sizing: border-box;
     border: 1em solid #C77A4C;
-    box-shadow: 0.5em 0.5em #365B56;
+    box-shadow: 1em 1em #365B56;
 }
 
 #landing-right h3 {
@@ -1878,34 +1860,9 @@ float: left;
 
 
 /* Styling for Update Calendar Event */
-#updateEventDiv {
-    margin: auto;
-    margin-top: 20px;
-    padding: 10px;
-    max-width: max-content;
-    border: solid 2px #36846b;
-}
 
-.eventLabel {
-    font-size: 1.5rem;
-    width: 10em;
-}
-
-#existingEventType {
-    font-size: 1.5rem;
-    margin-bottom: 0;
-}
-
-.display-box {
-    width: 40%;
-    padding: 10px;
-    font-size: 1.25rem;
-}
-
-.display-dropdown {
-    width: 40%;
-    padding: 10px;
-    font-size: 1.25rem;
+#entry {
+    margin: 0 30%;
 }
 
 /* UNIVERSAL UPDATE PAGE STYLING */
