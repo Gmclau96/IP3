@@ -41,90 +41,101 @@
     <!--Main section - contains the pages content-->
     <main id="calendar-main">
         
-        <!--Section for user interaction-->
-        <section id="calendar-actions">    
-            <!--Calendar View-->
-            <div class="calendar">
-                <div class="month">
-                    <p><i class="arrow left prev"></i></p>
-                    <div class="date">
-                        <h2></h2>
-                        <p></p>
+        <div id="calendar-content">
+            <!--Section for user interaction-->
+            <section id="calendar-actions">    
+                <!--Calendar View-->
+                <div class="calendar">
+                    <div class="month">
+                        <p><i class="arrow left prev"></i></p>
+                        <div class="date">
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                        <p><i class="arrow right next"></i></p>
                     </div>
-                    <p><i class="arrow right next"></i></p>
+                    <div class="weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thur</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="days">
+                    </div>
                 </div>
-                <div class="weekdays">
-                    <div>Sun</div>
-                    <div>Mon</div>
-                    <div>Tue</div>
-                    <div>Wed</div>
-                    <div>Thur</div>
-                    <div>Fri</div>
-                    <div>Sat</div>
+                <div class="buttonDiv">
+                    <button class="actionButton" id="newEventBtn" onclick="showForm()">ADD EVENT</button>
+                    <button class="actionButton" onclick="showEditingButtons()">EDIT EVENTS</button>
                 </div>
-                <div class="days">
+                <div class="buttonDiv">
+                    <button class="actionButton hide" id="editComplete" onclick="hideEditingButtons()">CONFIRM</button>
                 </div>
-            </div>
+                
 
-            <div class="calendar-buttons">
-                <button id="open-form-button">ADD EVENT</button>
-                <button id="delete-event-button" onclick="showEditingButtons()">EDIT EVENTS</button>
-            </div>
-
-            <!--Adding New Event Form-->
-            <dialog class="newEvent" id="newEvent">
-                <button id="exit-btn">X</button>
-                <div class="form-input">
-                    <form>
-                        <label for="eventName">Event name:</label><br>
-                        <input type="text" id="eventName" name="eventName"><br>
-                        <label for="date">Date:</label><br>
-                        <input type="datetime-local" name="datetime" id="datetime"><br>
-                        <label for="eventType">Event type:</label><br>
-                        <div id="eventType">
-                            <select name="eventType" id="eventType">
-                                <option value="Appointment">Appointment</option>
-                                <option value="Birthday">Birthday</option>
-                                <option value="Meeting">Meeting</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <label for="EvtNote">Notes:</label><br>
-                        <input type="text" id="EvtNote" name="EvtNote"><br>
-                        <button id="add"type="submit" formaction="/calendar" formmethod="post">Add Event</button>
-                    </form>
-                </div>
-            </dialog>
-        </section>
-        
-        <!--Section of added events-->
-        <section id="events">
-            <ul id="landing-event">
-                <h3>Upcoming Events<h3>
-                {{#events}}  
-                    <li class="event">
-                        <div id="event-content">
-                            <h3>Name: <span class="inliner">{{eventName}}</span></h3><hr>
-                            <p>Date: <span class="eventDate">{{date}}</span></p><hr>
-                            <p>Event Type: <span>{{eventType}}</span></p><hr>
-                            <p>Notes: <span>{{note}}</span></p>
-                        </div>
-                        <div id="event-btns">
-                            <a href="calendar/{{_id}}" class="editEvent" hidden="true">UPDATE</a>
-                            <button class="removeEvent" id="removeEvent" hidden="true">
-                                <div class="tooltip">REMOVE
-                                    <span class="tooltip-warning">This will permanently remove event!</span>
+                <!--Adding New Event Form-->
+                <dialog class="newEvent">
+                    <button class="actionButton" onclick="hideForm()">CANCEL</button>
+                    <div class="form-input">
+                        <form>
+                            <div class="pairing">
+                                <label for="eventName">Event name:</label><br>
+                                <input type="text" name="eventName" placeholder="Type your event name here..."><br>
+                            </div>
+                            <div class="pairing">
+                                <label for="date">Date:</label><br>
+                                <input type="datetime-local" name="datetime" class="display-dropdown"><br>
+                            </div>
+                            <div class="pairing">
+                                <label for="eventType">Event type:</label><br>
+                                <div>
+                                    <select name="eventType" class="display-dropdown">
+                                        <option value="Appointment">Appointment</option>
+                                        <option value="Birthday">Birthday</option>
+                                        <option value="Meeting">Meeting</option>
+                                        <option value="Other">Other</option>
+                                    </select>
                                 </div>
-                            </button>
-                        </div>
-                    </li>
-                {{/events}}
-            </ul>
-            <div id="completeButton">
-            <!--This button is not rendering for some reason-->
-                <button class="edit-complete" id="edit-complete" hidden="false" onclick="hideEditingButtons()">DONE</button>
-            </div>
-        </section>
+                            </div>
+                            <div class="pairing">
+                                <label for="EvtNote">Notes:</label><br>
+                                <textarea name="EvtNote" placeholder="Additional details..."></textarea>
+                            </div>
+                            <div class="buttonDiv">
+                                <button class="actionButton" type="submit" formaction="/calendar" formmethod="post">ADD EVENT</button>
+                            </div>
+                        </form>
+                    </div>
+                </dialog>
+            </section>
+            
+            <!--Section of added events-->
+            <section id="events">
+                <ul id="landing-event">
+                    <h3>Upcoming Events<h3>
+                    {{#events}}  
+                        <li class="event">
+                            <div id="event-content">
+                                <h3>Name: <span>{{eventName}}</span></h3><hr>
+                                <p>Date: <span class="eventDate">{{date}}</span></p><hr>
+                                <p>Event Type: <span>{{eventType}}</span></p><hr>
+                                <p>Notes: <span>{{note}}</span></p>
+                            </div>
+                            <div id="event-btns">
+                                <a href="calendar/{{_id}}" class="anchorButton editEvent hide">UPDATE</a>
+                                <button class="anchorButton removeEvent hide">
+                                    <div class="tooltip">REMOVE
+                                        <span class="tooltip-warning">This will permanently remove event!</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </li>
+                    {{/events}}
+                </ul>
+            </section>
+        </div>
     </main>
     <script src="./JavaScript/calendar.js"></script>
 </body>
