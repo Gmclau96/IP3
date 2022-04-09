@@ -45,24 +45,7 @@ function expandList() {
   }
 }
 
-function expandEditList() {
 
-  for (let i = 2; i < 11; i++) {
-    var itemlb = document.getElementById('itemlb' + i);
-    var item = document.getElementById('item' + i);
-    var checkboxlb = document.getElementById('checkboxlb' + i);
-    var checkbox = document.getElementById('checkbox' + i);
-
-    if (item.hidden == true) {
-      itemlb.hidden = false;
-      item.hidden = false;
-      checkboxlb.hidden = false;
-      checkbox.hidden = false;
-
-      i = 99;
-    }
-  }
-}
 
 
   for (let i = 2; i < 11; i++) {
@@ -124,7 +107,7 @@ for (let i = 0; i < itemBox.length; i++) {
   } 
 }
 
-//FOR UPDATING LISTS PAGE//
+
 
 //only show div section if there is an existing list item
 /*
@@ -134,3 +117,37 @@ for (let i = 0; i < present.length; i++) {
     present[i].style.display = 'none';
   }
 }*/
+
+//hides unused list divs
+for (let i = 0; i < itemLabel.length; i++) {
+  if (itemLabel[i].hidden == true) {
+    let parentDiv = itemLabel[i].parentNode;
+    parentDiv.style.display = "none";
+    if(parentDiv.style.display == "none"){
+      parentDiv.parentNode.style.display = "none";
+    }
+  }
+}
+//FOR UPDATING LISTS PAGE//
+function expandEditList() {
+
+  for (let i = 2; i < 11; i++) {
+    var itemlb = document.getElementById('itemlb' + i);
+    var item = document.getElementById('item' + i);
+    var checkboxlb = document.getElementById('checkboxlb' + i);
+    var checkbox = document.getElementById('checkbox' + i);
+    if (item.hidden == true) {
+      let parentDiv = itemlb.parentNode;
+      let checkDiv = checkbox.parentNode;
+      parentDiv.parentElement.style.display = "flex";
+      parentDiv.style.display = "flex";
+      checkDiv.style.display = "block";
+      itemlb.hidden = false;
+      item.hidden = false;
+      checkboxlb.hidden = false;
+      checkbox.hidden = false;
+      checkbox.checked = false;
+      i = 99;
+    }
+  }
+}
