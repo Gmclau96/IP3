@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="notesPage">
    <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,8 +52,9 @@
             </div>
          </form>
       </section>
+      <div id="notesAlign">
       <section id="sectionBlock">
-         <div>
+         <div id="notes">
             <ul id="note">
                {{#notes}} 
                <div class="notesBox">
@@ -80,6 +81,7 @@
             <button class="actionButton" id="notes-buttons"onclick="editNote()">EDIT NOTE</button>
          </div>
       </section>
+      </div>
       </main>
       <script src="./JavaScript/notes.js"></script>
    </body>

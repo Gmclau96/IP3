@@ -97,7 +97,9 @@ ul {
 
 /* Input fields styling */
 
-input[type=text], input[type=password], input[type=email] {
+input[type=text],
+input[type=password],
+input[type=email] {
     min-height: 3em;
     margin-top: 0.5em;
     padding: 0.5em;
@@ -775,6 +777,7 @@ label {
     box-shadow: 0.2em 0.2em #365B56;
 }
 
+
 /* ======================PASSWORD PAGE====================== */
 #passwordBox {
     padding: 1em;
@@ -788,13 +791,13 @@ label {
     float: left;
 }
 
-.passwordAlign{
+.passwordAlign {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#emailInput{
+#emailInput {
     min-height: 3em;
     margin-top: 0.5em;
     padding: 0.5em;
@@ -845,18 +848,19 @@ label {
     width: fit-content;
 }
 
-#accountButton{
+#accountButton {
     text-align: left;
     justify-content: left;
     float: left;
 }
-.accountAlign{
+
+.accountAlign {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
-#accountInfo{
+#accountInfo {
     font-size: large;
 }
 
@@ -1191,4 +1195,246 @@ label {
 /* UNIVERSAL LABEL STYLING */
 .sectionLabels {
     font-size: 1.5rem;
+}
+
+/* media queries for password page */
+@media screen and (max-width: 425px) {
+
+    html.passwordPage,
+    .passwordPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: auto;
+    }
+
+    .passwordPage h2,
+    .passwordPage #passwordBox,
+    .passwordPage #passwordBlock {
+        max-width: 95%;
+    }
+
+    .passwordPage .sectionLabels {
+        width: auto;
+    }
+
+    .passwordPage #emailInput {
+        min-width: auto;
+    }
+}
+
+
+/* media queries for signup page */
+@media screen and (max-width: 425px) {
+
+    html.signupPage,
+    .signupPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    .signupPage #sectionBlock {
+        max-width: 80%;
+        margin: auto;
+    }
+
+    .signupPage h2 {
+        max-width: 95%;
+    }
+
+    .signupPage div {
+        flex-direction: column;
+    }
+
+    .signupPage #form-label {
+        white-space: pre;
+    }
+
+    .signupPage .actionButton {
+        margin: 0;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+
+    .signupPage #signupBox,
+    .signupPage #accountBenifits {
+        width: auto;
+        margin: 1em;
+        font-size: small;
+    }
+
+    .signupPage .sectionLabels {
+        font-size: medium;
+        font-weight: bold;
+    }
+}
+
+/* media queries for notes page */
+@media screen and (max-width: 425px) {
+
+    html.notesPage,
+    .notesPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    .notesPage #sectionBlock,
+    .notesPage #newNote {
+        max-width: 80%;
+        min-height: fit-content;
+    }
+
+    .notesPage #notesAlign,
+    .notesPage #note {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .notesPage .notesBox {
+        font-size: small;
+        min-height: fit-content;
+    }
+
+}
+
+/* media queries for update notes page */
+@media screen and (max-width: 425px) {
+
+    html.updatenotesPage,
+    .updatenotesPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    .updatenotesPage #updatePageContent {
+        width: 80%;
+        min-height: fit-content;
+    }
+
+    .updatenotesPage .pairing {
+        max-width: 80%;
+        min-height: fit-content;
+    }
+
+}
+
+/* media queries for recipes page */
+@media screen and (max-width: 425px) {
+
+    html.recipesPage,
+    .recipesPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    .recipesPage #sectionBlock {
+        max-width: 80%;
+        min-height: fit-content;
+        margin: auto;
+    }
+
+    .recipesPage #newRecipe {
+        max-width: 80%;
+        min-height: fit-content;
+    }
+
+}
+
+/* media queries for update recipes page */
+@media screen and (max-width: 425px) {
+
+    html.updateRecipesPage,
+    .updateRecipesPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    .updateRecipesPage #updatePageContent {
+        width: 80%;
+        min-height: fit-content;
+    }
+
+    .updateRecipesPage .pairing {
+        max-width: 80%;
+        min-height: fit-content;
+    }
+
+}
+
+/* media queries for account page */
+@media screen and (max-width: 425px) {
+
+    html.accountPage,
+    .accountPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    .accountPage #accountInfo {
+        font-size: small;
+    }
+
+    .accountPage #accountSection {
+        width: 80%;
+        min-height: fit-content;
+    }
+
+    .accountPage #accountBox {
+        text-align: left;
+    }
+
+    .accountPage label {
+        font-size: larger;
+        width: auto;
+    }
+
+}
+
+/* media queries for update account page */
+@media screen and (max-width: 425px) {
+
+    html.updateaccountPage,
+    .updateaccountPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    .updateaccountPage .accountAlign,
+    .updateaccountPage #sectionBlock,
+    .updateaccountPage #editAccountBox
+     {
+        max-width:90%;
+        min-height: fit-content;
+        margin: auto;
+    }
+
+    .updateaccountPage label
+     {
+        font-size: larger;
+        width: auto;
+    }
+    .updateaccountPage .accountButton{
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+   }
+    
+
+    .updateaccountPage button
+    {
+        font-size: small;
+       min-width: fit-content;
+    margin: 2%;
+   }
+
 }
