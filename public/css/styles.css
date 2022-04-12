@@ -1438,3 +1438,25 @@ label {
    }
 
 }
+
+/* media queries for lists page */
+@media screen and (max-width: 425px) {
+
+    .listPage .listBox{
+        width: 70%;
+
+    }
+
+    .listPage #newListDiv{
+        max-width: 80%;
+        min-height: fit-content;
+    }
+}
+
+/* media queries for update list page */
+@media screen and (max-width: 425px) {
+
+    
+    
+    
+}
