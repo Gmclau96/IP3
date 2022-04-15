@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #D8B196;
+    background-color: #f1ece1;
     display: block;
     flex-direction: row;
     min-height: 100vh;
@@ -22,13 +22,13 @@ header {
 }
 
 h1 {
-    color: #26403E;
+    color: #1C120D;
     text-align: center;
     font-size: 3rem;
 }
 
 h2 {
-    color: #26403E;
+    color: #1C120D;
 }
 
 
@@ -60,11 +60,11 @@ ul {
 .actionButton {
     font-weight: bold;
     color: #ffffff;
-    background-color: #26403E;
+    background-color: #7F5039;
     border: none;
-    box-shadow: 0.3em 0.3em 0.2em #172625;
+    box-shadow: 0.3em 0.3em 0.2em #543526;
     padding: 1em;
-    border: solid 1px #172625;
+    border: solid 1px #7F5039;
     border-radius: .5em;
     margin: 1em;
     cursor: pointer;
@@ -81,8 +81,8 @@ ul {
 .anchorButton {
     font-weight: bold;
     color: #DCD6C8;
-    background-color: #26403E;
-    box-shadow: 0.3em 0.3em 0.2em #172625;
+    background-color: #7F5039;
+    box-shadow: 0.3em 0.3em 0.2em #543526;
     border: none;
     border-radius: .5em;
     padding: 1em;
@@ -104,9 +104,9 @@ input[type=email] {
     margin-top: 0.5em;
     padding: 0.5em;
     max-width: 25em;
-    border: 0.1em solid #172625;
+    border: 0.1em solid #543526;
     border-radius: 0.2em;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
     font-size: medium;
 }
 
@@ -121,9 +121,9 @@ textarea {
     margin-top: 0.5em;
     padding: 0.5em;
     max-width: 25em;
-    border: 0.1em solid #172625;
+    border: 0.1em solid #543526;
     border-radius: 0.2em;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
     resize: vertical;
     font-size: medium;
 }
@@ -133,9 +133,9 @@ textarea {
     width: 100%;
     padding: 10px;
     font-size: 1.25rem;
-    border: 0.01em solid #172625;
+    border: 0.01em solid #543526;
     border-radius: 0.2em;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
 }
 
 /*Scroll bar for chrome, edge, safari*/
@@ -151,11 +151,11 @@ textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #365B56;
+    background-color: #7C6E53;
     /* color of the scroll thumb */
     border-radius: 1em;
     /* roundness of the scroll thumb */
-    border: 0.5em solid #365B56;
+    border: 0.5em solid #7C6E53;
     /* creates padding around scroll thumb */
 }
 
@@ -168,7 +168,7 @@ textarea {
     /*Scroll bar details for firefox*/
     scrollbar-width: thin;
     /* "auto" or "thin" */
-    scrollbar-color: #365B56 #C77A4C;
+    scrollbar-color: #7C6E53 #C6AC8A;
     /* scroll thumb and track */
 }
 
@@ -255,10 +255,10 @@ label {
 #calendar-content {
     display: flex;
     flex-direction: row;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
     box-sizing: border-box;
-    border: 2px solid #365B56;
-    box-shadow: 1em 1em #365B56;
+    border: 2px solid #7C6E53;
+    box-shadow: 1em 1em #7C6E53;
     width: 80%;
     height: 45em;
     margin: 1% auto;
@@ -278,8 +278,8 @@ label {
     height: 35rem;
     margin: 3% 0;
     background-color: #DCD6C8;
-    box-shadow: 0.5em 0.5em #365B56;
-    border: 2px solid #365B56;
+    box-shadow: 0.5em 0.5em #7C6E53;
+    border: 2px solid #7C6E53;
 }
 
 .arrow {
@@ -301,7 +301,7 @@ label {
 }
 
 .month {
-    background-color: #365B56;
+    background-color: #A39477;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -367,7 +367,7 @@ label {
 }
 
 .days div:hover {
-    border: .25rem solid #365B56;
+    border: .25rem solid #7C6E53;
     border-radius: 2rem;
     cursor: pointer;
 }
@@ -380,7 +380,7 @@ label {
 .today {
     background-color: #DCD6C8;
     border-radius: 2rem;
-    border: solid 2px #365B56;
+    border: solid 2px #7C6E53;
 }
 
 /*New Event Form*/
@@ -410,7 +410,7 @@ label {
     flex-direction: column;
     width: 40em;
     margin-top: 1em;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
 }
 
 .event {
@@ -418,10 +418,10 @@ label {
     flex-direction: row;
     padding: 1em;
     margin: 1em auto;
-    border: #365B56 solid 2px;
+    border: #7C6E53 solid 2px;
     max-width: 100%;
     background-color: #DCD6C8;
-    box-shadow: 0.5em 0.5em #365B56;
+    box-shadow: 0.5em 0.5em #7C6E53;
 }
 
 #event-content {
@@ -441,8 +441,8 @@ label {
 }
 
 #event-btns a {
-    background-color: #26403E;
-    box-shadow: 0.3em 0.3em 0.2em #172625;
+    background-color: #7F5039;
+    box-shadow: 0.3em 0.3em 0.2em #543526;
     border: none;
     border-radius: .5em;
     padding: 1.3em 0.5em;
@@ -486,7 +486,7 @@ label {
 /* ======================RECIPE PAGE====================== */
 
 .recipeTable {
-    border: 0.1em solid #172625;
+    border: 0.1em solid #543526;
     border-radius: 0.2em;
     border-collapse: collapse;
 }
@@ -494,7 +494,7 @@ label {
 .recipeBackground {
     border-radius: 0.2em;
     background-color: #DCD6C8;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
 }
 
 .recipeTitle {
@@ -524,10 +524,10 @@ label {
     margin: 2em auto;
     padding: 1em 3em;
     max-width: max-content;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
     box-sizing: border-box;
-    box-shadow: 0.5em 0.5em #365B56;
-    border: 2px solid #365B56;
+    box-shadow: 0.5em 0.5em #7C6E53;
+    border: 2px solid #7C6E53;
 }
 
 
@@ -536,7 +536,7 @@ label {
 #add {
     font-weight: 500;
     color: #ffffff;
-    background-color: #365B56;
+    background-color: #7C6E53;
     border: none;
     padding: 1em;
     border-radius: .5em;
@@ -547,7 +547,7 @@ label {
 #del {
     font-weight: 500;
     color: #ffffff;
-    background-color: #365B56;
+    background-color: #7C6E53;
     border: none;
     padding: 1em;
     border-radius: .5em;
@@ -560,7 +560,7 @@ label {
 #back {
     font-weight: 500;
     color: #ffffff;
-    background-color: #365B56;
+    background-color: #7C6E53;
     border: none;
     padding: 1em;
     border-radius: .5em;
@@ -644,7 +644,7 @@ label {
 #delete-button {
     font-weight: 500;
     color: #ffffff;
-    background-color: #365B56;
+    background-color: #7C6E53;
     border: none;
     padding: 1em;
     border-radius: .5em;
@@ -656,7 +656,7 @@ label {
 #remove-button {
     font-weight: 500;
     color: #ffffff;
-    background-color: #365B56;
+    background-color: #7C6E53;
     border: none;
     padding: 1em;
     border-radius: .5em;
@@ -672,10 +672,10 @@ label {
 .notesBox {
     padding: 1em;
     margin: 1em;
-    border: 0.1em solid #172625;
+    border: 0.1em solid #543526;
     border-radius: 0.2em;
     background-color: #DCD6C8;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
     height: 25em;
     width: 18em;
     text-align: left;
@@ -692,10 +692,10 @@ label {
     margin: 2em auto;
     padding: 1em 3em;
     max-width: max-content;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
     box-sizing: border-box;
-    box-shadow: 0.5em 0.5em #365B56;
-    border: 2px solid #365B56;
+    box-shadow: 0.5em 0.5em #7C6E53;
+    border: 2px solid #7C6E53;
 }
 
 
@@ -714,10 +714,10 @@ label {
 #signupBox {
     padding: 1em;
     margin: 1em;
-    border: 0.1em solid #172625;
+    border: 0.1em solid #543526;
     border-radius: 0.2em;
     background-color: #DCD6C8;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
     text-align: left;
     justify-content: left;
     float: left;
@@ -727,10 +727,10 @@ label {
     padding: 1em;
     margin: 1em;
     margin-left: auto;
-    border: 0.1em solid #172625;
+    border: 0.1em solid #543526;
     border-radius: 0.2em;
     background-color: #DCD6C8;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
 }
 
 
@@ -738,10 +738,10 @@ label {
 #passwordBox {
     padding: 1em;
     margin: 1em;
-    border: 0.1em solid #172625;
+    border: 0.1em solid #543526;
     border-radius: 0.2em;
     background-color: #DCD6C8;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
     text-align: left;
     justify-content: left;
     float: left;
@@ -758,9 +758,9 @@ label {
     margin-top: 0.5em;
     padding: 0.5em;
     min-width: 31em;
-    border: 0.1em solid #172625;
+    border: 0.1em solid #543526;
     border-radius: 0.2em;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
     font-size: medium;
 }
 
@@ -769,9 +769,9 @@ label {
     padding: 1em;
     display: flex;
     flex-direction: column;
-    background-color: #C77A4C;
-    box-shadow: 0.5em 0.5em #365B56;
-    border: 2px solid #365B56;
+    background-color: #C6AC8A;
+    box-shadow: 0.5em 0.5em #7C6E53;
+    border: 2px solid #7C6E53;
     width: fit-content;
 }
 
@@ -782,11 +782,11 @@ label {
     padding: 1em;
     width: fit-content;
     height: 75%;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
     box-sizing: border-box;
-    border: 1em solid #C77A4C;
-    box-shadow: 0.5em 0.5em #365B56;
-    border: 2px solid #365B56;
+    border: 1em solid #C6AC8A;
+    box-shadow: 0.5em 0.5em #7C6E53;
+    border: 2px solid #7C6E53;
     display: flex;
     flex-direction: column;
 }
@@ -794,10 +794,10 @@ label {
 #accountBox {
     padding: 1em;
     margin: 1em;
-    border: 0.1em solid #172625;
+    border: 0.1em solid #543526;
     border-radius: 0.2em;
     background-color: #DCD6C8;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
     text-align: center;
     justify-content: center;
     float: center;
@@ -823,10 +823,10 @@ label {
 #editAccountBox {
     padding: 1em;
     margin: 1em;
-    border: 0.1em solid #172625;
+    border: 0.1em solid #543526;
     border-radius: 0.2em;
     background-color: #DCD6C8;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
     text-align: left;
     justify-content: center;
     float: center;
@@ -872,11 +872,11 @@ label {
     margin: 2em auto;
     padding: 1em 3em;
     max-width: max-content;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
     box-sizing: border-box;
-    border: 1em solid #C77A4C;
-    box-shadow: 1em 1em #365B56;
-    border: 2px solid #365B56;
+    border: 1em solid #C6AC8A;
+    box-shadow: 1em 1em #7C6E53;
+    border: 2px solid #7C6E53;
 }
 
 #listBlock {
@@ -886,10 +886,10 @@ label {
     width: 70%;
     display: flex;
     flex-direction: column;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
     box-sizing: border-box;
-    box-shadow: 1em 1em #365B56;
-    border: 2px solid #365B56;
+    box-shadow: 1em 1em #7C6E53;
+    border: 2px solid #7C6E53;
 }
 
 /* list boxes on lists page */
@@ -897,19 +897,19 @@ label {
     margin: 2em auto;
     padding: 1em 3em;
     max-width: max-content;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
     box-sizing: border-box;
-    box-shadow: 0.5em 0.5em #365B56;
-    border: 2px solid #365B56;
+    box-shadow: 0.5em 0.5em #7C6E53;
+    border: 2px solid #7C6E53;
 }
 
 .listBox {
     padding: 1em;
     margin: 1em 2em 1em 2em;
-    border: 0.1em solid #172625;
+    border: 0.1em solid #543526;
     border-radius: 0.2em;
     background-color: #DCD6C8;
-    box-shadow: 0.2em 0.2em #365B56;
+    box-shadow: 0.2em 0.2em #7C6E53;
     height: 27em;
     width: 20%;
     text-align: left;
@@ -931,8 +931,8 @@ label {
     display: flex;
     flex-direction: row;
     margin: 0.8em 8%;
-    border: 0.2em solid #365B56;
-    box-shadow: 0.3em 0.3em #365B56;
+    border: 0.2em solid #7C6E53;
+    box-shadow: 0.3em 0.3em #7C6E53;
     border-radius: 0.5em;
     padding: 1em;
     background-color: #DCD6C8;
@@ -958,11 +958,11 @@ label {
     padding: 1em;
     width: 40%;
     height: 75%;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
     box-sizing: border-box;
-    border: 1em solid #C77A4C;
-    box-shadow: 0.5em 0.5em #365B56;
-    border: 2px solid #365B56;
+    border: 1em solid #C6AC8A;
+    box-shadow: 0.5em 0.5em #7C6E53;
+    border: 2px solid #7C6E53;
     display: flex;
     flex-direction: column;
 }
@@ -975,7 +975,7 @@ label {
     width: 80%;
     border: #000000 solid 2px;
     background-color: #DCD6C8;
-    box-shadow: 0.5em 0.5em #365B56;
+    box-shadow: 0.5em 0.5em #7C6E53;
 }
 
 #accountIdentifier {
@@ -1056,12 +1056,12 @@ label {
     height: 36%;
     margin: 0 0 5% 11%;
     padding: 1.5em 2em 3em 2em;
-    outline: #365B56 solid 2px;
+    outline: #7C6E53 solid 2px;
     overflow-y: scroll;
     box-sizing: border-box;
-    border: 1em solid #C77A4C;
-    background-color: #C77A4C;
-    box-shadow: 1em 1em #365B56;
+    border: 1em solid #C6AC8A;
+    background-color: #C6AC8A;
+    box-shadow: 1em 1em #7C6E53;
 }
 
 .lists-point {
@@ -1074,12 +1074,12 @@ label {
     width: 47%;
     height: 60em;
     padding: 2em 2em 3em 2em;
-    outline: #365B56 solid 2px;
+    outline: #7C6E53 solid 2px;
     overflow-y: scroll;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
     box-sizing: border-box;
-    border: 1em solid #C77A4C;
-    box-shadow: 1em 1em #365B56;
+    border: 1em solid #C6AC8A;
+    box-shadow: 1em 1em #7C6E53;
 }
 
 #landing-right h3 {
@@ -1089,7 +1089,7 @@ label {
 .landing-list {
     padding: 1em;
     margin: 1em auto;
-    border: #365B56 solid 2px;
+    border: #7C6E53 solid 2px;
     width: 100%;
     background-color: #DCD6C8;
 }
@@ -1099,7 +1099,7 @@ label {
     margin: 0 0.5em;
     height: 90%;
     overflow-y: scroll;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
 }
 
 #landing-event h3 {
@@ -1123,10 +1123,10 @@ label {
     margin: 1em auto;
     padding: 1em;
     width: 50%;
-    background-color: #C77A4C;
+    background-color: #C6AC8A;
     box-sizing: border-box;
-    box-shadow: 0.5em 0.5em #365B56;
-    border: 2px solid #365B56;
+    box-shadow: 0.5em 0.5em #7C6E53;
+    border: 2px solid #7C6E53;
 }
 
 /* CENTERS LABELS AND INPUTS ON UPDATE PAGES */
@@ -1142,9 +1142,9 @@ label {
     padding: 1em;
     display: flex;
     flex-direction: column;
-    background-color: #C77A4C;
-    box-shadow: 0.5em 0.5em #365B56;
-    border: 2px solid #365B56;
+    background-color: #C6AC8A;
+    box-shadow: 0.5em 0.5em #7C6E53;
+    border: 2px solid #7C6E53;
     width: fit-content;
 }
 
