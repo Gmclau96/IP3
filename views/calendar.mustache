@@ -82,16 +82,16 @@
                         <form>
                             <div class="pairing">
                                 <label for="eventName">Event name:</label><br>
-                                <input type="text" name="eventName" placeholder="Type your event name here..."><br>
+                                <input type="text" name="eventName" placeholder="Type your event name here..." required="true"><br>
                             </div>
                             <div class="pairing">
                                 <label for="date">Date:</label><br>
-                                <input type="datetime-local" name="datetime" class="display-dropdown"><br>
+                                <input type="datetime-local" name="datetime" class="display-dropdown" required="true"><br>
                             </div>
                             <div class="pairing">
                                 <label for="eventType">Event type:</label><br>
                                 <div>
-                                    <select name="eventType" class="display-dropdown">
+                                    <select name="eventType" class="display-dropdown" required="true">
                                         <option value="Appointment">Appointment</option>
                                         <option value="Birthday">Birthday</option>
                                         <option value="Meeting">Meeting</option>
