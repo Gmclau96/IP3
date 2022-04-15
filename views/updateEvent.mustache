@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="updateEventPage">
 
 
 <header>
@@ -16,7 +16,7 @@
           Update Calendar Event
         </h1>
 <!-- abillity to update recipe -->
-        <div id="updatePageContent"> 
+        <section id="updatePageContent"> 
            <form>
                 {{#event}}
                     <div id="entry">
@@ -57,7 +57,7 @@
                     </div>
                 {{/event}}
             </form>  
-        </div>
+        </section>
         <script>
             //Removes timezone from appearing on calendar entries
             let dates = document.getElementsByClassName('eventDate');

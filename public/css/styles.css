@@ -1125,7 +1125,6 @@ label {
     width: 50%;
     background-color: #C77A4C;
     box-sizing: border-box;
-    border: 1em solid #C77A4C;
     box-shadow: 0.5em 0.5em #365B56;
     border: 2px solid #365B56;
 }
@@ -1416,4 +1415,166 @@ label {
     
     
     
+}
+
+/* media queries for login page */
+@media screen and (max-width: 425px) {
+
+    html.loginPage,
+    .loginPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    .loginPage #sectionBlock {
+        max-width: 80%;
+        margin: auto;
+    }
+
+    .loginPage h2 {
+        max-width: 95%;
+    }
+
+    .loginPage div {
+        flex-direction: column;
+    }
+
+    .loginPage #form-label {
+        white-space: pre;
+    }
+
+    .loginPage .actionButton {
+        margin: 0;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+
+    .loginPage #signupBox,
+    .loginPage #accountBenifits {
+        width: auto;
+        margin: 1em;
+        font-size: small;
+    }
+
+    .loginPage .sectionLabels {
+        font-size: medium;
+        font-weight: bold;
+    }
+}
+
+/* media queries for landing page */
+@media screen and (max-width: 425px) {
+
+    html.landingPage,
+    .landingPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    .landingPage #landing-main {
+        max-width: 80%;
+        min-height: fit-content;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .landingPage h2 {
+        max-width: 95%;
+    }
+
+    /*landing-right not changing size*/
+    .landingPage .landing-left-inner, .landingPage .landing-right {
+        max-width: 100%;
+        margin: 10% 0;
+    }
+    .landingPage #events {
+        width: 80%;
+    }
+    
+}
+
+/* media queries for calendar page */
+@media screen and (max-width: 425px) {
+
+    html.calendarPage,
+    .calendarPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    .calendarPage #calendar-content {
+        max-width: 80%;
+        min-height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .calendarPage .calendar {
+        width: 96%;
+        height: fit-content;
+        margin: 10% auto;
+    }
+    .calendarPage .month {
+        height: 3.5rem;
+        padding: 1em;
+    }
+    .calendarPage .weekdays {
+        font-size: 0.7rem;
+        padding: 0 0.3em;
+    }
+    .calendarPage .date {
+        width: 60%;
+    }
+    .calendarPage .date h2, .date p {
+        font-size: 0.9rem;
+    }
+    .calendarPage .days div {
+        width: 8%;
+        margin: 0 3%;
+    }
+    .calendarPage .newEvent {
+        width: 70%;
+    }
+    .calendarPage .actionButton {
+        height: 4em;
+    }
+    .calendarPage #events {
+        max-width: 100%;
+    }
+    .calendarPage #landing-event {
+        height: auto;
+        overflow-x: hidden;
+    }
+
+}
+
+/* media queries for update event page */
+@media screen and (max-width: 425px) {
+
+    html.updateEventPage,
+    .updateEventPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+    .updateEventPage #updatePageContent {
+        width: 80%;
+        min-height: fit-content;
+    }
+    .updateEventPage #entry {
+        width: 80%;
+        min-height: fit-content;
+        margin: 0 auto;
+    }
+    .updateEventPage .pairing {
+        max-width: 100%;
+        min-height: fit-content;
+    }
+    .updateEventPage input[type=text] {
+        max-width: 80%;
+    }
 }
