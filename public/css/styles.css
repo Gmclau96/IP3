@@ -1412,9 +1412,37 @@ label {
 /* media queries for update list page */
 @media screen and (max-width: 425px) {
 
-    
-    
-    
+    .updateListPage .listTitle {
+       float: left;
+       
+   
+   }   
+   
+   .updateListPage .updateCheck{
+   float: left;
+   
+   }
+   
+   .updateListPage .listGroup{
+       flex-direction: column;
+   }
+   
+   .updateListPage #updatePageContent {
+   width: 90%;
+   min-height: fit-content;
+   
+   }
+   
+   .updateListPage .listTitle input[type=text] {
+       max-width: 80%;
+   }
+   
+   .updateListPage input[type=text],
+   input[type=password],
+   input[type=email]{
+   
+       max-width: 70%;
+   }
 }
 
 /* media queries for login page */

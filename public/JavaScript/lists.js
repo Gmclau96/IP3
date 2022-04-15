@@ -131,7 +131,7 @@ for (let i = 0; i < itemLabel.length; i++) {
 //FOR UPDATING LISTS PAGE//
 function expandEditList() {
 
-  for (let i = 2; i < 11; i++) {
+  for (let i = 1; i < 11; i++) {
     var itemlb = document.getElementById('itemlb' + i);
     var item = document.getElementById('item' + i);
     var checkboxlb = document.getElementById('checkboxlb' + i);
