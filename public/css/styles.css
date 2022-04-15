@@ -1092,6 +1092,7 @@ label {
     border: #7C6E53 solid 2px;
     width: 100%;
     background-color: #DCD6C8;
+    box-shadow: 0.5em 0.5em #7C6E53;
 }
 
 #landing-event {
@@ -1514,12 +1515,18 @@ label {
     }
 
     /*landing-right not changing size*/
-    .landingPage .landing-left-inner, .landingPage .landing-right {
+    .landingPage .landing-left-inner{
         max-width: 100%;
         margin: 10% 0;
     }
-    .landingPage #events {
-        width: 80%;
+
+    .landingPage #landing-right{
+        width: 100%;
+        margin:auto;
+    }
+    .landingPage #landing-event {
+        min-width: 120%;
+        margin-left: -8%;
     }
     
 }
