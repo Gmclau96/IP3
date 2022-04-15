@@ -17,26 +17,59 @@
         <h1>IP3Diary</h1>
         <h2 id="sub-header">For all your planning and scheduling needs</h2>
     </header>
-    <br><br><br>
-
-    <form id="login-form">
-        <fieldset id="login-fieldset">
-            <legend id="login-legend">Login</legend>
-            <div class="email">
-                <label class="email-class" id="form-label"> Email:</label><br>
-                <input id="form-control" type="email" placeholder="Type your email here" id='email' name="email" required>
+    <main>
+        <section id="sectionBlock">
+            <div class="signupAlign">
+                <form id="signupBox">
+                    <legend class="sectionLabels">
+                        Login
+                        <hr>
+                    </legend>
+                    <div class="pairing">
+                        <label class="email-class" id="form-label"> Email:</label><br>
+                        <input id="form-control" type="email" placeholder="Type your email here" id='email' name="email" required>
+                    </div>
+                    <div class="pairing">
+                        <label class="password-class" id="form-label"> Password:</label><br>
+                        <input id="form-control" type="password" placeholder="Type your password here" id="password" name="password" required>
+                    </div>
+                    <div class="buttonDiv">
+                        <button class="actionButton" type="submit" formaction="/landing" formmethod="post">LOGIN</button>
+                        <button class="actionButton" type="submit" formnovalidate formaction="/signup" formmethod="get">SIGN
+                            UP</button>
+                    </div>
+                    <br>
+                    <div class="buttonDiv">
+                        <a href="/password" id="form-label">Forgotten password? Reset here</a>
+                    </div>
+                </form>
+                <div id="accountBenifits">
+                  <legend class="sectionLabels">
+                     Create an account to gain access to the following:
+                     <hr>
+                  </legend>
+                  <br>
+                  <ul id="signupList">
+                     <li class="sectionLabels">Write notes with our dedicated notes page</li>
+                     <li>Edit, update or delete anything that comes to mind that you may need reminding of</li>
+                     <br>
+                     <li class="sectionLabels">Store all your favourite recipes</li>
+                     <li>Whether its been in the family for decades or a fast favourite, our recipe page allows for both</li>
+                     <br>
+                     <li class="sectionLabels">Manage your day by creating and updating lists</li>
+                     <li>Keep track of any shopping lists, chores or other tasks that require a checklist</li>
+                     <br>
+                     <li class="sectionLabels">Create and track events with our calendar</li>
+                     <li>Appointments, Birthdays, Meetings and more will never be missed again thanks to our calendar page</li>
+                     <br>
+                     <li class="sectionLabels">Your home page is unique to you!</li>
+                     <li>We organise your home page based off of recent notes and lists as well as any upcoming events you have added to your calendar!</li>
+                     <br>
+                  </ul>
+               </div>
             </div>
-            <div class="password">
-                <label class="password-class" id="form-label"> Password:</label><br>
-                <input id="form-control" type="password" placeholder="Type your password here" id="password" name="password" required>
-            </div><br>
-            <button id="login-buttons" type="submit" formaction="/landing" formmethod="post">LOGIN</button>
-            <button id="login-buttons" type="submit" formnovalidate formaction="/signup" formmethod="get">SIGN
-                UP</button>
-            <button id="login-buttons" type="submit" formnovalidate formaction="/password" formmethod="get">FORGOT
-                PASSWORD?</button>
-        </fieldset>
-    </form>
+        </section>
+    </main>
 </body>
 
 </html>
