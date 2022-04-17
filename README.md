@@ -9,7 +9,7 @@
 
 #### In order to download and run this code, the repoistory should be coloned and the below steps must be followed.
 #### 1. Ensure git is installed on your machine (https://github.com/git-guides/install-git).
-#### 2. Have a secure connection (Eduroam will refuse to run this code due to security/firewall restrictions).
+#### 2. Have a secure connection (Eduroam will give a timeout error due to security/firewall restrictions).
 #### 3. Open the file in Visual studio code.
 #### 4. Type "npm install" to retrieve all required dependancies in the terminal window.
 #### 5. Type "node index" in the terminal window.
