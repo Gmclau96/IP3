@@ -1414,7 +1414,8 @@ label {
 @media screen and (max-width: 425px) {
 
     .updateListPage .listTitle {
-       float: left;
+       
+       flex-direction: column;
        
    
    }   
