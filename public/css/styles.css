@@ -363,7 +363,7 @@ label {
     width: calc(23.4rem/7);
     /*[calendar width - (weekdays padding + days padding +( days margin * 14))/7] [(30 - (1.2 + 0.7 + (0.38 * 14)) /7] */
     height: 3rem;
-    
+
 }
 
 .days div:hover {
@@ -969,7 +969,7 @@ label {
 
 #accountChoice {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 1em auto;
     height: 8em;
     width: 80%;
@@ -1365,46 +1365,115 @@ label {
     }
 
     .updateaccountPage .accountAlign,
-    .updateaccountPage #sectionBlock,
-    .updateaccountPage #editAccountBox
-     {
-        max-width:90%;
+    .updateaccountPage #sectionBlock {
+        width: 90%;
         min-height: fit-content;
         margin: auto;
     }
 
-    .updateaccountPage label
-     {
+    .updateaccountPage #editAccountBox{
+        width: 100%;
+        margin: auto;
+    }
+
+    .updateaccountPage input {
+        min-width: 100%;
+    }
+
+    .updateaccountPage label {
         font-size: larger;
         width: auto;
     }
-    .updateaccountPage .accountButton{
-        
+
+    .updateaccountPage .accountButton {
+
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-   }
-    
+    }
 
-    .updateaccountPage button
-    {
+
+    .updateaccountPage button {
         font-size: small;
-       min-width: fit-content;
-    margin: 2%;
-   }
+        min-width: fit-content;
+        margin: 2%;
+    }
 
 }
+
+/* media queries for admin page */
+@media screen and (max-width: 425px) {
+    html.adminPage,
+    .adminPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    .adminPage #accountsInfo {
+        width: 90%;
+    }
+    .adminPage #accountIdentifier {
+        margin: 1%; 
+    }
+}
+
+/* media queries for update admin page */
+@media screen and (max-width: 425px) {
+    html.updateAdminPage,
+    .updateAdminPage body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+    .updateAdminPage .accountAlign,
+    .updateAdminPage #sectionBlock {
+        width: 90%;
+        min-height: fit-content;
+        margin: auto;
+    }
+
+    .updateAdminPage #editAccountBox{
+        width: 100%;
+        margin: auto;
+    }
+
+    .updateAdminPage input {
+        min-width: 100%;
+    }
+
+    .updateAdminPage label {
+        font-size: larger;
+        width: auto;
+    }
+
+    .updateAdminPage .accountButton {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .updateAdminPage button {
+        font-size: small;
+        min-width: fit-content;
+        margin: 2%;
+    }
+}
+
 
 /* media queries for lists page */
 @media screen and (max-width: 425px) {
 
-    .listPage .listBox{
+    .listPage .listBox {
         width: 70%;
 
     }
 
-    .listPage #newListDiv{
+    .listPage #newListDiv {
         max-width: 80%;
         min-height: fit-content;
     }
@@ -1414,37 +1483,37 @@ label {
 @media screen and (max-width: 425px) {
 
     .updateListPage .listTitle {
-       
-       flex-direction: column;
-       
-   
-   }   
-   
-   .updateListPage .updateCheck{
-   float: left;
-   
-   }
-   
-   .updateListPage .listGroup{
-       flex-direction: column;
-   }
-   
-   .updateListPage #updatePageContent {
-   width: 90%;
-   min-height: fit-content;
-   
-   }
-   
-   .updateListPage .listTitle input[type=text] {
-       max-width: 80%;
-   }
-   
-   .updateListPage input[type=text],
-   input[type=password],
-   input[type=email]{
-   
-       max-width: 70%;
-   }
+
+        flex-direction: column;
+
+
+    }
+
+    .updateListPage .updateCheck {
+        float: left;
+
+    }
+
+    .updateListPage .listGroup {
+        flex-direction: column;
+    }
+
+    .updateListPage #updatePageContent {
+        width: 90%;
+        min-height: fit-content;
+
+    }
+
+    .updateListPage .listTitle input[type=text] {
+        max-width: 80%;
+    }
+
+    .updateListPage input[type=text],
+    input[type=password],
+    input[type=email] {
+
+        max-width: 70%;
+    }
 }
 
 /* media queries for login page */
@@ -1516,20 +1585,21 @@ label {
     }
 
     /*landing-right not changing size*/
-    .landingPage .landing-left-inner{
+    .landingPage .landing-left-inner {
         max-width: 100%;
         margin: 10% 0;
     }
 
-    .landingPage #landing-right{
+    .landingPage #landing-right {
         width: 100%;
-        margin:auto;
+        margin: auto;
     }
+
     .landingPage #landing-event {
         min-width: 120%;
         margin-left: -8%;
     }
-    
+
 }
 
 /* media queries for calendar page */
@@ -1554,33 +1624,43 @@ label {
         height: fit-content;
         margin: 10% auto;
     }
+
     .calendarPage .month {
         height: 3.5rem;
         padding: 1em;
     }
+
     .calendarPage .weekdays {
         font-size: 0.7rem;
         padding: 0 0.3em;
     }
+
     .calendarPage .date {
         width: 60%;
     }
-    .calendarPage .date h2, .date p {
+
+    .calendarPage .date h2,
+    .date p {
         font-size: 0.9rem;
     }
+
     .calendarPage .days div {
         width: 8%;
         margin: 0 3%;
     }
+
     .calendarPage .newEvent {
         width: 70%;
     }
+
     .calendarPage .actionButton {
         height: 4em;
     }
+
     .calendarPage #events {
         max-width: 100%;
     }
+
     .calendarPage #landing-event {
         height: auto;
         overflow-x: hidden;
@@ -1597,19 +1677,23 @@ label {
         overflow-x: hidden;
         height: fit-content;
     }
+
     .updateEventPage #updatePageContent {
         width: 80%;
         min-height: fit-content;
     }
+
     .updateEventPage #entry {
         width: 80%;
         min-height: fit-content;
         margin: 0 auto;
     }
+
     .updateEventPage .pairing {
         max-width: 100%;
         min-height: fit-content;
     }
+
     .updateEventPage input[type=text] {
         max-width: 80%;
     }

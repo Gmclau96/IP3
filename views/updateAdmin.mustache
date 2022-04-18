@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="updateAdminPage">
 
 
 <header>
@@ -18,26 +18,36 @@
         </h1>
 
 <!-- abillity to update account details -->
+<div class="accountAlign">
+<section id="sectionBlock">
         <div id="updateNoteDiv" > 
         
            <form>
            {{#account}}
+           <div id="editAccountBox">
+           <div class="pairing">
                 <label id="fname">Update Forename:</label>
-                <input id="fname" name="fname" value="{{account.forename}}"> <br>
+                <input type="text" name="fname" value="{{account.forename}}"> </div> <br>
+                <div class="pairing">
                 <label id="sname">Update Surname:</label>
-                <input id="sname" name="sname" value="{{account.surname}}"> <br>
+                <input  type="text" name="sname" value="{{account.surname}}"> </div> <br>
+                <div class="pairing">
                 <label id="email">Update Email Address:</label>
-                <input id="email" name="email" value="{{account.email}}"> <br>
+                <input type="email" name="email" value="{{account.email}}"> </div> <br>
+                <div class="pairing">
                 <label id="password">Update Password:</label>
-                <input id="password" name="password" value="{{password}}" type="password"> <br>
+                <input type="password" name="password" value="{{password}}" type="password"></div> <br>
                
-                <div class="add-button">
-                <button id="add"type="submit" formaction="/adminUpdate/{{_id}}" formmethod="post">Save changes</button>
-                <button id="del"type="submit" formaction="/adminDelete/{{_id}}" formmethod="post">Delete Account</button>
-                <button id="back" type="submit" formaction="/admin" formmethod="get" formnovalidate>Back</button>
+              <div class="accountButton">
+                <button class="actionButton" type="submit" formaction="/adminUpdate/{{_id}}" formmethod="post">Save</button>
+                <button class="actionButton" type="submit" formaction="/adminDelete/{{_id}}" formmethod="post">Delete Account</button>
+                <button class="actionButton" type="submit" formaction="/admin" formmethod="get" formnovalidate>Back</button>
                 {{/account}}
                 </div>
+                </div>
                </form>  
+        </div>
+        </section>
         </div>
 </body>
 </html>
