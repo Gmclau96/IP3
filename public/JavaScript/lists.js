@@ -81,11 +81,9 @@ document.documentElement.style.overflowX = 'hidden';
 let itemBox = document.getElementsByClassName('itemBox');
 let itemLabel = document.getElementsByClassName('itemLabel');
 for (let i = 0; i < itemBox.length; i++) {
-  if (itemLabel[i].innerHTML.charAt(0) == "t") {
+  if (itemLabel[i].innerHTML.charAt(0) === "t") {
     itemBox[i].checked = true;
-  } else {
-    itemBox[i].checked = false;
-  }
+  } 
 }
 
 

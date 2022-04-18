@@ -1498,6 +1498,16 @@ label {
         flex-direction: column;
     }
 
+    .updateListPage .buttonsDiv {
+       display: flex;
+       overflow: auto;
+    }
+
+    .updateListPage button {
+        margin: 1%;
+        padding: 0%;
+     }
+
     .updateListPage #updatePageContent {
         width: 90%;
         min-height: fit-content;
