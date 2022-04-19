@@ -227,7 +227,7 @@ exports.deleteAccount = async function (req, res) {
   deleteAccount = await bcrypt.compare(deleteAccount, currentpassword);
   if (deleteAccount) {
     await userDao.deleteOne({ _id: id });
-    await calendarDao.deleteMany({ email: _email });
+    await calendarDao.deleteMany({ _email: _email });
     await notesDao.deleteMany({ _email: _email });
     await listsDao.deleteMany({ _email: _email });
     await recipesDao.deleteMany({ _email: _email });
@@ -244,7 +244,7 @@ exports.get_admin = async function (req, res) {
   if (admin == true) {
     res.render("admin", { account });
   } else {
-    res.render("landing");
+    res.redirect("/");
   }
 };
 
