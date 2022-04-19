@@ -1624,7 +1624,7 @@ label {
 
     .calendarPage #calendar-content {
         max-width: 80%;
-        min-height: fit-content;
+        height: fit-content;
         display: flex;
         flex-direction: column;
     }

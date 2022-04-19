@@ -30,7 +30,7 @@
                         </div>
                         <div class="pairing">
                             <label >Confirm Date:</label>
-                            <input class="display-dropdown" type="datetime-local" name="datetime" value="{{date}}" required><br><br>
+                            <input id="dateTime" class="display-dropdown" type="datetime-local" name="datetime" required><br><br>
                         </div>
                         <div class="pairing">
                             <label > Notes:</label>
@@ -58,12 +58,6 @@
                 {{/event}}
             </form>  
         </section>
-        <script>
-            //Removes timezone from appearing on calendar entries
-            let dates = document.getElementsByClassName('eventDate');
-            for (let i = 0; i < dates.length; i++) {
-            dates[i].innerHTML = dates[i].innerHTML.slice(0, -34);
-            }
-        </script>
+        <script src="../JavaScript/updateEvent.js"></script>
     </body>
 </html>

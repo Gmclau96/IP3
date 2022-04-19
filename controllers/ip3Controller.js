@@ -448,15 +448,13 @@ exports.post_calendar = async function (req, res) {
   const id = res.locals.user.id;
   const eventName = req.body.eventName;
   const datetime = req.body.datetime;
-  const date = new Date(datetime);
-  const iso = date.toISOString();
   const eventType = req.body.eventType;
   const note = req.body.EvtNote;
   const _email = res.locals.user.email;
   try {
     const event = await calendarDao.create({
       eventName,
-      date: iso,
+      date: datetime,
       note,
       eventType,
       _email,
