@@ -54,22 +54,22 @@
             <!--Displays latest list by user-->
             <div class="landing-left-inner">
                 <h3>Most Recent List</h3><br>
-                <ol id="list" class="landing-list">
+                <ul id="list" class="landing-list">
                     {{#lists}}
                     <h3>Title:&ensp;{{title}}</h3><hr><br><br>
-                        <li class="lists-point"> {{item1}}</li>
-                        <li class="lists-point"> {{item2}}</li>
-                        <li class="lists-point"> {{item3}} </li>
-                        <li class="lists-point"> {{item4}} </li>
-                        <li class="lists-point"> {{item5}} </li>
-                        <li class="lists-point"> {{item6}} </li>
-                        <li class="lists-point"> {{item7}} </li>
-                        <li class="lists-point"> {{item8}} </li>
-                        <li class="lists-point"> {{item9}} </li>
-                        <li class="lists-point"> {{item10}} </li>
+                        <li><input type="checkbox" class="itemBox" id="item1" name="item1" onclick="return false;"><label class="itemLabel" for="item1">{{box1}}{{item1}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item2" name="item2" onclick="return false;"><label class="itemLabel" for="item2">{{box2}}{{item2}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item3" name="item3" onclick="return false;"><label class="itemLabel" for="item3">{{box3}}{{item3}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item4" name="item4" onclick="return false;"><label class="itemLabel" for="item4">{{box4}}{{item4}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item5" name="item5" onclick="return false;"><label class="itemLabel" for="item5">{{box5}}{{item5}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item6" name="item6" onclick="return false;"><label class="itemLabel" for="item6">{{box6}}{{item6}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item7" name="item7" onclick="return false;"><label class="itemLabel" for="item7">{{box7}}{{item7}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item8" name="item8" onclick="return false;"><label class="itemLabel" for="item8">{{box8}}{{item8}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item9" name="item9" onclick="return false;"><label class="itemLabel" for="item9">{{box9}}{{item9}}</label></li>
+                           <li><input type="checkbox" class="itemBox" id="item10" name="item10" onclick="return false;"><label class="itemLabel" for="item10">{{box10}}{{item10}}</label></li>
                     {{/lists}}
                     <br><br>
-                </ol>
+                </ul>
             </div>
         </section>
         <!--Displays 5 closest events from users calendar-->

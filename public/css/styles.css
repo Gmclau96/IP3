@@ -698,6 +698,12 @@ label {
     border: 2px solid #7C6E53;
 }
 
+#notesAlign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* ======================SIGNUP PAGE====================== */
 

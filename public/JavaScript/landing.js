@@ -23,3 +23,31 @@ function openNav() {
   }
   document.getElementById("nav-menu").style.width = "250px";
 }*/
+
+//remembers checkbox state
+let itemBox = document.getElementsByClassName('itemBox');
+let itemLabel = document.getElementsByClassName('itemLabel');
+for (let i = 0; i < itemBox.length; i++) {
+  if (itemLabel[i].innerHTML.charAt(0) === "t") {
+    itemBox[i].checked = true;
+  } 
+}
+
+
+//slices boolean state from output
+for (let i = 0; i < itemLabel.length; i++) {
+  if (itemLabel[i].innerHTML.charAt(0) == "t") {
+    itemLabel[i].innerHTML = itemLabel[i].innerHTML.slice(4);
+  } else {
+    itemLabel[i].innerHTML = itemLabel[i].innerHTML.slice(5);
+  }
+}
+
+//only shows chekboxes if there is an item attached to it
+for (let i = 0; i < itemBox.length; i++) {
+  if (itemLabel[i].innerHTML.length == 0) {
+    itemBox[i].style.opacity = 0;
+    itemBox[i].style.position = "absolute";
+    itemBox[i].style.left = "9999999px";
+  } 
+}
