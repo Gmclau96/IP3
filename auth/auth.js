@@ -14,7 +14,6 @@ const authenticate = function (req, res, next) {
                 res.redirect("/login");
                 console.log(error.message);
             } else {
-                // console.log(decodedToken);
                 next()
             }
         })
@@ -35,7 +34,6 @@ const loggedIn = (req, res, next) => {
                 res.locals.user = null;
                 next();
             } else {
-                // console.log(decodedToken);
                 let user = await userDao.findById(decodedToken._id)
                 console.log(user);
                 res.locals.user = user;
