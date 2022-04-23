@@ -50,7 +50,6 @@ exports.post_landing = async function (req, res) {
 //Gets landing page with added elements
 exports.get_landing = async function (req, res, next) {
   const _email = res.locals.user.email;
-  //variables for converting todays date to an ISO time
   const dateString = Date.now();
   const date = new Date(dateString);
   const iso = date.toISOString();
@@ -311,7 +310,7 @@ exports.adminUpdate = async function (req, res) {
 exports.adminDelete = async function (req, res) {
   const id = req.params.id;
   const _email = req.body.email;
-  await calendarDao.deleteMany({ email: _email });
+  await calendarDao.deleteMany({ _email: _email });
   await userDao.deleteOne({ _id: id });
   await notesDao.deleteMany({ _email: _email });
   await listsDao.deleteMany({ _email: _email });
@@ -460,7 +459,6 @@ exports.post_calendar = async function (req, res) {
       _email,
     });
     console.log(event);
-    await calendarDao.where({ _email: _email });
     res.redirect("calendar");
   } catch (error) {
     showErrors(error, res);
